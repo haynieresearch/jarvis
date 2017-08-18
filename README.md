@@ -6,6 +6,8 @@ well as using Amazon Alexa products. However, creating custom intents was not as
 have liked for quick and easy creation. Between wake word and API.AI for speech handling, it appears to work
 rather well. I have also decoupled the TTS services to make it easier to use that functionality elsewhere.
 
+![Screenshot of Jarvis Wall Mount](https://raw.githubusercontent.com/Haynie-Research-and-Development/jarvis/master/resources/screenshots/jarvis_wall.png)
+![Screenshot of Jarvis SMS](https://raw.githubusercontent.com/Haynie-Research-and-Development/jarvis/master/resources/screenshots/jarvis_sms.png)
 Note: SMS commands will require a basic level of experience with PHP.
 
 P.S.: This system is far from perfect, if you make some enhancements or have any ideas please
@@ -144,3 +146,8 @@ If you get a TLS fingerprint mismatch error with Pianobar/Pandora run this comma
 openssl s_client -connect tuner.pandora.com:443 < /dev/null 2> /dev/null | \
     openssl x509 -noout -fingerprint | tr -d ':' | cut -d'=' -f2
 ```
+
+![Screenshot of Jarvis Home](https://raw.githubusercontent.com/Haynie-Research-and-Development/jarvis/master/resources/screenshots/jarvis_home.png)
+![Screenshot of Jarvis Lights](https://raw.githubusercontent.com/Haynie-Research-and-Development/jarvis/master/resources/screenshots/jarvis_lights.png)
+![Screenshot of Jarvis Climate](https://raw.githubusercontent.com/Haynie-Research-and-Development/jarvis/master/resources/screenshots/jarvis_climate.png)
+![Screenshot of Jarvis Security](https://raw.githubusercontent.com/Haynie-Research-and-Development/jarvis/master/resources/screenshots/jarvis_security.png)
