@@ -67,6 +67,7 @@ this up for you.
 * /opt/jarvis/configuration.yaml
 * /opt/jarvis/secrets.yaml
 * /opt/jarvis/stt/config/config.yaml
+* /opt/jarvis/web/webapi/sms/config.php
 
 If you utilize the installJarvis script it will set you up with ready to edit configuration files. Otherwise, you can copy the .example files located in each primary directory.
 
