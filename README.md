@@ -1,4 +1,4 @@
-#Jarvis Home Automation by [@Haynie-Research-and-Development]
+# Jarvis Home Automation by [@Haynie-Research-and-Development]
 Jarvis is a Home Assistant (https://home-assistant.io/) implementation with wake word detection, SMS commands,
 and a lot of automation control. While the Conversation component does it's job, it's currently a bit limited
 and without wake word detection it was almost useless to me. I also have tried the AlexaPi implementation as
@@ -19,27 +19,27 @@ works as designed. There is no other documentation other than this README file. 
 comes with no guaranteed support. Furthermore, this software is licensed under the MIT license.
 License text is provided in the LICENSE file.
 
-**Devices**
-*Apple AirPort Extreme
-*Too Many iOS Devices
-*Raspberry Pi 3 - The Brain
-*Raspberry Pi LCD 7" Touchscreen - Touchscreen Interface
-*Honeywell Wi-Fi Thermostat
-*Wink Relay - Smart Switches + Touchscreen Interface
-*Wink Hub
-*Lutron Wireless Dimmer
-*Leviton Z-Wave Switch
-*Schlage Deadbolt
-*Phillips Hue Starter Pack
-*Phillips Hue Light Strip
-*Phillips Hue Soft White Blub
-*Phillips Hue Color Bulb
-*Phillips Hue Color Flood Light Bulb
-*Logitech Harmony Ultimate
-*iHome Smart Plug
-*Kiddie Z-Wave Smoke/Carbon Monoxide Alarm
+### Devices
+* Apple AirPort Extreme
+* Too Many iOS Devices
+* Raspberry Pi 3 - The Brain
+* Raspberry Pi LCD 7" Touchscreen - Touchscreen Interface
+* Honeywell Wi-Fi Thermostat
+* Wink Relay - Smart Switches + Touchscreen Interface
+* Wink Hub
+* Lutron Wireless Dimmer
+* Leviton Z-Wave Switch
+* Schlage Deadbolt
+* Phillips Hue Starter Pack
+* Phillips Hue Light Strip
+* Phillips Hue Soft White Blub
+* Phillips Hue Color Bulb
+* Phillips Hue Color Flood Light Bulb
+* Logitech Harmony Ultimate
+* iHome Smart Plug
+* Kiddie Z-Wave Smoke/Carbon Monoxide Alarm
 
-##Assumptions
+### Assumptions
 This software makes a couple of assumptions, I will list them below and you can either update/install
 what is needed on your system or make the required changes. Even though the software is open source,
 some services currently are utilizing paid services. The main service is Microsoft Bing Speech.
@@ -61,14 +61,14 @@ Note: I am going to include my current configuration and layout as an example. T
 are included in the resources folder if you wish to edit them. The installer will take care of setting
 this up for you.
 
-##Configuration Files
+### Configuration Files
 /opt/jarvis/configuration.yaml
 /opt/jarvis/secrets.yaml
 /opt/jarvis/stt/config/config.yaml
 
 If you utilize the installJarvis script it will set you up with ready to edit configuration files. Otherwise, you can copy the .example files located in each primary directory.
 
-##Setup
+### Setup
 This assumes you are setting up Home Assistant from scratch.
 
 1. Download the Raspian Lite image, and burn to an SD card for your Raspberry Pi.
@@ -112,7 +112,7 @@ This assumes you are setting up Home Assistant from scratch.
 If all is well, your system will be 100% ready to go. If you have an attached screen/touch screen the main
 panel will appear after all systems boot. If not, navigate to http://<raspberry pi IP>:8123.
 
-##Notes
+### Notes
 Once installed you can use the following system services to restart/control the entire system.
 
 Restart Everything:
