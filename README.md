@@ -47,12 +47,12 @@ While there are free alternatives for speech-to-text services. I have found them
 Luckily, most have a free tier available to use.
 
 For everything to work, you will need the following API keys:
-API.AI - https://api.ai/
-Microsoft Azure Bing Speech - https://docs.microsoft.com/en-us/azure/cognitive-services/speech/home
-Microsoft Azure Face - https://docs.microsoft.com/en-us/azure/cognitive-services/face/overview
-Dark Sky - https://darksky.net/dev/
-Weather Underground - https://www.wunderground.com/weather/api/
-Twilio - https://twilio.com
+* API.AI - https://api.ai/
+* Microsoft Azure Bing Speech - https://docs.microsoft.com/en-us/azure/cognitive-services/speech/home
+* Microsoft Azure Face - https://docs.microsoft.com/en-us/azure/cognitive-services/face/overview
+* Dark Sky - https://darksky.net/dev/
+* Weather Underground - https://www.wunderground.com/weather/api/
+* Twilio - https://twilio.com
 
 If you want SSL you can purchase and install a certificate. However, I find it much easier to sign
 up for a free Cloud Flare (https://www.cloudflare.com) plan and encrypt your external site that way.
@@ -62,14 +62,14 @@ are included in the resources folder if you wish to edit them. The installer wil
 this up for you.
 
 ### Configuration Files
-/opt/jarvis/configuration.yaml
-/opt/jarvis/secrets.yaml
-/opt/jarvis/stt/config/config.yaml
+* /opt/jarvis/configuration.yaml
+* /opt/jarvis/secrets.yaml
+* /opt/jarvis/stt/config/config.yaml
 
 If you utilize the installJarvis script it will set you up with ready to edit configuration files. Otherwise, you can copy the .example files located in each primary directory.
 
 ### Setup
-This assumes you are setting up Home Assistant from scratch.
+*This assumes you are setting up Home Assistant from scratch.*
 
 1. Download the Raspian Lite image, and burn to an SD card for your Raspberry Pi.
 2. Boot your Raspberry Pi and set the initial system configuration.
@@ -140,5 +140,7 @@ Restart Kiosk:
 sudo service jarvis-web restart
 ```
 If you get a TLS fingerprint mismatch error with Pianobar/Pandora run this command to get the updated one:
+```
 openssl s_client -connect tuner.pandora.com:443 < /dev/null 2> /dev/null | \
     openssl x509 -noout -fingerprint | tr -d ':' | cut -d'=' -f2
+```
