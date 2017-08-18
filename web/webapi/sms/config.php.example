@@ -1,0 +1,59 @@
+<?php
+#**********************************************************
+#* CATEGORY    SMS AUTOMATION
+#* GROUP       HOME AUTOMATION
+#* AUTHOR      LANCE HAYNIE <LANCE@HAYNIEMAIL.COM>
+#**********************************************************
+#Jarvis Home Automation
+#Copyright (C) 2017  Haynie Research & Development
+
+#This program is free software; you can redistribute it and/or modify
+#it under the terms of the GNU General Public License as published by
+#the Free Software Foundation; either version 2 of the License, or
+#(at your option) any later version.
+
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+
+#You should have received a copy of the GNU General Public License along
+#with this program; if not, write to the Free Software Foundation, Inc.,
+#51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+
+$twilio_sid = '';
+$twilio_token = '';
+
+$validNumbers = array(
+	"", //Lance
+	"", //Katie
+	"", //Vickie
+	"", //Robert
+	"" //Chris B.
+//	"" //Hudson
+);
+
+$RelayNumbers = array(
+	"", //Lance
+);
+
+$alertNumbers = array(
+	"561-49", //NWS
+	"+15303494355", //NWS
+	"+16265392474", //NWS
+	"+15306944687", //NWS
+  "+14352720084" //NWS
+);
+
+$nwsRelayNumbers = array(
+	"", //Lance
+	"", //Katie
+	"" //Hudson
+);
+
+$host = "http://10.0.1.200:8123/api/";
+$password = "";
+$passwordUrl = "?api_password=" . $password;
+$fromNumber = "";
+
+?>
