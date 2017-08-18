@@ -67,4 +67,9 @@ cp -fR /opt/jarvis/resources/user-config /home/pi/.config
 echo "Setting up sound profile"
 cp -fR /opt/jarvis/resources/asoundrc /home/pi/.asoundrc
 
+echo "Setting up Configuration Files"
+cd /opt/jarvis
+mv secrets.yaml.example secrets.yaml
+cd /opt/jarvis/stt/config/
+mv config.yaml.example
 cd /opt/jarvis
