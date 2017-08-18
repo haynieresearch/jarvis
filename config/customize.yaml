@@ -1,0 +1,302 @@
+#**********************************************************
+#* CATEGORY    CUSTOMIZATION
+#* GROUP       HOME AUTOMATION
+#* AUTHOR      LANCE HAYNIE <LANCE@HAYNIEMAIL.COM>
+#**********************************************************
+#Jarvis Home Automation
+#Copyright (C) 2017  Haynie Research & Development
+
+#This program is free software; you can redistribute it and/or modify
+#it under the terms of the GNU General Public License as published by
+#the Free Software Foundation; either version 2 of the License, or
+#(at your option) any later version.
+
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+
+#You should have received a copy of the GNU General Public License along
+#with this program; if not, write to the Free Software Foundation, Inc.,
+#51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+
+     alarm_control_panel.home_alarm:
+       icon: mdi:security-home
+       friendly_name: Home Security
+
+     binary_sensor.kitchen_presence:
+       icon: mdi:run-fast
+       friendly_name: Kitchen Motion
+       device_class: motion
+
+     binary_sensor.master_bedroom_presence:
+       icon: mdi:run-fast
+       friendly_name: Master Bedroom Motion
+       device_class: motion
+
+     binary_sensor.upstairs_hallway_presence:
+       icon: mdi:run-fast
+       friendly_name: Upstairs Hallway Motion
+       device_class: motion
+
+     binary_sensor.smoke_and_co_co_detected:
+       friendly_name: CO Sensor
+
+     binary_sensor.smoke_and_co_smoke_detected:
+       friendly_name: Smoke Sensor
+
+     binary_sensor.hudsons_room_presence:
+       icon: mdi:run-fast
+       friendly_name: Hudsons Room Motion
+       device_class: motion
+
+     binary_sensor.wesleys_room_presence:
+       icon: mdi:run-fast
+       friendly_name: Wesleys Room Motion
+       device_class: motion
+
+     media_player.roku_yu005p719382:
+       icon: mdi:television-guide
+       friendly_name: Office Roku
+
+     switch.hudsontv:
+       icon: mdi:television
+       friendly_name: Hudson TV
+
+     switch.wesleytv:
+       icon: mdi:television
+       friendly_name: Wesley TV
+
+     media_player.plex_for_sony_playstation_4_0155:
+       icon: mdi:television
+       friendly_name: 'Living Room Plex (PS4)'
+
+     media_player.plex_for_vizio_vizio_mtk:
+       icon: mdi:television
+       friendly_name: 'Master Bedroom Plex'
+
+     media_player.plex_for_vizio_vizio_mtk_2:
+       icon: mdi:television
+       friendly_name: 'Living Room Plex (Smart TV)'
+
+     media_player.hudson_tv_un40j5200:
+       icon: mdi:television
+       friendly_name: 'Hudson TV'
+
+     script.game_timer:
+       icon: mdi:timer-sand
+       friendly_name: 'Game Timer'
+
+     group.all_automations:
+       hidden: false
+       friendly_name: All Automations
+
+     switch.hudson_tv:
+       icon: mdi:television-guide
+       friendly_name: Hudson TV
+
+     switch.wesleys_tv:
+       icon: mdi:television-guide
+       friendly_name: Wesley TV
+
+     switch.upstairs_hallway:
+       icon: mdi:lightbulb
+       friendly_name: Upstairs Hallway
+
+     switch.master_closet:
+       icon: mdi:lightbulb
+       friendly_name: Master Closet
+
+     switch.master_hallway:
+       icon: mdi:lightbulb
+       friendly_name: Master Hallway
+
+     switch.pantry_hallway:
+       icon: mdi:lightbulb
+       friendly_name: Pantry Hallway
+
+     switch.hudsons_light:
+      icon: mdi:lightbulb
+      friendly_name: Hudsons Light
+
+     switch.hudsons_fan:
+       icon: mdi:fan
+       friendly_name: Hudsons Fan
+
+     switch.wesleys_light:
+       icon: mdi:lightbulb
+       friendly_name: Wesleys Light
+
+     switch.upstairs_bathroom_main:
+       icon: mdi:lightbulb
+       friendly_name: Upstairs Bathroom Main
+
+     switch.wesleys_fan:
+       icon: mdi:fan
+       friendly_name: Wesleys Fan
+
+     script.find_katies_iphone:
+       icon: mdi:phone-outgoing
+       friendly_name: Find Katies Phone
+
+     script.find_lances_iphone:
+       icon: mdi:phone-outgoing
+       friendly_name: Find Lances Phone
+
+     script.find_hudsons_iphone:
+       icon: mdi:phone-outgoing
+       friendly_name: Find Hudsons Phone
+
+     scene.outdoor_blue:
+       icon: mdi:lightbulb-on
+       friendly_name: Outdoor Blue
+
+     scene.outdoor_patriotic:
+       icon: mdi:flag
+       friendly_name: Outdoor Patriotic
+
+     scene.movies:
+       icon: mdi:movie
+       friendly_name: Movies
+
+     scene.color_loop:
+       icon: mdi:loop
+       friendly_name: Color Loop
+
+     sensor.pws_pressure_in:
+       friendly_name: 'Outdoor Pressure'
+       icon: mdi:gauge
+
+     sensor.pws_wind_dir:
+       friendly_name: 'Wind Direction'
+       icon: mdi:compass-outline
+
+     sensor.pws_wind_string:
+       friendly_name: 'Wind Summary'
+       icon: mdi:weather-windy
+
+     sensor.pws_temp_f:
+       friendly_name: 'Outdoor Temperature'
+       icon: mdi:thermometer
+
+     sensor.pws_weather:
+       friendly_name: 'Weather Summary'
+
+     sensor.pws_relative_humidity:
+       icon: mdi:water-percent
+       friendly_name: 'Outdoor Humidity'
+
+     sensor.dark_sky_cloud_coverage:
+       friendly_name: 'Cloud Coverage'
+
+     sensor.dark_sky_daily_summary:
+       friendly_name: 'Daily Summary'
+
+     sensor.dark_sky_hourly_summary:
+       friendly_name: 'Hourly Summary'
+
+     group.weather:
+       icon: mdi:weather-pouring
+
+     group.information:
+       icon: mdi:information-outline
+
+     camera.wxradar:
+       friendly_name: Weather Radar
+
+     light.front_porch_color_1_phue:
+       friendly_name: 'Front Porch Color 1'
+
+     light.front_porch_color_2_phue:
+       friendly_name: 'Front Porch Color 2'
+
+     light.front_porch_color_3_phue:
+       friendly_name: 'Front Porch Color 3'
+
+     light.front_porch_left_phue:
+       friendly_name: 'Front Porch Left'
+
+     light.front_porch_right_phue:
+       friendly_name: 'Front Porch Right'
+
+     light.back_porch_phue:
+       friendly_name: 'Back Porch'
+
+     light.dining_room_1_phue:
+       friendly_name: 'Dining Room 1'
+
+     light.dining_room_2_phue:
+       friendly_name: 'Dining Room 2'
+
+     light.dining_room_3_phue:
+       friendly_name: 'Dining Room 3'
+
+     light.tv_backlight_phue:
+       friendly_name: 'TV Backlight'
+
+     light.master_shower_phue:
+       friendly_name: 'Master Shower'
+
+     climate.downstairs:
+       icon: mdi:air-conditioner
+       friendly_name: Downstairs Thermostat
+
+     climate.upstairs:
+       icon: mdi:air-conditioner
+       friendly_name: Upstairs Thermostat
+
+     sensor.average_home_temp:
+       icon: mdi:thermometer
+       friendly_name: Home Average Temperature
+
+     sensor.average_down_temp:
+       icon: mdi:thermometer
+       friendly_name: Downstairs Average Temperature
+
+     sensor.average_up_temp:
+       icon: mdi:thermometer
+       friendly_name: Upstairs Average Temperature
+
+     sensor.kitchen_temperature:
+       icon: mdi:thermometer
+       friendly_name: Kitchen Temperature
+
+     sensor.kitchen_humidity:
+       icon: mdi:water-percent
+       friendly_name: Kitchen Humidity
+
+     sensor.master_bedroom_temperature:
+       icon: mdi:thermometer
+       friendly_name: Master Bedroom Temperature
+
+     sensor.master_bedroom_humidity:
+       icon: mdi:water-percent
+       friendly_name: Master Bedroom Humidity
+
+     sensor.upstairs_hallway_temperature:
+       icon: mdi:thermometer
+       friendly_name: Upstairs Hallway Temperature
+
+     sensor.upstairs_hallway_humidity:
+       icon: mdi:water-percent
+       friendly_name: Upstairs Hallway Humidity
+
+     input_boolean.hvacautomation:
+       icon: mdi:nest-thermostat
+       friendly_name: HVAC Automation
+
+     sensor.wesleys_room_temperature:
+       icon: mdi:thermometer
+       friendly_name: Wesleys Room Temperature
+
+     sensor.wesleys_room_humidity:
+       icon: mdi:water-percent
+       friendly_name: Wesleys Room Humidity
+
+     sensor.hudsons_room_temperature:
+       icon: mdi:thermometer
+       friendly_name: Hudsons Room Temperature
+
+     sensor.hudsons_room_humidity:
+       icon: mdi:water-percent
+       friendly_name: Hudsons Room Humidity

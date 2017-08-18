@@ -1,0 +1,10 @@
+keyword: Jarvis
+
+ha:
+  host: 10.0.1.200
+  port: 8123
+  api_password:
+
+keys:
+  apiai:
+  bing_speech: 

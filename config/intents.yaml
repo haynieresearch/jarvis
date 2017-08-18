@@ -1,0 +1,288 @@
+#**********************************************************
+#* CATEGORY    INTENTS
+#* GROUP       HOME AUTOMATION
+#* AUTHOR      LANCE HAYNIE <LANCE@HAYNIEMAIL.COM>
+#**********************************************************
+#Jarvis Home Automation
+#Copyright (C) 2017  Haynie Research & Development
+
+#This program is free software; you can redistribute it and/or modify
+#it under the terms of the GNU General Public License as published by
+#the Free Software Foundation; either version 2 of the License, or
+#(at your option) any later version.
+
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+
+#You should have received a copy of the GNU General Public License along
+#with this program; if not, write to the Free Software Foundation, Inc.,
+#51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+
+IncreaseVolume:
+  speech:
+    text: This functionality is not enabled yet.
+DecreaseVolume:
+  speech:
+    text: This functionality is not enabled yet.
+SetVolume:
+  speech:
+    text: This functionality is not enabled yet.
+SetAlarm:
+  speech:
+    text: This functionality is not enabled yet.
+SetTimer:
+  speech:
+    text: This functionality is not enabled yet.
+Google:
+  speech:
+    text: This functionality is not enabled yet.
+Wikipedia:
+  speech:
+    text: This functionality is not enabled yet.
+Define:
+  speech:
+    text: This functionality is not enabled yet.
+Spell:
+  speech:
+    text: This functionality is not enabled yet.
+
+HarmonyRemotes:
+  speech:
+    text: I am changing {{ HarmonyDevices | replace('_', ' ') }} to {{ HarmonyInput }}
+  action:
+    - service: remote.turn_on
+      data_template:
+        entity_id: "remote.{{ HarmonyDevices }}"
+        activity: "{{ HarmonyInput }}"
+
+HarmonyVolume:
+  speech:
+    text: I am changing the volume on {{ HarmonyDevices | replace('_', ' ') }}
+  action:
+    - service: script.turn_on
+      data_template:
+        entity_id: >-
+          {%- if HarmonyDevices == "living_room" -%}
+            {%- if VolUpDown == "Up" -%}
+              script.living_room_tv_up
+            {%- elif VolUpDown == "Down" -%}
+              script.living_room_tv_down
+            {%- elif VolUpDown == "Mute" -%}
+              script.living_room_tv_mute
+            {%- endif -%}
+          {%- endif -%}
+
+Say:
+  speech:
+    text: "{{ text }}"
+
+SwitchOnOff:
+  speech:
+    text: I have turned {{ (((Switches | replace('_', ' ') | replace('switch.', '')) | replace('light.', '')) | replace('group.', '')) }} {{ OnOff }}.
+  action:
+    service_template: >
+      {%- if OnOff == "on" -%}
+        homeassistant.turn_on
+      {%- else -%}
+        homeassistant.turn_off
+      {%- endif -%}
+    data_template:
+      entity_id: "{{ Switches | replace(' ', '_') }}"
+
+ActivateScene:
+  speech:
+    text: I have activated {{ Scenes }}.
+  action:
+    - service: homeassistant.turn_on
+      data_template:
+        entity_id: "scene.{{ Scenes | replace(' ', '_') }}"
+
+ActivateScript:
+  speech:
+    text: As you wish.
+  action:
+    - service: homeassistant.turn_on
+      data_template:
+        entity_id: "script.{{ Script | replace(' ', '_') }}"
+
+RestartSys:
+  speech:
+    text: I have restarted the requested system.
+  action:
+    - service: script.turn_on
+      data_template:
+        entity_id: "script.{{ System | replace(' ', '_') }}"
+
+WhatTime:
+  speech:
+    text: It is {{ states.sensor.time__date.state }}.
+
+WeatherReport:
+  speech:
+    text: Here is your weather briefing. It is currently {{ states.sensor.pws_temp_f.state }} degrees outside and {{ states.sensor.pws_weather.state }}. The hourly forecast is {{ states.sensor.dark_sky_hourly_summary.state }} and the daily forecast is {{ states.sensor.dark_sky_daily_summary.state }}.
+
+HomeTemp:
+  speech:
+    text: The average home temperature is {{ states.sensor.average_home_temp.state }} degrees.
+
+ShoppingList:
+  speech:
+    text: I have added {{ item }} to your shopping list.
+  action:
+    - service: conversation.process
+      data_template:
+        text: "add {{ item }} to my shopping list"
+
+AlarmStatus:
+  speech:
+    text: The security system is {{ states.alarm_control_panel.home_alarm.state }}.
+
+ArmAway:
+  speech:
+    text: I am arming the security alarm and setting it as away.
+  action:
+    service: alarm_control_panel.alarm_arm_away
+
+ArmHome:
+  speech:
+    text: I am arming the security alarm and setting it to home.
+  action:
+    service: alarm_control_panel.alarm_arm_home
+
+CancelCarbon:
+  speech:
+    text: I am turning off the carbon monoxide alarm.
+  action:
+    - service: script.turn_off
+      data:
+        entity_id: script.sos_alarm
+    - service: script.turn_off
+      data:
+        entity_id: script.sos_alarm_loop
+    - service: homeassistant.turn_off
+      data:
+        entity_id: switch.gpio_switch_21
+
+CancelFire:
+  speech:
+    text: I am turning off the fire alarm.
+  action:
+    - service: script.turn_off
+      data:
+        entity_id: script.sos_alarm
+    - service: script.turn_off
+      data:
+        entity_id: script.sos_alarm_loop
+    - service: homeassistant.turn_off
+      data:
+        entity_id: switch.gpio_switch_21
+
+Disarm:
+  speech:
+    text: I am disarming the security alarm.
+  action:
+    service: alarm_control_panel.alarm_disarm
+
+FireCall:
+  speech:
+    text: I am setting the fire call status to on.
+  action:
+    - service: homeassistant.turn_on
+      entity_id: input_boolean.lancefirecall
+
+FireCallCancel:
+  speech:
+    text: I am setting the fire call status to off.
+  action:
+    - service: homeassistant.turn_off
+      entity_id: input_boolean.lancefirecall
+
+FireStatus:
+  speech:
+    text: The fire alarm status is {{ states.input_boolean.firealarm.state }}.
+
+KatieCallDad:
+  speech:
+    text: Message to Katie has been played.
+  action:
+    - service: shell_command.alarm_sound
+    - delay:
+        seconds: 1
+    - service: shell_command.alarm_sound
+    - delay:
+        seconds: 0.5
+    - service: shell_command.tts
+      data_template:
+        message: "Attention Katie. Attention Katie. Your dad is trying to get a hold of you and you are not responding to calls and or texts. Please call him as soon as possible. Attention Katie. Attention Katie. Call your dad as soon as possible."
+
+KatieCallDadCell:
+  speech:
+    text: Message to Katie has been played.
+  action:
+    - service: shell_command.alarm_sound
+    - delay:
+        seconds: 1
+    - service: shell_command.alarm_sound
+    - delay:
+        seconds: 0.5
+    - service: shell_command.tts
+      data_template:
+        message: "Attention Katie. Attention Katie. Your dad is trying to get a hold of you on his cell phone and you are not responding to calls and or texts. Please call him on his cell phone soon as possible. Attention Katie. Attention Katie. Call your dad on his cell phone as soon as possible."
+
+KatieCallDadHome:
+  speech:
+    text: Message to Katie has been played.
+  action:
+    - service: shell_command.alarm_sound
+    - delay:
+        seconds: 1
+    - service: shell_command.alarm_sound
+    - delay:
+        seconds: 0.5
+    - service: shell_command.tts
+      data_template:
+        message: "Attention Katie. Attention Katie. Your dad is trying to get a hold of you at home and you are not responding to calls and or texts. Please call him at home as soon as possible. Attention Katie. Attention Katie. Call your dad at home as soon as possible."
+
+KatieCallMom:
+  speech:
+    text: Message to Katie has been played.
+  action:
+    - service: shell_command.alarm_sound
+    - delay:
+        seconds: 1
+    - service: shell_command.alarm_sound
+    - delay:
+        seconds: 0.5
+    - service: shell_command.tts
+      data_template:
+        message: "Attention Katie. Attention Katie. Your mom is trying to get a hold of you and you are not responding to calls and or texts. Please call her as soon as possible. Attention Katie. Attention Katie. Call your mom as soon as possible."
+
+KatieCallMomCell:
+  speech:
+    text: Message to Katie has been played.
+  action:
+    - service: shell_command.alarm_sound
+    - delay:
+        seconds: 1
+    - service: shell_command.alarm_sound
+    - delay:
+        seconds: 0.5
+    - service: shell_command.tts
+      data_template:
+        message: "Attention Katie. Attention Katie. Your mom is trying to get a hold of you on her cell phone and you are not responding to calls and or texts. Please call her on her cell phone as soon as possible. Attention Katie. Attention Katie. Call your mom on her cell phone as soon as possible."
+
+KatieCallMomHome:
+  speech:
+    text: Message to Katie has been played.
+  action:
+    - service: shell_command.alarm_sound
+    - delay:
+        seconds: 1
+    - service: shell_command.alarm_sound
+    - delay:
+        seconds: 0.5
+    - service: shell_command.tts
+      data_template:
+        message: "Attention Katie. Attention Katie. Your mom is trying to get a hold of you at home and you are not responding to calls and or texts. Please call her at home as soon as possible. Attention Katie. Attention Katie. Call your mom at home as soon as possible."

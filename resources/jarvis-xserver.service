@@ -1,0 +1,14 @@
+[Unit]
+Description=JARVIS XORG System
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/opt/jarvis/scripts/jarvis-xserver.sh
+SyslogIdentifier=JARVIS
+Restart=always
+RestartSec=100
+
+[Install]
+WantedBy=multi-user.target

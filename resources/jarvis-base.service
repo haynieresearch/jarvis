@@ -1,0 +1,14 @@
+[Unit]
+Description=JARVIS Base System
+After=network.target jarvis-tts.service
+
+[Service]
+Type=simple
+User=pi
+ExecStart=/usr/local/bin/hass -c "/opt/jarvis"
+SyslogIdentifier=JARVIS
+Restart=always
+RestartSec=100
+
+[Install]
+WantedBy=multi-user.target

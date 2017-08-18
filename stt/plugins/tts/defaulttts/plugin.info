@@ -1,0 +1,10 @@
+[Plugin]
+Name = defaulttts
+Version = 0.0.1
+License = MIT
+URL = https://haynie-research-and-development.github.io/
+Description = Default TTS Engine
+
+[Author]
+Name = Haynie Research & Development
+URL = https://haynie-research-and-development.github.io/

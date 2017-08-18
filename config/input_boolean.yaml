@@ -1,0 +1,86 @@
+#**********************************************************
+#* CATEGORY    INPUT BOOLEAN
+#* GROUP       HOME AUTOMATION
+#* AUTHOR      LANCE HAYNIE <LANCE@HAYNIEMAIL.COM>
+#**********************************************************
+#Jarvis Home Automation
+#Copyright (C) 2017  Haynie Research & Development
+
+#This program is free software; you can redistribute it and/or modify
+#it under the terms of the GNU General Public License as published by
+#the Free Software Foundation; either version 2 of the License, or
+#(at your option) any later version.
+
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+
+#You should have received a copy of the GNU General Public License along
+#with this program; if not, write to the Free Software Foundation, Inc.,
+#51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+
+hvacautomation:
+  name: HVAC Automation
+  initial: on
+  icon: mdi:thermometer
+
+hudson_grounded:
+  name: Hudson Grounded
+  initial: off
+  icon: mdi:emoticon-sad
+
+wesley_grounded:
+  name: Wesley Grounded
+  initial: off
+  icon: mdi:emoticon-sad
+
+flash_hudson_lights:
+  name: Flash Hudson Lights
+  initial: off
+  icon: mdi:alarm-light
+
+flash_wesley_lights:
+  name: Flash Wesley Lights
+  initial: off
+  icon: mdi:alarm-light
+
+panic:
+  name: Panic Alarm
+  initial: off
+  icon: mdi:alert
+
+sound_alarm:
+  name: Sound Alarm
+  initial: off
+  icon: mdi:alarm-bell
+
+garage_alarm:
+  name: Garage Alarm
+  initial: off
+  icon: mdi:alarm-bell
+
+firealarm:
+  name: Fire Alarm
+  initial: off
+  icon: mdi:fire
+
+coalarm:
+  name: Carbon Monoxide Alarm
+  initial: off
+  icon: mdi:skull
+
+lancefirecall:
+  name: Lance on Fire Call
+  initial: off
+  icon: mdi:fire
+
+livingroomtv:
+  name: Living Room TV
+  initial: off
+  icon: mdi:television-guide
+
+nighttimemode:
+  name: Night Time Mode
+  initial: on
+  icon: mdi:weather-night

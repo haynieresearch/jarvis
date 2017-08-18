@@ -1,0 +1,10 @@
+[Plugin]
+Name = AI
+Version = 0.0.1
+License = MIT
+URL = https://haynie-research-and-development.github.io/
+Description = API AI Connectivity & Default Speech Processing
+
+[Author]
+Name = Haynie Research & Development
+URL = https://haynie-research-and-development.github.io/

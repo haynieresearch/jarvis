@@ -1,0 +1,197 @@
+#**********************************************************
+#* CATEGORY    SCENES
+#* GROUP       HOME AUTOMATION
+#* AUTHOR      LANCE HAYNIE <LANCE@HAYNIEMAIL.COM>
+#**********************************************************
+#Jarvis Home Automation
+#Copyright (C) 2017  Haynie Research & Development
+
+#This program is free software; you can redistribute it and/or modify
+#it under the terms of the GNU General Public License as published by
+#the Free Software Foundation; either version 2 of the License, or
+#(at your option) any later version.
+
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+
+#You should have received a copy of the GNU General Public License along
+#with this program; if not, write to the Free Software Foundation, Inc.,
+#51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+
+-  name: TV Blue
+   entities:
+     light.tv_backlight:
+       state: on
+       brightness: 255
+       color_name: blue
+
+-  name: TV Red
+   entities:
+     light.tv_backlight:
+       state: on
+       brightness: 255
+       color_name: red
+
+-  name: Outside Blue
+   entities:
+     light.back_porch:
+       state: on
+       brightness: 255
+       color_name: blue
+     light.front_porch_color_1:
+       state: on
+       brightness: 255
+       color_name: blue
+     light.front_porch_color_2:
+       state: on
+       brightness: 255
+       color_name: blue
+     light.front_porch_color_3:
+       state: on
+       brightness: 255
+       color_name: blue
+     light.front_porch_left:
+       state: on
+       brightness: 128
+       kelvin: 6500
+     light.front_porch_right:
+       state: on
+       brightness: 128
+       kelvin: 6500
+
+-  name: Outside Orange
+   entities:
+     light.back_porch:
+       state: on
+       brightness: 255
+       color_name: orange
+     light.front_porch_color_1:
+       state: on
+       brightness: 255
+       color_name: orange
+     light.front_porch_color_2:
+       state: on
+       brightness: 255
+       color_name: orange
+     light.front_porch_color_3:
+       state: on
+       brightness: 255
+       color_name: orange
+     light.front_porch_left:
+       state: on
+       brightness: 128
+       kelvin: 6500
+     light.front_porch_right:
+       state: on
+       brightness: 128
+       kelvin: 6500
+
+-  name: Outside Pink
+   entities:
+     light.back_porch:
+       state: on
+       brightness: 255
+       color_name: pink
+     light.front_porch_color_1:
+       state: on
+       brightness: 255
+       color_name: pink
+     light.front_porch_color_2:
+       state: on
+       brightness: 255
+       color_name: pink
+     light.front_porch_color_3:
+       state: on
+       brightness: 255
+       color_name: pink
+     light.front_porch_left:
+       state: on
+       brightness: 128
+       kelvin: 6500
+     light.front_porch_right:
+       state: on
+       brightness: 128
+       kelvin: 6500
+
+-  name: Outside Purple
+   entities:
+     light.back_porch:
+       state: on
+       brightness: 255
+       color_name: purple
+     light.front_porch_color_1:
+       state: on
+       brightness: 255
+       color_name: purple
+     light.front_porch_color_2:
+       state: on
+       brightness: 255
+       color_name: purple
+     light.front_porch_color_3:
+       state: on
+       brightness: 255
+       color_name: purple
+     light.front_porch_left:
+       state: on
+       brightness: 128
+       kelvin: 6500
+     light.front_porch_right:
+       state: on
+       brightness: 128
+       kelvin: 6500
+
+-  name: Outside Red
+   entities:
+     light.back_porch:
+       state: on
+       brightness: 255
+       color_name: red
+     light.front_porch_color_1:
+       state: on
+       brightness: 255
+       color_name: red
+     light.front_porch_color_2:
+       state: on
+       brightness: 255
+       color_name: red
+     light.front_porch_color_3:
+       state: on
+       brightness: 255
+       color_name: red
+     light.front_porch_left:
+       state: on
+       brightness: 128
+       kelvin: 6500
+     light.front_porch_right:
+       state: on
+       brightness: 128
+       kelvin: 6500
+
+-  name: Color Loop
+   entities:
+     light.back_porch:
+       state: on
+       brightness: 255
+       effect: colorloop
+     light.front_porch_color_1:
+       state: on
+       brightness: 255
+       effect: colorloop
+     light.front_porch_color_2:
+       state: on
+       brightness: 255
+       effect: colorloop
+     light.front_porch_color_3:
+       state: on
+       brightness: 255
+       effect: colorloop
+     light.front_porch_left:
+       state: on
+       brightness: 128
+       kelvin: 6500
+     light.front_porch_right:
+       state: on
+       brightness: 128
+       kelvin: 6500

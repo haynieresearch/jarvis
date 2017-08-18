@@ -1,0 +1,3815 @@
+#**********************************************************
+#* CATEGORY    HOME ASSISTANT AUTOMATION
+#* GROUP       HOME AUTOMATION
+#* AUTHOR      LANCE HAYNIE <LANCE@HAYNIEMAIL.COM>
+#**********************************************************
+#Jarvis Home Automation
+#Copyright (C) 2017  Haynie Research & Development
+
+#This program is free software; you can redistribute it and/or modify
+#it under the terms of the GNU General Public License as published by
+#the Free Software Foundation; either version 2 of the License, or
+#(at your option) any later version.
+
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+
+#You should have received a copy of the GNU General Public License along
+#with this program; if not, write to the Free Software Foundation, Inc.,
+#51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+
+#**********************************************************
+# HVAC
+#**********************************************************
+- id: climate_upstairs_max_temp
+  alias: Upstairs AC Max Temp
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: climate.upstairs
+    value_template: '{{ state.attributes.temperature }}'
+    above: 80
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.upstairs
+        temperature: 75
+        operation_mode: cool
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.upstairs
+        operation_mode: cool
+
+- id: climate_upstairs_min_temp
+  alias: Upstairs AC Min Temp
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: climate.upstairs
+    value_template: '{{ state.attributes.temperature }}'
+    below: 65
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.upstairs
+        temperature: 75
+        operation_mode: cool
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.upstairs
+        operation_mode: cool
+
+- id: climate_upstairs_ac_day_set
+  alias: Upstairs AC Day Set
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '08:00:00'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.hvacautomation
+        state: 'on'
+      - condition: numeric_state
+        entity_id: sensor.pws_temp_f
+        above: 65
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.upstairs
+        temperature: 76
+        operation_mode: cool
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.upstairs
+        operation_mode: cool
+
+- id: climate_upstairs_heat_day_set
+  alias: Upstairs Heat Day Set
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '08:00:00'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.hvacautomation
+        state: 'on'
+      - condition: numeric_state
+        entity_id: sensor.pws_temp_f
+        below: 65
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.upstairs
+        temperature: 76
+        operation_mode: heat
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.upstairs
+        operation_mode: heat
+
+- id: climate_upstairs_ac_night_set
+  alias: Upstairs AC Night Set
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '22:00:00'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.hvacautomation
+        state: 'on'
+      - condition: numeric_state
+        entity_id: sensor.pws_temp_f
+        above: 65
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.upstairs
+        temperature: 70
+        operation_mode: cool
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.upstairs
+        operation_mode: cool
+
+- id: climate_upstairs_heat_night_set
+  alias: Upstairs Heat Night Set
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '22:00:00'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.hvacautomation
+        state: 'on'
+      - condition: numeric_state
+        entity_id: sensor.pws_temp_f
+        below: 65
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.upstairs
+        temperature: 70
+        operation_mode: heat
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.upstairs
+        operation_mode: heat
+
+- id: climate_upstairs_ac_day
+  alias: Upstairs AC Day
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.average_up_temp
+    above: 78
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.hvacautomation
+        state: 'on'
+      - condition: time
+        before: '21:00:00'
+        after: '07:00:00'
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.upstairs
+        temperature: 76
+        operation_mode: cool
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.upstairs
+        operation_mode: cool
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, The average temperature upstairs is getting a bit warm with an average temperature of {{ trigger.to_state.state }}. I am going to turn on the air conditioning."
+
+- id: climate_upstairs_heat_day
+  alias: Upstairs Heat Day
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.average_up_temp
+    below: 70
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.hvacautomation
+        state: 'on'
+      - condition: time
+        before: '21:00:00'
+        after: '07:00:00'
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.upstairs
+        temperature: 73
+        operation_mode: heat
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.upstairs
+        operation_mode: heat
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, The average temperature upstairs is getting a bit cold with an average temprature of {{ trigger.to_state.state }}. I am going to turn on the heater."
+
+- id: climate_downstairs_max_temp
+  alias: Downstairs AC Max Temp
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: climate.downstairs
+    value_template: '{{ state.attributes.temperature }}'
+    above: 80
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.downstairs
+        temperature: 75
+        operation_mode: cool
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.downstairs
+        operation_mode: cool
+
+- id: climate_downstairs_min_temp
+  alias: Downstairs AC Min Temp
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: climate.downstairs
+    value_template: '{{ state.attributes.temperature }}'
+    below: 65
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.downstairs
+        temperature: 75
+        operation_mode: cool
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.downstairs
+        operation_mode: cool
+
+- id: climate_downstairs_ac_day_set
+  alias: Downstairs AC Day Set
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '08:00:00'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.hvacautomation
+        state: 'on'
+      - condition: numeric_state
+        entity_id: sensor.pws_temp_f
+        above: 65
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.downstairs
+        temperature: 76
+        operation_mode: cool
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.downstairs
+        operation_mode: cool
+
+- id: climate_downstairs_heat_day_set
+  alias: Downstairs Heat Day Set
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '08:00:00'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.hvacautomation
+        state: 'on'
+      - condition: numeric_state
+        entity_id: sensor.pws_temp_f
+        below: 65
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.downstairs
+        temperature: 76
+        operation_mode: heat
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.downstairs
+        operation_mode: heat
+
+- id: climate_downstairs_ac_night_set
+  alias: Downstairs AC Night Set
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '22:00:00'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.hvacautomation
+        state: 'on'
+      - condition: numeric_state
+        entity_id: sensor.pws_temp_f
+        above: 75
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.downstairs
+        temperature: 70
+        operation_mode: cool
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.downstairs
+        operation_mode: cool
+
+- id: climate_downstairs_heat_night_set
+  alias: Downstairs Heat Night Set
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '22:00:00'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.hvacautomation
+        state: 'on'
+      - condition: numeric_state
+        entity_id: sensor.pws_temp_f
+        below: 65
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.downstairs
+        temperature: 70
+        operation_mode: heat
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.downstairs
+        operation_mode: heat
+
+- id: climate_downstairs_ac_day
+  alias: Downstairs AC Day
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.average_down_temp
+    above: 78
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.hvacautomation
+        state: 'on'
+      - condition: time
+        before: '21:00:00'
+        after: '07:00:00'
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.downstairs
+        temperature: 76
+        operation_mode: cool
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.downstairs
+        operation_mode: cool
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, The average temperature downstairs is getting a bit warm with an average temperature of {{ trigger.to_state.state }}. I am going to turn on the air conditioning."
+
+- id: climate_downstairs_heat_day
+  alias: Downstairs Heat Day
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.average_down_temp
+    below: 70
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.hvacautomation
+        state: 'on'
+      - condition: time
+        before: '21:00:00'
+        after: '07:00:00'
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.downstairs
+        temperature: 73
+        operation_mode: heat
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.downstairs
+        operation_mode: heat
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, The average temperature downstairs is getting a bit cold with an average temperature of {{ trigger.to_state.state }}. I am going to turn on the heater."
+
+- id: climate_upstairs_ac_night
+  alias: Upstairs AC Night
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.average_up_temp
+    above: 71
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.hvacautomation
+        state: 'on'
+      - condition: time
+        before: '06:59:00'
+        after: '21:01:00'
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.upstairs
+        temperature: 71
+        operation_mode: cool
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.upstairs
+        operation_mode: cool
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, The average temperature upstairs is getting a bit warm with an average temperature of {{ trigger.to_state.state }}. I am going to turn on the air conditioning."
+
+- id: climate_upstairs_heat_night
+  alias: Upstairs Heat Night
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.average_up_temp
+    below: 68
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.hvacautomation
+        state: 'on'
+      - condition: time
+        before: '06:59:00'
+        after: '21:01:00'
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.upstairs
+        temperature: 71
+        operation_mode: heat
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.upstairs
+        operation_mode: heat
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, The average temperature upstairs is getting a bit cold with an average temprature of {{ trigger.to_state.state }}. I am going to turn on the heater."
+
+- id: climate_downstairs_ac_night
+  alias: Downstairs AC Night
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.average_down_temp
+    above: 71
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.hvacautomation
+        state: 'on'
+      - condition: time
+        before: '06:59:00'
+        after: '21:01:00'
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.downstairs
+        temperature: 71
+        operation_mode: cool
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.downstairs
+        operation_mode: cool
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, The average temperature downstairs is getting a bit warm with an average temperature of {{ trigger.to_state.state }}. I am going to turn on the air conditioning."
+
+- id: climate_downstairs_heat_night
+  alias: Downstairs Heat Night
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.average_down_temp
+    below: 68
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.hvacautomation
+        state: 'on'
+      - condition: time
+        before: '21:00:00'
+        after: '07:00:00'
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.downstairs
+        temperature: 71
+        operation_mode: heat
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.downstairs
+        operation_mode: heat
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, The average temperature downstairs is getting a bit cold with an average temperature of {{ trigger.to_state.state }}. I am going to turn on the heater."
+
+- id: hudsons_room_fan_on
+  alias: Hudsons Room Fan On
+  initial_state: 'on'
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.hudsons_room_temperature
+      above: 79
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: switch.hudsons_fan
+        state: 'off'
+      - condition: numeric_state
+        entity_id: sensor.hudsons_room_temperature
+        above: 79
+  action:
+    - service: homeassistant.turn_on
+      entity_id: switch.hudsons_fan
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, Hudsons room is getting a bit warm with an average temperature of {{ states.sensor.hudsons_room_temperature.state }}. I am going to turn his fan on."
+
+- id: hudsons_room_fan_off
+  alias: Hudsons Room Fan Off
+  initial_state: 'on'
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.hudsons_room_temperature
+      below: 70
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: switch.hudsons_fan
+        state: 'on'
+      - condition: numeric_state
+        entity_id: sensor.hudsons_room_temperature
+        below: 70
+  action:
+    - service: homeassistant.turn_off
+      entity_id: switch.hudsons_fan
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, Hudsons room is getting a bit cold with an average temperature of {{ states.sensor.hudsons_room_temperature.state }}. I am going to turn his fan off."
+
+- id: wesleys_room_fan_on
+  alias: Wesleys Room Fan On
+  initial_state: 'on'
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.wesleys_room_temperature
+      above: 79
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: switch.wesleys_fan
+        state: 'off'
+      - condition: numeric_state
+        entity_id: sensor.wesleys_room_temperature
+        above: 79
+  action:
+    - service: homeassistant.turn_on
+      entity_id: switch.wesleys_fan
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, Wesleys room is getting a bit warm with an average temperature of {{ tates.sensor.wesleys_room_temperature.state }}. I am going to turn his fan on."
+
+- id: wesleys_room_fan_off
+  alias: Wesleys Room Fan Off
+  initial_state: 'on'
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.wesleys_room_temperature
+      below: 70
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: switch.wesleys_fan
+        state: 'on'
+      - condition: numeric_state
+        entity_id: sensor.wesleys_room_temperature
+        below: 70
+  action:
+    - service: homeassistant.turn_off
+      entity_id: switch.wesleys_fan
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, Wesleys room is getting a bit cold with an average temperature of {{ tates.sensor.wesleys_room_temperature.state }}. I am going to turn his fan off."
+
+#**********************************************************
+# LIGHTING
+#**********************************************************
+- id: lighting_outdoor_sunset
+  alias: Outdoor Lighting Sunset
+  initial_state: 'on'
+  trigger:
+    platform: sun
+    event: sunset
+    offset: '00:00:00'
+  action:
+    - service: light.turn_on
+      entity_id: group.outsidelights
+    - delay:
+        seconds: 0.5
+    - service: scene.turn_on
+      data_template:
+        entity_id:
+          "{% if states.sensor.random_outside_lights.state == '1' %}scene.outside_blue
+           {% elif states.sensor.random_outside_lights.state == '2' %}scene.color_loop
+           {% elif states.sensor.random_outside_lights.state == '3' %}scene.outside_orange
+           {% elif states.sensor.random_outside_lights.state == '4' %}scene.outside_pink
+           {% elif states.sensor.random_outside_lights.state == '5' %}scene.outside_purple
+           {% elif states.sensor.random_outside_lights.state == '6' %}scene.outside_red
+           {% endif %}"
+    - delay:
+        seconds: 0.5
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message:
+          "{% if states.sensor.random_outside_lights.state == '1' %}{{ states.sensor.jarvis_greeting.state }}, the sun has set so I am going to turn the outside lights on. Tonight, I think I will make the outside lights blue.
+           {% elif states.sensor.random_outside_lights.state == '2' %}{{ states.sensor.jarvis_greeting.state }}, the sun has set so I am going to turn the outside lights on. Tonight, I think I will make the outside lights go through a color loop.
+           {% elif states.sensor.random_outside_lights.state == '3' %}{{ states.sensor.jarvis_greeting.state }}, the sun has set so I am going to turn the outside lights on. Tonight, I think I will make the outside lights orange.
+           {% elif states.sensor.random_outside_lights.state == '4' %}{{ states.sensor.jarvis_greeting.state }}, the sun has set so I am going to turn the outside lights on. Tonight, I think I will make the outside lights pink.
+           {% elif states.sensor.random_outside_lights.state == '5' %}{{ states.sensor.jarvis_greeting.state }}, the sun has set so I am going to turn the outside lights on. Tonight, I think I will make the outside lights purple.
+           {% elif states.sensor.random_outside_lights.state == '6' %}{{ states.sensor.jarvis_greeting.state }}, the sun has set so I am going to turn the outside lights on. Tonight, I think I will make the outside lights red.
+           {% endif %}"
+
+- id: lighting_outdoor_sunrise
+  alias: Outdoor Lighting Sunrise
+  initial_state: 'on'
+  trigger:
+    platform: sun
+    event: sunrise
+    offset: '+00:00:00'
+  action:
+    - service: light.turn_off
+      entity_id: group.outsidelights
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, the sun is up so I am turning the outside lights off."
+
+- id: tv_backlight_daily_on
+  alias: TV Backlight Daily On
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '8:00:00'
+  action:
+    - service: light.turn_on
+      entity_id: light.tv_backlight
+    - delay:
+        seconds: 0.5
+    - service: scene.turn_on
+      entity_id: scene.tv_blue
+
+- id: upstairs_bathroom_main_nightlight_on
+  alias: Upstairs Bathroom Main Nightlight On
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '20:00:00'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.upstairs_bathroom_main
+
+- id: upstairs_bathroom_main_nightlight_automation
+  alias: Upstairs Bathroom Main Nightlight Automation
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: switch.upstairs_bathroom_main
+    to: 'off'
+  condition:
+    condition: time
+    before: '08:00:00'
+    after: '20:00:00'
+  action:
+    - service: switch.turn_on
+      entity_id: switch.upstairs_bathroom_main
+
+#**********************************************************
+# MISC
+#**********************************************************
+- id: lance_firecall_leave
+  alias: Lance Fire Call - Leave
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_boolean.lancefirecall
+    to: 'on'
+  action:
+    - service: notify.sms
+      data:
+        message: "Notification: SCFD has been paged and Lance is responding."
+        target:
+          - !secret lance_cell
+          - !secret katie_cell
+    - service: notify.sms
+      data:
+        message: "Notification: Lance acknowledges page and is en route to the station. Text or call Lance if there are any special instructions."
+        target:
+          - !secret barela_cell
+          - !secret ryand_cell
+    - service: shell_command.alarm_sound
+    - delay:
+        seconds: 0.5
+    - service: shell_command.alarm_sound
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, Santa Clara Fire Department has been paged."
+
+- id: lance_firecall_return
+  alias: Lance Fire Call - Return
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_boolean.lancefirecall
+    to: 'off'
+  action:
+    - service: notify.sms
+      data:
+        message: "Notification: Lance is leaving the fire scene and heading back to the station. As soon as any post incident work is done at the station, he will be returning home."
+        target:
+          - !secret lance_cell
+          - !secret katie_cell
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you that Lance is returning to the station from the fire page. As soon as any post incident work is done at the station, he will be returning home."
+
+#**********************************************************
+# SECURITY
+#**********************************************************
+- id: security_armed
+  alias: Security Armed
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id:
+      - alarm_control_panel.home_alarm
+    from: 'disarmed'
+    to: 'pending'
+  action:
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.hvacautomation
+    - service: climate.set_away_mode
+      data:
+        entity_id: climate.downstairs
+        away_mode: 'on'
+    - service: climate.set_away_mode
+      data:
+        entity_id: climate.downstairs
+        away_mode: 'on'
+    - service: shell_command.tts
+      data_template:
+        message: "The security system will be armed in 30 seconds."
+
+- id: security_disarmed
+  alias: Security Armed Home
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id:
+      - alarm_control_panel.home_alarm
+    to: 'disarmed'
+  action:
+    - service: input_boolean.turn_on
+      entity_id: input_boolean.hvacautomation
+    - service: climate.set_away_mode
+      data:
+        entity_id: climate.downstairs
+        away_mode: 'off'
+    - service: climate.set_away_mode
+      data:
+        entity_id: climate.downstairs
+        away_mode: 'off'
+    - service: shell_command.tts
+      data_template:
+        message: "The security system has been disarmed."
+
+- id: security_alert_1
+  alias: Security Alert 1
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id:
+      - alarm_control_panel.home_alarm
+    from: 'armed_away'
+    to: 'pending'
+  action:
+    - service: shell_command.tts
+      data_template:
+        message: "The security system has been triggered, whole home image capture has been completed. You have thirty seconds until the alarm will sound and emergency services will be notified."
+
+- id: security_alert_2
+  alias: Security Alert 2
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id:
+      - alarm_control_panel.home_alarm
+    from: 'armed_home'
+    to: 'pending'
+  action:
+    - service: shell_command.tts
+      data_template:
+        message: "The security system has been triggered, whole home image capture has been completed. You have thirty seconds until the alarm will sound and emergency services will be notified."
+
+- id: security_sensors_changed_when_armed
+  alias: Sensors Changed When Security Armed
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id:
+        - binary_sensor.kitchen_presence
+        - binary_sensor.master_bedroom_presence
+        - binary_sensor.upstairs_hallway_presence
+        - binary_sensor.hudsons_room_presence
+        - binary_sensor.wesleyss_room_presence
+      from: 'off'
+      to: 'on'
+      for:
+        seconds: 30
+  condition:
+    condition: state
+    entity_id: alarm_control_panel.home_alarm
+    state: 'armed_away'
+  action:
+    - service: alarm_control_panel.alarm_trigger
+      data:
+        entity_id: alarm_control_panel.home_alarm
+    - service: notify.sms
+      data_template:
+        message: "ALARM! {{ trigger.to_state.name }} was changed to {{ trigger.to_state.state }} while the alarm system was armed. Reply arm away or arm home to turn off the alarm and rearm the system, or reply disarm to put the system in standby mode. Note: If you do not recieve a response, the command failed."
+        target:
+          - !secret lance_cell
+          - !secret katie_cell
+          - !secret hudson_cell
+
+- id: security_lights_on_while_away_dining_room
+  alias: Lights On While Away - Dining Room
+  initial_state: 'on'
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "00:45:00"
+  condition:
+    condition: state
+    entity_id: alarm_control_panel.home_alarm
+    state: 'armed_away'
+  action:
+    - service: light.turn_on
+      entity_id: group.diningroomlights
+
+- id: security_lights_off_while_away_dining_room
+  alias: Turn Off Lights While Away - Dining Room
+  initial_state: 'on'
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "02:45:00"
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.home_alarm
+      state: 'armed_away'
+    - condition: state
+      entity_id: group.diningroomlights
+      state: 'on'
+  action:
+    - service: light.turn_off
+      entity_id: group.diningroomlights
+
+- id: security_lights_on_while_away_kitchen
+  alias: Lights On While Away - Kitchen
+  initial_state: 'on'
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "03:00:00"
+  condition:
+    condition: state
+    entity_id: alarm_control_panel.home_alarm
+    state: 'armed_away'
+  action:
+    - service: light.turn_on
+      entity_id: light.kitchen
+
+- id: security_lights_off_while_away_kitchen
+  alias: Turn Off Lights While Away - Kitchen
+  initial_state: 'on'
+  trigger:
+    platform: sun
+    event: sunset
+    offset: "04:00:00"
+  condition:
+    - condition: state
+      entity_id: alarm_control_panel.home_alarm
+      state: 'armed_away'
+    - condition: state
+      entity_id: group.diningroomlights
+      state: 'on'
+  action:
+    - service: light.turn_off
+      entity_id: light.kitchen
+
+- id: security_turn_on_alarm
+  alias: Turn On Alarm
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: alarm_control_panel.home_alarm
+      to: 'triggered'
+  action:
+    - service: homeassistant.turn_on
+      entity_id: group.alllights
+    - service: homeassistant.turn_on
+      entity_id: scene.outside_bright
+    - service: script.turn_on
+      data:
+        entity_id: script.sound_alarm
+    - service: persistent_notification.create
+      data:
+        message: "The home alarm has been activated. Emergency services have been notified."
+        title: "Security Alert!"
+    - service: shell_command.tts
+      data_template:
+        message: "I have detected a breach in security while the alarm system was armed. I have called 9 1 1, emergency services has been notifed."
+
+- id: security_turn_off_alarm
+  alias: Turn Off Alarm
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: alarm_control_panel.home_alarm
+      to: 'disarmed'
+    - platform: state
+      entity_id: alarm_control_panel.home_alarm
+      to: 'armed_home'
+    - platform: state
+      entity_id: alarm_control_panel.home_alarm
+      to: 'armed_away'
+  condition:
+    condition: or
+    conditions:
+      - condition: state
+        entity_id: alarm_control_panel.home_alarm
+        state: 'disarmed'
+      - condition: state
+        entity_id: input_select.alarmstatus
+        state: 'armed_home'
+      - condition: state
+        entity_id: input_select.alarmstatus
+        state: 'armed_away'
+  action:
+    - service: script.turn_off
+      data:
+        entity_id: script.sound_alarm
+    - service: script.turn_off
+      data:
+        entity_id: script.sound_alarm_loop
+    - service: homeassistant.turn_off
+      data:
+        entity_id: switch.gpio_switch_21
+
+- id: security_panic_alarm_on
+  alias: Panic Alarm On
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_boolean.panic
+    to: 'on'
+  action:
+    - service: notify.sms
+      data:
+        message: "ALARM! The panic alarm was activated! Note: a panic alarm cannot be disabled via SMS messaging."
+        target:
+          - !secret lance_cell
+          - !secret katie_cell
+          - !secret hudson_cell
+    - service: homeassistant.turn_on
+      entity_id: group.alllights
+    - service: homeassistant.turn_on
+      entity_id: scene.outside_bright
+    - service: script.turn_on
+      data:
+        entity_id: script.sound_alarm
+    - service: persistent_notification.create
+      data:
+        message: "The panic alarm has been activated. Emergency services have been notified."
+        title: "Security Alert!"
+    - service: shell_command.tts
+      data_template:
+        message: "Someone has pressed the panic alarm. I have called 9 1 1, emergency services have been notified."
+
+- id: security_panic_alarm_off
+  alias: Panic Alarm Off
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_boolean.panic
+    to: 'off'
+  action:
+    - service: script.turn_off
+      data:
+        entity_id: script.sound_alarm
+    - service: script.turn_off
+      data:
+        entity_id: script.sound_alarm_loop
+    - service: homeassistant.turn_off
+      data:
+        entity_id: switch.gpio_switch_21
+
+- id: security_upstairs_panic_alarm_on
+  alias: Upstairs Panic Alarm On
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: switch.upstairs_panic
+    to: 'on'
+  action:
+    - service: notify.sms
+      data:
+        message: "ALARM! The upstairs panic alarm was activated! Note: a panic alarm cannot be disabled via SMS messaging."
+        target:
+          - !secret lance_cell
+          - !secret katie_cell
+          - !secret hudson_cell
+    - service: homeassistant.turn_on
+      entity_id: group.alllights
+    - service: homeassistant.turn_on
+      entity_id: scene.outside_bright
+    - service: script.turn_on
+      data:
+        entity_id: script.sound_alarm
+
+- id: security_upstairs_panic_alarm_off
+  alias: Upstairs Panic Alarm Off
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: switch.upstairs_panic
+    to: 'off'
+  action:
+    - service: script.turn_off
+      data:
+        entity_id: script.sound_alarm
+    - service: script.turn_off
+      data:
+        entity_id: script.sound_alarm_loop
+    - service: homeassistant.turn_off
+      data:
+        entity_id: switch.gpio_switch_21
+
+- id: security_sound_alarm_on
+  alias: Sound Alarm On
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_boolean.sound_alarm
+    to: 'on'
+  action:
+    - service: script.turn_on
+      data:
+        entity_id: script.sound_alarm
+
+- id: security_sound_alarm_off
+  alias: Sound Alarm Off
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_boolean.sound_alarm
+    to: 'off'
+  action:
+    - service: script.turn_off
+      data:
+        entity_id: script.sound_alarm
+    - service: script.turn_off
+      data:
+        entity_id: script.sound_alarm_loop
+    - service: homeassistant.turn_off
+      data:
+        entity_id: switch.gpio_switch_21
+
+- id: security_garage_alarm_on
+  alias: Garage Alarm On
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_boolean.garage_alarm
+    to: 'on'
+  action:
+    - service: script.turn_on
+      data:
+        entity_id: script.sound_alarm_long
+
+- id: security_garage_alarm_off
+  alias: Garage Alarm Off
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_boolean.garage_alarm
+    to: 'off'
+  action:
+    - service: script.turn_off
+      data:
+        entity_id: script.sound_alarm_long
+    - service: script.turn_off
+      data:
+        entity_id: script.sound_alarm_loop_long
+    - service: homeassistant.turn_off
+      data:
+        entity_id: switch.gpio_switch_21
+
+- id: security_silance_alarm_after_15_min
+  alias: Silence Alarm After 15 Minutes
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: alarm_control_panel.home_alarm
+      to: 'triggered'
+      for:
+        minutes: 15
+  action:
+    - service: script.turn_off
+      data:
+        entity_id: script.sound_alarm
+    - service: script.turn_off
+      data:
+        entity_id: script.sound_alarm_loop
+    - service: homeassistant.turn_off
+      data:
+        entity_id: switch.gpio_switch_21
+
+#**********************************************************
+# FIRE ALARMS
+#**********************************************************
+- id: fire_sensor_on
+  alias: Fire Sensor On
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.smoke_and_co_smoke_detected
+    to: 'on'
+  action:
+    - service: homeassistant.turn_on
+      entity_id: input_boolean.firealarm
+
+- id: fire_sensor_off
+  alias: Fire Sensor Off
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.smoke_and_co_smoke_detected
+    to: 'off'
+  action:
+    - service: homeassistant.turn_off
+      entity_id: input_boolean.firealarm
+
+- id: security_fire_alarm_on
+  alias: Fire Alarm On
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_boolean.firealarm
+    to: 'on'
+  action:
+    - service: homeassistant.turn_on
+      entity_id: group.alllights
+    - service: homeassistant.turn_on
+      entity_id: scene.outside_bright
+    - service: script.turn_on
+      data:
+        entity_id: script.panic_alarm
+    - service: script.turn_on
+      data:
+        entity_id: script.sos_alarm
+    - service: notify.sms
+      data:
+        message: "FIRE ALARM! A fire alarm at {{ states.sensor.home_address.state }} was triggered! Reply Cancel fire to turn off the alarm. Note: If you do not recieve a response, the command failed."
+        target:
+          - !secret lance_cell
+          - !secret katie_cell
+          - !secret hudson_cell
+    - service: persistent_notification.create
+      data:
+        message: "Smoke has been detected in the house. Please evacuate and call 911"
+        title: "Fire Alarm!"
+    - service: shell_command.tts
+      data_template:
+        message: "Smoke has been detected in the house. Please evacuate and call 9 1 1."
+
+- id: security_fire_alarm_off
+  alias: Fire Alarm Off
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_boolean.firealarm
+    to: 'off'
+  action:
+    - service: script.turn_off
+      data:
+        entity_id: script.sos_alarm
+    - service: script.turn_off
+      data:
+        entity_id: script.sos_alarm_loop
+    - service: homeassistant.turn_off
+      data:
+        entity_id: switch.gpio_switch_21
+
+- id: co_sensor_on
+  alias: CO Sensor On
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.smoke_and_co_co_detected
+    to: 'on'
+  action:
+    - service: homeassistant.turn_on
+      entity_id: input_boolean.coalarm
+
+- id: co_sensor_off
+  alias: CO Sensor Off
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: binary_sensor.smoke_and_co_co_detected
+    to: 'off'
+  action:
+    - service: homeassistant.turn_off
+      entity_id: input_boolean.coalarm
+
+- id: security_co_alarm_on
+  alias: CO Alarm On
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_boolean.coalarm
+    to: 'on'
+  action:
+    - service: homeassistant.turn_on
+      entity_id: group.alllights
+    - service: homeassistant.turn_on
+      entity_id: scene.outside_bright
+    - service: script.turn_on
+      data:
+        entity_id: script.panic_alarm
+    - service: script.turn_on
+      data:
+        entity_id: script.sos_alarm
+    - service: notify.sms
+      data:
+        message: "CARBON MONOXIDE ALARM! A carbon monoxide alarm at {{ states.sensor.home_address.state }} was triggered! Reply Cancel carbon to turn off the alarm. Note: If you do not recieve a response, the command failed."
+        target:
+          - !secret lance_cell
+          - !secret katie_cell
+          - !secret hudson_cell
+    - service: persistent_notification.create
+      data:
+        message: "Carbon monoxide has been detected in the house. Please evacuate and call 911"
+        title: "Carbon Monoxide Alarm!"
+    - service: shell_command.tts
+      data_template:
+        message: "Carbon monoxide has been detected in the house. Please evacuate and call 9 1 1."
+
+- id: security_co_alarm_off
+  alias: CO Alarm Off
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_boolean.coalarm
+    to: 'off'
+  action:
+    - service: script.turn_off
+      data:
+        entity_id: script.sos_alarm
+    - service: script.turn_off
+      data:
+        entity_id: script.sos_alarm_loop
+    - service: homeassistant.turn_off
+      data:
+        entity_id: switch.gpio_switch_21
+
+#**********************************************************
+# SECURITY NOTIFICATIONS
+#**********************************************************
+- id: security_alarm_notify_5_min
+  alias: Alarm Notification 5 Minutes
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: alarm_control_panel.home_alarm
+      to: 'triggered'
+      for:
+        minutes: 5
+  action:
+    - service: notify.sms
+      data:
+        message: "ALARM! The home alarm at {{ states.sensor.home_address.state }} has been activated for 5 minutes without intervention. Emergency services will be notified if the alarm continues for 10 minutes. Reply arm away or arm home to turn off the alarm and rearm the system, or reply disarm to put the system in standby mode. Note: If you do not recieve a response, the command failed."
+        target:
+          - !secret lance_cell
+          - !secret katie_cell
+          - !secret vickie_cell
+          - !secret robert_cell
+          - !secret barela_cell
+          - !secret hudson_cell
+          - !secret ryand_cell
+
+- id: security_panic_alarm_notify_5_min
+  alias: Panic Alarm Notification 5 Minutes
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: input_boolean.panic
+      to: 'on'
+      for:
+        minutes: 5
+  action:
+    - service: notify.sms
+      data:
+        message: "ALARM! The panic alarm at {{ states.sensor.home_address.state }} has been activated for 5 minutes without intervention. Emergency services will be notified if the alarm continues for 10 minutes. Note: a panic alarm cannot be disabled via SMS messaging."
+        target:
+          - !secret lance_cell
+          - !secret katie_cell
+          - !secret vickie_cell
+          - !secret robert_cell
+          - !secret barela_cell
+          - !secret hudson_cell
+          - !secret ryand_cell
+
+- id: security_upstairs_panic_alarm_notify_5_min
+  alias: Upstairs Panic Alarm Notification 5 Minutes
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: switch.upstairs_panic
+      to: 'on'
+      for:
+        minutes: 5
+  action:
+    - service: notify.sms
+      data:
+        message: "ALARM! The upstairs panic alarm at {{ states.sensor.home_address.state }} has been activated for 5 minutes without intervention. Emergency services will be notified if the alarm continues for 10 minutes. Note: a panic alarm cannot be disabled via SMS messaging."
+        target:
+          - !secret lance_cell
+          - !secret katie_cell
+          - !secret vickie_cell
+          - !secret robert_cell
+          - !secret barela_cell
+          - !secret hudson_cell
+          - !secret ryand_cell
+
+- id: security_fire_alarm_notify_5_min
+  alias: Fire Alarm Notification 5 Minutes
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: input_boolean.firealarm
+      to: 'on'
+      for:
+        minutes: 5
+  action:
+    - service: notify.sms
+      data:
+        message: "FIRE ALARM! A fire alarm at {{ states.sensor.home_address.state }} has been activated for 5 minutes without intervention. Emergency services will be notified if the alarm continues for 10 minutes. Reply Cancel fire to turn off the alarm. Note: If you do not recieve a response, the command failed."
+        target:
+          - !secret lance_cell
+          - !secret katie_cell
+          - !secret vickie_cell
+          - !secret robert_cell
+          - !secret barela_cell
+          - !secret hudson_cell
+          - !secret ryand_cell
+
+- id: security_co_alarm_notify_5_min
+  alias: CO Alarm Notification 5 Minutes
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: input_boolean.coalarm
+      to: 'on'
+      for:
+        minutes: 5
+  action:
+    - service: notify.sms
+      data:
+        message: "CARBON MONOXIDE ALARM! A carbon monoxide alarm at {{ states.sensor.home_address.state }} has been activated for 5 minutes without intervention. Emergency services will be notified if the alarm continues for 10 minutes. Reply Cancel carbon to turn off the alarm. Note: If you do not recieve a response, the command failed."
+        target:
+          - !secret lance_cell
+          - !secret katie_cell
+          - !secret vickie_cell
+          - !secret robert_cell
+          - !secret barela_cell
+          - !secret hudson_cell
+          - !secret ryand_cell
+
+#**********************************************************
+# MEDIA
+#**********************************************************
+- id: livingroom_harmony_sync_xbox
+  alias: Living Room Harmony Sync Play XBOX 360
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: remote.living_room
+  condition:
+    condition: template
+    value_template: '{{ trigger.to_state.attributes.current_activity == "Play XBOX 360" }}'
+  action:
+    - service: input_select.select_option
+      data_template:
+        entity_id: input_select.livingroomharmony
+        option: Play XBOX 360
+
+- id: livingroom_harmony_sync_smarttv
+  alias: Living Room Harmony Sync Watch Smart TV
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: remote.living_room
+  condition:
+    condition: template
+    value_template: '{{ trigger.to_state.attributes.current_activity == "Watch Smart TV" }}'
+  action:
+    - service: input_select.select_option
+      data_template:
+        entity_id: input_select.livingroomharmony
+        option: Watch Smart TV
+
+- id: livingroom_harmony_sync_off
+  alias: Living Room Harmony Sync PowerOff
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: remote.living_room
+  condition:
+    condition: template
+    value_template: '{{ trigger.to_state.attributes.current_activity == "PowerOff" }}'
+  action:
+    - service: input_select.select_option
+      data_template:
+        entity_id: input_select.livingroomharmony
+        option: PowerOff
+
+- id: livingroom_harmony_sync_ps4
+  alias: Living Room Harmony Sync Play PS4
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: remote.living_room
+  condition:
+    condition: template
+    value_template: '{{ trigger.to_state.attributes.current_activity == "Play PS4" }}'
+  action:
+    - service: input_select.select_option
+      data_template:
+        entity_id: input_select.livingroomharmony
+        option: Play PS4
+
+- id: livingroom_harmony_sync_netflix
+  alias: Living Room Harmony Sync Netflix
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: remote.living_room
+  condition:
+    condition: template
+    value_template: '{{ trigger.to_state.attributes.current_activity == "Netflix" }}'
+  action:
+    - service: input_select.select_option
+      data_template:
+        entity_id: input_select.livingroomharmony
+        option: Netflix
+
+- id: livingroom_harmony_sync_wii
+  alias: Living Room Harmony Sync Play Wii
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: remote.living_room
+  condition:
+    condition: template
+    value_template: '{{ trigger.to_state.attributes.current_activity == "Play Wii" }}'
+  action:
+    - service: input_select.select_option
+      data_template:
+        entity_id: input_select.livingroomharmony
+        option: Play Wii
+
+- id: livingroom_harmony_input_select
+  alias: Living Room Harmony Activity from Input Select
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_select.livingroomharmony
+  action:
+    - service: remote.turn_on
+      data_template:
+        entity_id: remote.living_room
+        activity: '{{trigger.to_state.state}}'
+
+- id: system_volume_slider
+  alias: System Volume Slider
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_slider.systemvolume
+  action:
+    - service: shell_command.volume
+      data_template:
+        cmd: "{{ states.input_slider.systemvolume.state }}"
+
+- id: system_volume
+  alias: System Volume
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.system_volume
+  action:
+     service: input_slider.select_value
+     data_template:
+       entity_id: input_slider.systemvolume
+       value: "{{ states.sensor.system_volume.state }}"
+
+- id: system_volume_day
+  alias: System Volume Day
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '08:00:00'
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+      - sat
+      - sun
+  action:
+    - service: shell_command.volume
+      data_template:
+        cmd: "100"
+
+- id: system_volume_night
+  alias: System Volume Night
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '22:00:00'
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+      - sat
+      - sun
+  action:
+    - service: shell_command.volume
+      data_template:
+        cmd: "90"
+
+- id: living_room_tv_night_shutoff
+  alias: Living Room TV Night Shutoff
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '00:00:00'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.nighttimemode
+        state: 'on'
+      - condition: or
+        conditions:
+          - condition: state
+            entity_id: input_select.livingroomharmony
+            state: 'Play XBOX 360'
+          - condition: state
+            entity_id: input_select.livingroomharmony
+            state: 'Watch Smart TV'
+          - condition: state
+            entity_id: input_select.livingroomharmony
+            state: 'Play PS4'
+          - condition: state
+            entity_id: input_select.livingroomharmony
+            state: 'Netflix'
+          - condition: state
+            entity_id: input_select.livingroomharmony
+            state: 'Play Wii'
+  action:
+    - service: input_select.select_option
+      data_template:
+        entity_id: input_select.livingroomharmony
+        option: PowerOff
+    - service: light.turn_off
+      entity_id: light.tv_backlight
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message:
+          "{% if states.sensor.random_3.state == '1' %}It is getting a bit late, I have turned off the living room TV. Have a good night.
+           {% elif states.sensor.random_3.state == '2' %}I am turning off the living room TV. It is getting a bit late, try to get a good nights sleep.
+           {% elif states.sensor.random_3.state == '3' %}It is time for bed, I have turned off the living room TV. Have a good night.
+           {% endif %}"
+
+- id: living_room_tv_night_automation
+  alias: Living Room TV Night Shutoff
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_select.livingroomharmony
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.nighttimemode
+        state: 'on'
+      - condition: time
+        before: '06:00:00'
+        after: '00:00:00'
+  action:
+    - service: input_select.select_option
+      data_template:
+        entity_id: input_select.livingroomharmony
+        option: PowerOff
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message:
+          "{% if states.sensor.random_3.state == '1' %}I am sorry, but I cannot allow you to turn on the living room TV right now.
+           {% elif states.sensor.random_3.state == '2' %}I cannot allow you to turn on the living room TV right now.
+           {% elif states.sensor.random_3.state == '3' %}I see you are trying to turn on the living room TV after hours. I cannot allow you to do that right now.
+           {% endif %}"
+
+- id: hudson_school_alarm_clock
+  alias: Hudson School Alarm Clock
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '06:30:00'
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+  action:
+    - service: notify.sms
+      data_template:
+        message: "Good Morning Hudson! It's time to wake up!"
+        target:
+          - !secret hudson_cell
+    - service: notify.call
+      data_template:
+        message: "Good morning Hudson! It's time to wake up and get ready for school."
+        target:
+          - !secret hudson_cell
+
+- id: wes_tv_school_night_shutoff
+  alias: Wes TV School Night Shutoff
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '21:00:00'
+  condition:
+    condition: time
+    weekday:
+      - sun
+      - mon
+      - tue
+      - wed
+      - thu
+  action:
+    - service: homeassistant.turn_off
+      entity_id: switch.wesleytv
+
+- id: wes_tv_school_night_automation
+  alias: Wes TV School Night Automation
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: switch.wesleytv
+    to: 'on'
+  condition:
+    condition: time
+    before: '09:00:00'
+    after: '21:00:00'
+    weekday:
+      - sun
+      - mon
+      - tue
+      - wed
+      - thu
+  action:
+    - service: homeassistant.turn_off
+      entity_id: switch.wesleytv
+    - service: notify.sms
+      data:
+        message: "Wesley attempted to turn on his TV after hours."
+        target:
+          - !secret lance_cell
+          - !secret katie_cell
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message:
+          "{% if states.sensor.random_3.state == '1' %}I hate to inform you of this, but Wesley has attempted to turn on his TV after hours.
+           {% elif states.sensor.random_3.state == '2' %}I hate to be a taddle tale, but Wesley has attempted to turn on his TV after hours.
+           {% elif states.sensor.random_3.state == '3' %}I hate to be the bearer of bad news, but Wesley is attempting to turn on his TV after hours.
+           {% endif %}"
+
+- id: wes_tv_weekend_shutoff
+  alias: Wesley Weekend Shutoff
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '23:00:00'
+  condition:
+    condition: time
+    weekday:
+      - fri
+      - sat
+  action:
+    - service: homeassistant.turn_off
+      entity_id: switch.wesleytv
+
+- id: wes_tv_weekend_automation
+  alias: Wesley Weekend Automation
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: switch.wesleytv
+    to: 'on'
+  condition:
+    condition: time
+    before: '09:00:00'
+    after: '23:01:00'
+    weekday:
+      - fri
+      - sat
+  action:
+    - service: homeassistant.turn_off
+      entity_id: switch.wesleytv
+    - service: notify.sms
+      data:
+        message: "Wesley attempted to turn on his TV after hours."
+        target:
+          - !secret lance_cell
+          - !secret katie_cell
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message:
+          "{% if states.sensor.random_3.state == '1' %}I hate to inform you of this, but Wesley has attempted to turn on his TV after hours.
+           {% elif states.sensor.random_3.state == '2' %}I hate to be a taddle tale, but Wesley has attempted to turn on his TV after hours.
+           {% elif states.sensor.random_3.state == '3' %}I hate to be the bearer of bad news, but Wesley is attempting to turn on his TV after hours.
+           {% endif %}"
+
+- id: hudson_tv_school_night_shutoff
+  alias: Hudson TV School Night Shutoff
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '22:00:00'
+  condition:
+    condition: time
+    weekday:
+      - sun
+      - mon
+      - tue
+      - wed
+      - thu
+  action:
+    - service: homeassistant.turn_off
+      entity_id: switch.hudsontv
+
+- id: hudson_tv_school_night_automation
+  alias: Hudson TV School Night Automation
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: switch.hudsontv
+    to: 'on'
+  condition:
+    condition: time
+    before: '09:00:00'
+    after: '22:00:00'
+    weekday:
+      - sun
+      - mon
+      - tue
+      - wed
+      - thu
+  action:
+    - service: homeassistant.turn_off
+      entity_id: switch.hudsontv
+    - service: notify.sms
+      data:
+        message: "Hudson attempted to turn on his TV after hours."
+        target:
+          - !secret lance_cell
+          - !secret katie_cell
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message:
+          "{% if states.sensor.random_3.state == '1' %}I hate to inform you of this, but Hudson has attempted to turn on his TV after hours.
+           {% elif states.sensor.random_3.state == '2' %}I hate to be a taddle tale, but Hudson has attempted to turn on his TV after hours.
+           {% elif states.sensor.random_3.state == '3' %}I hate to be the bearer of bad news, but Hudson is attempting to turn on his TV after hours.
+           {% endif %}"
+
+- id: hudson_tv_weekend_shutoff
+  alias: Hudson Weekend Shutoff
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '23:58:00'
+  condition:
+    condition: time
+    weekday:
+      - fri
+      - sat
+  action:
+    - service: homeassistant.turn_off
+      entity_id: switch.hudsontv
+
+- id: hudson_tv_weekend_automation
+  alias: Hudson Weekend Automation
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: switch.hudsontv
+    to: 'on'
+  condition:
+    condition: time
+    before: '09:00:00'
+    after: '23:59:00'
+    weekday:
+      - fri
+      - sat
+  action:
+    - service: homeassistant.turn_off
+      entity_id: switch.hudsontv
+    - service: notify.sms
+      data:
+        message: "Hudson attempted to turn on his TV after hours."
+        target:
+          - !secret lance_cell
+          - !secret katie_cell
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message:
+          "{% if states.sensor.random_3.state == '1' %}I hate to inform you of this, but Hudson has attempted to turn on his TV after hours.
+           {% elif states.sensor.random_3.state == '2' %}I hate to be a taddle tale, but Hudson has attempted to turn on his TV after hours.
+           {% elif states.sensor.random_3.state == '3' %}I hate to be the bearer of bad news, but Hudson is attempting to turn on his TV after hours.
+           {% endif %}"
+
+- id: wes_tv_summer_shutoff
+  alias: Wes TV Summer Shutoff
+  initial_state: 'off'
+  trigger:
+    platform: time
+    at: '00:00:00'
+  condition:
+    condition: time
+    weekday:
+      - sun
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+      - sat
+  action:
+    - service: homeassistant.turn_off
+      entity_id: switch.wesleytv
+
+- id: wes_tv_summer_automation
+  alias: Wes TV Summer Automation
+  initial_state: 'off'
+  trigger:
+    platform: state
+    entity_id: switch.wesleytv
+    to: 'on'
+  condition:
+    condition: time
+    before: '10:00:00'
+    after: '00:00:00'
+    weekday:
+      - sun
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+      - sat
+  action:
+    - service: homeassistant.turn_off
+      entity_id: switch.wesleytv
+    - service: notify.sms
+      data:
+        message: "Wesley attempted to turn on his TV after hours."
+        target:
+          - !secret lance_cell
+          - !secret katie_cell
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message:
+          "{% if states.sensor.random_3.state == '1' %}I hate to inform you of this, but Wesley has attempted to turn on his TV after hours.
+           {% elif states.sensor.random_3.state == '2' %}I hate to be a taddle tale, but Wesley has attempted to turn on his TV after hours.
+           {% elif states.sensor.random_3.state == '3' %}I hate to be the bearer of bad news, but Wesley is attempting to turn on his TV after hours.
+           {% endif %}"
+
+- id: hudson_tv_summer_shutoff
+  alias: Hudson TV Summer Shutoff
+  initial_state: 'off'
+  trigger:
+    platform: time
+    at: '02:00:00'
+  condition:
+    condition: time
+    weekday:
+      - sun
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+      - sat
+  action:
+    - service: homeassistant.turn_off
+      entity_id: switch.hudsontv
+
+- id: hudson_tv_summer_automation
+  alias: Hudson TV Summer Automation
+  initial_state: 'off'
+  trigger:
+    platform: state
+    entity_id: switch.hudsontv
+    to: 'on'
+  condition:
+    condition: time
+    before: '10:00:00'
+    after: '02:00:00'
+    weekday:
+      - sun
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+      - sat
+  action:
+    - service: homeassistant.turn_off
+      entity_id: switch.hudsontv
+    - service: notify.sms
+      data:
+        message: "Hudson attempted to turn on his TV after hours."
+        target:
+          - !secret lance_cell
+          - !secret katie_cell
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message:
+          "{% if states.sensor.random_3.state == '1' %}I hate to inform you of this, but Hudson has attempted to turn on his TV after hours.
+           {% elif states.sensor.random_3.state == '2' %}I hate to be a taddle tale, but Hudson has attempted to turn on his TV after hours.
+           {% elif states.sensor.random_3.state == '3' %}I hate to be the bearer of bad news, but Hudson is attempting to turn on his TV after hours.
+           {% endif %}"
+
+- id: hudson_grounded_automation
+  alias: Hudson Grounded Automation
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: switch.hudsontv
+    to: 'on'
+  condition:
+    condition: state
+    entity_id: input_boolean.hudson_grounded
+    state: 'on'
+  action:
+    - service: homeassistant.turn_off
+      entity_id: switch.hudsontv
+    - service: notify.sms
+      data:
+        message: "Hudson attempted to turn on his TV when grounded."
+        target:
+          - !secret lance_cell
+          - !secret katie_cell
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message:
+          "{% if states.sensor.random_3.state == '1' %}I hate to inform you of this, but Hudson has attempted to turn on his TV while grounded.
+           {% elif states.sensor.random_3.state == '2' %}I hate to be a taddle tale, but Hudson has attempted to turn on his TV while grounded.
+           {% elif states.sensor.random_3.state == '3' %}I hate to be the bearer of bad news, but Hudson is attempting to turn on his TV while grounded.
+           {% endif %}"
+
+- id: wesley_grounded_automation
+  alias: Wesley Grounded Automation
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: switch.wesleytv
+    to: 'on'
+  condition:
+    condition: state
+    entity_id: input_boolean.wesley_grounded
+    state: 'on'
+  action:
+    - service: homeassistant.turn_off
+      entity_id: switch.wesleytv
+    - service: notify.sms
+      data:
+        message: "Wesley attempted to turn on his TV when grounded."
+        target:
+          - !secret lance_cell
+          - !secret katie_cell
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message:
+          "{% if states.sensor.random_3.state == '1' %}I hate to inform you of this, but Wesley has attempted to turn on his TV while grounded.
+           {% elif states.sensor.random_3.state == '2' %}I hate to be a taddle tale, but Wesley has attempted to turn on his TV while grounded.
+           {% elif states.sensor.random_3.state == '3' %}I hate to be the bearer of bad news, but Wesley is attempting to turn on his TV while grounded.
+           {% endif %}"
+
+- id: wesley_grounded_input_action
+  alias: Wesley Grounded Input Action
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_boolean.wesley_grounded
+    to: 'on'
+  action:
+    - service: homeassistant.turn_off
+      entity_id: switch.wesleytv
+
+- id: hudson_grounded_input_action
+  alias: Hudson Grounded Input Action
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_boolean.hudson_grounded
+    to: 'on'
+  action:
+    - service: homeassistant.turn_off
+      entity_id: switch.hudson
+
+- id: hudson_grounded_input_action_off
+  alias: Hudson Grounded Input Action Off
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_boolean.hudson_grounded
+    to: 'off'
+  action:
+    - service: notify.sms
+      data:
+        message: "Hudson grounded switch has been turned off."
+        target:
+          - !secret lance_cell
+          - !secret katie_cell
+
+- id: wesley.grounded_input_action_off
+  alias: Wesley Grounded Input Action Off
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_boolean.wesley_grounded
+    to: 'off'
+  action:
+    - service: notify.sms
+      data:
+        message: "Wesley grounded switch has been turned off."
+        target:
+          - !secret lance_cell
+          - !secret katie_cell
+#**********************************************************
+# NOTIFICATIONS
+#**********************************************************
+- id: home_assistant_start
+  alias: Home Assistant Start
+  initial_state: 'on'
+  trigger:
+    platform: homeassistant
+    event: start
+  action:
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message:
+          "{% if states.sensor.random_3.state == '1' %}Jarvis Artificial Intelligience System is starting up.
+           {% elif states.sensor.random_3.state == '2' %}Jarvis AI system is starting up
+           {% elif states.sensor.random_3.state == '3' %}Jarvis Artificial Intelligience is starting up.
+           {% endif %}"
+    - delay:
+        seconds: 0.55
+    - service: shell_command.volume
+      data_template:
+        cmd: "100"
+
+- id: home_assistant_shutdown
+  alias: Home Assistant Shutdown
+  initial_state: 'on'
+  trigger:
+    platform: homeassistant
+    event: shutdown
+  action:
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message:
+          "{% if states.sensor.random_3.state == '1' %}Jarvis Artificial Intelligience System is shutting down.
+           {% elif states.sensor.random_3.state == '2' %}Jarvis AI system is shutting down.
+           {% elif states.sensor.random_3.state == '3' %}Jarvis Artificial Intelligience is shutting down.
+           {% endif %}"
+
+- id: update_notification
+  alias: Update Available Notification
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: updater.updater
+  action:
+    - service: notify.sms
+      data:
+        message: "HomeAssistant {{ states('updater.updater') }} is now available."
+        target:
+          - !secret lance_cell
+    - service: persistent_notification.create
+      data:
+        message: "HomeAssistant {{ states('updater.updater') }} is now available."
+        title: "Update Available"
+
+- id: speedtest_download
+  alias: Speedtest Download
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.speedtest_download
+    below: 15
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you that there is a network issue. The current download speed is {{ trigger.to_state.state }} mega bits per second."
+
+- id: speedtest_upload
+  alias: Speedtest Upload
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.speedtest_upload
+    below: 3
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you that there is a network issue. The current upload speed is {{ trigger.to_state.state }} mega bits per second."
+
+- id: speedtest_ping
+  alias: Speedtest Ping
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.speedtest_ping
+    above: 30
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you that there is a network issue. The current ping result is {{ trigger.to_state.state }} milliseconds."
+
+- id: cpu_use_50
+  alias: CPU Use 50
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.cpu_use
+    above: 50
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "My CPU usage is getting high, I am currently at {{ states.sensor.cpu_use.state }} percent."
+
+- id: cpu_use_75
+  alias: CPU Use 75
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.cpu_use
+    above: 75
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "My CPU usage is now serious, I am currently at {{ states.sensor.cpu_use.state }} percent."
+
+- id: cpu_use_90
+  alias: CPU Use 90
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.cpu_use
+    above: 90
+  action:
+    - service: shell_command.alarm_sound
+    - delay:
+        seconds: 0.5
+    - service: shell_command.alarm_sound
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "My CPU usage is now critical, I am currently at {{ states.sensor.cpu_use.state }} percent. If an intervention is not performed, I may soon crash."
+
+- id: cpu_use_95
+  alias: CPU Use 95
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.cpu_use
+    above: 95
+  action:
+    - service: shell_command.alarm_sound
+    - delay:
+        seconds: 0.5
+    - service: shell_command.alarm_sound
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "My CPU usage is now beyond critical, I am currently at {{ states.sensor.cpu_use.state }} percent. I am going to try and reboot myself."
+    - delay:
+        seconds: 5
+    - service: shell_command.restart_system
+
+- id: ram_use_70
+  alias: Ram Use 70
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.ram_use
+    above: 70
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "My memory usage is getting high, I am currently at {{ states.sensor.ram_use.state }} percent."
+
+- id: ram_use_80
+  alias: Ram Use 80
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.ram_use
+    above: 80
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "My memory usage is now serious, I am currently at {{ states.sensor.ram_use.state }} percent."
+
+- id: ram_use_90
+  alias: Ram Use 90
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.ram_use
+    above: 90
+  action:
+    - service: shell_command.alarm_sound
+    - delay:
+        seconds: 0.5
+    - service: shell_command.alarm_sound
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "My memory usage is now critical, I am currently at {{ states.sensor.ram_use.state }} percent. If an intervention is not performed, I may soon crash."
+
+- id: ram_use_95
+  alias: Ram Use 95
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.ram_use
+    above: 95
+  action:
+    - service: shell_command.alarm_sound
+    - delay:
+        seconds: 0.5
+    - service: shell_command.alarm_sound
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "My memory usage is now beyond critical, I am currently at {{ states.sensor.ram_use.state }} percent. I am going to try and reboot myself."
+    - delay:
+        seconds: 5
+    - service: shell_command.restart_system
+
+- id: 15_min_load_3
+  alias: 15 Min Load 3
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.average_load_15m
+    above: 3
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "My 15 minute load average is getting high, I am currently at {{ states.sensor.sensor.average_load_15m.state }}."
+
+- id: 15_min_load_4
+  alias: 15 Min Load 4
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.average_load_15m
+    above: 4
+  action:
+    - service: shell_command.alarm_sound
+    - delay:
+        seconds: 0.5
+    - service: shell_command.alarm_sound
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "My 15 minute load average is now critical, I am currently at {{ states.sensor.average_load_15m.state }}."
+
+- id: 15_min_load_5
+  alias: 15 Min Load 5
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.average_load_15m
+    above: 5
+  action:
+    - service: shell_command.alarm_sound
+    - delay:
+        seconds: 0.5
+    - service: shell_command.alarm_sound
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "My 15 minute load average has exceeded my limitations, I am currently at {{ states.sensor.average_load_15m.state }}. I am going to try and reboot myself."
+    - delay:
+        seconds: 5
+    - service: shell_command.restart_system
+
+- id: chore_reminder
+  alias: Chore Reminder
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '15:00:00'
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+      - sat
+      - sun
+  action:
+    - service: shell_command.foghorn
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message:
+          "{% if states.sensor.random_3.state == '1' %}Attention all kids, attention all kids. If you have not done your chores yet, it may be a good time to do them.
+           {% elif states.sensor.random_3.state == '2' %}Attention all kids, attention all kids. You should consider doing your chores if you have not done so by now.
+           {% elif states.sensor.random_3.state == '3' %}Attention all kids, attention all kids. Now would be a good time to do your chores if you have not done so yet.
+           {% endif %}"
+
+- id: brush_teeth_night_reminder
+  alias: Brush Teeth Night Reminder
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '20:00:00'
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+      - sat
+      - sun
+  action:
+    - service: shell_command.foghorn
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message:
+          "{% if states.sensor.random_3.state == '1' %}Attention all kids, attention all kids. You better go brush your teeth now. I have electrodes to shock you if you do not brush your teeth.
+           {% elif states.sensor.random_3.state == '2' %}Attention all kids, attention all kids. You better go brush your teeth now. I will disable the play station four if you do not brush your teeth.
+           {% elif states.sensor.random_3.state == '3' %}Attention all kids, attention all kids. You better go brush your teeth now. I will disable all of your electronics if you do not brush your teeth.
+           {% endif %}"
+    - service: notify.sms
+      data_template:
+        message:
+          "{% if states.sensor.random_3.state == '1' %}Attention all kids, attention all kids. You better go brush your teeth now. I have electrodes to shock you if you do not brush your teeth.
+           {% elif states.sensor.random_3.state == '2' %}Attention all kids, attention all kids. You better go brush your teeth now. I will disable the play station four if you do not brush your teeth.
+           {% elif states.sensor.random_3.state == '3' %}Attention all kids, attention all kids. You better go brush your teeth now. I will disable all of your electronics if you do not brush your teeth.
+           {% endif %}"
+        target:
+          - !secret hudson_cell
+
+- id: brush_teeth_night_reminder2
+  alias: Brush Teeth Night Reminder 2
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '20:05:00'
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+      - sat
+      - sun
+  action:
+    - service: shell_command.foghorn
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message:
+          "{% if states.sensor.random_3.state == '1' %}Attention all kids, attention all kids. You better go brush your teeth now. I have electrodes to shock you if you do not brush your teeth.
+           {% elif states.sensor.random_3.state == '2' %}Attention all kids, attention all kids. You better go brush your teeth now. I will disable the play station four if you do not brush your teeth.
+           {% elif states.sensor.random_3.state == '3' %}Attention all kids, attention all kids. You better go brush your teeth now. I will disable all of your electronics if you do not brush your teeth.
+           {% endif %}"
+
+- id: wes_shower_reminder
+  alias: Wes Shower Reminder
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '19:30:00'
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+      - sat
+      - sun
+  action:
+    - service: shell_command.foghorn
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message:
+          "{% if states.sensor.random_5.state == '1' %}Attention Wesley, Attention Wesley. My smell sensors indicate an odor emitting from your arm pits. Your presence is required in the shower.
+           {% elif states.sensor.random_5.state == '2' %}Attention Wesley, Attention Wesley. My smell sensors indicate an essence of stink. Your presence is required in the shower.
+           {% elif states.sensor.random_5.state == '3' %}Attention Wesley, Attention Wesley. My smell sensors indicate you stink. Your presence is required in the shower.
+           {% elif states.sensor.random_5.state == '4' %}Attention Wesley, Attention Wesley. I hate to inform you of this, but you stink. Please go take a shower.
+           {% elif states.sensor.random_5.state == '5' %}Attention Wesley, Attention Wesley. I regret to inform you but your stinch is plugging my smell sensors. You are required to take a shower now.
+           {% endif %}"
+
+- id: wes_shower_reminder2
+  alias: Wes Shower Reminder 2
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '19:35:00'
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+      - sat
+      - sun
+  action:
+    - service: shell_command.foghorn
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message:
+          "{% if states.sensor.random_5.state == '1' %}Attention Wesley, Attention Wesley. My smell sensors indicate an odor emitting from your arm pits. Your presence is required in the shower.
+           {% elif states.sensor.random_5.state == '2' %}Attention Wesley, Attention Wesley. My smell sensors indicate an essence of stink. Your presence is required in the shower.
+           {% elif states.sensor.random_5.state == '3' %}Attention Wesley, Attention Wesley. My smell sensors indicate you stink. Your presence is required in the shower.
+           {% elif states.sensor.random_5.state == '4' %}Attention Wesley, Attention Wesley. I hate to inform you of this, but you stink. Please go take a shower.
+           {% elif states.sensor.random_5.state == '5' %}Attention Wesley, Attention Wesley. I regret to inform you but your stinch is plugging my smell sensors. You are required to take a shower now.
+           {% endif %}"
+
+- id: hudson_shower_reminder
+  alias: Hudson Shower Reminder
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '19:45:00'
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+      - sat
+      - sun
+  action:
+    - service: shell_command.foghorn
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message:
+          "{% if states.sensor.random_5.state == '1' %}Attention Hudson, Attention Hudson. My smell sensors indicate an odor emitting from your arm pits. Your presence is required in the shower.
+           {% elif states.sensor.random_5.state == '2' %}Attention Hudson, Attention Hudson. My smell sensors indicate an essence of stink. Your presence is required in the shower.
+           {% elif states.sensor.random_5.state == '3' %}Attention Hudson, Attention Hudson. My smell sensors indicate you stink. Your presence is required in the shower.
+           {% elif states.sensor.random_5.state == '4' %}Attention Hudson, Attention Hudson. I hate to inform you of this, but you stink. Please go take a shower.
+           {% elif states.sensor.random_5.state == '5' %}Attention Hudson, Attention Hudson. I regret to inform you but your stinch is plugging my smell sensors. You are required to take a shower now.
+           {% endif %}"
+    - service: notify.sms
+      data_template:
+        message:
+          "{% if states.sensor.random_5.state == '1' %}Attention Hudson, Attention Hudson. My smell sensors indicate an odor emitting from your arm pits. Your presence is required in the shower.
+           {% elif states.sensor.random_5.state == '2' %}Attention Hudson, Attention Hudson. My smell sensors indicate an essence of stink. Your presence is required in the shower.
+           {% elif states.sensor.random_5.state == '3' %}Attention Hudson, Attention Hudson. My smell sensors indicate you stink. Your presence is required in the shower.
+           {% elif states.sensor.random_5.state == '4' %}Attention Hudson, Attention Hudson. I hate to inform you of this, but you stink. Please go take a shower.
+           {% elif states.sensor.random_5.state == '5' %}Attention Hudson, Attention Hudson. I regret to inform you but your stinch is plugging my smell sensors. You are required to take a shower now.
+           {% endif %}"
+        target:
+          - !secret hudson_cell
+
+- id: hudson_shower_reminder2
+  alias: Hudson Shower Reminder 2
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '19:50:00'
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+      - sat
+      - sun
+  action:
+    - service: shell_command.foghorn
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message:
+          "{% if states.sensor.random_5.state == '1' %}Attention Hudson, Attention Hudson. My smell sensors indicate an odor emitting from your arm pits. Your presence is required in the shower.
+           {% elif states.sensor.random_5.state == '2' %}Attention Hudson, Attention Hudson. My smell sensors indicate an essence of stink. Your presence is required in the shower.
+           {% elif states.sensor.random_5.state == '3' %}Attention Hudson, Attention Hudson. My smell sensors indicate you stink. Your presence is required in the shower.
+           {% elif states.sensor.random_5.state == '4' %}Attention Hudson, Attention Hudson. I hate to inform you of this, but you stink. Please go take a shower.
+           {% elif states.sensor.random_5.state == '5' %}Attention Hudson, Attention Hudson. I regret to inform you but your stinch is plugging my smell sensors. You are required to take a shower now.
+           {% endif %}"
+
+- id: clean_kitchen_reminder
+  alias: Clean Kitchen Reminder
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '19:15:00'
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+      - sat
+      - sun
+  action:
+    - service: shell_command.foghorn
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "Attention Kids. Attention Lance. Attention Kids. Attention Lance. It is time to make sure the kitchen is clean after dinner. Chances are your beautiful mom and girlfriend made dinner. It would be really nice if the kitchen was not left as a mess."
+
+- id: wes_school_night_bedtime
+  alias: Wesley School Night Bed Time
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '20:30:00'
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - sun
+  action:
+    - service: shell_command.foghorn
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "Attention Wesley. Attention Wesley. It is now your bedtime and you are required to promply report to your bed. I repeat, Wesley, it is now your bedtime and you are required to go to bed."
+
+- id: hudson_school_night_bedtime
+  alias: Hudson School Night Bed Time
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '21:30:00'
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - sun
+  action:
+    - service: shell_command.foghorn
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "Attention Hudson. Attention Hudson. It is now your bedtime and you are required to promply report to your bed. I repeat, Hudson, it is now your bedtime and you are required to go to bed."
+    - service: notify.sms
+      data_template:
+        message: "Attention Hudson. Attention Hudson. It is now your bedtime and you are required to promply report to your bed. I repeat, Hudson, it is now your bedtime and you are required to go to bed."
+        target:
+          - !secret hudson_cell
+
+- id: homework_reminder
+  alias: Homework Reminder
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '16:00:00'
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+  action:
+    - service: shell_command.foghorn
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "Attention all kids. Attention all kids. If you have any homework to be done, now is the time to do it."
+    - service: notify.sms
+      data_template:
+        message: "If you have any homework to be done, now is the time to do it.."
+        target:
+          - !secret hudson_cell
+
+- id: dinner_reminder
+  alias: Dinner Reminder
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '17:30:00'
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+      - sat
+      - sun
+  action:
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "Attention parental units. Attention parental units. Now would be a good time to start making dinner."
+
+- id: hudson_daily_trash_reminder
+  alias: Hudson Daily Trash Reminder
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '17:45:00'
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+      - sat
+      - sun
+  action:
+    - service: notify.sms
+      data_template:
+        message: "Hudson: You need to take out the trash."
+        target:
+          - !secret hudson_cell
+    - service: shell_command.foghorn
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message:
+          "{% if states.sensor.random_5.state == '1' %}Attention Hudson, Attention Hudson. Its probably a good idea to take out the trash now.
+           {% elif states.sensor.random_5.state == '2' %}Attention Hudson, Attention Hudson. You should check the trash to see if it needs to be taken out.
+           {% elif states.sensor.random_5.state == '3' %}Attention Hudson, Attention Hudson. Chances are you have not taken out the trash, pleaes do so now.
+           {% elif states.sensor.random_5.state == '4' %}Attention Hudson, Attention Hudson. Please check to see if the trash needs to be taken out.
+           {% elif states.sensor.random_5.state == '5' %}Attention Hudson, Attention Hudson. If you have not taken out the trash today, please do so now.
+           {% endif %}"
+
+- id: hudson_daily_trash_reminder2
+  alias: Hudson Daily Trash Reminder 2
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '17:50:00'
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+      - sat
+      - sun
+  action:
+    - service: shell_command.foghorn
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message:
+          "{% if states.sensor.random_5.state == '1' %}Attention Hudson, Attention Hudson. Its probably a good idea to take out the trash now.
+           {% elif states.sensor.random_5.state == '2' %}Attention Hudson, Attention Hudson. You should check the trash to see if it needs to be taken out.
+           {% elif states.sensor.random_5.state == '3' %}Attention Hudson, Attention Hudson. Chances are you have not taken out the trash, pleaes do so now.
+           {% elif states.sensor.random_5.state == '4' %}Attention Hudson, Attention Hudson. Please check to see if the trash needs to be taken out.
+           {% elif states.sensor.random_5.state == '5' %}Attention Hudson, Attention Hudson. If you have not taken out the trash today, please do so now.
+           {% endif %}"
+
+- id: lance_sunday_trash_reminder
+  alias: Lance Sunday Trash Reminder
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '21:30:00'
+  condition:
+    condition: time
+    weekday:
+      - sun
+  action:
+    - service: notify.sms
+      data_template:
+        message: "Lance: Take the trash bins out."
+        target:
+          - !secret lance_cell
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "Lance, dont forget to take the trash bins out."
+
+- id: hudson_monday_trash_bins
+  alias: Hudson Monday Trash Bins
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '15:30:00'
+  condition:
+    condition: time
+    weekday:
+      - mon
+  action:
+    - service: notify.sms
+      data_template:
+        message: "Hudson: If you have not already brought the trash bins in, you need to do it now. This includes BOTH bins, and the recycling bin if it is out."
+        target:
+          - !secret hudson_cell
+
+- id: morning_wx
+  alias: Morning WX
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '8:00:00'
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+      - sat
+      - sun
+  action:
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "Good morning all, I hope everyone slept well. Lance, please do not forget to make coffee. Also, please check your to do list and make sure your day is planned properly. Katie, make sure to check the calendar for the day to see what events are planned for the day. If there are any events that need to be added please do so today. Here is your morning weather briefing. It is currently {{ states.sensor.pws_temp_f.state }} degrees outside and {{ states.sensor.pws_weather.state }}. The hourly forecast is {{ states.sensor.dark_sky_hourly_summary.state }} and the daily forecast is {{ states.sensor.dark_sky_daily_summary.state }}."
+
+- id: mid_morning_wx
+  alias: Mid Morning WX
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '10:00:00'
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+      - sat
+      - sun
+  action:
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "Good morning all, Lance, please check your to do list and make sure your day is planned properly. Katie, make sure to check the calendar for the day to see what events are planned for the day. If there are any events that need to be added please do so today. Here is your morning weather briefing. It is currently {{ states.sensor.pws_temp_f.state }} degrees outside and {{ states.sensor.pws_weather.state }}. The hourly forecast is {{ states.sensor.dark_sky_hourly_summary.state }} and the daily forecast is {{ states.sensor.dark_sky_daily_summary.state }}."
+
+- id: afternoon_wx
+  alias: Afternoon WX
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '13:00:00'
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+      - sat
+      - sun
+  action:
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "Good afternoon all, Lance, please make sure you are still on track with your daily to do list. Katie, this would also be a good time to check the calendar for further events today. If there are any events missing, please add them now so everyone is updated. Here is your afternoon weather briefing. It is currently {{ states.sensor.pws_temp_f.state }} degrees outside and {{ states.sensor.pws_weather.state }}. The hourly forecast is {{ states.sensor.dark_sky_hourly_summary.state }} and the daily forecast is {{ states.sensor.dark_sky_daily_summary.state }}."
+
+- id: evening_wx
+  alias: Evening WX
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '19:00:00'
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+      - sat
+      - sun
+  action:
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "Good evening all, Lance, this would be a good time to start planning your to do list for tomorrow. Katie, please check the calendar and make sure any events for tomorrow have been added. Here is your evening weather briefing. It is currently {{ states.sensor.pws_temp_f.state }} degrees outside and {{ states.sensor.pws_weather.state }}. The hourly forecast is {{ states.sensor.dark_sky_hourly_summary.state }} and the daily forecast is {{ states.sensor.dark_sky_daily_summary.state }}."
+
+- id: restart_on_no_network
+  alias: Restart on no Network
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: sensor.internet_status
+      to: 'DOWN'
+      for:
+        minutes: 15
+  action:
+    - service: shell_command.restart_system
+
+- id: rule_reminder_5
+  alias: Rule Reminder 5 Min
+  initial_state: 'on'
+  trigger:
+    platform: time
+    minutes: '/5'
+    seconds: 00
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_select.rule_freq
+        state: '5'
+      - condition: time
+        before: '20:00:00'
+        after: '08:00:00'
+  action:
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message:
+          "{% if states.sensor.random_rules.state == '1' %}If you make a mess, clean that mess up. Not later, not in a minute, right after you are done.
+           {% elif states.sensor.random_rules.state == '2' %}When you take off your clothes, they belong with the dirty clothes. Do not leave them lying around the house.
+           {% elif states.sensor.random_rules.state == '3' %}Do not leave your shoes all over the house. If you put them up when you take them off, you can find them easier.
+           {% elif states.sensor.random_rules.state == '4' %}When you are done eating, your dish should be rinsed and put in the dish washer.
+           {% elif states.sensor.random_rules.state == '5' %}When you are done with a toy or item, put it up. Do not leave it lying around the house.
+           {% elif states.sensor.random_rules.state == '6' %}Clean up after yourself, do not make mom do it.
+           {% elif states.sensor.random_rules.state == '7' %}Tell your mom how much you love and appreciate her, she can never hear it enough.
+           {% elif states.sensor.random_rules.state == '8' %}Dishes are not to be left in the sink. Rinse them and put them in the dishwasher.
+           {% elif states.sensor.random_rules.state == '9' %}Clean common areas after each use. Do not leave belongings around the house.
+           {% elif states.sensor.random_rules.state == '10' %}Do not borrow anything from anyone without permission.
+           {% elif states.sensor.random_rules.state == '11' %}You are responsible for the actions of your friends while they are in the house.
+           {% elif states.sensor.random_rules.state == '12' %}Treat family and property with respect. This includes not leaving messes for your mother to pick up.
+           {% elif states.sensor.random_rules.state == '13' %}Clean up after yourself before leaving a room.
+           {% elif states.sensor.random_rules.state == '14' %}You must obtain permission before leaving the house.
+           {% elif states.sensor.random_rules.state == '15' %}Treat everyone with respect. Remember to say please, thank you, im sorry, and you are welcome.
+           {% elif states.sensor.random_rules.state == '16' %}Tell the truth, do not omit or leave out details. Say what you mean and follow through on your word.
+           {% elif states.sensor.random_rules.state == '17' %}Be thankful for what you have, be aware of how lucky you are and show gratitude towards each other.
+           {% elif states.sensor.random_rules.state == '18' %}Thank about others and not just yourself. Do nice things for each other.
+           {% elif states.sensor.random_rules.state == '19' %}Food and drink only in the kitchen and dining room. Only bottled water is allowed outside of food areas.
+           {% elif states.sensor.random_rules.state == '20' %}If you make a mess, clean it up.
+           {% elif states.sensor.random_rules.state == '21' %}Children cannot enforce a punishment, do not try to be a parent.
+           {% elif states.sensor.random_rules.state == '22' %}Only Mom and Lance can punish other children, you are not a parent yet.
+           {% elif states.sensor.random_rules.state == '23' %}If you get it out, you put it away.
+           {% elif states.sensor.random_rules.state == '24' %}Respect the furniture, do not sit on it improperly.
+           {% elif states.sensor.random_rules.state == '25' %}Do not make unnecessary messes. Make sure to pick up after yourself.
+           {% elif states.sensor.random_rules.state == '26' %}No arguing until mom has had her coffee.
+           {% elif states.sensor.random_rules.state == '27' %}If you ask for something over and over, you will not get whatever you are asking for.
+           {% elif states.sensor.random_rules.state == '28' %}Treat others the way you wish to be treated.
+           {% elif states.sensor.random_rules.state == '29' %}If you make a mess, you will clean that mess.
+           {% elif states.sensor.random_rules.state == '30' %}If you take it out, put it back.
+           {% elif states.sensor.random_rules.state == '31' %}If you open it, close it.
+           {% elif states.sensor.random_rules.state == '32' %}If you drop it, pick it back up.
+           {% elif states.sensor.random_rules.state == '33' %}If you see a mess, clean it up, do not make mom do it.
+           {% elif states.sensor.random_rules.state == '34' %}If you take it off, hang it back up.
+           {% elif states.sensor.random_rules.state == '35' %}If you break it, fix it. If you cannot fix it, find someone who can.
+           {% elif states.sensor.random_rules.state == '36' %}If you spill it, clean it up.
+           {% elif states.sensor.random_rules.state == '37' %}If it is not yours, ask before you play or use it.
+           {% elif states.sensor.random_rules.state == '38' %}If it is not your concern, stay out of it.
+           {% elif states.sensor.random_rules.state == '39' %}If you bring a blanket down stairs, put it back up when you are done.
+           {% elif states.sensor.random_rules.state == '40' %}If you see something on the floor that doesnt belong there, pick it up.
+           {% elif states.sensor.random_rules.state == '41' %}Do not bug your mom all day long, she deserves a break too.
+           {% elif states.sensor.random_rules.state == '42' %}Tell your mom you love her.
+           {% elif states.sensor.random_rules.state == '43' %}Do not argue over everything, if you are told no that is final.
+           {% elif states.sensor.random_rules.state == '44' %}Do not run inside, go outside if you want to run around.
+           {% elif states.sensor.random_rules.state == '45' %}Do not throw any object indoors. You can throw stuff all you want outside.
+           {% elif states.sensor.random_rules.state == '46' %}Always listen the first time you are told to do something. Do not make your mom repeat herself.
+           {% elif states.sensor.random_rules.state == '47' %}Always answer when spoken to. Listen and do not interrupt or contradict.
+           {% elif states.sensor.random_rules.state == '48' %}Always do what is right, even if no one is looking.
+           {% elif states.sensor.random_rules.state == '49' %}Do not mock, tease, or make fun of others. No one likes a bully, do not be one.
+           {% elif states.sensor.random_rules.state == '50' %}Quickly admit when you have done something wrong. Do not wait until you are caught.
+           {% endif %}"
+
+- id: rule_reminder_10
+  alias: Rule Reminder 10 Min
+  initial_state: 'on'
+  trigger:
+    platform: time
+    minutes: '/10'
+    seconds: 00
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_select.rule_freq
+        state: '10'
+      - condition: time
+        before: '20:00:00'
+        after: '08:00:00'
+  action:
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message:
+          "{% if states.sensor.random_rules.state == '1' %}If you make a mess, clean that mess up. Not later, not in a minute, right after you are done.
+           {% elif states.sensor.random_rules.state == '2' %}When you take off your clothes, they belong with the dirty clothes. Do not leave them lying around the house.
+           {% elif states.sensor.random_rules.state == '3' %}Do not leave your shoes all over the house. If you put them up when you take them off, you can find them easier.
+           {% elif states.sensor.random_rules.state == '4' %}When you are done eating, your dish should be rinsed and put in the dish washer.
+           {% elif states.sensor.random_rules.state == '5' %}When you are done with a toy or item, put it up. Do not leave it lying around the house.
+           {% elif states.sensor.random_rules.state == '6' %}Clean up after yourself, do not make mom do it.
+           {% elif states.sensor.random_rules.state == '7' %}Tell your mom how much you love and appreciate her, she can never hear it enough.
+           {% elif states.sensor.random_rules.state == '8' %}Dishes are not to be left in the sink. Rinse them and put them in the dishwasher.
+           {% elif states.sensor.random_rules.state == '9' %}Clean common areas after each use. Do not leave belongings around the house.
+           {% elif states.sensor.random_rules.state == '10' %}Do not borrow anything from anyone without permission.
+           {% elif states.sensor.random_rules.state == '11' %}You are responsible for the actions of your friends while they are in the house.
+           {% elif states.sensor.random_rules.state == '12' %}Treat family and property with respect. This includes not leaving messes for your mother to pick up.
+           {% elif states.sensor.random_rules.state == '13' %}Clean up after yourself before leaving a room.
+           {% elif states.sensor.random_rules.state == '14' %}You must obtain permission before leaving the house.
+           {% elif states.sensor.random_rules.state == '15' %}Treat everyone with respect. Remember to say please, thank you, im sorry, and you are welcome.
+           {% elif states.sensor.random_rules.state == '16' %}Tell the truth, do not omit or leave out details. Say what you mean and follow through on your word.
+           {% elif states.sensor.random_rules.state == '17' %}Be thankful for what you have, be aware of how lucky you are and show gratitude towards each other.
+           {% elif states.sensor.random_rules.state == '18' %}Thank about others and not just yourself. Do nice things for each other.
+           {% elif states.sensor.random_rules.state == '19' %}Food and drink only in the kitchen and dining room. Only bottled water is allowed outside of food areas.
+           {% elif states.sensor.random_rules.state == '20' %}If you make a mess, clean it up.
+           {% elif states.sensor.random_rules.state == '21' %}Children cannot enforce a punishment, do not try to be a parent.
+           {% elif states.sensor.random_rules.state == '22' %}Only Mom and Lance can punish other children, you are not a parent yet.
+           {% elif states.sensor.random_rules.state == '23' %}If you get it out, you put it away.
+           {% elif states.sensor.random_rules.state == '24' %}Respect the furniture, do not sit on it improperly.
+           {% elif states.sensor.random_rules.state == '25' %}Do not make unnecessary messes. Make sure to pick up after yourself.
+           {% elif states.sensor.random_rules.state == '26' %}No arguing until mom has had her coffee.
+           {% elif states.sensor.random_rules.state == '27' %}If you ask for something over and over, you will not get whatever you are asking for.
+           {% elif states.sensor.random_rules.state == '28' %}Treat others the way you wish to be treated.
+           {% elif states.sensor.random_rules.state == '29' %}If you make a mess, you will clean that mess.
+           {% elif states.sensor.random_rules.state == '30' %}If you take it out, put it back.
+           {% elif states.sensor.random_rules.state == '31' %}If you open it, close it.
+           {% elif states.sensor.random_rules.state == '32' %}If you drop it, pick it back up.
+           {% elif states.sensor.random_rules.state == '33' %}If you see a mess, clean it up, do not make mom do it.
+           {% elif states.sensor.random_rules.state == '34' %}If you take it off, hang it back up.
+           {% elif states.sensor.random_rules.state == '35' %}If you break it, fix it. If you cannot fix it, find someone who can.
+           {% elif states.sensor.random_rules.state == '36' %}If you spill it, clean it up.
+           {% elif states.sensor.random_rules.state == '37' %}If it is not yours, ask before you play or use it.
+           {% elif states.sensor.random_rules.state == '38' %}If it is not your concern, stay out of it.
+           {% elif states.sensor.random_rules.state == '39' %}If you bring a blanket down stairs, put it back up when you are done.
+           {% elif states.sensor.random_rules.state == '40' %}If you see something on the floor that doesnt belong there, pick it up.
+           {% elif states.sensor.random_rules.state == '41' %}Do not bug your mom all day long, she deserves a break too.
+           {% elif states.sensor.random_rules.state == '42' %}Tell your mom you love her.
+           {% elif states.sensor.random_rules.state == '43' %}Do not argue over everything, if you are told no that is final.
+           {% elif states.sensor.random_rules.state == '44' %}Do not run inside, go outside if you want to run around.
+           {% elif states.sensor.random_rules.state == '45' %}Do not throw any object indoors. You can throw stuff all you want outside.
+           {% elif states.sensor.random_rules.state == '46' %}Always listen the first time you are told to do something. Do not make your mom repeat herself.
+           {% elif states.sensor.random_rules.state == '47' %}Always answer when spoken to. Listen and do not interrupt or contradict.
+           {% elif states.sensor.random_rules.state == '48' %}Always do what is right, even if no one is looking.
+           {% elif states.sensor.random_rules.state == '49' %}Do not mock, tease, or make fun of others. No one likes a bully, do not be one.
+           {% elif states.sensor.random_rules.state == '50' %}Quickly admit when you have done something wrong. Do not wait until you are caught.
+           {% endif %}"
+
+- id: rule_reminder_15
+  alias: Rule Reminder 15 Min
+  initial_state: 'on'
+  trigger:
+    platform: time
+    minutes: '/15'
+    seconds: 00
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_select.rule_freq
+        state: '15'
+      - condition: time
+        before: '20:00:00'
+        after: '08:00:00'
+  action:
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message:
+          "{% if states.sensor.random_rules.state == '1' %}If you make a mess, clean that mess up. Not later, not in a minute, right after you are done.
+           {% elif states.sensor.random_rules.state == '2' %}When you take off your clothes, they belong with the dirty clothes. Do not leave them lying around the house.
+           {% elif states.sensor.random_rules.state == '3' %}Do not leave your shoes all over the house. If you put them up when you take them off, you can find them easier.
+           {% elif states.sensor.random_rules.state == '4' %}When you are done eating, your dish should be rinsed and put in the dish washer.
+           {% elif states.sensor.random_rules.state == '5' %}When you are done with a toy or item, put it up. Do not leave it lying around the house.
+           {% elif states.sensor.random_rules.state == '6' %}Clean up after yourself, do not make mom do it.
+           {% elif states.sensor.random_rules.state == '7' %}Tell your mom how much you love and appreciate her, she can never hear it enough.
+           {% elif states.sensor.random_rules.state == '8' %}Dishes are not to be left in the sink. Rinse them and put them in the dishwasher.
+           {% elif states.sensor.random_rules.state == '9' %}Clean common areas after each use. Do not leave belongings around the house.
+           {% elif states.sensor.random_rules.state == '10' %}Do not borrow anything from anyone without permission.
+           {% elif states.sensor.random_rules.state == '11' %}You are responsible for the actions of your friends while they are in the house.
+           {% elif states.sensor.random_rules.state == '12' %}Treat family and property with respect. This includes not leaving messes for your mother to pick up.
+           {% elif states.sensor.random_rules.state == '13' %}Clean up after yourself before leaving a room.
+           {% elif states.sensor.random_rules.state == '14' %}You must obtain permission before leaving the house.
+           {% elif states.sensor.random_rules.state == '15' %}Treat everyone with respect. Remember to say please, thank you, im sorry, and you are welcome.
+           {% elif states.sensor.random_rules.state == '16' %}Tell the truth, do not omit or leave out details. Say what you mean and follow through on your word.
+           {% elif states.sensor.random_rules.state == '17' %}Be thankful for what you have, be aware of how lucky you are and show gratitude towards each other.
+           {% elif states.sensor.random_rules.state == '18' %}Thank about others and not just yourself. Do nice things for each other.
+           {% elif states.sensor.random_rules.state == '19' %}Food and drink only in the kitchen and dining room. Only bottled water is allowed outside of food areas.
+           {% elif states.sensor.random_rules.state == '20' %}If you make a mess, clean it up.
+           {% elif states.sensor.random_rules.state == '21' %}Children cannot enforce a punishment, do not try to be a parent.
+           {% elif states.sensor.random_rules.state == '22' %}Only Mom and Lance can punish other children, you are not a parent yet.
+           {% elif states.sensor.random_rules.state == '23' %}If you get it out, you put it away.
+           {% elif states.sensor.random_rules.state == '24' %}Respect the furniture, do not sit on it improperly.
+           {% elif states.sensor.random_rules.state == '25' %}Do not make unnecessary messes. Make sure to pick up after yourself.
+           {% elif states.sensor.random_rules.state == '26' %}No arguing until mom has had her coffee.
+           {% elif states.sensor.random_rules.state == '27' %}If you ask for something over and over, you will not get whatever you are asking for.
+           {% elif states.sensor.random_rules.state == '28' %}Treat others the way you wish to be treated.
+           {% elif states.sensor.random_rules.state == '29' %}If you make a mess, you will clean that mess.
+           {% elif states.sensor.random_rules.state == '30' %}If you take it out, put it back.
+           {% elif states.sensor.random_rules.state == '31' %}If you open it, close it.
+           {% elif states.sensor.random_rules.state == '32' %}If you drop it, pick it back up.
+           {% elif states.sensor.random_rules.state == '33' %}If you see a mess, clean it up, do not make mom do it.
+           {% elif states.sensor.random_rules.state == '34' %}If you take it off, hang it back up.
+           {% elif states.sensor.random_rules.state == '35' %}If you break it, fix it. If you cannot fix it, find someone who can.
+           {% elif states.sensor.random_rules.state == '36' %}If you spill it, clean it up.
+           {% elif states.sensor.random_rules.state == '37' %}If it is not yours, ask before you play or use it.
+           {% elif states.sensor.random_rules.state == '38' %}If it is not your concern, stay out of it.
+           {% elif states.sensor.random_rules.state == '39' %}If you bring a blanket down stairs, put it back up when you are done.
+           {% elif states.sensor.random_rules.state == '40' %}If you see something on the floor that doesnt belong there, pick it up.
+           {% elif states.sensor.random_rules.state == '41' %}Do not bug your mom all day long, she deserves a break too.
+           {% elif states.sensor.random_rules.state == '42' %}Tell your mom you love her.
+           {% elif states.sensor.random_rules.state == '43' %}Do not argue over everything, if you are told no that is final.
+           {% elif states.sensor.random_rules.state == '44' %}Do not run inside, go outside if you want to run around.
+           {% elif states.sensor.random_rules.state == '45' %}Do not throw any object indoors. You can throw stuff all you want outside.
+           {% elif states.sensor.random_rules.state == '46' %}Always listen the first time you are told to do something. Do not make your mom repeat herself.
+           {% elif states.sensor.random_rules.state == '47' %}Always answer when spoken to. Listen and do not interrupt or contradict.
+           {% elif states.sensor.random_rules.state == '48' %}Always do what is right, even if no one is looking.
+           {% elif states.sensor.random_rules.state == '49' %}Do not mock, tease, or make fun of others. No one likes a bully, do not be one.
+           {% elif states.sensor.random_rules.state == '50' %}Quickly admit when you have done something wrong. Do not wait until you are caught.
+           {% endif %}"
+
+- id: rule_reminder_30
+  alias: Rule Reminder 30 Min
+  initial_state: 'on'
+  trigger:
+    platform: time
+    minutes: '/30'
+    seconds: 00
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_select.rule_freq
+        state: '30'
+      - condition: time
+        before: '20:00:00'
+        after: '08:00:00'
+  action:
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message:
+          "{% if states.sensor.random_rules.state == '1' %}If you make a mess, clean that mess up. Not later, not in a minute, right after you are done.
+           {% elif states.sensor.random_rules.state == '2' %}When you take off your clothes, they belong with the dirty clothes. Do not leave them lying around the house.
+           {% elif states.sensor.random_rules.state == '3' %}Do not leave your shoes all over the house. If you put them up when you take them off, you can find them easier.
+           {% elif states.sensor.random_rules.state == '4' %}When you are done eating, your dish should be rinsed and put in the dish washer.
+           {% elif states.sensor.random_rules.state == '5' %}When you are done with a toy or item, put it up. Do not leave it lying around the house.
+           {% elif states.sensor.random_rules.state == '6' %}Clean up after yourself, do not make mom do it.
+           {% elif states.sensor.random_rules.state == '7' %}Tell your mom how much you love and appreciate her, she can never hear it enough.
+           {% elif states.sensor.random_rules.state == '8' %}Dishes are not to be left in the sink. Rinse them and put them in the dishwasher.
+           {% elif states.sensor.random_rules.state == '9' %}Clean common areas after each use. Do not leave belongings around the house.
+           {% elif states.sensor.random_rules.state == '10' %}Do not borrow anything from anyone without permission.
+           {% elif states.sensor.random_rules.state == '11' %}You are responsible for the actions of your friends while they are in the house.
+           {% elif states.sensor.random_rules.state == '12' %}Treat family and property with respect. This includes not leaving messes for your mother to pick up.
+           {% elif states.sensor.random_rules.state == '13' %}Clean up after yourself before leaving a room.
+           {% elif states.sensor.random_rules.state == '14' %}You must obtain permission before leaving the house.
+           {% elif states.sensor.random_rules.state == '15' %}Treat everyone with respect. Remember to say please, thank you, im sorry, and you are welcome.
+           {% elif states.sensor.random_rules.state == '16' %}Tell the truth, do not omit or leave out details. Say what you mean and follow through on your word.
+           {% elif states.sensor.random_rules.state == '17' %}Be thankful for what you have, be aware of how lucky you are and show gratitude towards each other.
+           {% elif states.sensor.random_rules.state == '18' %}Thank about others and not just yourself. Do nice things for each other.
+           {% elif states.sensor.random_rules.state == '19' %}Food and drink only in the kitchen and dining room. Only bottled water is allowed outside of food areas.
+           {% elif states.sensor.random_rules.state == '20' %}If you make a mess, clean it up.
+           {% elif states.sensor.random_rules.state == '21' %}Children cannot enforce a punishment, do not try to be a parent.
+           {% elif states.sensor.random_rules.state == '22' %}Only Mom and Lance can punish other children, you are not a parent yet.
+           {% elif states.sensor.random_rules.state == '23' %}If you get it out, you put it away.
+           {% elif states.sensor.random_rules.state == '24' %}Respect the furniture, do not sit on it improperly.
+           {% elif states.sensor.random_rules.state == '25' %}Do not make unnecessary messes. Make sure to pick up after yourself.
+           {% elif states.sensor.random_rules.state == '26' %}No arguing until mom has had her coffee.
+           {% elif states.sensor.random_rules.state == '27' %}If you ask for something over and over, you will not get whatever you are asking for.
+           {% elif states.sensor.random_rules.state == '28' %}Treat others the way you wish to be treated.
+           {% elif states.sensor.random_rules.state == '29' %}If you make a mess, you will clean that mess.
+           {% elif states.sensor.random_rules.state == '30' %}If you take it out, put it back.
+           {% elif states.sensor.random_rules.state == '31' %}If you open it, close it.
+           {% elif states.sensor.random_rules.state == '32' %}If you drop it, pick it back up.
+           {% elif states.sensor.random_rules.state == '33' %}If you see a mess, clean it up, do not make mom do it.
+           {% elif states.sensor.random_rules.state == '34' %}If you take it off, hang it back up.
+           {% elif states.sensor.random_rules.state == '35' %}If you break it, fix it. If you cannot fix it, find someone who can.
+           {% elif states.sensor.random_rules.state == '36' %}If you spill it, clean it up.
+           {% elif states.sensor.random_rules.state == '37' %}If it is not yours, ask before you play or use it.
+           {% elif states.sensor.random_rules.state == '38' %}If it is not your concern, stay out of it.
+           {% elif states.sensor.random_rules.state == '39' %}If you bring a blanket down stairs, put it back up when you are done.
+           {% elif states.sensor.random_rules.state == '40' %}If you see something on the floor that doesnt belong there, pick it up.
+           {% elif states.sensor.random_rules.state == '41' %}Do not bug your mom all day long, she deserves a break too.
+           {% elif states.sensor.random_rules.state == '42' %}Tell your mom you love her.
+           {% elif states.sensor.random_rules.state == '43' %}Do not argue over everything, if you are told no that is final.
+           {% elif states.sensor.random_rules.state == '44' %}Do not run inside, go outside if you want to run around.
+           {% elif states.sensor.random_rules.state == '45' %}Do not throw any object indoors. You can throw stuff all you want outside.
+           {% elif states.sensor.random_rules.state == '46' %}Always listen the first time you are told to do something. Do not make your mom repeat herself.
+           {% elif states.sensor.random_rules.state == '47' %}Always answer when spoken to. Listen and do not interrupt or contradict.
+           {% elif states.sensor.random_rules.state == '48' %}Always do what is right, even if no one is looking.
+           {% elif states.sensor.random_rules.state == '49' %}Do not mock, tease, or make fun of others. No one likes a bully, do not be one.
+           {% elif states.sensor.random_rules.state == '50' %}Quickly admit when you have done something wrong. Do not wait until you are caught.
+           {% endif %}"
+
+#**********************************************************
+# Network Status Automation
+#**********************************************************
+- id: network_status_hue_bridge_offline
+  alias: Network Status - Hue Bridge Offline
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.hue_bridge
+    from: 'Online'
+    to: 'Offline'
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you of a network issue. The Hue Bridge has become unresponsive."
+
+- id: network_status_hue_bridge_online
+  alias: Network Status - Hue Bridge Online
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.hue_bridge
+    from: 'Offline'
+    to: 'Online'
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you a network issue has been resolved. The Hue Bridge is now online."
+
+- id: network_status_wink_relay_upstairs_hall_offline
+  alias: Network Status - Wink Relay Upstairs Hall Offline
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.wink_relay_upstairs_hall
+    from: 'Online'
+    to: 'Offline'
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you of a network issue. The Wink Relay Upstairs Hallway has become unresponsive."
+
+- id: network_status_wink_relay_upstairs_hall_online
+  alias: Network Status - Wink Relay Upstairs Hall Online
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.wink_relay_upstairs_hall
+    from: 'Offline'
+    to: 'Online'
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you a network issue has been resolved. The Wink Relay Upstairs Hallway is now online."
+
+- id: network_status_jarvis_repeater_offline
+  alias: Network Status - JARVIS Repeater Offline
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.jarvis_repeater
+    from: 'Online'
+    to: 'Offline'
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you of a network issue. The Jarvis Repeater has become unresponsive."
+
+- id: network_status_jarvis_repeater_online
+  alias: Network Status - JARVIS Repeater Online
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.jarvis_repeater
+    from: 'Offline'
+    to: 'Online'
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you a network issue has been resolved. The Jarvis Repeater is now online."
+
+- id: network_status_wink_relay_wesley_offline
+  alias: Network Status - Wink Relay Wesley Offline
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.wink_relay_wesley
+    from: 'Online'
+    to: 'Offline'
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you of a network issue. The Wink Relay in Wesleys room has become unresponsive."
+
+- id: network_status_wink_relay_wesley_online
+  alias: Network Status - Wink Relay Wesley Online
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.wink_relay_wesley
+    from: 'Offline'
+    to: 'Online'
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you a network issue has been resolved. The Wink Relay in Wesleys room is now online."
+
+- id: network_status_wink_relay_master_bed_offline
+  alias: Network Status - Wink Relay Master Bed Offline
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.wink_relay_master_bed
+    from: 'Online'
+    to: 'Offline'
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you of a network issue. The Wink Relay in the Master Bedroom has become unresponsive."
+
+- id: network_status_wink_relay_master_bed_online
+  alias: Network Status - Wink Relay Master Bed Online
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.wink_relay_master_bed
+    from: 'Offline'
+    to: 'Online'
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you a network issue has been resolved. The Wink Relay the Master Bedroom is now online."
+
+- id: network_status_wink_relay_hudson_offline
+  alias: Network Status - Wink Relay Hudson Offline
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.wink_relay_hudson
+    from: 'Online'
+    to: 'Offline'
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you of a network issue. The Wink Relay in Hudsons room has become unresponsive."
+
+- id: network_status_wink_relay_hudson_online
+  alias: Network Status - Wink Relay Hudson Online
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.wink_relay_hudson
+    from: 'Offline'
+    to: 'Online'
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you a network issue has been resolved. The Wink Relay in Hudsons room is now online."
+
+- id: network_status_wink_relay_kitchen_offline
+  alias: Network Status - Wink Relay Kitchen Offline
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.wink_relay_kitchen
+    from: 'Online'
+    to: 'Offline'
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you of a network issue. The Wink Relay in the Kitchen has become unresponsive."
+
+- id: network_status_wink_relay_kitchen_online
+  alias: Network Status - Wink Relay Kitchen Online
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.wink_relay_kitchen
+    from: 'Offline'
+    to: 'Online'
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you a network issue has been resolved. The Wink Relay in the Kitchen is now online."
+
+- id: network_status_synology_nas_offline
+  alias: Network Status - Synology NAS Offline
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.synology_nas
+    from: 'Online'
+    to: 'Offline'
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you of a network issue. The Synology network attached storage device has become unresponsive."
+
+- id: network_status_synology_nas_online
+  alias: Network Status - Synology NAS Online
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.synology_nas
+    from: 'Offline'
+    to: 'Online'
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you a network issue has been resolved. The Synology network attached storage device is now online."
+
+- id: network_status_harmony_hub_living_room_offline
+  alias: Network Status - Living Room Harmony Hub Offline
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.harmony_hub_living_room
+    from: 'Online'
+    to: 'Offline'
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you of a network issue. The Living Room Harmony Hub has become unresponsive."
+
+- id: network_status_harmony_hub_living_room_online
+  alias: Network Status - Living Room Harmony Hub Online
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.harmony_hub_living_room
+    from: 'Offline'
+    to: 'Online'
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you a network issue has been resolved. The Living Room Harmony Hub is now online."
+
+- id: network_status_honeywell_thermostat_1_offline
+  alias: Network Status - Honeywell Thermostat 1 Offline
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.honeywell_thermostat_1
+    from: 'Online'
+    to: 'Offline'
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you of a network issue. The Honeywell Thermostat 1 has become unresponsive."
+
+- id: network_status_honeywell_thermostat_1_online
+  alias: Network Status - Honeywell Thermostat 1 Online
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.honeywell_thermostat_1
+    from: 'Offline'
+    to: 'Online'
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you a network issue has been resolved. The Honeywell Thermostat 1 is now online."
+
+- id: network_status_honeywell_thermostat_2_offline
+  alias: Network Status - Honeywell Thermostat 2 Offline
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.honeywell_thermostat_2
+    from: 'Online'
+    to: 'Offline'
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you of a network issue. The Honeywell Thermostat 2 has become unresponsive."
+
+- id: network_status_honeywell_thermostat_2_online
+  alias: Network Status - Honeywell Thermostat 2 Online
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.honeywell_thermostat_2
+    from: 'Offline'
+    to: 'Online'
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you a network issue has been resolved. The Honeywell Thermostat 2 is now online."
+
+- id: network_status_airport_express_offline
+  alias: Network Status - Airport Express Offline
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.airport_express
+    from: 'Online'
+    to: 'Offline'
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you of a network issue. The Airport Express has become unresponsive."
+
+- id: network_status_airport_express_online
+  alias: Network Status - Airport Express Online
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.airport_express
+    from: 'Offline'
+    to: 'Online'
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you a network issue has been resolved. The Airport Express is now online."
+
+- id: network_status_wink_hub_offline
+  alias: Network Status - Wink Hub Offline
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.wink_hub
+    from: 'Online'
+    to: 'Offline'
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you of a network issue. The Wink Hub has become unresponsive."
+
+- id: network_status_wink_hub_online
+  alias: Network Status - Wink Hub Online
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.wink_hub
+    from: 'Offline'
+    to: 'Online'
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you a network issue has been resolved. The Wink Hub is now online."
+
+- id: network_status_tpl_hudson_repeater_offline
+  alias: Network Status - TPL Hudson Repeater Offline
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.tpl_hudson_repeater
+    from: 'Online'
+    to: 'Offline'
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you of a network issue. The TPL Hudson Repeater has become unresponsive."
+
+- id: network_status_tpl_hudson_repeater_online
+  alias: Network Status - TPL Hudson Repeater Online
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.tpl_hudson_repeater
+    from: 'Offline'
+    to: 'Online'
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you a network issue has been resolved. The TPL Hudson Repeater is now online."

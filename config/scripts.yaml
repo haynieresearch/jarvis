@@ -1,0 +1,376 @@
+#**********************************************************
+#* CATEGORY    SCRIPTS
+#* GROUP       HOME AUTOMATION
+#* AUTHOR      LANCE HAYNIE <LANCE@HAYNIEMAIL.COM>
+#**********************************************************
+#Jarvis Home Automation
+#Copyright (C) 2017  Haynie Research & Development
+
+#This program is free software; you can redistribute it and/or modify
+#it under the terms of the GNU General Public License as published by
+#the Free Software Foundation; either version 2 of the License, or
+#(at your option) any later version.
+
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+
+#You should have received a copy of the GNU General Public License along
+#with this program; if not, write to the Free Software Foundation, Inc.,
+#51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+
+sound_alarm:
+  sequence:
+    - service: homeassistant.turn_on
+      data:
+        entity_id: switch.gpio_switch_21
+    - service: shell_command.alarm_sound
+    - delay:
+        seconds: 0.125
+    - service: homeassistant.turn_off
+      data:
+        entity_id: switch.gpio_switch_21
+    - service: script.turn_on
+      data:
+        entity_id: script.sound_alarm_loop
+
+sound_alarm_loop:
+  sequence:
+    - delay:
+        seconds: 0
+    - service: script.turn_on
+      data:
+        entity_id: script.sound_alarm
+
+sound_alarm_long:
+  sequence:
+    - service: homeassistant.turn_on
+      data:
+        entity_id: switch.gpio_switch_21
+    - delay:
+        seconds: 2
+    - service: homeassistant.turn_off
+      data:
+        entity_id: switch.gpio_switch_21
+    - service: script.turn_on
+      data:
+        entity_id: script.sound_alarm_loop_long
+
+sound_alarm_loop_long:
+  sequence:
+    - delay:
+        seconds: 1
+    - service: script.turn_on
+      data:
+        entity_id: script.sound_alarm_long
+
+sos_alarm:
+  sequence:
+    - service: homeassistant.turn_on
+      data:
+        entity_id: switch.gpio_switch_21
+    - delay:
+        seconds: 0.125
+    - service: homeassistant.turn_off
+      data:
+        entity_id: switch.gpio_switch_21
+    - delay:
+        seconds: 0
+    - service: homeassistant.turn_on
+      data:
+        entity_id: switch.gpio_switch_21
+    - delay:
+        seconds: 0.125
+    - service: homeassistant.turn_off
+      data:
+        entity_id: switch.gpio_switch_21
+    - delay:
+        seconds: 0
+    - service: homeassistant.turn_on
+      data:
+        entity_id: switch.gpio_switch_21
+    - delay:
+        seconds: 0.125
+    - service: homeassistant.turn_off
+      data:
+        entity_id: switch.gpio_switch_21
+    - delay:
+        seconds: 0
+    - service: homeassistant.turn_on
+      data:
+        entity_id: switch.gpio_switch_21
+    - delay:
+        seconds: 1
+    - service: homeassistant.turn_off
+      data:
+        entity_id: switch.gpio_switch_21
+    - delay:
+        seconds: 0
+    - service: homeassistant.turn_on
+      data:
+        entity_id: switch.gpio_switch_21
+    - delay:
+        seconds: 1
+    - service: homeassistant.turn_off
+      data:
+        entity_id: switch.gpio_switch_21
+    - delay:
+        seconds: 0
+    - service: homeassistant.turn_on
+      data:
+        entity_id: switch.gpio_switch_21
+    - delay:
+        seconds: 1
+    - service: homeassistant.turn_off
+      data:
+        entity_id: switch.gpio_switch_21
+    - service: script.turn_on
+      data:
+        entity_id: script.sos_alarm_loop
+
+sos_alarm_loop:
+  sequence:
+    - delay:
+        seconds: 1
+    - service: script.turn_on
+      data:
+        entity_id: script.sos_alarm
+
+find_katies_iphone:
+  sequence:
+    - service: notify.call
+      data_template:
+        message: "Hi there Katie, it appears you have lost your phone again."
+        target:
+          - +14352725103
+    - service: shell_command.tts
+      data_template:
+        message: "I am calling Katies phone."
+
+find_lances_iphone:
+  sequence:
+    - service: notify.call
+      data_template:
+        message: "Hi there Lance, it appears you have lost your phone again."
+        target:
+          - +14355251418
+    - service: shell_command.tts
+      data_template:
+        message: "I am calling Lances phone."
+
+find_hudsons_iphone:
+  sequence:
+    - service: notify.call
+      data_template:
+        message: "Hi there Hudson, it appears you have lost your phone again."
+        target:
+          - +14357733385
+    - service: shell_command.tts
+      data_template:
+        message: "I am calling Hudsons phone."
+
+flash_hudson_lights:
+  sequence:
+    - service: homeassistant.turn_on
+      data:
+        entity_id: switch.hudsons_light
+    - delay:
+        seconds: 0.125
+    - service: homeassistant.turn_off
+      data:
+        entity_id: switch.hudsons_light
+    - service: script.turn_on
+      data:
+        entity_id: script.flash_hudson_lights_loop
+
+flash_hudson_lights_loop:
+  sequence:
+    - delay:
+        seconds: 0
+    - service: script.turn_on
+      data:
+        entity_id: script.flash_hudson_lights
+
+flash_wesley_lights:
+  sequence:
+    - service: homeassistant.turn_on
+      data:
+        entity_id: switch.wesleys_light
+    - delay:
+        seconds: 0.125
+    - service: homeassistant.turn_off
+      data:
+        entity_id: switch.wesleys_light
+    - service: script.turn_on
+      data:
+        entity_id: script.flash_wesley_lights_loop
+
+flash_wesley_lights_loop:
+  sequence:
+    - delay:
+        seconds: 0
+    - service: script.turn_on
+      data:
+        entity_id: script.flash_wesley_lights
+
+restart_system:
+  alias: Reboot JARVIS System
+  sequence:
+    - service: shell_command.tts
+      data_template:
+        message: "I am going to reboot the Jarvis system now."
+    - service: shell_command.restart_system
+
+restart_jarvis_base:
+  alias: Restart JARVIS AI
+  sequence:
+    - service: shell_command.tts
+      data_template:
+        message: "I am going to reboot the Jarvis artificial intelligience system."
+    - service: shell_command.restart_jarvis_base
+
+restart_jarvis_stt:
+  alias: Reboot JARVIS STT
+  sequence:
+    - service: shell_command.tts
+      data_template:
+        message: "I am going to reboot the Jarvis speech to text system."
+    - service: shell_command.restart_jarvis_stt
+
+restart_jarvis_tts:
+  alias: Reboot JARVIS TTS
+  sequence:
+    - service: shell_command.tts
+      data_template:
+        message: "I am going to reboot the Jarvis text to speech system."
+    - service: shell_command.restart_jarvis_tts
+
+leaving_in_15_min:
+  alias: Leave in 15 Minutes
+  sequence:
+    - service: shell_command.tts
+      data_template:
+        message: "Thank you for pressing the self destruct button. This house will self destruct in exactly fifteen minutes."
+    - delay:
+        minutes: 5
+    - service: shell_command.tts
+      data_template:
+        message: "Attention, attention, you have exactly ten minutes to be ready to leave. This house will self destruct in ten minutes."
+    - delay:
+        minutes: 5
+    - service: shell_command.tts
+      data_template:
+        message: "Attention, attention, you have exactly five minutes to be ready to leave. This house will self destruct in five minutes. This is your last chance to push the cancellation button. Oh, I am sorry, the cancellation button is out of order."
+    - delay:
+        minutes: 2
+    - service: shell_command.tts
+      data_template:
+        message: "Attention, This is Colonel Sanders in forward command. Abandon house. Abandon house. All personnel, proceed to escape pods. Close down the circus. Evacuate the zoo. Self-destruct mechanism has been activated. Abandon house."
+    - delay:
+        minutes: 1
+    - service: shell_command.tts
+      data_template:
+        message: "This is your two minute warning. This house will self-destruct in exactly two minutes."
+    - delay:
+        minutes: 2
+    - service: shell_command.tts
+      data_template:
+        message: "10. 9. 8. 7. 6. 5. 4. 3. 2. 1. Have a nice day."
+    - service: shell_command.bomb_sound
+
+game_timer:
+  alias: Game Timer
+  sequence:
+    - service: shell_command.foghorn
+    - service: shell_command.tts
+      data_template:
+        message: "The game timer has been activated, you have twenty minutes to play."
+    - delay:
+        minutes: 10
+    - service: shell_command.tts
+      data_template:
+        message: "This is your ten minute warning, you have ten minutes of game time remaining."
+    - delay:
+        minutes: 5
+    - service: shell_command.tts
+      data_template:
+        message: "This is your five minute warning, you have five minutes to wrap up your game."
+    - delay:
+        minutes: 4
+    - service: shell_command.tts
+      data_template:
+        message: "This is your one minute warning, you have exactly one minute to finish up your game. Start saving or ending your game now."
+    - delay:
+        minutes: 1
+    - service: shell_command.foghorn
+    - service: shell_command.tts
+      data_template:
+        message: "The game timer is now up. Please exit your game immediatly, you have had exactly twenty minutes to play."
+
+living_room_tv_up:
+  alias: Living Room TV Up
+  sequence:
+    - service: remote.send_command
+      data_template:
+        entity_id: remote.living_room
+        device: 17416035
+        command: VolumeUp
+    - service: remote.send_command
+      data_template:
+        entity_id: remote.living_room
+        device: 17416035
+        command: VolumeUp
+    - service: remote.send_command
+      data_template:
+        entity_id: remote.living_room
+        device: 17416035
+        command: VolumeUp
+    - service: remote.send_command
+      data_template:
+        entity_id: remote.living_room
+        device: 17416035
+        command: VolumeUp
+    - service: remote.send_command
+      data_template:
+        entity_id: remote.living_room
+        device: 17416035
+        command: VolumeUp
+
+living_room_tv_down:
+  alias: Living Room TV Down
+  sequence:
+    - service: remote.send_command
+      data_template:
+        entity_id: remote.living_room
+        device: 17416035
+        command: VolumeDown
+    - service: remote.send_command
+      data_template:
+        entity_id: remote.living_room
+        device: 17416035
+        command: VolumeDown
+    - service: remote.send_command
+      data_template:
+        entity_id: remote.living_room
+        device: 17416035
+        command: VolumeDown
+    - service: remote.send_command
+      data_template:
+        entity_id: remote.living_room
+        device: 17416035
+        command: VolumeDown
+    - service: remote.send_command
+      data_template:
+        entity_id: remote.living_room
+        device: 17416035
+        command: VolumeDown
+
+living_room_tv_mute:
+  alias: Living Room TV Mute
+  sequence:
+    - service: remote.send_command
+      data_template:
+        entity_id: remote.living_room
+        device: 17416035
+        command: Mute

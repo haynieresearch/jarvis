@@ -1,0 +1,219 @@
+/*#**********************************************************
+#* CATEGORY    HOME ASSISTANT AUTOMATION
+#* GROUP       HOME AUTOMATION
+#* AUTHOR      LANCE HAYNIE <LANCE@HAYNIEMAIL.COM>
+#**********************************************************
+#Jarvis Home Automation
+#Copyright (C) 2017  Haynie Research & Development
+
+#This program is free software; you can redistribute it and/or modify
+#it under the terms of the GNU General Public License as published by
+#the Free Software Foundation; either version 2 of the License, or
+#(at your option) any later version.
+
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+
+#You should have received a copy of the GNU General Public License along
+#with this program; if not, write to the Free Software Foundation, Inc.,
+#51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA */
+
+/***********************************************************/
+/* Downstairs Floorplan CSS
+/***********************************************************/
+
+svg, svg * {
+  vector-effect: non-scaling-stroke !important;
+  pointer-events: all !important;
+}
+
+.entity:hover:not(.static-text):not(.static-temp):not(.static-text-date):not:(.static-text-time) {
+  stroke: #03A9F4 !important;
+  stroke-width: 1px !important;
+  stroke-opacity: 1 !important;
+}
+
+.warning-background, .warning-text-background  {
+  fill: #fcf8e3 !important;
+  fill-opacity: 1 !important;
+  stroke: #faebcc !important;
+  stroke-width: 1px !important;
+}
+
+.switch-on {
+  fill: #00c8ff !important;
+}
+
+.switch-off {
+  fill: #527494 !important;
+}
+
+.button-on {
+  fill: #00c8ff !important;
+  fill-opacity: 0.25;
+}
+
+.button-off {
+  fill: #527494 !important;
+  fill-opacity: 0.5;
+}
+
+.button-panel-on {
+  fill: #005cb2 !important;
+}
+
+.button-panel-off {
+  fill: #013b6e !important;
+}
+
+.success-text {
+  fill: #3c763d !important;
+}
+
+.success-background, .success-text-background {
+  fill: #dff0d8 !important;
+  fill-opacity: 1 !important;
+  stroke: #d6e9c6 !important;
+  stroke-width: 1px !important;
+}
+
+.protect-on {
+  fill: red !important;
+}
+
+.protect-off {
+  fill: green !important;
+}
+
+.info-text {
+  fill: #31708f !important;
+}
+
+.info-background, .info-text-background {
+  fill: #d9edf7 !important;
+  fill-opacity: 1 !important;
+  stroke: #bce8f1 !important;
+  stroke-width: 1px !important;
+}
+
+.warning-text {
+  fill: #8a6d3b !important;
+}
+
+.warning-background, .warning-text-background  {
+  fill: #fcf8e3 !important;
+  fill-opacity: 1 !important;
+  stroke: #faebcc !important;
+  stroke-width: 1px !important;
+}
+
+.danger-text {
+  fill: #a94442 !important;
+}
+
+.danger-background, .danger-text-background {
+  fill: #f2dede !important;
+  fill-opacity: 1 !important;
+  stroke: #ebccd1 !important;
+  stroke-width: 1px !important;
+}
+
+/* Last motion entity */
+
+.last-motion {
+  stroke: #808080 !important;
+  stroke-width: 1px !important;
+  stroke-opacity: 1 !important;
+}
+
+/* Alarm Panel */
+
+.alarm-disarmed {
+  fill: #3c763d !important;
+}
+
+.alarm-armed {
+  fill: #8a6d3b !important;
+}
+
+/* Camera */
+
+.camera-idle {
+/*  fill: #B9CEF7 !important; */
+  fill: #6FAECE !important;
+}
+
+/* Light */
+
+.light-off {
+  fill: #527494 !important;
+}
+
+.light-on {
+  fill: #00c8ff !important;
+}
+
+/* Temperature sensor */
+
+.temp-very-low-background {
+  fill: #d9edf7 !important;
+  fill-opacity: 1 !important;
+}
+
+.temp-below-average-background {
+  fill: #dcefe8 !important;
+  fill-opacity: 1 !important;
+}
+
+.temp-average-background {
+  fill: #dff0d8 !important;
+  fill-opacity: 1 !important;
+}
+
+.temp-very-high-background {
+  fill: #f2dede !important;
+  fill-opacity: 1 !important;
+}
+
+/* Media player */
+
+.squeezebox-off {
+  fill: #8AA8A7 !important;
+}
+
+.squeezebox-on {
+  fill: #2baaa6 !important;
+}
+
+.static-text
+{
+  fill: #FFFFA6;
+  font-family : Helvetica;
+  font-weight : bold;
+  font-size : 15px;
+}
+
+.static-text-date
+{
+  font-family : Helvetica;
+  font-weight : bold;
+  font-size : 16px;
+  fill : #FFFFA6;
+}
+
+.static-text-time
+{
+  font-family : Helvetica;
+  font-weight : bold;
+  font-size : 35px;
+  fill: #FFFFA6;
+}
+
+.static-temp
+{
+  font-family: Helvetica;
+  font-size: 22px;
+  fill: #FFFFA6;
+}

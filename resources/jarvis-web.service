@@ -1,0 +1,14 @@
+[Unit]
+Description=JARVIS WEB
+After=startx.service jarvis-base.service
+
+[Service]
+Type=simple
+User=pi
+ExecStart=/opt/jarvis/scripts/jarvisweb.sh
+SyslogIdentifier=JARVIS
+Restart=always
+RestartSec=100
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,14 @@
+[Unit]
+Description=JARVIS TTS
+After=network.target
+
+[Service]
+Type=simple
+User=pi
+ExecStart=/opt/jarvis/scripts/jarvis-tts.sh
+SyslogIdentifier=JARVIS
+Restart=always
+RestartSec=100
+
+[Install]
+WantedBy=multi-user.target

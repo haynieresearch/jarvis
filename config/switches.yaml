@@ -1,0 +1,41 @@
+#**********************************************************
+#* CATEGORY    SWITCHES
+#* GROUP       HOME AUTOMATION
+#* AUTHOR      LANCE HAYNIE <LANCE@HAYNIEMAIL.COM>
+#**********************************************************
+#Jarvis Home Automation
+#Copyright (C) 2017  Haynie Research & Development
+
+#This program is free software; you can redistribute it and/or modify
+#it under the terms of the GNU General Public License as published by
+#the Free Software Foundation; either version 2 of the License, or
+#(at your option) any later version.
+
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+
+#You should have received a copy of the GNU General Public License along
+#with this program; if not, write to the Free Software Foundation, Inc.,
+#51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
+
+- platform: rpi_gpio
+  ports:
+    14: gpio_switch_14
+    15: gpio_switch_15
+    18: gpio_switch_18
+    23: gpio_switch_23
+    24: gpio_switch_24
+    25: gpio_switch_25
+    08: gpio_switch_08
+    07: gpio_switch_07
+    12: gpio_switch_12
+    16: gpio_switch_16
+    20: gpio_switch_20
+    21: gpio_switch_21  #Vibratone
+
+- platform: command_line
+  switches:
+    restart_system:
+      command_off: "sudo /sbin/shutdown -r now"
