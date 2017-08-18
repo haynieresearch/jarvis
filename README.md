@@ -7,7 +7,7 @@ have liked for quick and easy creation. Between wake word and API.AI for speech 
 rather well. I have also decoupled the TTS services to make it easier to use that functionality elsewhere.
 
 ![Screenshot of Jarvis Wall Mount](https://raw.githubusercontent.com/Haynie-Research-and-Development/jarvis/master/resources/screenshots/jarvis_wall.png)
-![Screenshot of Jarvis SMS](https://raw.githubusercontent.com/Haynie-Research-and-Development/jarvis/master/resources/screenshots/jarvis_sms.png)
+![Screenshot of Jarvis SMS](https://raw.githubusercontent.com/Haynie-Research-and-Development/jarvis/master/resources/screenshots/jarvis_sms.jpeg)
 Note: SMS commands will require a basic level of experience with PHP.
 
 P.S.: This system is far from perfect, if you make some enhancements or have any ideas please
