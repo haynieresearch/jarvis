@@ -8,6 +8,7 @@
 #**********************************************************
 #* MODIFICATIONS
 #* 2017-08-09 - LHAYNIE - INITIAL VERSION
+#* 2017-08-18 - LHAYNIE - UPDATED EXAMPLE CONFIG
 #**********************************************************
 
 #Jarvis Home Automation
