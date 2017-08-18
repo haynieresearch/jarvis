@@ -12,7 +12,7 @@ Note: SMS commands will require a basic level of experience with PHP.
 
 P.S.: This system is far from perfect, if you make some enhancements or have any ideas please
 feel free to share them. If you find any bugs you would like to report, you can do so via
-the following link: https://sourceforge.net/p/jarvis-home-automation/tickets/?source=navbar
+the following link: https://github.com/Haynie-Research-and-Development/jarvis/issues
 Keep in mind, generally any Home Assistant related issues should be raised on their side. If you are having a
 configuration problem, I would be glad to help.
 
