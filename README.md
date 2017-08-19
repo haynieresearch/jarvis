@@ -18,7 +18,7 @@ configuration problem, I would be glad to help.
 
 You will need to read this section completely before using this software to ensure that everything
 works as designed. There is no other documentation other than this README file. Please note: this software
-comes with no guaranteed support. Furthermore, this software is licensed under the MIT license.
+comes with no guaranteed support. Furthermore, this software is licensed under the GNU GENERAL PUBLIC LICENSE.
 License text is provided in the LICENSE file.
 
 ### Devices
