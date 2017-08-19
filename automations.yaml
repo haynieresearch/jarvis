@@ -23,42 +23,106 @@
 #**********************************************************
 # HVAC
 #**********************************************************
+- id: climate_downstairs_max_temp
+  alias: Downstairs Max Temp
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: climate.downstairs
+    value_template: '{{ state.attributes.temperature }}'
+    above: !secret max_hvac_temp
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.downstairs
+        temperature: !secret hvac_set_temp_ac_day
+        operation_mode: cool
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.downstairs
+        operation_mode: cool
+
 - id: climate_upstairs_max_temp
-  alias: Upstairs AC Max Temp
+  alias: Upstairs Max Temp
   initial_state: 'on'
   trigger:
     platform: numeric_state
     entity_id: climate.upstairs
     value_template: '{{ state.attributes.temperature }}'
-    above: 80
+    above: !secret max_hvac_temp
   action:
     - service: climate.set_temperature
       data:
         entity_id: climate.upstairs
-        temperature: 75
+        temperature: !secret hvac_set_temp_ac_day
         operation_mode: cool
     - service: climate.set_operation_mode
       data:
         entity_id: climate.upstairs
         operation_mode: cool
 
+- id: climate_downstairs_min_temp
+  alias: Downstairs Min Temp
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: climate.downstairs
+    value_template: '{{ state.attributes.temperature }}'
+    below: !secret min_hvac_temp
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.downstairs
+        temperature: !secret hvac_set_temp_heat_day
+        operation_mode: heat
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.downstairs
+        operation_mode: heat
+
 - id: climate_upstairs_min_temp
-  alias: Upstairs AC Min Temp
+  alias: Upstairs Min Temp
   initial_state: 'on'
   trigger:
     platform: numeric_state
     entity_id: climate.upstairs
     value_template: '{{ state.attributes.temperature }}'
-    below: 65
+    below: !secret min_hvac_temp
   action:
     - service: climate.set_temperature
       data:
         entity_id: climate.upstairs
-        temperature: 75
-        operation_mode: cool
+        temperature: !secret hvac_set_temp_heat_day
+        operation_mode: heat
     - service: climate.set_operation_mode
       data:
         entity_id: climate.upstairs
+        operation_mode: heat
+
+- id: climate_downstairs_ac_day_set
+  alias: Downstairs AC Day Set
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '08:00:00'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.hvacautomation
+        state: 'on'
+      - condition: numeric_state
+        entity_id: sensor.pws_temp_f
+        above: !secret hvac_outside_trigger_temp
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.downstairs
+        temperature: !secret hvac_set_temp_ac_day
+        operation_mode: cool
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.downstairs
         operation_mode: cool
 
 - id: climate_upstairs_ac_day_set
@@ -75,224 +139,16 @@
         state: 'on'
       - condition: numeric_state
         entity_id: sensor.pws_temp_f
-        above: 65
+        above: !secret hvac_outside_trigger_temp
   action:
     - service: climate.set_temperature
       data:
         entity_id: climate.upstairs
-        temperature: 76
+        temperature: !secret hvac_set_temp_ac_day
         operation_mode: cool
     - service: climate.set_operation_mode
       data:
         entity_id: climate.upstairs
-        operation_mode: cool
-
-- id: climate_upstairs_heat_day_set
-  alias: Upstairs Heat Day Set
-  initial_state: 'on'
-  trigger:
-    platform: time
-    at: '08:00:00'
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: input_boolean.hvacautomation
-        state: 'on'
-      - condition: numeric_state
-        entity_id: sensor.pws_temp_f
-        below: 65
-  action:
-    - service: climate.set_temperature
-      data:
-        entity_id: climate.upstairs
-        temperature: 76
-        operation_mode: heat
-    - service: climate.set_operation_mode
-      data:
-        entity_id: climate.upstairs
-        operation_mode: heat
-
-- id: climate_upstairs_ac_night_set
-  alias: Upstairs AC Night Set
-  initial_state: 'on'
-  trigger:
-    platform: time
-    at: '22:00:00'
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: input_boolean.hvacautomation
-        state: 'on'
-      - condition: numeric_state
-        entity_id: sensor.pws_temp_f
-        above: 65
-  action:
-    - service: climate.set_temperature
-      data:
-        entity_id: climate.upstairs
-        temperature: 70
-        operation_mode: cool
-    - service: climate.set_operation_mode
-      data:
-        entity_id: climate.upstairs
-        operation_mode: cool
-
-- id: climate_upstairs_heat_night_set
-  alias: Upstairs Heat Night Set
-  initial_state: 'on'
-  trigger:
-    platform: time
-    at: '22:00:00'
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: input_boolean.hvacautomation
-        state: 'on'
-      - condition: numeric_state
-        entity_id: sensor.pws_temp_f
-        below: 65
-  action:
-    - service: climate.set_temperature
-      data:
-        entity_id: climate.upstairs
-        temperature: 70
-        operation_mode: heat
-    - service: climate.set_operation_mode
-      data:
-        entity_id: climate.upstairs
-        operation_mode: heat
-
-- id: climate_upstairs_ac_day
-  alias: Upstairs AC Day
-  initial_state: 'on'
-  trigger:
-    platform: numeric_state
-    entity_id: sensor.average_up_temp
-    above: 78
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: input_boolean.hvacautomation
-        state: 'on'
-      - condition: time
-        before: '21:00:00'
-        after: '07:00:00'
-  action:
-    - service: climate.set_temperature
-      data:
-        entity_id: climate.upstairs
-        temperature: 76
-        operation_mode: cool
-    - service: climate.set_operation_mode
-      data:
-        entity_id: climate.upstairs
-        operation_mode: cool
-    - service: shell_command.one_tone
-    - delay:
-        seconds: 0.125
-    - service: shell_command.tts
-      data_template:
-        message: "{{ states.sensor.jarvis_greeting.state }}, The average temperature upstairs is getting a bit warm with an average temperature of {{ trigger.to_state.state }}. I am going to turn on the air conditioning."
-
-- id: climate_upstairs_heat_day
-  alias: Upstairs Heat Day
-  initial_state: 'on'
-  trigger:
-    platform: numeric_state
-    entity_id: sensor.average_up_temp
-    below: 70
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: input_boolean.hvacautomation
-        state: 'on'
-      - condition: time
-        before: '21:00:00'
-        after: '07:00:00'
-  action:
-    - service: climate.set_temperature
-      data:
-        entity_id: climate.upstairs
-        temperature: 73
-        operation_mode: heat
-    - service: climate.set_operation_mode
-      data:
-        entity_id: climate.upstairs
-        operation_mode: heat
-    - service: shell_command.one_tone
-    - delay:
-        seconds: 0.125
-    - service: shell_command.tts
-      data_template:
-        message: "{{ states.sensor.jarvis_greeting.state }}, The average temperature upstairs is getting a bit cold with an average temprature of {{ trigger.to_state.state }}. I am going to turn on the heater."
-
-- id: climate_downstairs_max_temp
-  alias: Downstairs AC Max Temp
-  initial_state: 'on'
-  trigger:
-    platform: numeric_state
-    entity_id: climate.downstairs
-    value_template: '{{ state.attributes.temperature }}'
-    above: 80
-  action:
-    - service: climate.set_temperature
-      data:
-        entity_id: climate.downstairs
-        temperature: 75
-        operation_mode: cool
-    - service: climate.set_operation_mode
-      data:
-        entity_id: climate.downstairs
-        operation_mode: cool
-
-- id: climate_downstairs_min_temp
-  alias: Downstairs AC Min Temp
-  initial_state: 'on'
-  trigger:
-    platform: numeric_state
-    entity_id: climate.downstairs
-    value_template: '{{ state.attributes.temperature }}'
-    below: 65
-  action:
-    - service: climate.set_temperature
-      data:
-        entity_id: climate.downstairs
-        temperature: 75
-        operation_mode: cool
-    - service: climate.set_operation_mode
-      data:
-        entity_id: climate.downstairs
-        operation_mode: cool
-
-- id: climate_downstairs_ac_day_set
-  alias: Downstairs AC Day Set
-  initial_state: 'on'
-  trigger:
-    platform: time
-    at: '08:00:00'
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: input_boolean.hvacautomation
-        state: 'on'
-      - condition: numeric_state
-        entity_id: sensor.pws_temp_f
-        above: 65
-  action:
-    - service: climate.set_temperature
-      data:
-        entity_id: climate.downstairs
-        temperature: 76
-        operation_mode: cool
-    - service: climate.set_operation_mode
-      data:
-        entity_id: climate.downstairs
         operation_mode: cool
 
 - id: climate_downstairs_heat_day_set
@@ -309,16 +165,42 @@
         state: 'on'
       - condition: numeric_state
         entity_id: sensor.pws_temp_f
-        below: 65
+        below: !secret hvac_outside_trigger_temp
   action:
     - service: climate.set_temperature
       data:
         entity_id: climate.downstairs
-        temperature: 76
+        temperature: !secret hvac_set_temp_heat_day
         operation_mode: heat
     - service: climate.set_operation_mode
       data:
         entity_id: climate.downstairs
+        operation_mode: heat
+
+- id: climate_upstairs_heat_day_set
+  alias: Upstairs Heat Day Set
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '08:00:00'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.hvacautomation
+        state: 'on'
+      - condition: numeric_state
+        entity_id: sensor.pws_temp_f
+        below: !secret hvac_outside_trigger_temp
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.upstairs
+        temperature: !secret hvac_set_temp_heat_day
+        operation_mode: heat
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.upstairs
         operation_mode: heat
 
 - id: climate_downstairs_ac_night_set
@@ -335,16 +217,42 @@
         state: 'on'
       - condition: numeric_state
         entity_id: sensor.pws_temp_f
-        above: 75
+        above: !secret hvac_outside_trigger_temp
   action:
     - service: climate.set_temperature
       data:
         entity_id: climate.downstairs
-        temperature: 70
+        temperature: !secret hvac_set_temp_ac_night
         operation_mode: cool
     - service: climate.set_operation_mode
       data:
         entity_id: climate.downstairs
+        operation_mode: cool
+
+- id: climate_upstairs_ac_night_set
+  alias: Upstairs AC Night Set
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '22:00:00'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.hvacautomation
+        state: 'on'
+      - condition: numeric_state
+        entity_id: sensor.pws_temp_f
+        above: !secret hvac_outside_trigger_temp
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.upstairs
+        temperature: !secret hvac_set_temp_ac_night
+        operation_mode: cool
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.upstairs
         operation_mode: cool
 
 - id: climate_downstairs_heat_night_set
@@ -361,16 +269,42 @@
         state: 'on'
       - condition: numeric_state
         entity_id: sensor.pws_temp_f
-        below: 65
+        below: !secret hvac_outside_trigger_temp
   action:
     - service: climate.set_temperature
       data:
         entity_id: climate.downstairs
-        temperature: 70
+        temperature: !secret hvac_set_temp_heat_night
         operation_mode: heat
     - service: climate.set_operation_mode
       data:
         entity_id: climate.downstairs
+        operation_mode: heat
+
+- id: climate_upstairs_heat_night_set
+  alias: Upstairs Heat Night Set
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '22:00:00'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.hvacautomation
+        state: 'on'
+      - condition: numeric_state
+        entity_id: sensor.pws_temp_f
+        below: !secret hvac_outside_trigger_temp
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.upstairs
+        temperature: !secret hvac_set_temp_heat_night
+        operation_mode: heat
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.upstairs
         operation_mode: heat
 
 - id: climate_downstairs_ac_day
@@ -379,7 +313,7 @@
   trigger:
     platform: numeric_state
     entity_id: sensor.average_down_temp
-    above: 78
+    above: !secret max_hvac_temp
   condition:
     condition: and
     conditions:
@@ -393,7 +327,7 @@
     - service: climate.set_temperature
       data:
         entity_id: climate.downstairs
-        temperature: 76
+        temperature: !secret hvac_set_temp_ac_day
         operation_mode: cool
     - service: climate.set_operation_mode
       data:
@@ -406,13 +340,46 @@
       data_template:
         message: "{{ states.sensor.jarvis_greeting.state }}, The average temperature downstairs is getting a bit warm with an average temperature of {{ trigger.to_state.state }}. I am going to turn on the air conditioning."
 
+- id: climate_upstairs_ac_day
+  alias: Upstairs AC Day
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.average_up_temp
+    above: !secret max_hvac_temp
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.hvacautomation
+        state: 'on'
+      - condition: time
+        before: '21:00:00'
+        after: '07:00:00'
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.upstairs
+        temperature: !secret hvac_set_temp_ac_day
+        operation_mode: cool
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.upstairs
+        operation_mode: cool
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, The average temperature upstairs is getting a bit warm with an average temperature of {{ trigger.to_state.state }}. I am going to turn on the air conditioning."
+
 - id: climate_downstairs_heat_day
   alias: Downstairs Heat Day
   initial_state: 'on'
   trigger:
     platform: numeric_state
     entity_id: sensor.average_down_temp
-    below: 70
+    below: !secret min_hvac_temp
   condition:
     condition: and
     conditions:
@@ -426,7 +393,7 @@
     - service: climate.set_temperature
       data:
         entity_id: climate.downstairs
-        temperature: 73
+        temperature: !secret hvac_set_temp_heat_day
         operation_mode: heat
     - service: climate.set_operation_mode
       data:
@@ -439,13 +406,13 @@
       data_template:
         message: "{{ states.sensor.jarvis_greeting.state }}, The average temperature downstairs is getting a bit cold with an average temperature of {{ trigger.to_state.state }}. I am going to turn on the heater."
 
-- id: climate_upstairs_ac_night
-  alias: Upstairs AC Night
+- id: climate_upstairs_heat_day
+  alias: Upstairs Heat Day
   initial_state: 'on'
   trigger:
     platform: numeric_state
     entity_id: sensor.average_up_temp
-    above: 71
+    below: !secret min_hvac_temp
   condition:
     condition: and
     conditions:
@@ -453,46 +420,13 @@
         entity_id: input_boolean.hvacautomation
         state: 'on'
       - condition: time
-        before: '06:59:00'
-        after: '21:01:00'
+        before: '21:00:00'
+        after: '07:00:00'
   action:
     - service: climate.set_temperature
       data:
         entity_id: climate.upstairs
-        temperature: 71
-        operation_mode: cool
-    - service: climate.set_operation_mode
-      data:
-        entity_id: climate.upstairs
-        operation_mode: cool
-    - service: shell_command.one_tone
-    - delay:
-        seconds: 0.125
-    - service: shell_command.tts
-      data_template:
-        message: "{{ states.sensor.jarvis_greeting.state }}, The average temperature upstairs is getting a bit warm with an average temperature of {{ trigger.to_state.state }}. I am going to turn on the air conditioning."
-
-- id: climate_upstairs_heat_night
-  alias: Upstairs Heat Night
-  initial_state: 'on'
-  trigger:
-    platform: numeric_state
-    entity_id: sensor.average_up_temp
-    below: 68
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: input_boolean.hvacautomation
-        state: 'on'
-      - condition: time
-        before: '06:59:00'
-        after: '21:01:00'
-  action:
-    - service: climate.set_temperature
-      data:
-        entity_id: climate.upstairs
-        temperature: 71
+        temperature: !secret hvac_set_temp_heat_day
         operation_mode: heat
     - service: climate.set_operation_mode
       data:
@@ -511,7 +445,7 @@
   trigger:
     platform: numeric_state
     entity_id: sensor.average_down_temp
-    above: 71
+    above: !secret max_hvac_temp
   condition:
     condition: and
     conditions:
@@ -525,7 +459,7 @@
     - service: climate.set_temperature
       data:
         entity_id: climate.downstairs
-        temperature: 71
+        temperature: !secret hvac_set_temp_ac_night
         operation_mode: cool
     - service: climate.set_operation_mode
       data:
@@ -538,13 +472,46 @@
       data_template:
         message: "{{ states.sensor.jarvis_greeting.state }}, The average temperature downstairs is getting a bit warm with an average temperature of {{ trigger.to_state.state }}. I am going to turn on the air conditioning."
 
+- id: climate_upstairs_ac_night
+  alias: Upstairs AC Night
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.average_up_temp
+    above: !secret max_hvac_temp
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.hvacautomation
+        state: 'on'
+      - condition: time
+        before: '06:59:00'
+        after: '21:01:00'
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.upstairs
+        temperature: !secret hvac_set_temp_ac_night
+        operation_mode: cool
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.upstairs
+        operation_mode: cool
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, The average temperature upstairs is getting a bit warm with an average temperature of {{ trigger.to_state.state }}. I am going to turn on the air conditioning."
+
 - id: climate_downstairs_heat_night
   alias: Downstairs Heat Night
   initial_state: 'on'
   trigger:
     platform: numeric_state
     entity_id: sensor.average_down_temp
-    below: 68
+    below: !secret min_hvac_temp
   condition:
     condition: and
     conditions:
@@ -558,7 +525,7 @@
     - service: climate.set_temperature
       data:
         entity_id: climate.downstairs
-        temperature: 71
+        temperature: !secret hvac_set_temp_heat_night
         operation_mode: heat
     - service: climate.set_operation_mode
       data:
@@ -571,13 +538,46 @@
       data_template:
         message: "{{ states.sensor.jarvis_greeting.state }}, The average temperature downstairs is getting a bit cold with an average temperature of {{ trigger.to_state.state }}. I am going to turn on the heater."
 
+- id: climate_upstairs_heat_night
+  alias: Upstairs Heat Night
+  initial_state: 'on'
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.average_up_temp
+    below: !secret min_hvac_temp
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.hvacautomation
+        state: 'on'
+      - condition: time
+        before: '06:59:00'
+        after: '21:01:00'
+  action:
+    - service: climate.set_temperature
+      data:
+        entity_id: climate.upstairs
+        temperature: !secret hvac_set_temp_heat_night
+        operation_mode: heat
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.upstairs
+        operation_mode: heat
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, The average temperature upstairs is getting a bit cold with an average temprature of {{ trigger.to_state.state }}. I am going to turn on the heater."
+
 - id: hudsons_room_fan_on
   alias: Hudsons Room Fan On
   initial_state: 'on'
   trigger:
     - platform: numeric_state
       entity_id: sensor.hudsons_room_temperature
-      above: 79
+      above: !secret max_hvac_temp
   condition:
     condition: and
     conditions:
@@ -586,7 +586,7 @@
         state: 'off'
       - condition: numeric_state
         entity_id: sensor.hudsons_room_temperature
-        above: 79
+        above: !secret max_hvac_temp
   action:
     - service: homeassistant.turn_on
       entity_id: switch.hudsons_fan
@@ -603,7 +603,7 @@
   trigger:
     - platform: numeric_state
       entity_id: sensor.hudsons_room_temperature
-      below: 70
+      below: !secret min_hvac_temp
   condition:
     condition: and
     conditions:
@@ -612,7 +612,7 @@
         state: 'on'
       - condition: numeric_state
         entity_id: sensor.hudsons_room_temperature
-        below: 70
+        below: !secret min_hvac_temp
   action:
     - service: homeassistant.turn_off
       entity_id: switch.hudsons_fan
@@ -629,7 +629,7 @@
   trigger:
     - platform: numeric_state
       entity_id: sensor.wesleys_room_temperature
-      above: 79
+      above: !secret max_hvac_temp
   condition:
     condition: and
     conditions:
@@ -638,7 +638,7 @@
         state: 'off'
       - condition: numeric_state
         entity_id: sensor.wesleys_room_temperature
-        above: 79
+        above: !secret max_hvac_temp
   action:
     - service: homeassistant.turn_on
       entity_id: switch.wesleys_fan
@@ -655,7 +655,7 @@
   trigger:
     - platform: numeric_state
       entity_id: sensor.wesleys_room_temperature
-      below: 70
+      below: !secret min_hvac_temp
   condition:
     condition: and
     conditions:
@@ -664,7 +664,7 @@
         state: 'on'
       - condition: numeric_state
         entity_id: sensor.wesleys_room_temperature
-        below: 70
+        below: !secret min_hvac_temp
   action:
     - service: homeassistant.turn_off
       entity_id: switch.wesleys_fan
