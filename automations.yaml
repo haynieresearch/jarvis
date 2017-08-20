@@ -255,7 +255,6 @@
         entity_id: climate.upstairs
         operation_mode: cool
 
-#Automation for downstairs heater during the night
 - id: climate_downstairs_heat_night_set
   alias: Downstairs Heat Night Set
   initial_state: 'on'
@@ -282,7 +281,6 @@
         entity_id: climate.downstairs
         operation_mode: heat
 
-#Automation for upstairs heater durning the night
 - id: climate_upstairs_heat_night_set
   alias: Upstairs Heat Night Set
   initial_state: 'on'
@@ -309,7 +307,6 @@
         entity_id: climate.upstairs
         operation_mode: heat
 
-#
 - id: climate_downstairs_ac_day
   alias: Downstairs AC Day
   initial_state: 'on'
@@ -913,11 +910,7 @@
   trigger:
     - platform: state
       entity_id:
-        - binary_sensor.kitchen_presence
-        - binary_sensor.master_bedroom_presence
-        - binary_sensor.upstairs_hallway_presence
-        - binary_sensor.hudsons_room_presence
-        - binary_sensor.wesleyss_room_presence
+        - group.allpresensesensors
       from: 'off'
       to: 'on'
       for:
@@ -1253,7 +1246,7 @@
   initial_state: 'on'
   trigger:
     platform: state
-    entity: group.allfans
+    entity_id: group.allfans
     to: 'on'
   condition:
     condition: and
@@ -1274,11 +1267,7 @@
   trigger:
     - platform: numeric_state
       entity_id:
-        - sensor.master_bedroom_temperature
-        - sensor.kitchen_temperature
-        - sensor.hudsons_room_temperature
-        - sensor.wesleys_room_temperature
-        - sensor.upstairs_hallway_temperature
+        - group.alltemperaturesensors
       above: 100
   condition:
     condition: state
@@ -1291,6 +1280,35 @@
     - service: notify.sms
       data_template:
         message: "Excessive heat detected in {{ trigger.to_state.name }} with a temperature of {{ trigger.to_state.state }}. The seat of the fire may be nearby."
+        target:
+          - !secret lance_cell
+          - !secret katie_cell
+          - !secret hudson_cell
+          - !secret barela_cell
+          - !secret ryand_cell
+
+- id: motion_when_fire
+  alias: Motion Sensors Changed When Fire Alarm
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id:
+        - group.allpresensesensors
+      from: 'off'
+      to: 'on'
+      for:
+        seconds: 30
+  condition:
+    condition: state
+    entity_id: input_boolean.firealarm
+    state: 'on'
+  action:
+    - service: shell_command.tts
+      data_template:
+        message: "Motion detected in {{ trigger.to_state.name }} durning an active fire alarm."
+    - service: notify.sms
+      data_template:
+        message: "Motion detected in {{ trigger.to_state.name }} durning an active fire alarm."
         target:
           - !secret lance_cell
           - !secret katie_cell
@@ -1378,7 +1396,7 @@
   initial_state: 'on'
   trigger:
     platform: state
-    entity: group.allfans
+    entity_id: group.allfans
     to: 'on'
   condition:
     condition: and
