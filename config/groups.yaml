@@ -397,3 +397,21 @@ AllFans:
   entities:
   - switch.hudsons_fan
   - switch.wesleys_fan
+
+AllTemperatureSensors:
+  name: All Temperature Sensors
+  entities:
+    - sensor.master_bedroom_temperature
+    - sensor.kitchen_temperature
+    - sensor.hudsons_room_temperature
+    - sensor.wesleys_room_temperature
+    - sensor.upstairs_hallway_temperature
+
+AllPresenseSensors:
+  name: All Presence Sensors
+  entities:
+    - binary_sensor.kitchen_presence
+    - binary_sensor.master_bedroom_presence
+    - binary_sensor.upstairs_hallway_presence
+    - binary_sensor.hudsons_room_presence
+    - binary_sensor.wesleyss_room_presence
