@@ -391,3 +391,9 @@ NetworkStatus:
     - sensor.katies_laptop
     - sensor.citi_laptop
     - sensor.lances_ipad
+
+AllFans:
+  name: All Fans
+  entities:
+  - switch.hudsons_fan
+  - switch.wesleys_fan
