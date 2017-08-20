@@ -255,6 +255,7 @@
         entity_id: climate.upstairs
         operation_mode: cool
 
+#Automation for downstairs heater during the night
 - id: climate_downstairs_heat_night_set
   alias: Downstairs Heat Night Set
   initial_state: 'on'
@@ -281,6 +282,7 @@
         entity_id: climate.downstairs
         operation_mode: heat
 
+#Automation for upstairs heater durning the night
 - id: climate_upstairs_heat_night_set
   alias: Upstairs Heat Night Set
   initial_state: 'on'
@@ -307,6 +309,7 @@
         entity_id: climate.upstairs
         operation_mode: heat
 
+#
 - id: climate_downstairs_ac_day
   alias: Downstairs AC Day
   initial_state: 'on'
@@ -1242,6 +1245,58 @@
   action:
     - service: homeassistant.turn_on
       entity_id: input_boolean.firealarm
+    - service: homeassistant.turn_off
+      entity_id: group.allfans
+
+- id: fans_off_when_fire
+  alias: Fans off When Fire
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity: group.allfans
+    to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.firealarm
+        state: 'on'
+  action:
+    - service: homeassistant.turn_off
+      entity_id: group.allfans
+    - service: shell_command.tts
+      data_template:
+        message: "Smoke has been detected in the house. I am turning off all the fans."
+
+- id: excessive_heat_when_fire
+  alias: Excessive Heat When Fire
+  initial_state: 'on'
+  trigger:
+    - platform: numeric_state
+      entity_id:
+        - sensor.master_bedroom_temperature
+        - sensor.kitchen_temperature
+        - sensor.hudsons_room_temperature
+        - sensor.wesleys_room_temperature
+        - sensor.upstairs_hallway_temperature
+      above: 100
+  condition:
+    condition: state
+    entity_id: input_boolean.firealarm
+    state: 'on'
+  action:
+    - service: shell_command.tts
+      data_template:
+        message: "Excessive heat detected in {{ trigger.to_state.name }} with a temperature of {{ trigger.to_state.state }}. The seat of the fire may be nearby."
+    - service: notify.sms
+      data_template:
+        message: "Excessive heat detected in {{ trigger.to_state.name }} with a temperature of {{ trigger.to_state.state }}. The seat of the fire may be nearby."
+        target:
+          - !secret lance_cell
+          - !secret katie_cell
+          - !secret hudson_cell
+          - !secret barela_cell
+          - !secret ryand_cell
 
 - id: fire_sensor_off
   alias: Fire Sensor Off
@@ -1315,6 +1370,28 @@
   action:
     - service: homeassistant.turn_on
       entity_id: input_boolean.coalarm
+    - service: homeassistant.turn_on
+      entity_id: group.allfans
+
+- id: fans_on_when_co
+  alias: Fans on When CO
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity: group.allfans
+    to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.coalarm
+        state: 'on'
+  action:
+    - service: homeassistant.turn_off
+      entity_id: group.allfans
+    - service: shell_command.tts
+      data_template:
+        message: "Carbon monoxide has been detected in the house. I am turning on all the fans."
 
 - id: co_sensor_off
   alias: CO Sensor Off
