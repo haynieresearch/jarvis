@@ -63,4 +63,5 @@ for key in "${!SHORT[@]}"
     mpg123 -a hw:0,0 -q "http://$server:$port/read?voiceId=$voice&text=$NEXTURL&outputFormat=mp3"
 		echo "TTS Message: $INPUT" >> /opt/jarvis/logs/tts.log
 done
+sleep 5
 exit 0
