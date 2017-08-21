@@ -35,7 +35,7 @@ echo $pid > "$pidfile"
 for pidcheck in $(pidof -x tts.sh); do
 	if [ $pidcheck != $$ ]; then
 		echo "TTS process is currently running, waiting for message to finish." >> /opt/jarvis/logs/tts.log
-		sleep 5
+		sleep 10
 		exec bash "$0" $*
 	fi
 done
@@ -63,5 +63,4 @@ for key in "${!SHORT[@]}"
     mpg123 -a hw:0,0 -q "http://$server:$port/read?voiceId=$voice&text=$NEXTURL&outputFormat=mp3"
 		echo "TTS Message: $INPUT" >> /opt/jarvis/logs/tts.log
 done
-sleep 5
 exit 0
