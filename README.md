@@ -69,7 +69,7 @@ this up for you.
 * /opt/jarvis/stt/config/config.yaml
 * /opt/jarvis/web/webapi/sms/config.php
 
-If you utilize the installJarvis script it will set you up with ready to edit configuration files. Otherwise, you can copy the .example files located in each primary directory.
+If you utilize the install script it will set you up with ready to edit configuration files. Otherwise, you can copy the .example files located in each primary directory.
 
 ### Setup
 *This assumes you are setting up Home Assistant from scratch.*
@@ -89,7 +89,7 @@ If you utilize the installJarvis script it will set you up with ready to edit co
       1. If this command fails, you may need to run: sudo apt-get update
    2. Then run: sudo git clone https://github.com/Haynie-Research-and-Development/jarvis.git jarvis
 5. Update permissions: sudo chown -fR pi:pi jarvis
-6. Navigate to /opt/jarvis "cd /opt/jarvis" and run InstallJarvis.sh
+6. Navigate to /opt/jarvis "cd /opt/jarvis" and run install.sh
 7. Configure AWS CLI for Amazon Polly TTS: aws configure --profile adminuser
    1. You will need to obtain your AWS Access Key, and Secret Key before you begin
    2. Default Region Name: us-east-1
