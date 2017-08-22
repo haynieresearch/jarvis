@@ -2,10 +2,8 @@ language: python
 python:
   - "3.4"
 install:
-  - ./installJarvis.sh
+  - pip3 install homeassistant
 script:
   - hass -c . --script check_config
 before_install:
-  - cd /opt
-  - git clone https://github.com/Haynie-Research-and-Development/jarvis.git jarvis
-  - cd /opt/jarvis
+  - mv secrets.yaml.example secrets.yaml
