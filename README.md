@@ -55,6 +55,7 @@ For everything to work, you will need the following API keys:
 * Dark Sky - https://darksky.net/dev/
 * Weather Underground - https://www.wunderground.com/weather/api/
 * Twilio - https://twilio.com
+* Amazon Polly - https://aws.amazon.com/polly/
 
 If you want SSL you can purchase and install a certificate. However, I find it much easier to sign
 up for a free Cloud Flare (https://www.cloudflare.com) plan and encrypt your external site that way.
