@@ -117,7 +117,7 @@ If you utilize the install script it will set you up with ready to edit configur
 15. Reboot your Raspberry Pi
 
 If all is well, your system will be 100% ready to go. If you have an attached screen/touch screen the main
-panel will appear after all systems boot. If not, navigate to http://<raspberry pi IP>:8123.
+panel will appear after all systems boot. If not, navigate to http://[raspberry pi IP]:8123.
 
 ### Notes
 Once installed you can use the following system services to restart/control the entire system.
