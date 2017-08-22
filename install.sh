@@ -46,11 +46,20 @@ sudo apt-get install python-pip python3-dev python3-pip mpg123 python-dev \
 bison libasound2-dev libportaudio-dev python-pyaudio xorg chromium-browser \
 nginx php5-fpm php-apc pianobar net-tools nmap --yes
 
-echo "Installing Python2 Requirements"
-sudo pip2 install boto3 awscli slugify mad pyalsa pyalsaaudio apiai
 
 echo "Installing Python3 Requirements"
-sudo pip3 install homeassistant sqlalchemy
+sudo pip3 install homeassistant 
+sudo pip3 install sqlalchemy
+
+echo "Installing Python2 Requirements"
+sudo pip2 install boto3 
+sudo pip2 install awscli 
+sudo pip2 install slugify 
+sudo pip2 install mad 
+sudo pip2 install pyalsa 
+sudo pip2 install pyalsaaudio 
+sudo pip2 install apiai
+
 
 echo "Installing System Services"
 sudo cp -fR /opt/jarvis/resources/jarvis-* /etc/systemd/system/
