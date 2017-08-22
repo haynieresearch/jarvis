@@ -2,8 +2,6 @@ language: python
 python:
   - "3.4"
 install:
-  - pip3 install homeassistant
+  - ./installJarvis.sh
 script:
   - hass -c . --script check_config
-before_install:
-  - mv secrets.yaml.example secrets.yaml
