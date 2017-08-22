@@ -41,7 +41,7 @@ sudo apt-get upgrade --yes
 sudo rpi-update
 
 echo "Installing System Requirements"
-sudo apt-get install subversion python-pip python3-dev python3-pip mpg123 python-dev \
+sudo apt-get install python-pip python3-dev python3-pip mpg123 python-dev \
 bison libasound2-dev libportaudio-dev python-pyaudio xorg chromium-browser \
 nginx php5-fpm php-apc pianobar net-tools nmap --yes
 
