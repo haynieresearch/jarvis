@@ -85,7 +85,8 @@ If you utilize the installJarvis script it will set you up with ready to edit co
       4. Reboot your Pi.
 3. Navigate to /opt "cd /opt" on your Raspberry Pi.
 4. Checkout the latest Jarvis program: 
-   1. Install GIT: sudo apt-get install git
+   1. Install git: sudo apt-get install git
+      1. If this command fails, you may need to run: sudo apt-get update
    2. Then run: sudo git clone https://github.com/Haynie-Research-and-Development/jarvis.git jarvis
 5. Update permissions: sudo chown -fR pi:pi jarvis
 6. Navigate to /opt/jarvis "cd /opt/jarvis" and run InstallJarvis.sh
