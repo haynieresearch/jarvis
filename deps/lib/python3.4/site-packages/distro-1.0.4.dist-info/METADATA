@@ -1,0 +1,30 @@
+Metadata-Version: 2.0
+Name: distro
+Version: 1.0.4
+Summary: Linux Distribution - a Linux OS platform information API
+Home-page: https://github.com/nir0s/distro
+Author: Nir Cohen
+Author-email: nir36g@gmail.com
+License: Apache License, Version 2.0
+Platform: All
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Developers
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: System :: Operating System
+
+Distro - a Linux OS platform information API
+============================================
+
+See `Official GitHub repo <https://github.com/nir0s/distro#distro---a-linux-os-platform-information-api>`_.
+
+

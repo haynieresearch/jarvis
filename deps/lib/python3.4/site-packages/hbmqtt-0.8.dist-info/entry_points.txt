@@ -1,0 +1,19 @@
+[console_scripts]
+hbmqtt = scripts.broker_script:main
+hbmqtt_pub = scripts.pub_script:main
+hbmqtt_sub = scripts.sub_script:main
+
+[hbmqtt.broker.plugins]
+auth_anonymous = hbmqtt.plugins.authentication:AnonymousAuthPlugin
+auth_file = hbmqtt.plugins.authentication:FileAuthPlugin
+broker_sys = hbmqtt.plugins.sys.broker:BrokerSysPlugin
+packet_logger_plugin = hbmqtt.plugins.logging:PacketLoggerPlugin
+
+[hbmqtt.client.plugins]
+packet_logger_plugin = hbmqtt.plugins.logging:PacketLoggerPlugin
+
+[hbmqtt.test.plugins]
+event_plugin = tests.plugins.test_manager:EventTestPlugin
+packet_logger_plugin = hbmqtt.plugins.logging:PacketLoggerPlugin
+test_plugin = tests.plugins.test_manager:TestPlugin
+

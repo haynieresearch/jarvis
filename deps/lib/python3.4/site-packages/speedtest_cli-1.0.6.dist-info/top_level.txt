@@ -1,0 +1,2 @@
+speedtest
+speedtest_cli

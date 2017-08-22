@@ -12,8 +12,6 @@ jarvis.db
 *.db-journal
 *.db-shm
 *.db-wal
-lib
-deps
 secrets.yaml
 config.yaml
 secrets

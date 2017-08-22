@@ -1,0 +1,16 @@
+Metadata-Version: 2.0
+Name: pywemo
+Version: 0.4.19
+Summary: Access WeMo switches using their SOAP API
+Home-page: http://github.com/pavoni/pywemo
+Author: Greg Dowling
+Author-email: mail@gregdowling.com
+License: MIT
+Platform: UNKNOWN
+Requires-Dist: netifaces (>=0.10.0)
+Requires-Dist: requests (>=2.0)
+Requires-Dist: six (>=1.10.0)
+
+UNKNOWN
+
+

@@ -1,0 +1,3 @@
+[console_scripts]
+harmony = pyharmony.__main__:main
+

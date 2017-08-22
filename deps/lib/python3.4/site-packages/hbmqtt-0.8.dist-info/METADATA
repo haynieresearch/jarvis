@@ -1,0 +1,28 @@
+Metadata-Version: 2.0
+Name: hbmqtt
+Version: 0.8
+Summary: MQTT client/brocker using Python 3.4 asyncio library
+Home-page: https://github.com/beerfactory/hbmqtt
+Author: Nicolas Jouanin
+Author-email: nico@beerfactory.org
+License: MIT
+Platform: all
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: POSIX
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Topic :: Communications
+Classifier: Topic :: Internet
+Requires-Dist: transitions (==0.2.5)
+Requires-Dist: websockets
+Requires-Dist: passlib
+Requires-Dist: docopt
+Requires-Dist: pyyaml
+
+UNKNOWN
+
+
