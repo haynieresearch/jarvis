@@ -82,5 +82,5 @@ echo "Setting up Configuration Files"
 cd /opt/jarvis
 mv secrets.yaml.example secrets.yaml
 cd /opt/jarvis/stt/config/
-mv config.yaml.example
+mv config.yaml.example config.yaml
 cd /opt/jarvis
