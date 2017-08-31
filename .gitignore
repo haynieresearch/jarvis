@@ -6,6 +6,7 @@
 *.conf
 *.pickle
 *.log
+*.pyc
 OZW_Log.txt
 home-assistant.log
 jarvis.db
