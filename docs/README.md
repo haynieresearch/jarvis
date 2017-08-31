@@ -13,5 +13,7 @@ All notable changes to this project will be documented in this file.
 - Changed X startup script to no longer show the mouse cursor
 - Moved from Bing Speech to Wit AI
   - While Bing Speech was one of the most accurate, it was becoming expensive. Wit AI isn't as good, but it is free.
+- Moved automation.yaml from root directory to config directory
 
 ### Removed
+- ios component from configuration
