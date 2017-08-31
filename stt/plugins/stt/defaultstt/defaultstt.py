@@ -37,7 +37,6 @@ class WitAiSTTPlugin(plugin.STTPlugin):
                       'Content-Type': 'audio/wav'}
 
         audio = fp.read()
-
         sttData = requests.post('https://api.wit.ai/speech?v=20170307',
                           data=audio,
                           headers=sttHeaders)
@@ -55,7 +54,7 @@ class WitAiSTTPlugin(plugin.STTPlugin):
         try:
             sttResponse = sttData.json()['_text']
             if len(sttResponse) == 0:
-                raise ValueError('Nothing to transcribed.')
+                raise ValueError('Nothing transcribed.')
         except ValueError as e:
             self._logger.warning('Empty response: %s', e.args[0])
             results = []
