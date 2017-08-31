@@ -6,6 +6,8 @@ well as using Amazon Alexa products. However, creating custom intents was not as
 have liked for quick and easy creation. Between wake word and API.AI for speech handling, it appears to work
 rather well. I have also decoupled the TTS services to make it easier to use that functionality elsewhere.
 
+Changelog: https://haynie-research-and-development.github.io/jarvis/
+
 ![Screenshot of Jarvis Wall Mount](https://raw.githubusercontent.com/Haynie-Research-and-Development/jarvis/master/resources/screenshots/jarvis_wall.png)
 
 Note: SMS commands will require a basic level of experience with PHP.
