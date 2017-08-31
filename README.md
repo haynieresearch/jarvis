@@ -58,6 +58,7 @@ For everything to work, you will need the following API keys:
 * Weather Underground - https://www.wunderground.com/weather/api/
 * Twilio - https://twilio.com
 * Amazon Polly - https://aws.amazon.com/polly/
+* iNWS - https://inws.ncep.noaa.gov/ (not an API key, but how I process NWS alerts)
 
 If you want SSL you can purchase and install a certificate. However, I find it much easier to sign
 up for a free Cloud Flare (https://www.cloudflare.com) plan and encrypt your external site that way.
