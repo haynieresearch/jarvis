@@ -2,6 +2,77 @@ twilio-php Changelog
 ====================
 
 
+[2017-08-25] Version 5.13.3
+----------------------------
+**Library**
+- Add `lastRequest` and `lastResponse` properties to `CurlClient` to help debugging.
+
+**Api**
+- Update `status` enum for Recordings to include 'failed'
+- Add `errorCode` property on Recordings
+
+**Chat**
+- Add mutable parameters for channel, members and messages
+
+**Video**
+- New `media_region` parameter when creating a room, which controls which region media will be served out of.
+
+
+[2017-08-18] Version 5.13.2
+----------------------------
+**Api**
+- Add VoiceReceiveMode {'voice', 'fax'} option to IncomingPhoneNumber UPDATE requests
+
+**Chat**
+- Add channel message media information
+- Add service instance message media information
+
+**Preview**
+- Removed 'email' from bulk_exports configuration api [bi]. No migration plan needed because api has not been used yet.
+- Add DeployedDevices.
+
+**Sync**
+- Add support for Service Instance unique names
+
+
+[2017-08-10] Version 5.13.1
+----------------------------
+**Api**
+- Add New wireless usage keys added
+- Add `auto_correct_address` param for Addresses create and update
+- Add ChatGrant to Grants and deprecate IpMessagingGrant
+
+**Video**
+- Add `video_codec` enum and `video_codecs` parameter, which can be set to either `VP8` or `H264` during room creation.
+- Restrict recordings page size to 100
+
+
+[2017-07-27] Version 5.13.0
+----------------------------
+This release adds Beta and Preview products to main artifact.
+
+Previously, Beta and Preview products were only included in the `alpha`
+artifact. They are now being included in the main artifact to ease product
+discoverability and the collective operational overhead of maintaining multiple
+artifacts per library.
+
+**Api**
+- Remove unused `encryption_type` property on Recordings *(breaking change)*
+- Update `status` enum for Messages to include 'accepted'
+
+**Messaging**
+- Fix incorrectly typed capabilities property for PhoneNumbers.
+
+**Notify**
+- Add `ToBinding` optional parameter on Notifications resource creation. Accepted values are json strings.
+
+**Preview**
+- Add `sms_application_sid` to HostedNumberOrders.
+
+**Taskrouter**
+- Fully support conference functionality in reservations.
+
+
 [2017-07-13] Version 5.12.1
 ---------------------------
 - This release drops official support for PHP 5.3 and PHP 5.4, which were EOL'd

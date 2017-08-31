@@ -10,6 +10,10 @@ class IpMessagingGrant implements Grant {
     private $deploymentRoleSid;
     private $pushCredentialSid;
 
+    public function __construct() {
+        trigger_error("IpMessagingGrant is deprecated, please use ChatGrant", E_USER_NOTICE);
+    }
+
     /**
      * Returns the service sid
      *

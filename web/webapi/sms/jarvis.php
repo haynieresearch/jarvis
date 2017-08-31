@@ -27,9 +27,9 @@ $body = $_GET['Body'];
 include 'config.php';
 include 'functions.php';
 
-if (in_array($number, $alertNumbers))
+if (in_array($number, $nwsNumbers))
 	{
-		send_tts($body);
+		wx_alert($body);
 	}
 elseif (in_array($number, $validNumbers) && strtolower(substr($body,0,4)) == "tts:")
 	{

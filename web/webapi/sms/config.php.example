@@ -33,10 +33,6 @@ $validNumbers = array(
 //	"" //Hudson
 );
 
-$RelayNumbers = array(
-	"", //Lance
-);
-
 $alertNumbers = array(
 	"561-49", //NWS
 	"+15303494355", //NWS

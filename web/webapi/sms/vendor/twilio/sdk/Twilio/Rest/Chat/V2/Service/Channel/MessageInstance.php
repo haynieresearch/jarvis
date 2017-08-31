@@ -25,10 +25,13 @@ use Twilio\Version;
  * @property string channelSid
  * @property \DateTime dateCreated
  * @property \DateTime dateUpdated
+ * @property string lastUpdatedBy
  * @property boolean wasEdited
  * @property string from
  * @property string body
  * @property integer index
+ * @property string type
+ * @property array media
  * @property string url
  */
 class MessageInstance extends InstanceResource {
@@ -55,10 +58,13 @@ class MessageInstance extends InstanceResource {
             'channelSid' => Values::array_get($payload, 'channel_sid'),
             'dateCreated' => Deserialize::dateTime(Values::array_get($payload, 'date_created')),
             'dateUpdated' => Deserialize::dateTime(Values::array_get($payload, 'date_updated')),
+            'lastUpdatedBy' => Values::array_get($payload, 'last_updated_by'),
             'wasEdited' => Values::array_get($payload, 'was_edited'),
             'from' => Values::array_get($payload, 'from'),
             'body' => Values::array_get($payload, 'body'),
             'index' => Values::array_get($payload, 'index'),
+            'type' => Values::array_get($payload, 'type'),
+            'media' => Values::array_get($payload, 'media'),
             'url' => Values::array_get($payload, 'url'),
         );
 

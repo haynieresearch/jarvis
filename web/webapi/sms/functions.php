@@ -79,7 +79,7 @@ function massmsg($varCommand)
 		$client->messages->create(
 			$number,
 			array(
-					'from' => '$fromNumber',
+					'from' => $fromNumber,
 					'body' => "Mass Message:" . substr($varCommand, 8)
 			)
 		);
@@ -88,7 +88,7 @@ function massmsg($varCommand)
 		$reply = "Mass Message Sent:" . substr($varCommand, 8);
 	}
 
-function send_tts($varCommand)
+function wx_alert($varCommand)
 	{
 		global $command;
 		global $url;
@@ -166,7 +166,7 @@ function send_tts($varCommand)
 		$client->messages->create(
 			$number,
 			array(
-					'from' => '$fromNumber',
+					'from' => $fromNumber,
 					'body' => "Weather Alert: $varCommand"
 			)
 		);
