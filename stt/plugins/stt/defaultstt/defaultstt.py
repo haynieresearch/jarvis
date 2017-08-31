@@ -24,28 +24,21 @@ import logging
 import requests
 from core import plugin
 
-class MicrosoftSttPlugin(plugin.STTPlugin):
+class WitAiSTTPlugin(plugin.STTPlugin):
     def __init__(self, *args, **kwargs):
         plugin.STTPlugin.__init__(self, *args, **kwargs)
         self._logger = logging.getLogger(__name__)
-        self.key = self.profile['keys']['bing_speech']
+        self.key = self.profile['keys']['witai']
+
 
     def transcribe(self, fp):
-        tokenHeaders = {'Ocp-Apim-Subscription-Key': '%s' % self.key,
-                        'Content-type': 'application/x-www-form-urlencoded',
-                        'Content-Length': '0'}
-
-        keyData = requests.post('https://api.cognitive.microsoft.com/sts/v1.0/issueToken',
-                          headers=tokenHeaders)
-
-        token = keyData.content
-
-        sttHeaders = {'Authorization': 'Bearer %s' % token,
-                         'Content-Type': 'audio/wav; codec="audio/pcm"; samplerate=16000'}
+        sttHeaders = {'Authorization': 'Bearer %s' % self.key,
+                      'accept': 'application/json',
+                      'Content-Type': 'audio/wav'}
 
         audio = fp.read()
 
-        sttData = requests.post('https://speech.platform.bing.com/speech/recognition/conversation/cognitiveservices/v1?language=en-US',
+        sttData = requests.post('https://api.wit.ai/speech?v=20170307',
                           data=audio,
                           headers=sttHeaders)
 
@@ -60,15 +53,7 @@ class MicrosoftSttPlugin(plugin.STTPlugin):
             return []
 
         try:
-            sttStatus = sttData.json()['RecognitionStatus']
-            if sttStatus == 'InitialSilenceTimeout':
-                raise ValueError('Audio was empty.')
-            elif sttStatus == 'NoMatch':
-                raise ValueError('Unable to transcribe transmitted audio.')
-            elif sttStatus != 'Success':
-                raise ValueError('Unable to transcribe speech.')
-
-            sttResponse = sttData.json()['DisplayText']
+            sttResponse = sttData.json()['_text']
             if len(sttResponse) == 0:
                 raise ValueError('Nothing to transcribed.')
         except ValueError as e:

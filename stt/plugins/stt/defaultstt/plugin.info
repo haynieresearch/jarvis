@@ -1,9 +1,9 @@
 [Plugin]
 Name = defaultstt
-Version = 0.0.1
+Version = 0.0.2
 License = MIT
 URL = https://haynie-research-and-development.github.io/
-Description = Default STT Engine / Microsft Azure Bing Speech API
+Description = Default STT Engine / WitAI API
 
 [Author]
 Name = Haynie Research & Development
