@@ -15,5 +15,8 @@ All notable changes to this project will be documented in this file.
   - While Bing Speech was one of the most accurate, it was becoming expensive. Wit AI isn't as good, but it is free.
 - Moved automation.yaml from root directory to config directory
 
+### Fixed
+- Issue #1, SMS failtures on WX alerts
+
 ### Removed
 - ios component from configuration
