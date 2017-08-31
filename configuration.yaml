@@ -253,7 +253,7 @@ alarm_control_panel:
 #**********************************************************
 #* INCLUDES
 #**********************************************************
-automation: !include automations.yaml
+automation: !include config/automations.yaml
 intent_script: !include config/intents.yaml
 camera: !include config/cameras.yaml
 group: !include config/groups.yaml
