@@ -3578,42 +3578,6 @@
       data_template:
         message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you a network issue has been resolved. The Wink Relay Upstairs Hallway is now online."
 
-- id: network_status_jarvis_repeater_offline
-  alias: Network Status - JARVIS Repeater Offline
-  initial_state: 'on'
-  trigger:
-    platform: state
-    entity_id: sensor.jarvis_repeater
-    from: 'Online'
-    to: 'Offline'
-    for:
-      minutes: 5
-  action:
-    - service: shell_command.two_tone
-    - delay:
-        seconds: 0.125
-    - service: shell_command.tts
-      data_template:
-        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you of a network issue. The Jarvis Repeater has become unresponsive."
-
-- id: network_status_jarvis_repeater_online
-  alias: Network Status - JARVIS Repeater Online
-  initial_state: 'on'
-  trigger:
-    platform: state
-    entity_id: sensor.jarvis_repeater
-    from: 'Offline'
-    to: 'Online'
-    for:
-      minutes: 5
-  action:
-    - service: shell_command.two_tone
-    - delay:
-        seconds: 0.125
-    - service: shell_command.tts
-      data_template:
-        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you a network issue has been resolved. The Jarvis Repeater is now online."
-
 - id: network_status_wink_relay_wesley_offline
   alias: Network Status - Wink Relay Wesley Offline
   initial_state: 'on'
@@ -3973,39 +3937,3 @@
     - service: shell_command.tts
       data_template:
         message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you a network issue has been resolved. The Wink Hub is now online."
-
-- id: network_status_tpl_hudson_repeater_offline
-  alias: Network Status - TPL Hudson Repeater Offline
-  initial_state: 'on'
-  trigger:
-    platform: state
-    entity_id: sensor.tpl_hudson_repeater
-    from: 'Online'
-    to: 'Offline'
-    for:
-      minutes: 5
-  action:
-    - service: shell_command.two_tone
-    - delay:
-        seconds: 0.125
-    - service: shell_command.tts
-      data_template:
-        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you of a network issue. The TPL Hudson Repeater has become unresponsive."
-
-- id: network_status_tpl_hudson_repeater_online
-  alias: Network Status - TPL Hudson Repeater Online
-  initial_state: 'on'
-  trigger:
-    platform: state
-    entity_id: sensor.tpl_hudson_repeater
-    from: 'Offline'
-    to: 'Online'
-    for:
-      minutes: 5
-  action:
-    - service: shell_command.two_tone
-    - delay:
-        seconds: 0.125
-    - service: shell_command.tts
-      data_template:
-        message: "{{ states.sensor.jarvis_greeting.state }}, I wanted to inform you a network issue has been resolved. The TPL Hudson Repeater is now online."

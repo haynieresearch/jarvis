@@ -244,6 +244,8 @@ Presence:
     - device_tracker.lances_iphone
     - device_tracker.katies_iphone
     - device_tracker.hudsons_iphone
+    - device_tracker.hudson_ipad
+    - device_tracker.emma_kindle
 
 Misc:
   name: Miscellaneous
@@ -370,7 +372,6 @@ NetworkStatus:
   entities:
     - sensor.hue_bridge
     - sensor.wink_relay_upstairs_hall
-    - sensor.jarvis_repeater
     - sensor.wink_relay_wesley
     - sensor.wink_relay_master_bed
     - sensor.wink_relay_hudson
@@ -383,7 +384,6 @@ NetworkStatus:
     - sensor.airport_express
     - sensor.epson_wf3540
     - sensor.wink_hub
-    - sensor.tpl_hudson_repeater
     - sensor.wink_relay_kitchen
     - sensor.play_station_3
     - sensor.play_station_4
@@ -391,6 +391,13 @@ NetworkStatus:
     - sensor.katies_laptop
     - sensor.citi_laptop
     - sensor.lances_ipad
+    - sensor.lances_iphone
+    - sensor.katies_iphone
+    - sensor.ihome_smartplug_1
+    - sensor.ihome_smartplug_2
+    - sensor.ihome_smartplug_3
+    - sensor.emma_kindle
+    - sensor.hudson_ipad
 
 AllFans:
   name: All Fans
