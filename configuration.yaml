@@ -133,7 +133,6 @@ frontend:
 config:
 zeroconf:
 wemo:
-ios:
 discovery:
 shopping_list:
 conversation:
