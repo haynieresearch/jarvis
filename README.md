@@ -46,13 +46,13 @@ License text is provided in the LICENSE file.
 ### Assumptions
 This software makes a couple of assumptions, I will list them below and you can either update/install
 what is needed on your system or make the required changes. Even though the software is open source,
-some services currently are utilizing paid services. The main service is Microsoft Bing Speech.
+some services currently are utilizing paid services. The main service is Wit AI Speech.
 While there are free alternatives for speech-to-text services. I have found them to be less than desirable.
 Luckily, most have a free tier available to use.
 
 For everything to work, you will need the following API keys:
 * API.AI - https://api.ai/
-* Microsoft Azure Bing Speech - https://docs.microsoft.com/en-us/azure/cognitive-services/speech/home
+* Wit AI Speech - https://wit.ai/
 * Microsoft Azure Face - https://docs.microsoft.com/en-us/azure/cognitive-services/face/overview
 * Dark Sky - https://darksky.net/dev/
 * Weather Underground - https://www.wunderground.com/weather/api/
@@ -106,8 +106,8 @@ If you utilize the install script it will set you up with ready to edit configur
       4. Navigate to Export and Import, and RESTORE FROM ZIP: /opt/jarvis/resources/apiai.zip
    2. Amazon AWS
       1. http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html
-   3. Microsoft Azure Bing Speech
-      1. https://azure.microsoft.com/en-us/try/cognitive-services/?api=speech-api
+   3. Wit AI Speech 
+      1. https://wit.ai/
 10. Edit the configuration options in /opt/jarvis/stt/config/config.yaml
 11. Update /opt/jarvis/configuration.yaml
 12. Update SMS Commands
