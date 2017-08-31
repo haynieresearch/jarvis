@@ -5,6 +5,8 @@
 
 ## [Unreleased]
 ### Added
+
 ### Changed
 - Changed X startup script to no longer show the mouse cursor
+
 ### Removed
