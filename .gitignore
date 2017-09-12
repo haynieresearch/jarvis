@@ -13,6 +13,8 @@ jarvis.db
 *.db-journal
 *.db-shm
 *.db-wal
+JARVIS.DATA.EVENTS
+JARVIS.DATA.STATES
 secrets.yaml
 config.yaml
 secrets
