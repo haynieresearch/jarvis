@@ -17,6 +17,7 @@ import time
 import psutil
 from psutil import BSD
 from psutil import LINUX
+from psutil import OPENBSD
 from psutil import OSX
 from psutil import POSIX
 from psutil import SUNOS
@@ -35,6 +36,7 @@ from psutil.tests import skip_on_access_denied
 from psutil.tests import TRAVIS
 from psutil.tests import unittest
 from psutil.tests import wait_for_pid
+from psutil.tests import which
 
 
 def ps(cmd):
@@ -46,10 +48,7 @@ def ps(cmd):
     if SUNOS:
         cmd = cmd.replace("-o command", "-o comm")
         cmd = cmd.replace("-o start", "-o stime")
-    p = subprocess.Popen(cmd, shell=1, stdout=subprocess.PIPE)
-    output = p.communicate()[0].strip()
-    if PY3:
-        output = str(output, sys.stdout.encoding)
+    output = sh(cmd)
     if not LINUX:
         output = output.split('\n')[1].strip()
     try:
@@ -58,7 +57,7 @@ def ps(cmd):
         return output
 
 
-@unittest.skipUnless(POSIX, "POSIX only")
+@unittest.skipIf(not POSIX, "POSIX only")
 class TestProcess(unittest.TestCase):
     """Compare psutil results against 'ps' command line utility (mainly)."""
 
@@ -71,8 +70,6 @@ class TestProcess(unittest.TestCase):
     @classmethod
     def tearDownClass(cls):
         reap_children()
-
-    # for ps -o arguments see: http://unixhelp.ed.ac.uk/CGI/man-cgi?ps
 
     def test_ppid(self):
         ppid_ps = ps("ps --no-headers -o ppid -p %s" % self.pid)
@@ -93,6 +90,15 @@ class TestProcess(unittest.TestCase):
         username_ps = ps("ps --no-headers -o user -p %s" % self.pid)
         username_psutil = psutil.Process(self.pid).username()
         self.assertEqual(username_ps, username_psutil)
+
+    def test_username_no_resolution(self):
+        # Emulate a case where the system can't resolve the uid to
+        # a username in which case psutil is supposed to return
+        # the stringified uid.
+        p = psutil.Process()
+        with mock.patch("psutil.pwd.getpwuid", side_effect=KeyError) as fun:
+            self.assertEqual(p.username(), str(p.uids().real))
+            assert fun.called
 
     @skip_on_access_denied()
     @retry_before_failing()
@@ -122,6 +128,42 @@ class TestProcess(unittest.TestCase):
         name_ps = os.path.basename(name_ps).lower()
         name_psutil = psutil.Process(self.pid).name().lower()
         self.assertEqual(name_ps, name_psutil)
+
+    def test_name_long(self):
+        # On UNIX the kernel truncates the name to the first 15
+        # characters. In such a case psutil tries to determine the
+        # full name from the cmdline.
+        name = "long-program-name"
+        cmdline = ["long-program-name-extended", "foo", "bar"]
+        with mock.patch("psutil._psplatform.Process.name",
+                        return_value=name):
+            with mock.patch("psutil._psplatform.Process.cmdline",
+                            return_value=cmdline):
+                p = psutil.Process()
+                self.assertEqual(p.name(), "long-program-name-extended")
+
+    def test_name_long_cmdline_ad_exc(self):
+        # Same as above but emulates a case where cmdline() raises
+        # AccessDenied in which case psutil is supposed to return
+        # the truncated name instead of crashing.
+        name = "long-program-name"
+        with mock.patch("psutil._psplatform.Process.name",
+                        return_value=name):
+            with mock.patch("psutil._psplatform.Process.cmdline",
+                            side_effect=psutil.AccessDenied(0, "")):
+                p = psutil.Process()
+                self.assertEqual(p.name(), "long-program-name")
+
+    def test_name_long_cmdline_nsp_exc(self):
+        # Same as above but emulates a case where cmdline() raises NSP
+        # which is supposed to propagate.
+        name = "long-program-name"
+        with mock.patch("psutil._psplatform.Process.name",
+                        return_value=name):
+            with mock.patch("psutil._psplatform.Process.cmdline",
+                            side_effect=psutil.NoSuchProcess(0, "")):
+                p = psutil.Process()
+                self.assertRaises(psutil.NoSuchProcess, p.name)
 
     @unittest.skipIf(OSX or BSD, 'ps -o start not available')
     def test_create_time(self):
@@ -160,6 +202,11 @@ class TestProcess(unittest.TestCase):
             psutil_cmdline = psutil_cmdline.split(" ")[0]
         self.assertEqual(ps_cmdline, psutil_cmdline)
 
+    # On SUNOS "ps" reads niceness /proc/pid/psinfo which returns an
+    # incorrect value (20); the real deal is getpriority(2) which
+    # returns 0; psutil relies on it, see:
+    # https://github.com/giampaolo/psutil/issues/1082
+    @unittest.skipIf(SUNOS, "not reliable on SUNOS")
     def test_nice(self):
         ps_nice = ps("ps --no-headers -o nice -p %s" % self.pid)
         psutil_nice = psutil.Process().nice()
@@ -181,7 +228,8 @@ class TestProcess(unittest.TestCase):
         p = psutil.Process(os.getpid())
         failures = []
         ignored_names = ['terminate', 'kill', 'suspend', 'resume', 'nice',
-                         'send_signal', 'wait', 'children', 'as_dict']
+                         'send_signal', 'wait', 'children', 'as_dict',
+                         'memory_info_ex']
         if LINUX and get_kernel_version() < (2, 6, 36):
             ignored_names.append('rlimit')
         if LINUX and get_kernel_version() < (2, 6, 23):
@@ -205,14 +253,8 @@ class TestProcess(unittest.TestCase):
         if failures:
             self.fail('\n' + '\n'.join(failures))
 
-    @unittest.skipUnless(os.path.islink("/proc/%s/cwd" % os.getpid()),
-                         "/proc fs not available")
-    def test_cwd(self):
-        self.assertEqual(os.readlink("/proc/%s/cwd" % os.getpid()),
-                         psutil.Process().cwd())
 
-
-@unittest.skipUnless(POSIX, "POSIX only")
+@unittest.skipIf(not POSIX, "POSIX only")
 class TestSystemAPIs(unittest.TestCase):
     """Test some system APIs."""
 
@@ -240,8 +282,8 @@ class TestSystemAPIs(unittest.TestCase):
         pids_ps.sort()
         pids_psutil.sort()
 
-        # on OSX ps doesn't show pid 0
-        if OSX and 0 not in pids_ps:
+        # on OSX and OPENBSD ps doesn't show pid 0
+        if OSX or OPENBSD and 0 not in pids_ps:
             pids_ps.insert(0, 0)
 
         if pids_ps != pids_psutil:
@@ -253,13 +295,9 @@ class TestSystemAPIs(unittest.TestCase):
     # returned by psutil
     @unittest.skipIf(SUNOS, "unreliable on SUNOS")
     @unittest.skipIf(TRAVIS, "unreliable on TRAVIS")
+    @unittest.skipIf(not which('ifconfig'), "no ifconfig cmd")
     def test_nic_names(self):
-        p = subprocess.Popen("ifconfig -a", shell=1, stdout=subprocess.PIPE)
-        output = p.communicate()[0].strip()
-        if p.returncode != 0:
-            raise unittest.SkipTest('ifconfig returned no output')
-        if PY3:
-            output = str(output, sys.stdout.encoding)
+        output = sh("ifconfig -a")
         for nic in psutil.net_io_counters(pernic=True).keys():
             for line in output.split():
                 if line.startswith(nic):
@@ -277,11 +315,11 @@ class TestSystemAPIs(unittest.TestCase):
         out = sh("who")
         lines = out.split('\n')
         users = [x.split()[0] for x in lines]
-        self.assertEqual(len(users), len(psutil.users()))
         terminals = [x.split()[1] for x in lines]
+        self.assertEqual(len(users), len(psutil.users()))
         for u in psutil.users():
-            self.assertTrue(u.name in users, u.name)
-            self.assertTrue(u.terminal in terminals, u.terminal)
+            self.assertIn(u.name, users)
+            self.assertIn(u.terminal, terminals)
 
     def test_pid_exists_let_raise(self):
         # According to "man 2 kill" possible error values for kill
@@ -337,8 +375,10 @@ class TestSystemAPIs(unittest.TestCase):
                 # see:
                 # https://travis-ci.org/giampaolo/psutil/jobs/138338464
                 # https://travis-ci.org/giampaolo/psutil/jobs/138343361
-                if "no such file or directory" in str(err).lower() or \
-                        "raw devices not supported" in str(err).lower():
+                err = str(err).lower()
+                if "no such file or directory" in err or \
+                        "raw devices not supported" in err or \
+                        "permission denied" in err:
                     continue
                 else:
                     raise

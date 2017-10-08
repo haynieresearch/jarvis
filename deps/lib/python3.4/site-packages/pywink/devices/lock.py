@@ -86,3 +86,8 @@ class WinkLock(WinkDevice):
         """ Update state with latest info from Wink API. """
         response = self.api_interface.local_get_state(self)
         return self._update_state_from_response(response)
+
+    def add_new_key(self, code, name):
+        """Add a new user key code."""
+        device_json = {"code": code, "name": name}
+        return self.api_interface.create_lock_key(self, device_json)

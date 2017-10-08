@@ -81,6 +81,9 @@ class WinkDevice(object):
     def model_name(self):
         return self.json_state.get('model_name')
 
+    def remove_device(self):
+        return self.api_interface.remove_device(self)
+
     def _update_state_from_response(self, response_json):
         """
         :param response_json: the json obj returned from query

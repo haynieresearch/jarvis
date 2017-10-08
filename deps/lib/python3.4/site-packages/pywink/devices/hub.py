@@ -2,8 +2,6 @@ import logging
 
 from pywink.devices.base import WinkDevice
 
-import requests
-
 _LOGGER = logging.getLogger(__name__)
 
 
@@ -42,13 +40,7 @@ class WinkHub(WinkDevice):
         return self._last_reading.get('pairing_mode')
 
     def update_firmware(self):
-        url_string = "{}/{}s/{}/update_firmware".format(self.api_interface.BASE_URL,
-                                                        self.object_type,
-                                                        self.object_id)
-        arequest = requests.post(url_string,
-                                 headers=self.api_interface.API_HEADERS)
-        response_json = arequest.json()
-        return response_json
+        return self.api_interface.update_firmware(self)
 
     def pair_new_device(self, pairing_mode, pairing_mode_duration=60, pairing_device_type_selector=None,
                         kidde_radio_code=None):

@@ -122,7 +122,8 @@ history:
       - alarm_control_panel.home_alarm
 
 recorder:
-  purge_days: 1
+  purge_interval: 7
+  purge_keep_days: 14
   db_url: sqlite:///opt/jarvis/database/jarvis.db
   exclude:
     domains:
@@ -166,7 +167,7 @@ google:
 
 ifttt:
   key: !secret ifttt_key
-
+  
 #**********************************************************
 #* MISC CONFIG
 #**********************************************************

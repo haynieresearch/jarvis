@@ -29,6 +29,7 @@ from pywink.devices.robot import WinkRobot
 from pywink.devices.scene import WinkScene
 from pywink.devices.light_group import WinkLightGroup
 from pywink.devices.binary_switch_group import WinkBinarySwitchGroup
+from pywink.devices.water_heater import WinkWaterHeater
 
 
 # pylint: disable=too-many-branches, too-many-statements
@@ -109,6 +110,8 @@ def build_device(device_state_as_json, api_interface):
             # This is a group of lights
             else:
                 new_objects.append(WinkLightGroup(device_state_as_json, api_interface))
+    elif object_type == device_types.WATER_HEATER:
+        new_objects.append(WinkWaterHeater(device_state_as_json, api_interface))
 
     return new_objects
 

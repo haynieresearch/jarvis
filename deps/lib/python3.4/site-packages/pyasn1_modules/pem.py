@@ -54,10 +54,12 @@ def readPemFromFile(fileObj,
     return substrate
 
 
-def readBase64FromFile(fileObj):
+def readBase64fromText(text):
     if sys.version_info[0] <= 2:
-        return ''.join([base64.b64decode(x) for x in fileObj.readlines()])
+        return base64.b64decode(text)
     else:
-        return ''.encode().join(
-            [base64.b64decode(x.encode()) for x in fileObj.readlines()]
-        )
+        return base64.b64decode(text.encode())
+
+
+def readBase64FromFile(fileObj):
+    return readBase64fromText(fileObj.read())

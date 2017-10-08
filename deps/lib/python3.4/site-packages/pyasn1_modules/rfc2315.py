@@ -7,7 +7,7 @@
 # PKCS#7 message syntax
 #
 # ASN.1 source from:
-# http://www.trl.ibm.com/projects/xml/xss4j/data/asn1/grammars/pkcs7.asn
+# https://opensource.apple.com/source/Security/Security-55179.1/libsecurity_asn1/asn1/pkcs7.asn.auto.html
 #
 # Sample captures from:
 # openssl crl2pkcs7 -nocrl -certfile cert1.cer -out outfile.p7b

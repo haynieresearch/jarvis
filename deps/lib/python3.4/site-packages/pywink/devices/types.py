@@ -28,9 +28,10 @@ PROPANE_TANK = 'propane_tank'
 ROBOT = 'robot'
 SCENE = 'scene'
 GROUP = 'group'
+WATER_HEATER = 'water_heater'
 
 ALL_SUPPORTED_DEVICES = [LIGHT_BULB, BINARY_SWITCH, SENSOR_POD, LOCK, EGGTRAY,
                          GARAGE_DOOR, POWERSTRIP, SHADE, SIREN, KEY, PIGGY_BANK,
                          SMOKE_DETECTOR, THERMOSTAT, HUB, FAN, DOOR_BELL, REMOTE,
                          SPRINKLER, BUTTON, GANG, CAMERA, AIR_CONDITIONER,
-                         PROPANE_TANK, ROBOT, SCENE, GROUP]
+                         PROPANE_TANK, ROBOT, SCENE, GROUP, WATER_HEATER]

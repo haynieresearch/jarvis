@@ -25,13 +25,15 @@ from . import _common
 from . import _psposix
 from . import _psutil_linux as cext
 from . import _psutil_posix as cext_posix
+from ._common import ENCODING
+from ._common import ENCODING_ERRS
 from ._common import isfile_strict
 from ._common import memoize
 from ._common import memoize_when_activated
-from ._common import parse_environ_block
 from ._common import NIC_DUPLEX_FULL
 from ._common import NIC_DUPLEX_HALF
 from ._common import NIC_DUPLEX_UNKNOWN
+from ._common import parse_environ_block
 from ._common import path_exists_strict
 from ._common import supports_ipv6
 from ._common import usage_percent
@@ -81,11 +83,9 @@ BOOT_TIME = None  # set later
 # Used when reading "big" files, namely /proc/{pid}/smaps and /proc/net/*.
 # On Python 2, using a buffer with open() for such files may result in a
 # speedup, see: https://github.com/giampaolo/psutil/issues/708
-BIGGER_FILE_BUFFERING = -1 if PY3 else 8192
+BIGFILE_BUFFERING = -1 if PY3 else 8192
 LITTLE_ENDIAN = sys.byteorder == 'little'
-if PY3:
-    FS_ENCODING = sys.getfilesystemencoding()
-    ENCODING_ERRORS_HANDLER = 'surrogateescape'
+SECTOR_SIZE_FALLBACK = 512
 if enum is None:
     AF_LINK = socket.AF_PACKET
 else:
@@ -122,7 +122,7 @@ PROC_STATUSES = {
     "W": _common.STATUS_WAKING
 }
 
-# http://students.mimuw.edu.pl/lxr/source/include/net/tcp_states.h
+# https://github.com/torvalds/linux/blob/master/include/net/tcp_states.h
 TCP_STATUSES = {
     "01": _common.CONN_ESTABLISHED,
     "02": _common.CONN_SYN_SENT,
@@ -199,14 +199,14 @@ def open_text(fname, **kwargs):
         # See:
         # https://github.com/giampaolo/psutil/issues/675
         # https://github.com/giampaolo/psutil/pull/733
-        kwargs.setdefault('encoding', FS_ENCODING)
-        kwargs.setdefault('errors', ENCODING_ERRORS_HANDLER)
+        kwargs.setdefault('encoding', ENCODING)
+        kwargs.setdefault('errors', ENCODING_ERRS)
     return open(fname, "rt", **kwargs)
 
 
 if PY3:
     def decode(s):
-        return s.decode(encoding=FS_ENCODING, errors=ENCODING_ERRORS_HANDLER)
+        return s.decode(encoding=ENCODING, errors=ENCODING_ERRS)
 else:
     def decode(s):
         return s
@@ -260,7 +260,7 @@ def get_sector_size(partition):
     except (IOError, ValueError):
         # man iostat states that sectors are equivalent with blocks and
         # have a size of 512 bytes since 2.4 kernels.
-        return 512
+        return SECTOR_SIZE_FALLBACK
 
 
 @memoize
@@ -298,9 +298,10 @@ def cat(fname, fallback=_DEFAULT, binary=True):
         with open_binary(fname) if binary else open_text(fname) as f:
             return f.read().strip()
     except IOError:
-        if fallback != _DEFAULT:
+        if fallback is not _DEFAULT:
             return fallback
-        raise
+        else:
+            raise
 
 
 try:
@@ -318,7 +319,8 @@ except Exception:
 
 def calculate_avail_vmem(mems):
     """Fallback for kernels < 3.14 where /proc/meminfo does not provide
-    "MemAvailable:" column (see: https://blog.famzah.net/2014/09/24/).
+    "MemAvailable:" column, see:
+    https://blog.famzah.net/2014/09/24/
     This code reimplements the algorithm outlined here:
     https://git.kernel.org/cgit/linux/kernel/git/torvalds/linux.git/
         commit/?id=34e431b0ae398fc54ea69ff85ec700722c9da773
@@ -487,9 +489,23 @@ def virtual_memory():
 
 def swap_memory():
     """Return swap memory metrics."""
-    _, _, _, _, total, free, unit_multiplier = cext.linux_sysinfo()
-    total *= unit_multiplier
-    free *= unit_multiplier
+    mems = {}
+    with open_binary('%s/meminfo' % get_procfs_path()) as f:
+        for line in f:
+            fields = line.split()
+            mems[fields[0]] = int(fields[1]) * 1024
+    # We prefer /proc/meminfo over sysinfo() syscall so that
+    # psutil.PROCFS_PATH can be used in order to allow retrieval
+    # for linux containers, see:
+    # https://github.com/giampaolo/psutil/issues/1015
+    try:
+        total = mems[b'SwapTotal:']
+        free = mems[b'SwapFree:']
+    except KeyError:
+        _, _, _, _, total, free, unit_multiplier = cext.linux_sysinfo()
+        total *= unit_multiplier
+        free *= unit_multiplier
+
     used = total - free
     percent = usage_percent(used, total, _round=1)
     # get pgin/pgouts
@@ -581,7 +597,7 @@ def cpu_count_logical():
         # https://github.com/giampaolo/psutil/issues/200
         # try to parse /proc/stat as a last resort
         if num == 0:
-            search = re.compile('cpu\d')
+            search = re.compile(r'cpu\d')
             with open_text('%s/stat' % get_procfs_path()) as f:
                 for line in f:
                     line = line.split(' ')[0]
@@ -662,10 +678,19 @@ if os.path.exists("/sys/devices/system/cpu/cpufreq") or \
             ls = glob.glob("/sys/devices/system/cpu/cpu[0-9]*/cpufreq")
             ls.sort(key=lambda x: int(re.search('[0-9]+', x).group(0)))
 
+        pjoin = os.path.join
         for path in ls:
-            curr = int(cat(os.path.join(path, "scaling_cur_freq"))) / 1000
-            max_ = int(cat(os.path.join(path, "scaling_max_freq"))) / 1000
-            min_ = int(cat(os.path.join(path, "scaling_min_freq"))) / 1000
+            curr = cat(pjoin(path, "scaling_cur_freq"), fallback=None)
+            if curr is None:
+                # Likely an old RedHat, see:
+                # https://github.com/giampaolo/psutil/issues/1071
+                curr = cat(pjoin(path, "cpuinfo_cur_freq"), fallback=None)
+                if curr is None:
+                    raise NotImplementedError(
+                        "can't find current frequency file")
+            curr = int(curr) / 1000
+            max_ = int(cat(pjoin(path, "scaling_max_freq"))) / 1000
+            min_ = int(cat(pjoin(path, "scaling_min_freq"))) / 1000
             ret.append(_common.scpufreq(curr, min_, max_))
         return ret
 
@@ -809,7 +834,7 @@ class Connections:
                     raise _Ipv6UnsupportedError
                 else:
                     raise
-        return (ip, port)
+        return _common.addr(ip, port)
 
     @staticmethod
     def process_inet(file, family, type_, inodes, filter_pid=None):
@@ -817,7 +842,7 @@ class Connections:
         if file.endswith('6') and not os.path.exists(file):
             # IPv6 not supported
             return
-        with open_text(file, buffering=BIGGER_FILE_BUFFERING) as f:
+        with open_text(file, buffering=BIGFILE_BUFFERING) as f:
             f.readline()  # skip the first line
             for lineno, line in enumerate(f, 1):
                 try:
@@ -854,7 +879,7 @@ class Connections:
     @staticmethod
     def process_unix(file, family, inodes, filter_pid=None):
         """Parse /proc/net/unix files."""
-        with open_text(file, buffering=BIGGER_FILE_BUFFERING) as f:
+        with open_text(file, buffering=BIGFILE_BUFFERING) as f:
             f.readline()  # skip the first line
             for line in f:
                 tokens = line.split()
@@ -882,7 +907,10 @@ class Connections:
                         else:
                             path = ""
                         type_ = int(type_)
-                        raddr = None
+                        # XXX: determining the remote endpoint of a
+                        # UNIX socket on Linux is not possible, see:
+                        # https://serverfault.com/questions/252723/
+                        raddr = ""
                         status = _common.CONN_NONE
                         yield (fd, family, type_, path, raddr, status, pid)
 
@@ -1051,9 +1079,9 @@ def disk_io_counters():
             raise ValueError("not sure how to interpret line %r" % line)
 
         if name in partitions:
-            sector_size = get_sector_size(name)
-            rbytes = rbytes * sector_size
-            wbytes = wbytes * sector_size
+            ssize = get_sector_size(name)
+            rbytes *= ssize
+            wbytes *= ssize
             retdict[name] = (reads, writes, rbytes, wbytes, rtime, wtime,
                              reads_merged, writes_merged, busy_time)
     return retdict
@@ -1123,7 +1151,8 @@ def sensors_temperatures():
             current = float(cat(base + '_input')) / 1000.0
         except OSError as err:
             # https://github.com/giampaolo/psutil/issues/1009
-            if err.errno == errno.EIO:
+            # https://github.com/giampaolo/psutil/issues/1101
+            if err.errno in (errno.EIO, errno.ENODEV):
                 warnings.warn("ignoring %r" % err, RuntimeWarning)
                 continue
             else:
@@ -1257,15 +1286,15 @@ def users():
     retlist = []
     rawlist = cext.users()
     for item in rawlist:
-        user, tty, hostname, tstamp, user_process = item
+        user, tty, hostname, tstamp, user_process, pid = item
         # note: the underlying C function includes entries about
         # system boot, run level and others.  We might want
         # to use them in the future.
         if not user_process:
             continue
-        if hostname == ':0.0' or hostname == ':0':
+        if hostname in (':0.0', ':0'):
             hostname = 'localhost'
-        nt = _common.suser(user, tty or None, hostname, tstamp)
+        nt = _common.suser(user, tty or None, hostname, tstamp, pid)
         retlist.append(nt)
     return retlist
 
@@ -1273,14 +1302,15 @@ def users():
 def boot_time():
     """Return the system boot time expressed in seconds since the epoch."""
     global BOOT_TIME
-    with open_binary('%s/stat' % get_procfs_path()) as f:
+    path = '%s/stat' % get_procfs_path()
+    with open_binary(path) as f:
         for line in f:
             if line.startswith(b'btime'):
                 ret = float(line.strip().split()[1])
                 BOOT_TIME = ret
                 return ret
         raise RuntimeError(
-            "line 'btime' not found in %s/stat" % get_procfs_path())
+            "line 'btime' not found in %s" % path)
 
 
 # =====================================================================
@@ -1294,7 +1324,9 @@ def pids():
 
 
 def pid_exists(pid):
-    """Check for the existence of a unix PID."""
+    """Check for the existence of a unix PID. Linux TIDs are not
+    supported (always return False).
+    """
     if not _psposix.pid_exists(pid):
         return False
     else:
@@ -1310,14 +1342,15 @@ def pid_exists(pid):
             # Note: already checked that this is faster than using a
             # regular expr. Also (a lot) faster than doing
             # 'return pid in pids()'
-            with open_binary("%s/%s/status" % (get_procfs_path(), pid)) as f:
+            path = "%s/%s/status" % (get_procfs_path(), pid)
+            with open_binary(path) as f:
                 for line in f:
                     if line.startswith(b"Tgid:"):
                         tgid = int(line.split()[1])
                         # If tgid and pid are the same then we're
                         # dealing with a process PID.
                         return tgid == pid
-                raise ValueError("'Tgid' line not found")
+                raise ValueError("'Tgid' line not found in %s" % path)
         except (EnvironmentError, ValueError):
             return pid in pids()
 
@@ -1331,13 +1364,18 @@ def wrap_exceptions(fun):
         try:
             return fun(self, *args, **kwargs)
         except EnvironmentError as err:
-            # ENOENT (no such file or directory) gets raised on open().
-            # ESRCH (no such process) can get raised on read() if
-            # process is gone in meantime.
-            if err.errno in (errno.ENOENT, errno.ESRCH):
-                raise NoSuchProcess(self.pid, self._name)
             if err.errno in (errno.EPERM, errno.EACCES):
                 raise AccessDenied(self.pid, self._name)
+            # ESRCH (no such process) can be raised on read() if
+            # process is gone in the meantime.
+            if err.errno == errno.ESRCH:
+                raise NoSuchProcess(self.pid, self._name)
+            # ENOENT (no such file or directory) can be raised on open().
+            if err.errno == errno.ENOENT and not os.path.exists("%s/%s" % (
+                    self._procfs_path, self.pid)):
+                raise NoSuchProcess(self.pid, self._name)
+            # Note: zombies will keep existing under /proc until they're
+            # gone so there's no way to distinguish them in here.
             raise
     return wrapper
 
@@ -1360,7 +1398,6 @@ class Process(object):
         Using "man proc" as a reference: where "man proc" refers to
         position N, always substract 2 (e.g starttime pos 22 in
         'man proc' == pos 20 in the list returned here).
-
         The return value is cached in case oneshot() ctx manager is
         in use.
         """
@@ -1371,13 +1408,12 @@ class Process(object):
         # the first occurrence of "(" and the last occurence of ")".
         rpar = data.rfind(b')')
         name = data[data.find(b'(') + 1:rpar]
-        fields_after_name = data[rpar + 2:].split()
-        return [name] + fields_after_name
+        others = data[rpar + 2:].split()
+        return [name] + others
 
     @memoize_when_activated
     def _read_status_file(self):
         """Read /proc/{pid}/stat file and return its content.
-
         The return value is cached in case oneshot() ctx manager is
         in use.
         """
@@ -1387,7 +1423,7 @@ class Process(object):
     @memoize_when_activated
     def _read_smaps_file(self):
         with open_binary("%s/%s/smaps" % (self._procfs_path, self.pid),
-                         buffering=BIGGER_FILE_BUFFERING) as f:
+                         buffering=BIGFILE_BUFFERING) as f:
             return f.read().strip()
 
     def oneshot_enter(self):
@@ -1537,9 +1573,9 @@ class Process(object):
         @wrap_exceptions
         def memory_full_info(
                 self,
-                _private_re=re.compile(b"Private.*:\s+(\d+)"),
-                _pss_re=re.compile(b"Pss.*:\s+(\d+)"),
-                _swap_re=re.compile(b"Swap.*:\s+(\d+)")):
+                _private_re=re.compile(br"Private.*:\s+(\d+)"),
+                _pss_re=re.compile(br"Pss.*:\s+(\d+)"),
+                _swap_re=re.compile(br"Swap.*:\s+(\d+)")):
             basic_mem = self.memory_info()
             # Note: using 3 regexes is faster than reading the file
             # line by line.
@@ -1631,7 +1667,7 @@ class Process(object):
                 ))
             return ls
 
-    else:
+    else:  # pragma: no cover
         def memory_maps(self):
             raise NotImplementedError(
                 "/proc/%s/smaps does not exist on kernels < 2.6.14 or "
@@ -1652,7 +1688,8 @@ class Process(object):
             raise
 
     @wrap_exceptions
-    def num_ctx_switches(self, _ctxsw_re=re.compile(b'ctxt_switches:\t(\d+)')):
+    def num_ctx_switches(self,
+                         _ctxsw_re=re.compile(br'ctxt_switches:\t(\d+)')):
         data = self._read_status_file()
         ctxsw = _ctxsw_re.findall(data)
         if not ctxsw:
@@ -1660,12 +1697,12 @@ class Process(object):
                 "'voluntary_ctxt_switches' and 'nonvoluntary_ctxt_switches'"
                 "lines were not found in %s/%s/status; the kernel is "
                 "probably older than 2.6.23" % (
-                    self._procfs_path, self.self.pid))
+                    self._procfs_path, self.pid))
         else:
             return _common.pctxsw(int(ctxsw[0]), int(ctxsw[1]))
 
     @wrap_exceptions
-    def num_threads(self, _num_threads_re=re.compile(b'Threads:\t(\d+)')):
+    def num_threads(self, _num_threads_re=re.compile(br'Threads:\t(\d+)')):
         # Note: on Python 3 using a re is faster than iterating over file
         # line by line. On Python 2 is the exact opposite, and iterating
         # over a file on Python 3 is slower than on Python 2.
@@ -1721,7 +1758,7 @@ class Process(object):
         return cext.proc_cpu_affinity_get(self.pid)
 
     def _get_eligible_cpus(
-            self, _re=re.compile(b"Cpus_allowed_list:\t(\d+)-(\d+)")):
+            self, _re=re.compile(br"Cpus_allowed_list:\t(\d+)-(\d+)")):
         # See: https://github.com/giampaolo/psutil/issues/956
         data = self._read_status_file()
         match = _re.findall(data)
@@ -1856,12 +1893,23 @@ class Process(object):
                     # Get file position and flags.
                     file = "%s/%s/fdinfo/%s" % (
                         self._procfs_path, self.pid, fd)
-                    with open_binary(file) as f:
-                        pos = int(f.readline().split()[1])
-                        flags = int(f.readline().split()[1], 8)
-                    mode = file_flags_to_mode(flags)
-                    ntuple = popenfile(path, int(fd), int(pos), mode, flags)
-                    retlist.append(ntuple)
+                    try:
+                        with open_binary(file) as f:
+                            pos = int(f.readline().split()[1])
+                            flags = int(f.readline().split()[1], 8)
+                    except IOError as err:
+                        if err.errno == errno.ENOENT:
+                            # fd gone in the meantime; does not
+                            # necessarily mean the process disappeared
+                            # on us.
+                            hit_enoent = True
+                        else:
+                            raise
+                    else:
+                        mode = file_flags_to_mode(flags)
+                        ntuple = popenfile(
+                            path, int(fd), int(pos), mode, flags)
+                        retlist.append(ntuple)
         if hit_enoent:
             # raise NSP if the process disappeared on us
             os.stat('%s/%s' % (self._procfs_path, self.pid))
@@ -1883,13 +1931,13 @@ class Process(object):
         return int(self._parse_stat_file()[2])
 
     @wrap_exceptions
-    def uids(self, _uids_re=re.compile(b'Uid:\t(\d+)\t(\d+)\t(\d+)')):
+    def uids(self, _uids_re=re.compile(br'Uid:\t(\d+)\t(\d+)\t(\d+)')):
         data = self._read_status_file()
         real, effective, saved = _uids_re.findall(data)[0]
         return _common.puids(int(real), int(effective), int(saved))
 
     @wrap_exceptions
-    def gids(self, _gids_re=re.compile(b'Gid:\t(\d+)\t(\d+)\t(\d+)')):
+    def gids(self, _gids_re=re.compile(br'Gid:\t(\d+)\t(\d+)\t(\d+)')):
         data = self._read_status_file()
         real, effective, saved = _gids_re.findall(data)[0]
         return _common.pgids(int(real), int(effective), int(saved))

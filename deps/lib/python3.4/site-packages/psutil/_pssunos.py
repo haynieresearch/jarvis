@@ -10,11 +10,13 @@ import socket
 import subprocess
 import sys
 from collections import namedtuple
+from socket import AF_INET
 
 from . import _common
 from . import _psposix
 from . import _psutil_posix as cext_posix
 from . import _psutil_sunos as cext
+from ._common import AF_INET6
 from ._common import isfile_strict
 from ._common import memoize_when_activated
 from ._common import sockfam_to_enum
@@ -65,6 +67,16 @@ TCP_STATUSES = {
     cext.TCPS_IDLE: CONN_IDLE,  # sunos specific
     cext.TCPS_BOUND: CONN_BOUND,  # sunos specific
 }
+
+proc_info_map = dict(
+    ppid=0,
+    rss=1,
+    vms=2,
+    create_time=3,
+    nice=4,
+    num_threads=5,
+    status=6,
+    ttynr=7)
 
 # these get overwritten on "import psutil" from the __init__.py file
 NoSuchProcess = None
@@ -253,6 +265,11 @@ def net_connections(kind, _pid=-1):
             continue
         if type_ not in types:
             continue
+        if fam in (AF_INET, AF_INET6):
+            if laddr:
+                laddr = _common.addr(*laddr)
+            if raddr:
+                raddr = _common.addr(*raddr)
         status = TCP_STATUSES[status]
         fam = sockfam_to_enum(fam)
         type_ = socktype_to_enum(type_)
@@ -291,7 +308,7 @@ def users():
     rawlist = cext.users()
     localhost = (':0.0', ':0')
     for item in rawlist:
-        user, tty, hostname, tstamp, user_process = item
+        user, tty, hostname, tstamp, user_process, pid = item
         # note: the underlying C function includes entries about
         # system boot, run level and others.  We might want
         # to use them in the future.
@@ -299,7 +316,7 @@ def users():
             continue
         if hostname in localhost:
             hostname = 'localhost'
-        nt = _common.suser(user, tty, hostname, tstamp)
+        nt = _common.suser(user, tty, hostname, tstamp, pid)
         retlist.append(nt)
     return retlist
 
@@ -374,7 +391,9 @@ class Process(object):
 
     @memoize_when_activated
     def _proc_basic_info(self):
-        return cext.proc_basic_info(self.pid, self._procfs_path)
+        ret = cext.proc_basic_info(self.pid, self._procfs_path)
+        assert len(ret) == len(proc_info_map)
+        return ret
 
     @memoize_when_activated
     def _proc_cred(self):
@@ -403,22 +422,31 @@ class Process(object):
         return self._proc_name_and_args()[1].split(' ')
 
     @wrap_exceptions
+    def environ(self):
+        return cext.proc_environ(self.pid, self._procfs_path)
+
+    @wrap_exceptions
     def create_time(self):
-        return self._proc_basic_info()[3]
+        return self._proc_basic_info()[proc_info_map['create_time']]
 
     @wrap_exceptions
     def num_threads(self):
-        return self._proc_basic_info()[5]
+        return self._proc_basic_info()[proc_info_map['num_threads']]
 
     @wrap_exceptions
     def nice_get(self):
-        # For some reason getpriority(3) return ESRCH (no such process)
-        # for certain low-pid processes, no matter what (even as root).
+        # Note #1: for some reason getpriority(3) return ESRCH (no such
+        # process) for certain low-pid processes, no matter what (even
+        # as root).
         # The process actually exists though, as it has a name,
         # creation time, etc.
         # The best thing we can do here appears to be raising AD.
         # Note: tested on Solaris 11; on Open Solaris 5 everything is
         # fine.
+        #
+        # Note #2: we also can get niceness from /proc/pid/psinfo
+        # but it's wrong, see:
+        # https://github.com/giampaolo/psutil/issues/1082
         try:
             return cext_posix.getpriority(self.pid)
         except EnvironmentError as err:
@@ -441,7 +469,7 @@ class Process(object):
 
     @wrap_exceptions
     def ppid(self):
-        self._ppid = self._proc_basic_info()[0]
+        self._ppid = self._proc_basic_info()[proc_info_map['ppid']]
         return self._ppid
 
     @wrap_exceptions
@@ -481,7 +509,7 @@ class Process(object):
         procfs_path = self._procfs_path
         hit_enoent = False
         tty = wrap_exceptions(
-            self._proc_basic_info()[0])
+            self._proc_basic_info()[proc_info_map['ttynr']])
         if tty != cext.PRNODEV:
             for x in (0, 1, 2, 255):
                 try:
@@ -514,14 +542,15 @@ class Process(object):
     @wrap_exceptions
     def memory_info(self):
         ret = self._proc_basic_info()
-        rss, vms = ret[1] * 1024, ret[2] * 1024
+        rss = ret[proc_info_map['rss']] * 1024
+        vms = ret[proc_info_map['vms']] * 1024
         return pmem(rss, vms)
 
     memory_full_info = memory_info
 
     @wrap_exceptions
     def status(self):
-        code = self._proc_basic_info()[6]
+        code = self._proc_basic_info()[proc_info_map['status']]
         # XXX is '?' legit? (we're not supposed to return it anyway)
         return PROC_STATUSES.get(code, '?')
 
