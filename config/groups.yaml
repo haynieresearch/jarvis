@@ -29,7 +29,6 @@ default_view:
     - group.locationswitchfront
     - group.scenesfront
     - group.weather
-    - group.presence
 
 Lights:
  name: Lights
@@ -236,15 +235,6 @@ NetworkTest:
     - sensor.speedtest_ping
     - sensor.speedtest_download
     - sensor.speedtest_upload
-
-Presence:
-  name: Presence
-  entities:
-    - device_tracker.lances_iphone
-    - device_tracker.katies_iphone
-    - device_tracker.hudsons_iphone
-    - device_tracker.hudson_ipad
-    - device_tracker.emma_kindle
 
 Misc:
   name: Miscellaneous
