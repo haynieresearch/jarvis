@@ -167,7 +167,7 @@ google:
 
 ifttt:
   key: !secret ifttt_key
-  
+
 #**********************************************************
 #* MISC CONFIG
 #**********************************************************
@@ -259,6 +259,6 @@ binary_sensor: !include config/binary_sensors.yaml
 scene: !include config/scenes.yaml
 input_select: !include config/input_select.yaml
 input_boolean: !include config/input_boolean.yaml
-input_slider: !include config/input_slider.yaml
+input_number: !include config/input_number.yaml
 script: !include config/scripts.yaml
 panel_custom: !include config/panel_custom.yaml
