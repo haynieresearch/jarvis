@@ -6,7 +6,7 @@ well as using Amazon Alexa products. However, creating custom intents was not as
 have liked for quick and easy creation. Between wake word and API.AI for speech handling, it appears to work
 rather well. I have also decoupled the TTS services to make it easier to use that functionality elsewhere.
 
-Changelog: https://haynie-research-and-development.github.io/jarvis/
+Note: For those who want to track the network status of local devices the nmap_tracker built into HA does do that job very well. However, I have decided to remove it from my configuration. While it worked as intended, it had an unintended side effect on my Raspberry Pi -- it made it run slow. While I could tweak the interval settings, real time tracking was my goal. 
 
 ![Screenshot of Jarvis Wall Mount](https://raw.githubusercontent.com/Haynie-Research-and-Development/jarvis/master/resources/screenshots/jarvis_wall.png)
 
