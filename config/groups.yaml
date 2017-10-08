@@ -268,9 +268,9 @@ LivingRoomEntertainment:
     - media_player.plex_for_sony_playstation_4_0140
     - media_player.plex_for_vizio_vizio_mtk_2
     - input_select.livingroomharmony
-    - input_slider.harmonyvolume
+    - input_number.harmonyvolume
     - media_player.pandora
-    - input_slider.systemvolume
+    - input_number.systemvolume
 
 KidsTv:
   name: Kids TVs
