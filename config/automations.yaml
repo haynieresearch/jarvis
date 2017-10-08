@@ -3502,3 +3502,82 @@
            {% elif states.sensor.random_rules.state == '49' %}Do not mock, tease, or make fun of others. No one likes a bully, do not be one.
            {% elif states.sensor.random_rules.state == '50' %}Quickly admit when you have done something wrong. Do not wait until you are caught.
            {% endif %}"
+
+#**********************************************************
+# Shabbat
+#**********************************************************
+- id: shabbat_2_hour_reminder
+  alias: Shabbat 2 Hour Reminder
+  initial_state: 'on'
+  trigger:
+    platform: sun
+    event: sunset
+    offset: '-02:00:00'
+  condition:
+    condition: time
+    weekday:
+      - fri
+  action:
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, this is your notification that Shabbat starts in exactly 2 hours."
+
+- id: shabbat_1_hour_reminder
+  alias: Shabbat 1 Hour Reminder
+  initial_state: 'on'
+  trigger:
+    platform: sun
+    event: sunset
+    offset: '-01:00:00'
+  condition:
+    condition: time
+    weekday:
+      - fri
+  action:
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, this is your notification that Shabbat starts in exactly 1 hour."
+
+- id: shabbat_30_minute_reminder
+  alias: Shabbat 30 Minute Reminder
+  initial_state: 'on'
+  trigger:
+    platform: sun
+    event: sunset
+    offset: '-00:30:00'
+  condition:
+    condition: time
+    weekday:
+      - fri
+  action:
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, this is your notification that Shabbat starts in exactly 30 minutes."
+
+- id: shabbat_reminder
+  alias: Shabbat Reminder
+  initial_state: 'on'
+  trigger:
+    platform: sun
+    event: sunset
+    offset: '-00:00:00'
+  condition:
+    condition: time
+    weekday:
+      - fri
+  action:
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "Shabbat Shalom! The sun has set and it is time to start Shabbat. Break out the candles and lets get this party started."
