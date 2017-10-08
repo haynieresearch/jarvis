@@ -23,6 +23,42 @@
 #**********************************************************
 # HVAC
 #**********************************************************
+- id: climate_downstairs_off_to_on
+  alias: Downstairs Climate Off to On
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: climate.downstairs
+    to: 'off'
+  action:
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.downstairs
+        operation_mode: cool
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, The downstairs thermostat has been turned off, so I am turning it back on."
+
+- id: climate_upstairs_off_to_on
+  alias: Upstairs Climate Off to On
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: climate.upstairs
+    to: 'off'
+  action:
+    - service: climate.set_operation_mode
+      data:
+        entity_id: climate.upstairs
+        operation_mode: cool
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, The upstairs thermostat has been turned off, so I am turning it back on."
+
 - id: climate_downstairs_max_temp
   alias: Downstairs Max Temp
   initial_state: 'on'
