@@ -92,7 +92,6 @@ Settings:
     - group.networktest
     - group.serverinfo
     - updater.updater
-    - group.networkstatus
     - group.all_automations
 
 UpstairsClimate:
@@ -366,38 +365,6 @@ AllLights:
     - group.outsidelights
     - group.masterbedroomlights
     - group.upstairslights
-
-NetworkStatus:
-  name: Network Status
-  entities:
-    - sensor.hue_bridge
-    - sensor.wink_relay_upstairs_hall
-    - sensor.wink_relay_wesley
-    - sensor.wink_relay_master_bed
-    - sensor.wink_relay_hudson
-    - sensor.synology_nas
-    - sensor.lances_imac
-    - sensor.harmony_hub_living_room
-    - sensor.honeywell_thermostat_1
-    - sensor.honeywell_thermostat_2
-    - sensor.airport_extreme
-    - sensor.airport_express
-    - sensor.epson_wf3540
-    - sensor.wink_hub
-    - sensor.wink_relay_kitchen
-    - sensor.play_station_3
-    - sensor.play_station_4
-    - sensor.living_room_tv
-    - sensor.katies_laptop
-    - sensor.citi_laptop
-    - sensor.lances_ipad
-    - sensor.lances_iphone
-    - sensor.katies_iphone
-    - sensor.ihome_smartplug_1
-    - sensor.ihome_smartplug_2
-    - sensor.ihome_smartplug_3
-    - sensor.emma_kindle
-    - sensor.hudson_ipad
 
 AllFans:
   name: All Fans

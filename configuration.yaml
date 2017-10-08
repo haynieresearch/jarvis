@@ -170,10 +170,6 @@ ifttt:
 #**********************************************************
 #* MISC CONFIG
 #**********************************************************
-device_tracker:
-  - platform: nmap_tracker
-    hosts: 10.0.1.1/24
-
 weblink:
   entities:
     - name: Home
