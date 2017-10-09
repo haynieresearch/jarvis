@@ -239,6 +239,7 @@ NetworkTest:
 Misc:
   name: Miscellaneous
   entities:
+    - script.wesey_tv_automation_bypass
     - input_boolean.nighttimemode
     - input_boolean.flash_hudson_lights
     - input_boolean.flash_wesley_lights

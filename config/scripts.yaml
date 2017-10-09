@@ -374,3 +374,21 @@ living_room_tv_mute:
         entity_id: remote.living_room
         device: 17416035
         command: Mute
+
+wesey_tv_automation_bypass:
+  alias: Wesley TV Automation Bypass
+  sequence:
+    - service: homeassistant.turn_off
+      entity_id: automation.wes_tv_school_night_automation
+    - service: homeassistant.turn_off
+      entity_id: automation.wes_tv_weekend_automation
+    - service: homeassistant.turn_on
+      entity_id: switch.wesleytv
+    - delay:
+        minutes: 30
+    - service: homeassistant.turn_off
+      entity_id: switch.wesleytv
+    - service: homeassistant.turn_on
+      entity_id: automation.wes_tv_school_night_automation
+    - service: homeassistant.turn_on
+      entity_id: automation.wes_tv_weekend_automation
