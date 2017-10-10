@@ -227,6 +227,9 @@ shell_command:
   bullmastiff: /usr/bin/aplay /opt/jarvis/sounds/sound_effects/bullmastiff.wav
   one_tone: /usr/bin/aplay /opt/jarvis/sounds/tones/one-tone.wav
   two_tone: /usr/bin/aplay /opt/jarvis/sounds/tones/two-tone.wav
+  shalom_aleichem: /usr/bin/aplay /opt/jarvis/sounds/shabbat/shalom_aleichem.wav
+  lcha_dodi: /usr/bin/aplay /opt/jarvis/sounds/shabbat/lcha_dodi.wav
+  kah_ribon: /usr/bin/aplay /opt/jarvis/sounds/shabbat/kah_ribon.wav
   german_shephard: /usr/bin/aplay /opt/jarvis/sounds/sound_effects/german-shephard.wav
   restart_system: /opt/jarvis/scripts/restart_system.sh
   restart_jarvis_base: /opt/jarvis/scripts/restart_jarvis_base.sh
