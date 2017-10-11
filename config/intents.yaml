@@ -107,12 +107,6 @@ ActivateScript:
       data_template:
         entity_id: "script.{{ Script | replace(' ', '_') }}"
 
-ShabbatSong:
-  speech:
-    text: As you wish.
-  action:
-    - service: shell_command.{{ ShabbatSong | replace(' ', '_') }}
-
 RestartSys:
   speech:
     text: I have restarted the requested system.
