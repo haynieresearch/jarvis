@@ -1142,21 +1142,22 @@ def sensors_temperatures():
     basenames = sorted(set([x.split('_')[0] for x in basenames]))
 
     for base in basenames:
+        try:
+            current = float(cat(base + '_input')) / 1000.0
+        except (IOError, OSError) as err:
+            # A lot of things can go wrong here, so let's just skip the
+            # whole entry.
+            # https://github.com/giampaolo/psutil/issues/1009
+            # https://github.com/giampaolo/psutil/issues/1101
+            # https://github.com/giampaolo/psutil/issues/1129
+            warnings.warn("ignoring %r" % err, RuntimeWarning)
+            continue
+
         unit_name = cat(os.path.join(os.path.dirname(base), 'name'),
                         binary=False)
         high = cat(base + '_max', fallback=None)
         critical = cat(base + '_crit', fallback=None)
         label = cat(base + '_label', fallback='', binary=False)
-        try:
-            current = float(cat(base + '_input')) / 1000.0
-        except OSError as err:
-            # https://github.com/giampaolo/psutil/issues/1009
-            # https://github.com/giampaolo/psutil/issues/1101
-            if err.errno in (errno.EIO, errno.ENODEV):
-                warnings.warn("ignoring %r" % err, RuntimeWarning)
-                continue
-            else:
-                raise
 
         if high is not None:
             high = float(high) / 1000.0
@@ -1169,8 +1170,8 @@ def sensors_temperatures():
 
 
 def sensors_fans():
-    """Return hardware (CPU and others) fans as a dict
-    including hardware label, current speed.
+    """Return hardware fans info (for CPU and other peripherals) as a
+    dict including hardware label and current speed.
 
     Implementation notes:
     - /sys/class/hwmon looks like the most recent interface to
@@ -1187,11 +1188,14 @@ def sensors_fans():
 
     basenames = sorted(set([x.split('_')[0] for x in basenames]))
     for base in basenames:
+        try:
+            current = int(cat(base + '_input'))
+        except (IOError, OSError) as err:
+            warnings.warn("ignoring %r" % err, RuntimeWarning)
+            continue
         unit_name = cat(os.path.join(os.path.dirname(base), 'name'),
                         binary=False)
         label = cat(base + '_label', fallback='', binary=False)
-        current = int(cat(base + '_input'))
-
         ret[unit_name].append(_common.sfan(label, current))
 
     return dict(ret)

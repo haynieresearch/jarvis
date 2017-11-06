@@ -21,6 +21,7 @@ import types
 
 import psutil
 
+from psutil import AIX
 from psutil import BSD
 from psutil import LINUX
 from psutil import NETBSD
@@ -44,6 +45,7 @@ from psutil.tests import HAS_CPU_AFFINITY
 from psutil.tests import HAS_ENVIRON
 from psutil.tests import HAS_IONICE
 from psutil.tests import HAS_MEMORY_MAPS
+from psutil.tests import HAS_NUM_CTX_SWITCHES
 from psutil.tests import HAS_PROC_CPU_NUM
 from psutil.tests import HAS_PROC_IO_COUNTERS
 from psutil.tests import HAS_RLIMIT
@@ -317,7 +319,7 @@ class TestProcess(unittest.TestCase):
         with open(PYTHON, 'rb') as f:
             f.read()
         io2 = p.io_counters()
-        if not BSD:
+        if not BSD and not AIX:
             self.assertGreater(io2.read_count, io1.read_count)
             self.assertEqual(io2.write_count, io1.write_count)
             if LINUX:
@@ -864,10 +866,9 @@ class TestProcess(unittest.TestCase):
         self.assertEqual(len(initial), len(set(initial)))
 
         all_cpus = list(range(len(psutil.cpu_percent(percpu=True))))
-        # setting on travis doesn't seem to work (always return all
-        # CPUs on get):
-        # AssertionError: Lists differ: [0, 1, 2, 3, 4, 5, 6, ... != [0]
-        for n in all_cpus:
+        # Work around travis failure:
+        # https://travis-ci.org/giampaolo/psutil/builds/284173194
+        for n in all_cpus if not TRAVIS else initial:
             p.cpu_affinity([n])
             self.assertEqual(p.cpu_affinity(), [n])
             if hasattr(os, "sched_getaffinity"):
@@ -895,6 +896,8 @@ class TestProcess(unittest.TestCase):
         p.cpu_affinity(set(all_cpus))
         p.cpu_affinity(tuple(all_cpus))
 
+    # TODO: temporary, see: https://github.com/MacPython/psutil/issues/1
+    @unittest.skipIf(LINUX, "temporary")
     @unittest.skipIf(not HAS_CPU_AFFINITY, 'not supported')
     def test_cpu_affinity_errs(self):
         sproc = get_test_subprocess()
@@ -985,6 +988,7 @@ class TestProcess(unittest.TestCase):
 
     @skip_on_not_implemented(only_if=LINUX)
     @unittest.skipIf(OPENBSD or NETBSD, "not reliable on OPENBSD & NETBSD")
+    @unittest.skipIf(not HAS_NUM_CTX_SWITCHES, "not supported")
     def test_num_ctx_switches(self):
         p = psutil.Process()
         before = sum(p.num_ctx_switches())
@@ -1262,7 +1266,15 @@ class TestProcess(unittest.TestCase):
         # set methods
         succeed_or_zombie_p_exc(zproc.parent)
         if hasattr(zproc, 'cpu_affinity'):
-            succeed_or_zombie_p_exc(zproc.cpu_affinity, [0])
+            try:
+                succeed_or_zombie_p_exc(zproc.cpu_affinity, [0])
+            except ValueError as err:
+                if TRAVIS and LINUX and "not eligible" in str(err):
+                    # https://travis-ci.org/giampaolo/psutil/jobs/279890461
+                    pass
+                else:
+                    raise
+
         succeed_or_zombie_p_exc(zproc.nice, 0)
         if hasattr(zproc, 'ionice'):
             if LINUX:

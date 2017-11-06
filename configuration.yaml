@@ -147,6 +147,8 @@ apiai:
 wink:
   email: !secret wink_email
   password: !secret wink_password
+  client_id: !secret wink_client_id
+  client_secret: !secret wink_client_secret
 
 twilio:
   account_sid: !secret twilio_sid

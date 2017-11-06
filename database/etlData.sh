@@ -1,5 +1,5 @@
 #!/bin/bash
-source passwords.cfg
+source /opt/jarvis/database/passwords.cfg
 
 /usr/bin/sqlite3 -column /opt/jarvis/database/jarvis.db < /opt/jarvis/database/states.sql > /opt/jarvis/database/JARVIS.DATA.STATES
 /usr/bin/sqlite3 -column /opt/jarvis/database/jarvis.db < /opt/jarvis/database/events.sql > /opt/jarvis/database/JARVIS.DATA.EVENTS
@@ -7,7 +7,8 @@ source passwords.cfg
 /usr/bin/todos /opt/jarvis/database/JARVIS.DATA.EVENTS
 
 #Add JARVIS data to GDG
-ftp -n -v $HOST << EOT
+cd /opt/jarvis/database
+/usr/bin/ftp -n -v $HOST << EOT
 ascii
 user $USER $PASSWD
 prompt

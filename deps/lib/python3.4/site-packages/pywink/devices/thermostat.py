@@ -31,7 +31,20 @@ class WinkThermostat(WinkDevice):
         return hvac_modes
 
     def away(self):
-        return self._last_reading.get('users_away', False)
+        """
+        This function handles both ecobee and nest thermostats
+        which use a different field for away/home status.
+        """
+        nest = self._last_reading.get('users_away', None)
+        ecobee = self.profile()
+        if nest is None and ecobee is None:
+            return None
+        elif nest is not None:
+            return nest
+        elif ecobee is not None:
+            if ecobee == "home":
+                return False
+            return True
 
     def current_hvac_mode(self):
         return self._last_reading.get('mode', None)
@@ -90,6 +103,9 @@ class WinkThermostat(WinkDevice):
     def occupied(self):
         return self._last_reading.get('occupied', None)
 
+    def profile(self):
+        return self._last_reading.get('profile')
+
     def deadband(self):
         return self._last_reading.get('deadband', None)
 
@@ -125,8 +141,17 @@ class WinkThermostat(WinkDevice):
         """
         :param away: a boolean of true (away) or false ('home')
         :return nothing
+
+        This function handles both ecobee and nest thermostats
+        which use a different field for away/home status.
         """
-        desired_state = {"users_away": away}
+        if self.profile() is not None:
+            if away:
+                desired_state = {"profile": "away"}
+            else:
+                desired_state = {"profile": "home"}
+        else:
+            desired_state = {"users_away": away}
 
         response = self.api_interface.set_device_state(self, {
             "desired_state": desired_state

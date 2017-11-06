@@ -22,7 +22,10 @@ class WinkHub(WinkDevice):
 
     def kidde_radio_code(self):
         config = self.json_state.get('configuration')
-        return config.get('kidde_radio_code')
+        # Only Wink hub v1 and v2 support kidde
+        if config is not None:
+            return config.get('kidde_radio_code')
+        return config
 
     def update_needed(self):
         return self._last_reading.get('update_needed')
