@@ -145,10 +145,7 @@ apiai:
 #* ACCOUNTS
 #**********************************************************
 wink:
-  email: !secret wink_email
-  password: !secret wink_password
-  client_id: !secret wink_client_id
-  client_secret: !secret wink_client_secret
+  local_control: true
 
 twilio:
   account_sid: !secret twilio_sid
