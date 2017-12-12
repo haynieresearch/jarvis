@@ -34,7 +34,7 @@ class WinkLock(WinkDevice):
         :return: nothing
         """
         values = {"desired_state": {"alarm_sensitivity": mode}}
-        response = self.api_interface.local_set_state(self, values)
+        response = self.api_interface.set_device_state(self, values)
         self._update_state_from_response(response)
 
     def set_alarm_mode(self, mode):
@@ -43,7 +43,7 @@ class WinkLock(WinkDevice):
         :return: nothing
         """
         values = {"desired_state": {"alarm_mode": mode}}
-        response = self.api_interface.local_set_state(self, values)
+        response = self.api_interface.set_device_state(self, values)
         self._update_state_from_response(response)
 
     def set_alarm_state(self, state):
@@ -52,7 +52,7 @@ class WinkLock(WinkDevice):
         :return: nothing
         """
         values = {"desired_state": {"alarm_enabled": state}}
-        response = self.api_interface.local_set_state(self, values)
+        response = self.api_interface.set_device_state(self, values)
         self._update_state_from_response(response)
 
     def set_vacation_mode(self, state):
@@ -61,7 +61,7 @@ class WinkLock(WinkDevice):
         :return: nothing
         """
         values = {"desired_state": {"vacation_mode_enabled": state}}
-        response = self.api_interface.local_set_state(self, values)
+        response = self.api_interface.set_device_state(self, values)
         self._update_state_from_response(response)
 
     def set_beeper_mode(self, state):
@@ -70,7 +70,7 @@ class WinkLock(WinkDevice):
         :return: nothing
         """
         values = {"desired_state": {"beeper_enabled": state}}
-        response = self.api_interface.local_set_state(self, values)
+        response = self.api_interface.set_device_state(self, values)
         self._update_state_from_response(response)
 
     def set_state(self, state):
@@ -83,7 +83,7 @@ class WinkLock(WinkDevice):
         self._update_state_from_response(response)
 
     def update_state(self):
-        """ Update state with latest info from Wink API. """
+        """Update state with latest info from Wink API."""
         response = self.api_interface.local_get_state(self)
         return self._update_state_from_response(response)
 

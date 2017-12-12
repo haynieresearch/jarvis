@@ -21,7 +21,7 @@ class WinkPorkfolioNose(WinkDevice):
 
     def set_state(self, color_hex):
         """
-        :param nose_color: a hex string indicating the color of the porkfolio nose
+        :param color_hex: a hex string indicating the color of the porkfolio nose
         :return: nothing
         From the api...
         "the color of the nose is not in the desired_state

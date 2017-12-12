@@ -38,6 +38,8 @@ __extra__all__ = ["PROCFS_PATH"]
 # =====================================================================
 
 
+HAS_THREADS = hasattr(cext, "proc_threads")
+
 PAGE_SIZE = os.sysconf('SC_PAGE_SIZE')
 AF_LINK = cext_posix.AF_LINK
 
@@ -427,22 +429,23 @@ class Process(object):
     def num_threads(self):
         return self._proc_basic_info()[proc_info_map['num_threads']]
 
-    @wrap_exceptions
-    def threads(self):
-        rawlist = cext.proc_threads(self.pid)
-        retlist = []
-        for thread_id, utime, stime in rawlist:
-            ntuple = _common.pthread(thread_id, utime, stime)
-            retlist.append(ntuple)
-        # The underlying C implementation retrieves all OS threads
-        # and filters them by PID.  At this point we can't tell whether
-        # an empty list means there were no connections for process or
-        # process is no longer active so we force NSP in case the PID
-        # is no longer there.
-        if not retlist:
-            # will raise NSP if process is gone
-            os.stat('%s/%s' % (self._procfs_path, self.pid))
-        return retlist
+    if HAS_THREADS:
+        @wrap_exceptions
+        def threads(self):
+            rawlist = cext.proc_threads(self.pid)
+            retlist = []
+            for thread_id, utime, stime in rawlist:
+                ntuple = _common.pthread(thread_id, utime, stime)
+                retlist.append(ntuple)
+            # The underlying C implementation retrieves all OS threads
+            # and filters them by PID.  At this point we can't tell whether
+            # an empty list means there were no connections for process or
+            # process is no longer active so we force NSP in case the PID
+            # is no longer there.
+            if not retlist:
+                # will raise NSP if process is gone
+                os.stat('%s/%s' % (self._procfs_path, self.pid))
+            return retlist
 
     @wrap_exceptions
     def connections(self, kind='inet'):
@@ -459,22 +462,7 @@ class Process(object):
 
     @wrap_exceptions
     def nice_get(self):
-        # For some reason getpriority(3) return ESRCH (no such process)
-        # for certain low-pid processes, no matter what (even as root).
-        # The process actually exists though, as it has a name,
-        # creation time, etc.
-        # The best thing we can do here appears to be raising AD.
-        # Note: tested on Solaris 11; on Open Solaris 5 everything is
-        # fine.
-        try:
-            return cext_posix.getpriority(self.pid)
-        except EnvironmentError as err:
-            # 48 is 'operation not supported' but errno does not expose
-            # it. It occurs for low system pids.
-            if err.errno in (errno.ENOENT, errno.ESRCH, 48):
-                if pid_exists(self.pid):
-                    raise AccessDenied(self.pid, self._name)
-            raise
+        return cext_posix.getpriority(self.pid)
 
     @wrap_exceptions
     def nice_set(self, value):
@@ -565,6 +553,11 @@ class Process(object):
         if self.pid == 0:       # no /proc/0/fd
             return 0
         return len(os.listdir("%s/%s/fd" % (self._procfs_path, self.pid)))
+
+    @wrap_exceptions
+    def num_ctx_switches(self):
+        return _common.pctxsw(
+            *cext.proc_num_ctx_switches(self.pid))
 
     @wrap_exceptions
     def wait(self, timeout=None):

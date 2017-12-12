@@ -52,7 +52,7 @@ class WinkWaterHeater(WinkDevice):
 
     def set_temperature(self, set_point):
         """
-        :param temperature: a float for the temperature value in celsius
+        :param set_point: a float for the set point value in celsius
         :return: nothing
         """
         response = self.api_interface.set_device_state(self, {

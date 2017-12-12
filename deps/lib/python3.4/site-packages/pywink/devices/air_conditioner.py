@@ -86,7 +86,7 @@ class WinkAirConditioner(WinkDevice):
 
     def set_temperature(self, max_set_point=None):
         """
-        :param temperature: a float for the temperature value in celsius
+        :param max_set_point: a float for the max set point value in celsius
         :return: nothing
         """
         desired_state = {}

@@ -52,7 +52,7 @@ class WinkFan(WinkDevice):
 
     def set_state(self, state, speed=None):
         """
-        :param powered: bool
+        :param state: bool
         :param speed: a string one of ["lowest", "low",
             "medium", "high", "auto"] defaults to last speed
         :return: nothing
@@ -71,7 +71,7 @@ class WinkFan(WinkDevice):
 
     def set_fan_direction(self, direction):
         """
-        :param speed: a string one of ["forward", "reverse"]
+        :param direction: a string one of ["forward", "reverse"]
         :return: nothing
         """
         desired_state = {"direction": direction}

@@ -1573,7 +1573,10 @@ class MySQLDialect(default.DefaultDialect):
 
     def get_isolation_level(self, connection):
         cursor = connection.cursor()
-        cursor.execute('SELECT @@tx_isolation')
+        if self._is_mysql and self.server_version_info >= (5, 7, 20):
+            cursor.execute('SELECT @@transaction_isolation')
+        else:
+            cursor.execute('SELECT @@tx_isolation')
         val = cursor.fetchone()[0]
         cursor.close()
         if util.py3k and isinstance(val, bytes):
@@ -1721,9 +1724,41 @@ class MySQLDialect(default.DefaultDialect):
 
         default.DefaultDialect.initialize(self, connection)
 
+        self._warn_for_known_db_issues()
+
+    def _warn_for_known_db_issues(self):
+        if self._is_mariadb:
+            mdb_version = self._mariadb_normalized_version_info
+            if mdb_version > (10, 2) and mdb_version < (10, 2, 9):
+                util.warn(
+                    "MariaDB %r before 10.2.9 has known issues regarding "
+                    "CHECK constraints, which impact handling of NULL values "
+                    "with SQLAlchemy's boolean datatype (MDEV-13596). An "
+                    "additional issue prevents proper migrations of columns "
+                    "with CHECK constraints (MDEV-11114).  Please upgrade to "
+                    "MariaDB 10.2.9 or greater, or use the MariaDB 10.1 "
+                    "series, to avoid these issues." % (mdb_version, ))
+
     @property
     def _is_mariadb(self):
         return 'MariaDB' in self.server_version_info
+
+    @property
+    def _is_mysql(self):
+        return 'MariaDB' not in self.server_version_info
+
+    @property
+    def _is_mariadb_102(self):
+        return self._is_mariadb and \
+            self._mariadb_normalized_version_info > (10, 2)
+
+    @property
+    def _mariadb_normalized_version_info(self):
+        if self._is_mariadb:
+            idx = self.server_version_info.index('MariaDB')
+            return self.server_version_info[idx - 3: idx]
+        else:
+            return self.server_version_info
 
     @property
     def _supports_cast(self):
@@ -1808,8 +1843,7 @@ class MySQLDialect(default.DefaultDialect):
 
         fkeys = []
 
-        for spec in parsed_state.constraints:
-            # only FOREIGN KEYs
+        for spec in parsed_state.fk_constraints:
             ref_name = spec['table'][-1]
             ref_schema = len(spec['table']) > 1 and \
                 spec['table'][-2] or schema
@@ -1839,6 +1873,24 @@ class MySQLDialect(default.DefaultDialect):
             }
             fkeys.append(fkey_d)
         return fkeys
+
+    @reflection.cache
+    def get_check_constraints(
+            self, connection, table_name, schema=None, **kw):
+
+        parsed_state = self._parsed_state_or_create(
+            connection, table_name, schema, **kw)
+
+        return [
+            {"name": spec['name'], "sqltext": spec['sqltext']}
+            for spec in parsed_state.ck_constraints
+        ]
+
+    @reflection.cache
+    def get_table_comment(self, connection, table_name, schema=None, **kw):
+        parsed_state = self._parsed_state_or_create(
+            connection, table_name, schema, **kw)
+        return {"text": parsed_state.table_options.get('mysql_comment', None)}
 
     @reflection.cache
     def get_indexes(self, connection, table_name, schema=None, **kw):

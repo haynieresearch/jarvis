@@ -119,6 +119,7 @@ class WinkSiren(WinkDevice):
         :param sound: a str, one of ["doorbell", "fur_elise", "doorbell_extended", "alert",
                                      "william_tell", "rondo_alla_turca", "police_siren",
                                      ""evacuation", "beep_beep", "beep", "inactive"]
+        :param cycles: Undocumented seems to have no effect?
         :return: nothing
         """
         desired_state = {"activate_chime": sound}
@@ -130,7 +131,7 @@ class WinkSiren(WinkDevice):
 
     def set_auto_shutoff(self, timer):
         """
-        :param time: an int, one of [None (never), -1, 30, 60, 120]
+        :param timer: an int, one of [None (never), -1, 30, 60, 120]
         :return: nothing
         """
         values = {

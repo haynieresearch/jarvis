@@ -1,0 +1,28 @@
+Metadata-Version: 2.0
+Name: transitions
+Version: 0.6.3
+Summary: A lightweight, object-oriented Python state machine implementation.
+Home-page: http://github.com/pytransitions/transitions
+Author: Tal Yarkoni
+Author-email: tyarkoni@gmail.com
+License: MIT
+Download-URL: https://github.com/pytransitions/transitions/archive/0.6.3.tar.gz
+Description-Content-Type: UNKNOWN
+Platform: UNKNOWN
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Requires-Dist: six
+Provides-Extra: diagrams
+Requires-Dist: pygraphviz; extra == 'diagrams'
+Provides-Extra: test
+Requires-Dist: nose (>=0.10.1); extra == 'test'
+
+UNKNOWN
+
+

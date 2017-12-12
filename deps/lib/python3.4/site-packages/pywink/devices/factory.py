@@ -147,16 +147,13 @@ def __get_outlets_from_powerstrip(item, api_interface):
 
 
 def __get_devices_from_piggy_bank(item, api_interface):
-    subdevices = []
-    subdevices.append(WinkPorkfolioBalanceSensor(item, api_interface))
-    subdevices.append(WinkPorkfolioNose(item, api_interface))
-    return subdevices
+    return [WinkPorkfolioBalanceSensor(item, api_interface),
+            WinkPorkfolioNose(item, api_interface)]
 
 
 def __get_sensors_from_smoke_detector(item, api_interface):
-    sensors = []
-    sensors.append(WinkSmokeDetector(item, api_interface))
-    sensors.append(WinkCoDetector(item, api_interface))
+    sensors = [WinkSmokeDetector(item, api_interface),
+               WinkCoDetector(item, api_interface)]
     if item.get("manufacturer_device_model") == "nest":
         sensors.append(WinkSmokeSeverity(item, api_interface))
         sensors.append(WinkCoSeverity(item, api_interface))

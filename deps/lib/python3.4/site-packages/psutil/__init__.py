@@ -212,7 +212,7 @@ __all__ = [
 ]
 __all__.extend(_psplatform.__extra__all__)
 __author__ = "Giampaolo Rodola'"
-__version__ = "5.4.0"
+__version__ = "5.4.1"
 version_info = tuple([int(num) for num in __version__.split('.')])
 AF_LINK = _psplatform.AF_LINK
 POWER_TIME_UNLIMITED = _common.POWER_TIME_UNLIMITED
@@ -899,25 +899,25 @@ class Process(object):
             """
             return self._proc.num_handles()
 
-    if hasattr(_psplatform.Process, "num_ctx_switches"):
-
-        def num_ctx_switches(self):
-            """Return the number of voluntary and involuntary context
-            switches performed by this process.
-            """
-            return self._proc.num_ctx_switches()
+    def num_ctx_switches(self):
+        """Return the number of voluntary and involuntary context
+        switches performed by this process.
+        """
+        return self._proc.num_ctx_switches()
 
     def num_threads(self):
         """Return the number of threads used by this process."""
         return self._proc.num_threads()
 
-    def threads(self):
-        """Return threads opened by process as a list of
-        (id, user_time, system_time) namedtuples representing
-        thread id and thread CPU times (user/system).
-        On OpenBSD this method requires root access.
-        """
-        return self._proc.threads()
+    if hasattr(_psplatform.Process, "threads"):
+
+        def threads(self):
+            """Return threads opened by process as a list of
+            (id, user_time, system_time) namedtuples representing
+            thread id and thread CPU times (user/system).
+            On OpenBSD this method requires root access.
+            """
+            return self._proc.threads()
 
     @_assert_pid_not_reused
     def children(self, recursive=False):
@@ -1160,13 +1160,11 @@ class Process(object):
         ('rss', 'vms', 'shared', 'text', 'lib', 'data', 'dirty', 'uss', 'pss')
         """
         valid_types = list(_psplatform.pfullmem._fields)
-        if hasattr(_psplatform, "pfullmem"):
-            valid_types.extend(list(_psplatform.pfullmem._fields))
         if memtype not in valid_types:
             raise ValueError("invalid memtype %r; valid types are %r" % (
                 memtype, tuple(valid_types)))
-        fun = self.memory_full_info if memtype in ('uss', 'pss', 'swap') else \
-            self.memory_info
+        fun = self.memory_info if memtype in _psplatform.pmem._fields else \
+            self.memory_full_info
         metrics = fun()
         value = getattr(metrics, memtype)
 
