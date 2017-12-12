@@ -8,6 +8,10 @@ rather well. I have also decoupled the TTS services to make it easier to use tha
 
 Note: For those who want to track the network status of local devices the nmap_tracker built into HA does do that job very well. However, I have decided to remove it from my configuration. While it worked as intended, it had an unintended side effect on my Raspberry Pi -- it made it run slow. While I could tweak the interval settings, real time tracking was my goal. 
 
+Firewall Note: The Jarvis firewall is setup so that only local clients and one specific public IP can access. 
+The specific IP that can access Jarvis is a front end server with Apache as a reverse proxy and encryption. 
+Any other external clients will connect to the front end server outside of the network that then connects direct to Jarvis.
+
 ![Screenshot of Jarvis Wall Mount](https://raw.githubusercontent.com/Haynie-Research-and-Development/jarvis/master/resources/screenshots/jarvis_wall.png)
 
 Note: SMS commands will require a basic level of experience with PHP.
