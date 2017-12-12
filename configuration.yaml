@@ -139,7 +139,7 @@ shopping_list:
 conversation:
 alexa:
 snips:
-apiai:
+dialogflow:
 
 #**********************************************************
 #* ACCOUNTS
