@@ -195,3 +195,10 @@
        state: on
        brightness: 128
        kelvin: 6500
+
+-  name: Master Shower Color Loop
+   entities:
+     light.master_bathroom:
+       state: on
+       brightness: 255
+       effect: colorloop
