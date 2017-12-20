@@ -49,6 +49,23 @@
     livingroom_harmony:
       value_template: '{{ states.remote.living_room.attributes.current_activity }}'
 
+    climate_downstairs_op_mode:
+      value_template: '{{ states.climate.downstairs.attributes.operation_mode }}'
+
+    climate_upstairs_op_mode:
+      value_template: '{{ states.climate.upstairs.attributes.operation_mode }}'
+
+    climate_downstairs_temp:
+      value_template: '{{ states.climate.downstairs.attributes.current_temperature }}'
+
+    climate_upstairs_temp:
+      value_template: '{{ states.climate.upstairs.attributes.current_temperature }}'
+
+    climate_downstairs_temp_set:
+      value_template: '{{ states.climate.downstairs.attributes.temperature }}'
+
+    climate_upstairs_temp_set:
+      value_template: '{{ states.climate.upstairs.attributes.temperature }}'
     average_up_temp:
       friendly_name: 'Average Upstairs Temperature'
       unit_of_measurement: '°F'
