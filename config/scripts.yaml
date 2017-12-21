@@ -147,6 +147,9 @@ find_katies_iphone:
     - service: shell_command.tts
       data_template:
         message: "I am calling Katies phone."
+    - service: notify.twitter
+      data_template:
+        message: "It appears Katie lost her phone again, I am going to give it a call. #HomeAutomation #SmartHome"
 
 find_lances_iphone:
   sequence:
@@ -158,6 +161,9 @@ find_lances_iphone:
     - service: shell_command.tts
       data_template:
         message: "I am calling Lances phone."
+    - service: notify.twitter
+      data_template:
+        message: "It appears @MeanMrHaynie lost his phone again, I am going to give it a call. #HomeAutomation #SmartHome"
 
 find_hudsons_iphone:
   sequence:
@@ -169,6 +175,9 @@ find_hudsons_iphone:
     - service: shell_command.tts
       data_template:
         message: "I am calling Hudsons phone."
+    - service: notify.twitter
+      data_template:
+        message: "It appears Hudson lost his phone again, I am going to give it a call. #HomeAutomation #SmartHome"
 
 flash_hudson_lights:
   sequence:
@@ -286,6 +295,9 @@ game_timer:
     - service: shell_command.tts
       data_template:
         message: "The game timer has been activated, you have twenty minutes to play."
+    - service: notify.twitter
+      data_template:
+        message: "The game timer was activated, the kids have 20 minutes to play. #HomeAutomation #SmartHome"
     - delay:
         minutes: 10
     - service: shell_command.tts
@@ -296,17 +308,26 @@ game_timer:
     - service: shell_command.tts
       data_template:
         message: "This is your five minute warning, you have five minutes to wrap up your game."
+    - service: notify.twitter
+      data_template:
+        message: "The kids only have 5 minutes left on their timer, they hate the countdown. #HomeAutomation #SmartHome"
     - delay:
         minutes: 4
     - service: shell_command.tts
       data_template:
         message: "This is your one minute warning, you have exactly one minute to finish up your game. Start saving or ending your game now."
+    - service: notify.twitter
+      data_template:
+        message: "Only 1 more minute on the kids game timer, I hope they are saving like they were told to. #HomeAutomation #SmartHome"
     - delay:
         minutes: 1
     - service: shell_command.foghorn
     - service: shell_command.tts
       data_template:
         message: "The game timer is now up. Please exit your game immediatly, you have had exactly twenty minutes to play."
+    - service: notify.twitter
+      data_template:
+        message: "Time is up on the game timer! I am going to turn their system off, otherwise they will play forever. #HomeAutomation #SmartHome"
 
 living_room_tv_up:
   alias: Living Room TV Up
