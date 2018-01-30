@@ -168,6 +168,7 @@ SecuritySettingsFront:
     - alarm_control_panel.home_alarm
     - binary_sensor.smoke_and_co_co_detected
     - binary_sensor.smoke_and_co_smoke_detected
+    - input_boolean.garage_hazard
 
 MiscellaneousFront:
   name: Miscellaneous
@@ -182,6 +183,7 @@ SecuritySettings:
     - alarm_control_panel.home_alarm
     - input_boolean.panic
     - input_boolean.sound_alarm
+    - input_boolean.garage_hazard
     - input_boolean.garage_alarm
 
 ScenesFront:

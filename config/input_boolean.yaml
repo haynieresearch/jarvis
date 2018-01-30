@@ -55,6 +55,11 @@ sound_alarm:
   initial: off
   icon: mdi:alarm-bell
 
+garage_hazard:
+  name: Garage Hazard
+  initial: off
+  icon: mdi:alert-outline
+
 garage_alarm:
   name: Garage Alarm
   initial: off

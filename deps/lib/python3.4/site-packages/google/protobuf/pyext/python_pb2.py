@@ -30,7 +30,7 @@ optional_nested_message_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=None,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 REPEATED_NESTED_MESSAGE_EXTENSION_FIELD_NUMBER = 2
 repeated_nested_message_extension = _descriptor.FieldDescriptor(
   name='repeated_nested_message_extension', full_name='google.protobuf.python.internal.repeated_nested_message_extension', index=1,
@@ -38,7 +38,7 @@ repeated_nested_message_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 
 
 _TESTALLTYPES_NESTEDMESSAGE = _descriptor.Descriptor(
@@ -54,14 +54,14 @@ _TESTALLTYPES_NESTEDMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='cc', full_name='google.protobuf.python.internal.TestAllTypes.NestedMessage.cc', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -91,21 +91,21 @@ _TESTALLTYPES = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_nested_message', full_name='google.protobuf.python.internal.TestAllTypes.optional_nested_message', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_int32', full_name='google.protobuf.python.internal.TestAllTypes.optional_int32', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -136,14 +136,14 @@ _FOREIGNMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='d', full_name='google.protobuf.python.internal.ForeignMessage.d', index=1,
       number=2, type=5, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],

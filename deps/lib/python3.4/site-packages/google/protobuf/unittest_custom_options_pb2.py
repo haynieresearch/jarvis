@@ -80,7 +80,7 @@ file_opt1 = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=0,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 MESSAGE_OPT1_FIELD_NUMBER = 7739036
 message_opt1 = _descriptor.FieldDescriptor(
   name='message_opt1', full_name='protobuf_unittest.message_opt1', index=1,
@@ -88,7 +88,7 @@ message_opt1 = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=0,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 FIELD_OPT1_FIELD_NUMBER = 7740936
 field_opt1 = _descriptor.FieldDescriptor(
   name='field_opt1', full_name='protobuf_unittest.field_opt1', index=2,
@@ -96,7 +96,7 @@ field_opt1 = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=0,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 FIELD_OPT2_FIELD_NUMBER = 7753913
 field_opt2 = _descriptor.FieldDescriptor(
   name='field_opt2', full_name='protobuf_unittest.field_opt2', index=3,
@@ -104,7 +104,7 @@ field_opt2 = _descriptor.FieldDescriptor(
   has_default_value=True, default_value=42,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 ONEOF_OPT1_FIELD_NUMBER = 7740111
 oneof_opt1 = _descriptor.FieldDescriptor(
   name='oneof_opt1', full_name='protobuf_unittest.oneof_opt1', index=4,
@@ -112,7 +112,7 @@ oneof_opt1 = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=0,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 ENUM_OPT1_FIELD_NUMBER = 7753576
 enum_opt1 = _descriptor.FieldDescriptor(
   name='enum_opt1', full_name='protobuf_unittest.enum_opt1', index=5,
@@ -120,7 +120,7 @@ enum_opt1 = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=0,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 ENUM_VALUE_OPT1_FIELD_NUMBER = 1560678
 enum_value_opt1 = _descriptor.FieldDescriptor(
   name='enum_value_opt1', full_name='protobuf_unittest.enum_value_opt1', index=6,
@@ -128,7 +128,7 @@ enum_value_opt1 = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=0,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 SERVICE_OPT1_FIELD_NUMBER = 7887650
 service_opt1 = _descriptor.FieldDescriptor(
   name='service_opt1', full_name='protobuf_unittest.service_opt1', index=7,
@@ -136,7 +136,7 @@ service_opt1 = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=0,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 METHOD_OPT1_FIELD_NUMBER = 7890860
 method_opt1 = _descriptor.FieldDescriptor(
   name='method_opt1', full_name='protobuf_unittest.method_opt1', index=8,
@@ -144,7 +144,7 @@ method_opt1 = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=1,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 BOOL_OPT_FIELD_NUMBER = 7706090
 bool_opt = _descriptor.FieldDescriptor(
   name='bool_opt', full_name='protobuf_unittest.bool_opt', index=9,
@@ -152,7 +152,7 @@ bool_opt = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=False,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 INT32_OPT_FIELD_NUMBER = 7705709
 int32_opt = _descriptor.FieldDescriptor(
   name='int32_opt', full_name='protobuf_unittest.int32_opt', index=10,
@@ -160,7 +160,7 @@ int32_opt = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=0,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 INT64_OPT_FIELD_NUMBER = 7705542
 int64_opt = _descriptor.FieldDescriptor(
   name='int64_opt', full_name='protobuf_unittest.int64_opt', index=11,
@@ -168,7 +168,7 @@ int64_opt = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=0,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 UINT32_OPT_FIELD_NUMBER = 7704880
 uint32_opt = _descriptor.FieldDescriptor(
   name='uint32_opt', full_name='protobuf_unittest.uint32_opt', index=12,
@@ -176,7 +176,7 @@ uint32_opt = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=0,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 UINT64_OPT_FIELD_NUMBER = 7702367
 uint64_opt = _descriptor.FieldDescriptor(
   name='uint64_opt', full_name='protobuf_unittest.uint64_opt', index=13,
@@ -184,7 +184,7 @@ uint64_opt = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=0,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 SINT32_OPT_FIELD_NUMBER = 7701568
 sint32_opt = _descriptor.FieldDescriptor(
   name='sint32_opt', full_name='protobuf_unittest.sint32_opt', index=14,
@@ -192,7 +192,7 @@ sint32_opt = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=0,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 SINT64_OPT_FIELD_NUMBER = 7700863
 sint64_opt = _descriptor.FieldDescriptor(
   name='sint64_opt', full_name='protobuf_unittest.sint64_opt', index=15,
@@ -200,7 +200,7 @@ sint64_opt = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=0,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 FIXED32_OPT_FIELD_NUMBER = 7700307
 fixed32_opt = _descriptor.FieldDescriptor(
   name='fixed32_opt', full_name='protobuf_unittest.fixed32_opt', index=16,
@@ -208,7 +208,7 @@ fixed32_opt = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=0,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 FIXED64_OPT_FIELD_NUMBER = 7700194
 fixed64_opt = _descriptor.FieldDescriptor(
   name='fixed64_opt', full_name='protobuf_unittest.fixed64_opt', index=17,
@@ -216,7 +216,7 @@ fixed64_opt = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=0,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 SFIXED32_OPT_FIELD_NUMBER = 7698645
 sfixed32_opt = _descriptor.FieldDescriptor(
   name='sfixed32_opt', full_name='protobuf_unittest.sfixed32_opt', index=18,
@@ -224,7 +224,7 @@ sfixed32_opt = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=0,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 SFIXED64_OPT_FIELD_NUMBER = 7685475
 sfixed64_opt = _descriptor.FieldDescriptor(
   name='sfixed64_opt', full_name='protobuf_unittest.sfixed64_opt', index=19,
@@ -232,7 +232,7 @@ sfixed64_opt = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=0,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 FLOAT_OPT_FIELD_NUMBER = 7675390
 float_opt = _descriptor.FieldDescriptor(
   name='float_opt', full_name='protobuf_unittest.float_opt', index=20,
@@ -240,7 +240,7 @@ float_opt = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=float(0),
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 DOUBLE_OPT_FIELD_NUMBER = 7673293
 double_opt = _descriptor.FieldDescriptor(
   name='double_opt', full_name='protobuf_unittest.double_opt', index=21,
@@ -248,7 +248,7 @@ double_opt = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=float(0),
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 STRING_OPT_FIELD_NUMBER = 7673285
 string_opt = _descriptor.FieldDescriptor(
   name='string_opt', full_name='protobuf_unittest.string_opt', index=22,
@@ -256,7 +256,7 @@ string_opt = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=_b("").decode('utf-8'),
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 BYTES_OPT_FIELD_NUMBER = 7673238
 bytes_opt = _descriptor.FieldDescriptor(
   name='bytes_opt', full_name='protobuf_unittest.bytes_opt', index=23,
@@ -264,7 +264,7 @@ bytes_opt = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=_b(""),
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 ENUM_OPT_FIELD_NUMBER = 7673233
 enum_opt = _descriptor.FieldDescriptor(
   name='enum_opt', full_name='protobuf_unittest.enum_opt', index=24,
@@ -272,7 +272,7 @@ enum_opt = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=22,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 MESSAGE_TYPE_OPT_FIELD_NUMBER = 7665967
 message_type_opt = _descriptor.FieldDescriptor(
   name='message_type_opt', full_name='protobuf_unittest.message_type_opt', index=25,
@@ -280,7 +280,7 @@ message_type_opt = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=None,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 QUUX_FIELD_NUMBER = 7663707
 quux = _descriptor.FieldDescriptor(
   name='quux', full_name='protobuf_unittest.quux', index=26,
@@ -288,7 +288,7 @@ quux = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=0,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 CORGE_FIELD_NUMBER = 7663442
 corge = _descriptor.FieldDescriptor(
   name='corge', full_name='protobuf_unittest.corge', index=27,
@@ -296,7 +296,7 @@ corge = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=None,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 GRAULT_FIELD_NUMBER = 7650927
 grault = _descriptor.FieldDescriptor(
   name='grault', full_name='protobuf_unittest.grault', index=28,
@@ -304,7 +304,7 @@ grault = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=0,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 GARPLY_FIELD_NUMBER = 7649992
 garply = _descriptor.FieldDescriptor(
   name='garply', full_name='protobuf_unittest.garply', index=29,
@@ -312,7 +312,7 @@ garply = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=None,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 COMPLEX_OPT1_FIELD_NUMBER = 7646756
 complex_opt1 = _descriptor.FieldDescriptor(
   name='complex_opt1', full_name='protobuf_unittest.complex_opt1', index=30,
@@ -320,7 +320,7 @@ complex_opt1 = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=None,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 COMPLEX_OPT2_FIELD_NUMBER = 7636949
 complex_opt2 = _descriptor.FieldDescriptor(
   name='complex_opt2', full_name='protobuf_unittest.complex_opt2', index=31,
@@ -328,7 +328,7 @@ complex_opt2 = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=None,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 COMPLEX_OPT3_FIELD_NUMBER = 7636463
 complex_opt3 = _descriptor.FieldDescriptor(
   name='complex_opt3', full_name='protobuf_unittest.complex_opt3', index=32,
@@ -336,7 +336,7 @@ complex_opt3 = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=None,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 COMPLEXOPT6_FIELD_NUMBER = 7595468
 complexopt6 = _descriptor.FieldDescriptor(
   name='complexopt6', full_name='protobuf_unittest.complexopt6', index=33,
@@ -344,7 +344,7 @@ complexopt6 = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=None,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 FILEOPT_FIELD_NUMBER = 15478479
 fileopt = _descriptor.FieldDescriptor(
   name='fileopt', full_name='protobuf_unittest.fileopt', index=34,
@@ -352,7 +352,7 @@ fileopt = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=None,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 MSGOPT_FIELD_NUMBER = 15480088
 msgopt = _descriptor.FieldDescriptor(
   name='msgopt', full_name='protobuf_unittest.msgopt', index=35,
@@ -360,7 +360,7 @@ msgopt = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=None,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 FIELDOPT_FIELD_NUMBER = 15481374
 fieldopt = _descriptor.FieldDescriptor(
   name='fieldopt', full_name='protobuf_unittest.fieldopt', index=36,
@@ -368,7 +368,7 @@ fieldopt = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=None,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 ENUMOPT_FIELD_NUMBER = 15483218
 enumopt = _descriptor.FieldDescriptor(
   name='enumopt', full_name='protobuf_unittest.enumopt', index=37,
@@ -376,7 +376,7 @@ enumopt = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=None,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 ENUMVALOPT_FIELD_NUMBER = 15486921
 enumvalopt = _descriptor.FieldDescriptor(
   name='enumvalopt', full_name='protobuf_unittest.enumvalopt', index=38,
@@ -384,7 +384,7 @@ enumvalopt = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=None,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 SERVICEOPT_FIELD_NUMBER = 15497145
 serviceopt = _descriptor.FieldDescriptor(
   name='serviceopt', full_name='protobuf_unittest.serviceopt', index=39,
@@ -392,7 +392,7 @@ serviceopt = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=None,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 METHODOPT_FIELD_NUMBER = 15512713
 methodopt = _descriptor.FieldDescriptor(
   name='methodopt', full_name='protobuf_unittest.methodopt', index=40,
@@ -400,7 +400,7 @@ methodopt = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=None,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 REQUIRED_ENUM_OPT_FIELD_NUMBER = 106161807
 required_enum_opt = _descriptor.FieldDescriptor(
   name='required_enum_opt', full_name='protobuf_unittest.required_enum_opt', index=41,
@@ -408,7 +408,7 @@ required_enum_opt = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=None,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 
 _TESTMESSAGEWITHCUSTOMOPTIONS_ANENUM = _descriptor.EnumDescriptor(
   name='AnEnum',
@@ -526,14 +526,14 @@ _TESTMESSAGEWITHCUSTOMOPTIONS = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\001\301\340\303\035-\341u\n\002\000\000\000'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\001\301\340\303\035-\341u\n\002\000\000\000')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='oneof_field', full_name='protobuf_unittest.TestMessageWithCustomOptions.oneof_field', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -833,28 +833,28 @@ _COMPLEXOPTIONTYPE1 = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='foo2', full_name='protobuf_unittest.ComplexOptionType1.foo2', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='foo3', full_name='protobuf_unittest.ComplexOptionType1.foo3', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='foo4', full_name='protobuf_unittest.ComplexOptionType1.foo4', index=3,
       number=4, type=5, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -885,7 +885,7 @@ _COMPLEXOPTIONTYPE2_COMPLEXOPTIONTYPE4 = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
     _descriptor.FieldDescriptor(
@@ -894,7 +894,7 @@ _COMPLEXOPTIONTYPE2_COMPLEXOPTIONTYPE4 = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=True, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   nested_types=[],
   enum_types=[
@@ -922,28 +922,28 @@ _COMPLEXOPTIONTYPE2 = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='baz', full_name='protobuf_unittest.ComplexOptionType2.baz', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='fred', full_name='protobuf_unittest.ComplexOptionType2.fred', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='barney', full_name='protobuf_unittest.ComplexOptionType2.barney', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -974,7 +974,7 @@ _COMPLEXOPTIONTYPE3_COMPLEXOPTIONTYPE5 = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1004,14 +1004,14 @@ _COMPLEXOPTIONTYPE3 = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='complexoptiontype5', full_name='protobuf_unittest.ComplexOptionType3.complexoptiontype5', index=1,
       number=2, type=10, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1042,7 +1042,7 @@ _COMPLEXOPT6 = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1121,7 +1121,7 @@ _AGGREGATEMESSAGESETELEMENT = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
     _descriptor.FieldDescriptor(
@@ -1130,7 +1130,7 @@ _AGGREGATEMESSAGESETELEMENT = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=True, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   nested_types=[],
   enum_types=[
@@ -1159,35 +1159,35 @@ _AGGREGATE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='s', full_name='protobuf_unittest.Aggregate.s', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='sub', full_name='protobuf_unittest.Aggregate.sub', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='file', full_name='protobuf_unittest.Aggregate.file', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='mset', full_name='protobuf_unittest.Aggregate.mset', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
     _descriptor.FieldDescriptor(
@@ -1196,7 +1196,7 @@ _AGGREGATE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=True, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   nested_types=[],
   enum_types=[
@@ -1225,7 +1225,7 @@ _AGGREGATEMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\241\207;\021\022\017FieldAnnotation'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\362\241\207;\021\022\017FieldAnnotation')), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1256,7 +1256,7 @@ _NESTEDOPTIONTYPE_NESTEDMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\301\340\303\035\352\003\000\000\000\000\000\000'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\301\340\303\035\352\003\000\000\000\000\000\000')), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1288,7 +1288,7 @@ _NESTEDOPTIONTYPE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=True, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\310\213\312\035\355\007'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\310\213\312\035\355\007')), file=DESCRIPTOR),
   ],
   nested_types=[_NESTEDOPTIONTYPE_NESTEDMESSAGE, ],
   enum_types=[
@@ -1318,7 +1318,7 @@ _OLDOPTIONTYPE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1350,7 +1350,7 @@ _NEWOPTIONTYPE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],

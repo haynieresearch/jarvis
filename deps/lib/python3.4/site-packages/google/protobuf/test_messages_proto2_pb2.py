@@ -20,12 +20,12 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   name='google/protobuf/test_messages_proto2.proto',
   package='protobuf_test_messages.proto2',
   syntax='proto2',
-  serialized_pb=_b('\n*google/protobuf/test_messages_proto2.proto\x12\x1dprotobuf_test_messages.proto2\"\xba\x32\n\x12TestAllTypesProto2\x12\x16\n\x0eoptional_int32\x18\x01 \x01(\x05\x12\x16\n\x0eoptional_int64\x18\x02 \x01(\x03\x12\x17\n\x0foptional_uint32\x18\x03 \x01(\r\x12\x17\n\x0foptional_uint64\x18\x04 \x01(\x04\x12\x17\n\x0foptional_sint32\x18\x05 \x01(\x11\x12\x17\n\x0foptional_sint64\x18\x06 \x01(\x12\x12\x18\n\x10optional_fixed32\x18\x07 \x01(\x07\x12\x18\n\x10optional_fixed64\x18\x08 \x01(\x06\x12\x19\n\x11optional_sfixed32\x18\t \x01(\x0f\x12\x19\n\x11optional_sfixed64\x18\n \x01(\x10\x12\x16\n\x0eoptional_float\x18\x0b \x01(\x02\x12\x17\n\x0foptional_double\x18\x0c \x01(\x01\x12\x15\n\roptional_bool\x18\r \x01(\x08\x12\x17\n\x0foptional_string\x18\x0e \x01(\t\x12\x16\n\x0eoptional_bytes\x18\x0f \x01(\x0c\x12`\n\x17optional_nested_message\x18\x12 \x01(\x0b\x32?.protobuf_test_messages.proto2.TestAllTypesProto2.NestedMessage\x12O\n\x18optional_foreign_message\x18\x13 \x01(\x0b\x32-.protobuf_test_messages.proto2.ForeignMessage\x12Z\n\x14optional_nested_enum\x18\x15 \x01(\x0e\x32<.protobuf_test_messages.proto2.TestAllTypesProto2.NestedEnum\x12I\n\x15optional_foreign_enum\x18\x16 \x01(\x0e\x32*.protobuf_test_messages.proto2.ForeignEnum\x12!\n\x15optional_string_piece\x18\x18 \x01(\tB\x02\x08\x02\x12\x19\n\roptional_cord\x18\x19 \x01(\tB\x02\x08\x01\x12L\n\x11recursive_message\x18\x1b \x01(\x0b\x32\x31.protobuf_test_messages.proto2.TestAllTypesProto2\x12\x16\n\x0erepeated_int32\x18\x1f \x03(\x05\x12\x16\n\x0erepeated_int64\x18  \x03(\x03\x12\x17\n\x0frepeated_uint32\x18! \x03(\r\x12\x17\n\x0frepeated_uint64\x18\" \x03(\x04\x12\x17\n\x0frepeated_sint32\x18# \x03(\x11\x12\x17\n\x0frepeated_sint64\x18$ \x03(\x12\x12\x18\n\x10repeated_fixed32\x18% \x03(\x07\x12\x18\n\x10repeated_fixed64\x18& \x03(\x06\x12\x19\n\x11repeated_sfixed32\x18\' \x03(\x0f\x12\x19\n\x11repeated_sfixed64\x18( \x03(\x10\x12\x16\n\x0erepeated_float\x18) \x03(\x02\x12\x17\n\x0frepeated_double\x18* \x03(\x01\x12\x15\n\rrepeated_bool\x18+ \x03(\x08\x12\x17\n\x0frepeated_string\x18, \x03(\t\x12\x16\n\x0erepeated_bytes\x18- \x03(\x0c\x12`\n\x17repeated_nested_message\x18\x30 \x03(\x0b\x32?.protobuf_test_messages.proto2.TestAllTypesProto2.NestedMessage\x12O\n\x18repeated_foreign_message\x18\x31 \x03(\x0b\x32-.protobuf_test_messages.proto2.ForeignMessage\x12Z\n\x14repeated_nested_enum\x18\x33 \x03(\x0e\x32<.protobuf_test_messages.proto2.TestAllTypesProto2.NestedEnum\x12I\n\x15repeated_foreign_enum\x18\x34 \x03(\x0e\x32*.protobuf_test_messages.proto2.ForeignEnum\x12!\n\x15repeated_string_piece\x18\x36 \x03(\tB\x02\x08\x02\x12\x19\n\rrepeated_cord\x18\x37 \x03(\tB\x02\x08\x01\x12]\n\x0fmap_int32_int32\x18\x38 \x03(\x0b\x32\x44.protobuf_test_messages.proto2.TestAllTypesProto2.MapInt32Int32Entry\x12]\n\x0fmap_int64_int64\x18\x39 \x03(\x0b\x32\x44.protobuf_test_messages.proto2.TestAllTypesProto2.MapInt64Int64Entry\x12\x61\n\x11map_uint32_uint32\x18: \x03(\x0b\x32\x46.protobuf_test_messages.proto2.TestAllTypesProto2.MapUint32Uint32Entry\x12\x61\n\x11map_uint64_uint64\x18; \x03(\x0b\x32\x46.protobuf_test_messages.proto2.TestAllTypesProto2.MapUint64Uint64Entry\x12\x61\n\x11map_sint32_sint32\x18< \x03(\x0b\x32\x46.protobuf_test_messages.proto2.TestAllTypesProto2.MapSint32Sint32Entry\x12\x61\n\x11map_sint64_sint64\x18= \x03(\x0b\x32\x46.protobuf_test_messages.proto2.TestAllTypesProto2.MapSint64Sint64Entry\x12\x65\n\x13map_fixed32_fixed32\x18> \x03(\x0b\x32H.protobuf_test_messages.proto2.TestAllTypesProto2.MapFixed32Fixed32Entry\x12\x65\n\x13map_fixed64_fixed64\x18? \x03(\x0b\x32H.protobuf_test_messages.proto2.TestAllTypesProto2.MapFixed64Fixed64Entry\x12i\n\x15map_sfixed32_sfixed32\x18@ \x03(\x0b\x32J.protobuf_test_messages.proto2.TestAllTypesProto2.MapSfixed32Sfixed32Entry\x12i\n\x15map_sfixed64_sfixed64\x18\x41 \x03(\x0b\x32J.protobuf_test_messages.proto2.TestAllTypesProto2.MapSfixed64Sfixed64Entry\x12]\n\x0fmap_int32_float\x18\x42 \x03(\x0b\x32\x44.protobuf_test_messages.proto2.TestAllTypesProto2.MapInt32FloatEntry\x12_\n\x10map_int32_double\x18\x43 \x03(\x0b\x32\x45.protobuf_test_messages.proto2.TestAllTypesProto2.MapInt32DoubleEntry\x12Y\n\rmap_bool_bool\x18\x44 \x03(\x0b\x32\x42.protobuf_test_messages.proto2.TestAllTypesProto2.MapBoolBoolEntry\x12\x61\n\x11map_string_string\x18\x45 \x03(\x0b\x32\x46.protobuf_test_messages.proto2.TestAllTypesProto2.MapStringStringEntry\x12_\n\x10map_string_bytes\x18\x46 \x03(\x0b\x32\x45.protobuf_test_messages.proto2.TestAllTypesProto2.MapStringBytesEntry\x12p\n\x19map_string_nested_message\x18G \x03(\x0b\x32M.protobuf_test_messages.proto2.TestAllTypesProto2.MapStringNestedMessageEntry\x12r\n\x1amap_string_foreign_message\x18H \x03(\x0b\x32N.protobuf_test_messages.proto2.TestAllTypesProto2.MapStringForeignMessageEntry\x12j\n\x16map_string_nested_enum\x18I \x03(\x0b\x32J.protobuf_test_messages.proto2.TestAllTypesProto2.MapStringNestedEnumEntry\x12l\n\x17map_string_foreign_enum\x18J \x03(\x0b\x32K.protobuf_test_messages.proto2.TestAllTypesProto2.MapStringForeignEnumEntry\x12\x16\n\x0coneof_uint32\x18o \x01(\rH\x00\x12_\n\x14oneof_nested_message\x18p \x01(\x0b\x32?.protobuf_test_messages.proto2.TestAllTypesProto2.NestedMessageH\x00\x12\x16\n\x0coneof_string\x18q \x01(\tH\x00\x12\x15\n\x0boneof_bytes\x18r \x01(\x0cH\x00\x12\x14\n\noneof_bool\x18s \x01(\x08H\x00\x12\x16\n\x0coneof_uint64\x18t \x01(\x04H\x00\x12\x15\n\x0boneof_float\x18u \x01(\x02H\x00\x12\x16\n\x0coneof_double\x18v \x01(\x01H\x00\x12R\n\noneof_enum\x18w \x01(\x0e\x32<.protobuf_test_messages.proto2.TestAllTypesProto2.NestedEnumH\x00\x12\x45\n\x04\x64\x61ta\x18\xc9\x01 \x01(\n26.protobuf_test_messages.proto2.TestAllTypesProto2.Data\x12\x13\n\nfieldname1\x18\x91\x03 \x01(\x05\x12\x14\n\x0b\x66ield_name2\x18\x92\x03 \x01(\x05\x12\x15\n\x0c_field_name3\x18\x93\x03 \x01(\x05\x12\x16\n\rfield__name4_\x18\x94\x03 \x01(\x05\x12\x14\n\x0b\x66ield0name5\x18\x95\x03 \x01(\x05\x12\x16\n\rfield_0_name6\x18\x96\x03 \x01(\x05\x12\x13\n\nfieldName7\x18\x97\x03 \x01(\x05\x12\x13\n\nFieldName8\x18\x98\x03 \x01(\x05\x12\x14\n\x0b\x66ield_Name9\x18\x99\x03 \x01(\x05\x12\x15\n\x0c\x46ield_Name10\x18\x9a\x03 \x01(\x05\x12\x15\n\x0c\x46IELD_NAME11\x18\x9b\x03 \x01(\x05\x12\x15\n\x0c\x46IELD_name12\x18\x9c\x03 \x01(\x05\x12\x17\n\x0e__field_name13\x18\x9d\x03 \x01(\x05\x12\x17\n\x0e__Field_name14\x18\x9e\x03 \x01(\x05\x12\x16\n\rfield__name15\x18\x9f\x03 \x01(\x05\x12\x16\n\rfield__Name16\x18\xa0\x03 \x01(\x05\x12\x17\n\x0e\x66ield_name17__\x18\xa1\x03 \x01(\x05\x12\x17\n\x0e\x46ield_name18__\x18\xa2\x03 \x01(\x05\x1a\x62\n\rNestedMessage\x12\t\n\x01\x61\x18\x01 \x01(\x05\x12\x46\n\x0b\x63orecursive\x18\x02 \x01(\x0b\x32\x31.protobuf_test_messages.proto2.TestAllTypesProto2\x1a\x34\n\x12MapInt32Int32Entry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\r\n\x05value\x18\x02 \x01(\x05:\x02\x38\x01\x1a\x34\n\x12MapInt64Int64Entry\x12\x0b\n\x03key\x18\x01 \x01(\x03\x12\r\n\x05value\x18\x02 \x01(\x03:\x02\x38\x01\x1a\x36\n\x14MapUint32Uint32Entry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\r\n\x05value\x18\x02 \x01(\r:\x02\x38\x01\x1a\x36\n\x14MapUint64Uint64Entry\x12\x0b\n\x03key\x18\x01 \x01(\x04\x12\r\n\x05value\x18\x02 \x01(\x04:\x02\x38\x01\x1a\x36\n\x14MapSint32Sint32Entry\x12\x0b\n\x03key\x18\x01 \x01(\x11\x12\r\n\x05value\x18\x02 \x01(\x11:\x02\x38\x01\x1a\x36\n\x14MapSint64Sint64Entry\x12\x0b\n\x03key\x18\x01 \x01(\x12\x12\r\n\x05value\x18\x02 \x01(\x12:\x02\x38\x01\x1a\x38\n\x16MapFixed32Fixed32Entry\x12\x0b\n\x03key\x18\x01 \x01(\x07\x12\r\n\x05value\x18\x02 \x01(\x07:\x02\x38\x01\x1a\x38\n\x16MapFixed64Fixed64Entry\x12\x0b\n\x03key\x18\x01 \x01(\x06\x12\r\n\x05value\x18\x02 \x01(\x06:\x02\x38\x01\x1a:\n\x18MapSfixed32Sfixed32Entry\x12\x0b\n\x03key\x18\x01 \x01(\x0f\x12\r\n\x05value\x18\x02 \x01(\x0f:\x02\x38\x01\x1a:\n\x18MapSfixed64Sfixed64Entry\x12\x0b\n\x03key\x18\x01 \x01(\x10\x12\r\n\x05value\x18\x02 \x01(\x10:\x02\x38\x01\x1a\x34\n\x12MapInt32FloatEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\r\n\x05value\x18\x02 \x01(\x02:\x02\x38\x01\x1a\x35\n\x13MapInt32DoubleEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\r\n\x05value\x18\x02 \x01(\x01:\x02\x38\x01\x1a\x32\n\x10MapBoolBoolEntry\x12\x0b\n\x03key\x18\x01 \x01(\x08\x12\r\n\x05value\x18\x02 \x01(\x08:\x02\x38\x01\x1a\x36\n\x14MapStringStringEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x35\n\x13MapStringBytesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a~\n\x1bMapStringNestedMessageEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12N\n\x05value\x18\x02 \x01(\x0b\x32?.protobuf_test_messages.proto2.TestAllTypesProto2.NestedMessage:\x02\x38\x01\x1am\n\x1cMapStringForeignMessageEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12<\n\x05value\x18\x02 \x01(\x0b\x32-.protobuf_test_messages.proto2.ForeignMessage:\x02\x38\x01\x1ax\n\x18MapStringNestedEnumEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12K\n\x05value\x18\x02 \x01(\x0e\x32<.protobuf_test_messages.proto2.TestAllTypesProto2.NestedEnum:\x02\x38\x01\x1ag\n\x19MapStringForeignEnumEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x39\n\x05value\x18\x02 \x01(\x0e\x32*.protobuf_test_messages.proto2.ForeignEnum:\x02\x38\x01\x1a\x33\n\x04\x44\x61ta\x12\x14\n\x0bgroup_int32\x18\xca\x01 \x01(\x05\x12\x15\n\x0cgroup_uint32\x18\xcb\x01 \x01(\r\x1a!\n\x11MessageSetCorrect*\x08\x08\x04\x10\xff\xff\xff\xff\x07:\x02\x08\x01\x1a\xe0\x01\n\x1bMessageSetCorrectExtension1\x12\x0b\n\x03str\x18\x19 \x01(\t2\xb3\x01\n\x15message_set_extension\x12\x43.protobuf_test_messages.proto2.TestAllTypesProto2.MessageSetCorrect\x18\xf9\xbb^ \x01(\x0b\x32M.protobuf_test_messages.proto2.TestAllTypesProto2.MessageSetCorrectExtension1\x1a\xdf\x01\n\x1bMessageSetCorrectExtension2\x12\t\n\x01i\x18\t \x01(\x05\x32\xb4\x01\n\x15message_set_extension\x12\x43.protobuf_test_messages.proto2.TestAllTypesProto2.MessageSetCorrect\x18\x90\xb3\xfc\x01 \x01(\x0b\x32M.protobuf_test_messages.proto2.TestAllTypesProto2.MessageSetCorrectExtension2\"9\n\nNestedEnum\x12\x07\n\x03\x46OO\x10\x00\x12\x07\n\x03\x42\x41R\x10\x01\x12\x07\n\x03\x42\x41Z\x10\x02\x12\x10\n\x03NEG\x10\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01*\x05\x08x\x10\xc9\x01\x42\r\n\x0boneof_field\"\x1b\n\x0e\x46oreignMessage\x12\t\n\x01\x63\x18\x01 \x01(\x05*@\n\x0b\x46oreignEnum\x12\x0f\n\x0b\x46OREIGN_FOO\x10\x00\x12\x0f\n\x0b\x46OREIGN_BAR\x10\x01\x12\x0f\n\x0b\x46OREIGN_BAZ\x10\x02:J\n\x0f\x65xtension_int32\x12\x31.protobuf_test_messages.proto2.TestAllTypesProto2\x18x \x01(\x05\x42/\n(com.google.protobuf_test_messages.proto2H\x01\xf8\x01\x01')
+  serialized_pb=_b('\n*google/protobuf/test_messages_proto2.proto\x12\x1dprotobuf_test_messages.proto2\"\xde\x32\n\x12TestAllTypesProto2\x12\x16\n\x0eoptional_int32\x18\x01 \x01(\x05\x12\x16\n\x0eoptional_int64\x18\x02 \x01(\x03\x12\x17\n\x0foptional_uint32\x18\x03 \x01(\r\x12\x17\n\x0foptional_uint64\x18\x04 \x01(\x04\x12\x17\n\x0foptional_sint32\x18\x05 \x01(\x11\x12\x17\n\x0foptional_sint64\x18\x06 \x01(\x12\x12\x18\n\x10optional_fixed32\x18\x07 \x01(\x07\x12\x18\n\x10optional_fixed64\x18\x08 \x01(\x06\x12\x19\n\x11optional_sfixed32\x18\t \x01(\x0f\x12\x19\n\x11optional_sfixed64\x18\n \x01(\x10\x12\x16\n\x0eoptional_float\x18\x0b \x01(\x02\x12\x17\n\x0foptional_double\x18\x0c \x01(\x01\x12\x15\n\roptional_bool\x18\r \x01(\x08\x12\x17\n\x0foptional_string\x18\x0e \x01(\t\x12\x16\n\x0eoptional_bytes\x18\x0f \x01(\x0c\x12`\n\x17optional_nested_message\x18\x12 \x01(\x0b\x32?.protobuf_test_messages.proto2.TestAllTypesProto2.NestedMessage\x12U\n\x18optional_foreign_message\x18\x13 \x01(\x0b\x32\x33.protobuf_test_messages.proto2.ForeignMessageProto2\x12Z\n\x14optional_nested_enum\x18\x15 \x01(\x0e\x32<.protobuf_test_messages.proto2.TestAllTypesProto2.NestedEnum\x12O\n\x15optional_foreign_enum\x18\x16 \x01(\x0e\x32\x30.protobuf_test_messages.proto2.ForeignEnumProto2\x12!\n\x15optional_string_piece\x18\x18 \x01(\tB\x02\x08\x02\x12\x19\n\roptional_cord\x18\x19 \x01(\tB\x02\x08\x01\x12L\n\x11recursive_message\x18\x1b \x01(\x0b\x32\x31.protobuf_test_messages.proto2.TestAllTypesProto2\x12\x16\n\x0erepeated_int32\x18\x1f \x03(\x05\x12\x16\n\x0erepeated_int64\x18  \x03(\x03\x12\x17\n\x0frepeated_uint32\x18! \x03(\r\x12\x17\n\x0frepeated_uint64\x18\" \x03(\x04\x12\x17\n\x0frepeated_sint32\x18# \x03(\x11\x12\x17\n\x0frepeated_sint64\x18$ \x03(\x12\x12\x18\n\x10repeated_fixed32\x18% \x03(\x07\x12\x18\n\x10repeated_fixed64\x18& \x03(\x06\x12\x19\n\x11repeated_sfixed32\x18\' \x03(\x0f\x12\x19\n\x11repeated_sfixed64\x18( \x03(\x10\x12\x16\n\x0erepeated_float\x18) \x03(\x02\x12\x17\n\x0frepeated_double\x18* \x03(\x01\x12\x15\n\rrepeated_bool\x18+ \x03(\x08\x12\x17\n\x0frepeated_string\x18, \x03(\t\x12\x16\n\x0erepeated_bytes\x18- \x03(\x0c\x12`\n\x17repeated_nested_message\x18\x30 \x03(\x0b\x32?.protobuf_test_messages.proto2.TestAllTypesProto2.NestedMessage\x12U\n\x18repeated_foreign_message\x18\x31 \x03(\x0b\x32\x33.protobuf_test_messages.proto2.ForeignMessageProto2\x12Z\n\x14repeated_nested_enum\x18\x33 \x03(\x0e\x32<.protobuf_test_messages.proto2.TestAllTypesProto2.NestedEnum\x12O\n\x15repeated_foreign_enum\x18\x34 \x03(\x0e\x32\x30.protobuf_test_messages.proto2.ForeignEnumProto2\x12!\n\x15repeated_string_piece\x18\x36 \x03(\tB\x02\x08\x02\x12\x19\n\rrepeated_cord\x18\x37 \x03(\tB\x02\x08\x01\x12]\n\x0fmap_int32_int32\x18\x38 \x03(\x0b\x32\x44.protobuf_test_messages.proto2.TestAllTypesProto2.MapInt32Int32Entry\x12]\n\x0fmap_int64_int64\x18\x39 \x03(\x0b\x32\x44.protobuf_test_messages.proto2.TestAllTypesProto2.MapInt64Int64Entry\x12\x61\n\x11map_uint32_uint32\x18: \x03(\x0b\x32\x46.protobuf_test_messages.proto2.TestAllTypesProto2.MapUint32Uint32Entry\x12\x61\n\x11map_uint64_uint64\x18; \x03(\x0b\x32\x46.protobuf_test_messages.proto2.TestAllTypesProto2.MapUint64Uint64Entry\x12\x61\n\x11map_sint32_sint32\x18< \x03(\x0b\x32\x46.protobuf_test_messages.proto2.TestAllTypesProto2.MapSint32Sint32Entry\x12\x61\n\x11map_sint64_sint64\x18= \x03(\x0b\x32\x46.protobuf_test_messages.proto2.TestAllTypesProto2.MapSint64Sint64Entry\x12\x65\n\x13map_fixed32_fixed32\x18> \x03(\x0b\x32H.protobuf_test_messages.proto2.TestAllTypesProto2.MapFixed32Fixed32Entry\x12\x65\n\x13map_fixed64_fixed64\x18? \x03(\x0b\x32H.protobuf_test_messages.proto2.TestAllTypesProto2.MapFixed64Fixed64Entry\x12i\n\x15map_sfixed32_sfixed32\x18@ \x03(\x0b\x32J.protobuf_test_messages.proto2.TestAllTypesProto2.MapSfixed32Sfixed32Entry\x12i\n\x15map_sfixed64_sfixed64\x18\x41 \x03(\x0b\x32J.protobuf_test_messages.proto2.TestAllTypesProto2.MapSfixed64Sfixed64Entry\x12]\n\x0fmap_int32_float\x18\x42 \x03(\x0b\x32\x44.protobuf_test_messages.proto2.TestAllTypesProto2.MapInt32FloatEntry\x12_\n\x10map_int32_double\x18\x43 \x03(\x0b\x32\x45.protobuf_test_messages.proto2.TestAllTypesProto2.MapInt32DoubleEntry\x12Y\n\rmap_bool_bool\x18\x44 \x03(\x0b\x32\x42.protobuf_test_messages.proto2.TestAllTypesProto2.MapBoolBoolEntry\x12\x61\n\x11map_string_string\x18\x45 \x03(\x0b\x32\x46.protobuf_test_messages.proto2.TestAllTypesProto2.MapStringStringEntry\x12_\n\x10map_string_bytes\x18\x46 \x03(\x0b\x32\x45.protobuf_test_messages.proto2.TestAllTypesProto2.MapStringBytesEntry\x12p\n\x19map_string_nested_message\x18G \x03(\x0b\x32M.protobuf_test_messages.proto2.TestAllTypesProto2.MapStringNestedMessageEntry\x12r\n\x1amap_string_foreign_message\x18H \x03(\x0b\x32N.protobuf_test_messages.proto2.TestAllTypesProto2.MapStringForeignMessageEntry\x12j\n\x16map_string_nested_enum\x18I \x03(\x0b\x32J.protobuf_test_messages.proto2.TestAllTypesProto2.MapStringNestedEnumEntry\x12l\n\x17map_string_foreign_enum\x18J \x03(\x0b\x32K.protobuf_test_messages.proto2.TestAllTypesProto2.MapStringForeignEnumEntry\x12\x16\n\x0coneof_uint32\x18o \x01(\rH\x00\x12_\n\x14oneof_nested_message\x18p \x01(\x0b\x32?.protobuf_test_messages.proto2.TestAllTypesProto2.NestedMessageH\x00\x12\x16\n\x0coneof_string\x18q \x01(\tH\x00\x12\x15\n\x0boneof_bytes\x18r \x01(\x0cH\x00\x12\x14\n\noneof_bool\x18s \x01(\x08H\x00\x12\x16\n\x0coneof_uint64\x18t \x01(\x04H\x00\x12\x15\n\x0boneof_float\x18u \x01(\x02H\x00\x12\x16\n\x0coneof_double\x18v \x01(\x01H\x00\x12R\n\noneof_enum\x18w \x01(\x0e\x32<.protobuf_test_messages.proto2.TestAllTypesProto2.NestedEnumH\x00\x12\x45\n\x04\x64\x61ta\x18\xc9\x01 \x01(\n26.protobuf_test_messages.proto2.TestAllTypesProto2.Data\x12\x13\n\nfieldname1\x18\x91\x03 \x01(\x05\x12\x14\n\x0b\x66ield_name2\x18\x92\x03 \x01(\x05\x12\x15\n\x0c_field_name3\x18\x93\x03 \x01(\x05\x12\x16\n\rfield__name4_\x18\x94\x03 \x01(\x05\x12\x14\n\x0b\x66ield0name5\x18\x95\x03 \x01(\x05\x12\x16\n\rfield_0_name6\x18\x96\x03 \x01(\x05\x12\x13\n\nfieldName7\x18\x97\x03 \x01(\x05\x12\x13\n\nFieldName8\x18\x98\x03 \x01(\x05\x12\x14\n\x0b\x66ield_Name9\x18\x99\x03 \x01(\x05\x12\x15\n\x0c\x46ield_Name10\x18\x9a\x03 \x01(\x05\x12\x15\n\x0c\x46IELD_NAME11\x18\x9b\x03 \x01(\x05\x12\x15\n\x0c\x46IELD_name12\x18\x9c\x03 \x01(\x05\x12\x17\n\x0e__field_name13\x18\x9d\x03 \x01(\x05\x12\x17\n\x0e__Field_name14\x18\x9e\x03 \x01(\x05\x12\x16\n\rfield__name15\x18\x9f\x03 \x01(\x05\x12\x16\n\rfield__Name16\x18\xa0\x03 \x01(\x05\x12\x17\n\x0e\x66ield_name17__\x18\xa1\x03 \x01(\x05\x12\x17\n\x0e\x46ield_name18__\x18\xa2\x03 \x01(\x05\x1a\x62\n\rNestedMessage\x12\t\n\x01\x61\x18\x01 \x01(\x05\x12\x46\n\x0b\x63orecursive\x18\x02 \x01(\x0b\x32\x31.protobuf_test_messages.proto2.TestAllTypesProto2\x1a\x34\n\x12MapInt32Int32Entry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\r\n\x05value\x18\x02 \x01(\x05:\x02\x38\x01\x1a\x34\n\x12MapInt64Int64Entry\x12\x0b\n\x03key\x18\x01 \x01(\x03\x12\r\n\x05value\x18\x02 \x01(\x03:\x02\x38\x01\x1a\x36\n\x14MapUint32Uint32Entry\x12\x0b\n\x03key\x18\x01 \x01(\r\x12\r\n\x05value\x18\x02 \x01(\r:\x02\x38\x01\x1a\x36\n\x14MapUint64Uint64Entry\x12\x0b\n\x03key\x18\x01 \x01(\x04\x12\r\n\x05value\x18\x02 \x01(\x04:\x02\x38\x01\x1a\x36\n\x14MapSint32Sint32Entry\x12\x0b\n\x03key\x18\x01 \x01(\x11\x12\r\n\x05value\x18\x02 \x01(\x11:\x02\x38\x01\x1a\x36\n\x14MapSint64Sint64Entry\x12\x0b\n\x03key\x18\x01 \x01(\x12\x12\r\n\x05value\x18\x02 \x01(\x12:\x02\x38\x01\x1a\x38\n\x16MapFixed32Fixed32Entry\x12\x0b\n\x03key\x18\x01 \x01(\x07\x12\r\n\x05value\x18\x02 \x01(\x07:\x02\x38\x01\x1a\x38\n\x16MapFixed64Fixed64Entry\x12\x0b\n\x03key\x18\x01 \x01(\x06\x12\r\n\x05value\x18\x02 \x01(\x06:\x02\x38\x01\x1a:\n\x18MapSfixed32Sfixed32Entry\x12\x0b\n\x03key\x18\x01 \x01(\x0f\x12\r\n\x05value\x18\x02 \x01(\x0f:\x02\x38\x01\x1a:\n\x18MapSfixed64Sfixed64Entry\x12\x0b\n\x03key\x18\x01 \x01(\x10\x12\r\n\x05value\x18\x02 \x01(\x10:\x02\x38\x01\x1a\x34\n\x12MapInt32FloatEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\r\n\x05value\x18\x02 \x01(\x02:\x02\x38\x01\x1a\x35\n\x13MapInt32DoubleEntry\x12\x0b\n\x03key\x18\x01 \x01(\x05\x12\r\n\x05value\x18\x02 \x01(\x01:\x02\x38\x01\x1a\x32\n\x10MapBoolBoolEntry\x12\x0b\n\x03key\x18\x01 \x01(\x08\x12\r\n\x05value\x18\x02 \x01(\x08:\x02\x38\x01\x1a\x36\n\x14MapStringStringEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a\x35\n\x13MapStringBytesEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c:\x02\x38\x01\x1a~\n\x1bMapStringNestedMessageEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12N\n\x05value\x18\x02 \x01(\x0b\x32?.protobuf_test_messages.proto2.TestAllTypesProto2.NestedMessage:\x02\x38\x01\x1as\n\x1cMapStringForeignMessageEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\x42\n\x05value\x18\x02 \x01(\x0b\x32\x33.protobuf_test_messages.proto2.ForeignMessageProto2:\x02\x38\x01\x1ax\n\x18MapStringNestedEnumEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12K\n\x05value\x18\x02 \x01(\x0e\x32<.protobuf_test_messages.proto2.TestAllTypesProto2.NestedEnum:\x02\x38\x01\x1am\n\x19MapStringForeignEnumEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12?\n\x05value\x18\x02 \x01(\x0e\x32\x30.protobuf_test_messages.proto2.ForeignEnumProto2:\x02\x38\x01\x1a\x33\n\x04\x44\x61ta\x12\x14\n\x0bgroup_int32\x18\xca\x01 \x01(\x05\x12\x15\n\x0cgroup_uint32\x18\xcb\x01 \x01(\r\x1a!\n\x11MessageSetCorrect*\x08\x08\x04\x10\xff\xff\xff\xff\x07:\x02\x08\x01\x1a\xe0\x01\n\x1bMessageSetCorrectExtension1\x12\x0b\n\x03str\x18\x19 \x01(\t2\xb3\x01\n\x15message_set_extension\x12\x43.protobuf_test_messages.proto2.TestAllTypesProto2.MessageSetCorrect\x18\xf9\xbb^ \x01(\x0b\x32M.protobuf_test_messages.proto2.TestAllTypesProto2.MessageSetCorrectExtension1\x1a\xdf\x01\n\x1bMessageSetCorrectExtension2\x12\t\n\x01i\x18\t \x01(\x05\x32\xb4\x01\n\x15message_set_extension\x12\x43.protobuf_test_messages.proto2.TestAllTypesProto2.MessageSetCorrect\x18\x90\xb3\xfc\x01 \x01(\x0b\x32M.protobuf_test_messages.proto2.TestAllTypesProto2.MessageSetCorrectExtension2\"9\n\nNestedEnum\x12\x07\n\x03\x46OO\x10\x00\x12\x07\n\x03\x42\x41R\x10\x01\x12\x07\n\x03\x42\x41Z\x10\x02\x12\x10\n\x03NEG\x10\xff\xff\xff\xff\xff\xff\xff\xff\xff\x01*\x05\x08x\x10\xc9\x01\x42\r\n\x0boneof_field\"!\n\x14\x46oreignMessageProto2\x12\t\n\x01\x63\x18\x01 \x01(\x05*F\n\x11\x46oreignEnumProto2\x12\x0f\n\x0b\x46OREIGN_FOO\x10\x00\x12\x0f\n\x0b\x46OREIGN_BAR\x10\x01\x12\x0f\n\x0b\x46OREIGN_BAZ\x10\x02:J\n\x0f\x65xtension_int32\x12\x31.protobuf_test_messages.proto2.TestAllTypesProto2\x18x \x01(\x05\x42/\n(com.google.protobuf_test_messages.proto2H\x01\xf8\x01\x01')
 )
 
-_FOREIGNENUM = _descriptor.EnumDescriptor(
-  name='ForeignEnum',
-  full_name='protobuf_test_messages.proto2.ForeignEnum',
+_FOREIGNENUMPROTO2 = _descriptor.EnumDescriptor(
+  name='ForeignEnumProto2',
+  full_name='protobuf_test_messages.proto2.ForeignEnumProto2',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -44,12 +44,12 @@ _FOREIGNENUM = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=6567,
-  serialized_end=6631,
+  serialized_start=6609,
+  serialized_end=6679,
 )
-_sym_db.RegisterEnumDescriptor(_FOREIGNENUM)
+_sym_db.RegisterEnumDescriptor(_FOREIGNENUMPROTO2)
 
-ForeignEnum = enum_type_wrapper.EnumTypeWrapper(_FOREIGNENUM)
+ForeignEnumProto2 = enum_type_wrapper.EnumTypeWrapper(_FOREIGNENUMPROTO2)
 FOREIGN_FOO = 0
 FOREIGN_BAR = 1
 FOREIGN_BAZ = 2
@@ -61,7 +61,7 @@ extension_int32 = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=0,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 
 _TESTALLTYPESPROTO2_NESTEDENUM = _descriptor.EnumDescriptor(
   name='NestedEnum',
@@ -88,8 +88,8 @@ _TESTALLTYPESPROTO2_NESTEDENUM = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=6457,
-  serialized_end=6514,
+  serialized_start=6493,
+  serialized_end=6550,
 )
 _sym_db.RegisterEnumDescriptor(_TESTALLTYPESPROTO2_NESTEDENUM)
 
@@ -107,14 +107,14 @@ _TESTALLTYPESPROTO2_NESTEDMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='corecursive', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.NestedMessage.corecursive', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -127,8 +127,8 @@ _TESTALLTYPESPROTO2_NESTEDMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4510,
-  serialized_end=4608,
+  serialized_start=4534,
+  serialized_end=4632,
 )
 
 _TESTALLTYPESPROTO2_MAPINT32INT32ENTRY = _descriptor.Descriptor(
@@ -144,14 +144,14 @@ _TESTALLTYPESPROTO2_MAPINT32INT32ENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.MapInt32Int32Entry.value', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -164,8 +164,8 @@ _TESTALLTYPESPROTO2_MAPINT32INT32ENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4610,
-  serialized_end=4662,
+  serialized_start=4634,
+  serialized_end=4686,
 )
 
 _TESTALLTYPESPROTO2_MAPINT64INT64ENTRY = _descriptor.Descriptor(
@@ -181,14 +181,14 @@ _TESTALLTYPESPROTO2_MAPINT64INT64ENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.MapInt64Int64Entry.value', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -201,8 +201,8 @@ _TESTALLTYPESPROTO2_MAPINT64INT64ENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4664,
-  serialized_end=4716,
+  serialized_start=4688,
+  serialized_end=4740,
 )
 
 _TESTALLTYPESPROTO2_MAPUINT32UINT32ENTRY = _descriptor.Descriptor(
@@ -218,14 +218,14 @@ _TESTALLTYPESPROTO2_MAPUINT32UINT32ENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.MapUint32Uint32Entry.value', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -238,8 +238,8 @@ _TESTALLTYPESPROTO2_MAPUINT32UINT32ENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4718,
-  serialized_end=4772,
+  serialized_start=4742,
+  serialized_end=4796,
 )
 
 _TESTALLTYPESPROTO2_MAPUINT64UINT64ENTRY = _descriptor.Descriptor(
@@ -255,14 +255,14 @@ _TESTALLTYPESPROTO2_MAPUINT64UINT64ENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.MapUint64Uint64Entry.value', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -275,8 +275,8 @@ _TESTALLTYPESPROTO2_MAPUINT64UINT64ENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4774,
-  serialized_end=4828,
+  serialized_start=4798,
+  serialized_end=4852,
 )
 
 _TESTALLTYPESPROTO2_MAPSINT32SINT32ENTRY = _descriptor.Descriptor(
@@ -292,14 +292,14 @@ _TESTALLTYPESPROTO2_MAPSINT32SINT32ENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.MapSint32Sint32Entry.value', index=1,
       number=2, type=17, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -312,8 +312,8 @@ _TESTALLTYPESPROTO2_MAPSINT32SINT32ENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4830,
-  serialized_end=4884,
+  serialized_start=4854,
+  serialized_end=4908,
 )
 
 _TESTALLTYPESPROTO2_MAPSINT64SINT64ENTRY = _descriptor.Descriptor(
@@ -329,14 +329,14 @@ _TESTALLTYPESPROTO2_MAPSINT64SINT64ENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.MapSint64Sint64Entry.value', index=1,
       number=2, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -349,8 +349,8 @@ _TESTALLTYPESPROTO2_MAPSINT64SINT64ENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4886,
-  serialized_end=4940,
+  serialized_start=4910,
+  serialized_end=4964,
 )
 
 _TESTALLTYPESPROTO2_MAPFIXED32FIXED32ENTRY = _descriptor.Descriptor(
@@ -366,14 +366,14 @@ _TESTALLTYPESPROTO2_MAPFIXED32FIXED32ENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.MapFixed32Fixed32Entry.value', index=1,
       number=2, type=7, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -386,8 +386,8 @@ _TESTALLTYPESPROTO2_MAPFIXED32FIXED32ENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4942,
-  serialized_end=4998,
+  serialized_start=4966,
+  serialized_end=5022,
 )
 
 _TESTALLTYPESPROTO2_MAPFIXED64FIXED64ENTRY = _descriptor.Descriptor(
@@ -403,14 +403,14 @@ _TESTALLTYPESPROTO2_MAPFIXED64FIXED64ENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.MapFixed64Fixed64Entry.value', index=1,
       number=2, type=6, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -423,8 +423,8 @@ _TESTALLTYPESPROTO2_MAPFIXED64FIXED64ENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5000,
-  serialized_end=5056,
+  serialized_start=5024,
+  serialized_end=5080,
 )
 
 _TESTALLTYPESPROTO2_MAPSFIXED32SFIXED32ENTRY = _descriptor.Descriptor(
@@ -440,14 +440,14 @@ _TESTALLTYPESPROTO2_MAPSFIXED32SFIXED32ENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.MapSfixed32Sfixed32Entry.value', index=1,
       number=2, type=15, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -460,8 +460,8 @@ _TESTALLTYPESPROTO2_MAPSFIXED32SFIXED32ENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5058,
-  serialized_end=5116,
+  serialized_start=5082,
+  serialized_end=5140,
 )
 
 _TESTALLTYPESPROTO2_MAPSFIXED64SFIXED64ENTRY = _descriptor.Descriptor(
@@ -477,14 +477,14 @@ _TESTALLTYPESPROTO2_MAPSFIXED64SFIXED64ENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.MapSfixed64Sfixed64Entry.value', index=1,
       number=2, type=16, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -497,8 +497,8 @@ _TESTALLTYPESPROTO2_MAPSFIXED64SFIXED64ENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5118,
-  serialized_end=5176,
+  serialized_start=5142,
+  serialized_end=5200,
 )
 
 _TESTALLTYPESPROTO2_MAPINT32FLOATENTRY = _descriptor.Descriptor(
@@ -514,14 +514,14 @@ _TESTALLTYPESPROTO2_MAPINT32FLOATENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.MapInt32FloatEntry.value', index=1,
       number=2, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -534,8 +534,8 @@ _TESTALLTYPESPROTO2_MAPINT32FLOATENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5178,
-  serialized_end=5230,
+  serialized_start=5202,
+  serialized_end=5254,
 )
 
 _TESTALLTYPESPROTO2_MAPINT32DOUBLEENTRY = _descriptor.Descriptor(
@@ -551,14 +551,14 @@ _TESTALLTYPESPROTO2_MAPINT32DOUBLEENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.MapInt32DoubleEntry.value', index=1,
       number=2, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -571,8 +571,8 @@ _TESTALLTYPESPROTO2_MAPINT32DOUBLEENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5232,
-  serialized_end=5285,
+  serialized_start=5256,
+  serialized_end=5309,
 )
 
 _TESTALLTYPESPROTO2_MAPBOOLBOOLENTRY = _descriptor.Descriptor(
@@ -588,14 +588,14 @@ _TESTALLTYPESPROTO2_MAPBOOLBOOLENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.MapBoolBoolEntry.value', index=1,
       number=2, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -608,8 +608,8 @@ _TESTALLTYPESPROTO2_MAPBOOLBOOLENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5287,
-  serialized_end=5337,
+  serialized_start=5311,
+  serialized_end=5361,
 )
 
 _TESTALLTYPESPROTO2_MAPSTRINGSTRINGENTRY = _descriptor.Descriptor(
@@ -625,14 +625,14 @@ _TESTALLTYPESPROTO2_MAPSTRINGSTRINGENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.MapStringStringEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -645,8 +645,8 @@ _TESTALLTYPESPROTO2_MAPSTRINGSTRINGENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5339,
-  serialized_end=5393,
+  serialized_start=5363,
+  serialized_end=5417,
 )
 
 _TESTALLTYPESPROTO2_MAPSTRINGBYTESENTRY = _descriptor.Descriptor(
@@ -662,14 +662,14 @@ _TESTALLTYPESPROTO2_MAPSTRINGBYTESENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.MapStringBytesEntry.value', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -682,8 +682,8 @@ _TESTALLTYPESPROTO2_MAPSTRINGBYTESENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5395,
-  serialized_end=5448,
+  serialized_start=5419,
+  serialized_end=5472,
 )
 
 _TESTALLTYPESPROTO2_MAPSTRINGNESTEDMESSAGEENTRY = _descriptor.Descriptor(
@@ -699,14 +699,14 @@ _TESTALLTYPESPROTO2_MAPSTRINGNESTEDMESSAGEENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.MapStringNestedMessageEntry.value', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -719,8 +719,8 @@ _TESTALLTYPESPROTO2_MAPSTRINGNESTEDMESSAGEENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5450,
-  serialized_end=5576,
+  serialized_start=5474,
+  serialized_end=5600,
 )
 
 _TESTALLTYPESPROTO2_MAPSTRINGFOREIGNMESSAGEENTRY = _descriptor.Descriptor(
@@ -736,14 +736,14 @@ _TESTALLTYPESPROTO2_MAPSTRINGFOREIGNMESSAGEENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.MapStringForeignMessageEntry.value', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -756,8 +756,8 @@ _TESTALLTYPESPROTO2_MAPSTRINGFOREIGNMESSAGEENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5578,
-  serialized_end=5687,
+  serialized_start=5602,
+  serialized_end=5717,
 )
 
 _TESTALLTYPESPROTO2_MAPSTRINGNESTEDENUMENTRY = _descriptor.Descriptor(
@@ -773,14 +773,14 @@ _TESTALLTYPESPROTO2_MAPSTRINGNESTEDENUMENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.MapStringNestedEnumEntry.value', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -793,8 +793,8 @@ _TESTALLTYPESPROTO2_MAPSTRINGNESTEDENUMENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5689,
-  serialized_end=5809,
+  serialized_start=5719,
+  serialized_end=5839,
 )
 
 _TESTALLTYPESPROTO2_MAPSTRINGFOREIGNENUMENTRY = _descriptor.Descriptor(
@@ -810,14 +810,14 @@ _TESTALLTYPESPROTO2_MAPSTRINGFOREIGNENUMENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.MapStringForeignEnumEntry.value', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -830,8 +830,8 @@ _TESTALLTYPESPROTO2_MAPSTRINGFOREIGNENUMENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5811,
-  serialized_end=5914,
+  serialized_start=5841,
+  serialized_end=5950,
 )
 
 _TESTALLTYPESPROTO2_DATA = _descriptor.Descriptor(
@@ -847,14 +847,14 @@ _TESTALLTYPESPROTO2_DATA = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='group_uint32', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.Data.group_uint32', index=1,
       number=203, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -867,8 +867,8 @@ _TESTALLTYPESPROTO2_DATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5916,
-  serialized_end=5967,
+  serialized_start=5952,
+  serialized_end=6003,
 )
 
 _TESTALLTYPESPROTO2_MESSAGESETCORRECT = _descriptor.Descriptor(
@@ -890,8 +890,8 @@ _TESTALLTYPESPROTO2_MESSAGESETCORRECT = _descriptor.Descriptor(
   extension_ranges=[(4, 2147483647), ],
   oneofs=[
   ],
-  serialized_start=5969,
-  serialized_end=6002,
+  serialized_start=6005,
+  serialized_end=6038,
 )
 
 _TESTALLTYPESPROTO2_MESSAGESETCORRECTEXTENSION1 = _descriptor.Descriptor(
@@ -907,7 +907,7 @@ _TESTALLTYPESPROTO2_MESSAGESETCORRECTEXTENSION1 = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
     _descriptor.FieldDescriptor(
@@ -916,7 +916,7 @@ _TESTALLTYPESPROTO2_MESSAGESETCORRECTEXTENSION1 = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=True, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   nested_types=[],
   enum_types=[
@@ -927,8 +927,8 @@ _TESTALLTYPESPROTO2_MESSAGESETCORRECTEXTENSION1 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6005,
-  serialized_end=6229,
+  serialized_start=6041,
+  serialized_end=6265,
 )
 
 _TESTALLTYPESPROTO2_MESSAGESETCORRECTEXTENSION2 = _descriptor.Descriptor(
@@ -944,7 +944,7 @@ _TESTALLTYPESPROTO2_MESSAGESETCORRECTEXTENSION2 = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
     _descriptor.FieldDescriptor(
@@ -953,7 +953,7 @@ _TESTALLTYPESPROTO2_MESSAGESETCORRECTEXTENSION2 = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=True, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   nested_types=[],
   enum_types=[
@@ -964,8 +964,8 @@ _TESTALLTYPESPROTO2_MESSAGESETCORRECTEXTENSION2 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6232,
-  serialized_end=6455,
+  serialized_start=6268,
+  serialized_end=6491,
 )
 
 _TESTALLTYPESPROTO2 = _descriptor.Descriptor(
@@ -981,630 +981,630 @@ _TESTALLTYPESPROTO2 = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_int64', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.optional_int64', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_uint32', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.optional_uint32', index=2,
       number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_uint64', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.optional_uint64', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_sint32', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.optional_sint32', index=4,
       number=5, type=17, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_sint64', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.optional_sint64', index=5,
       number=6, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_fixed32', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.optional_fixed32', index=6,
       number=7, type=7, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_fixed64', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.optional_fixed64', index=7,
       number=8, type=6, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_sfixed32', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.optional_sfixed32', index=8,
       number=9, type=15, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_sfixed64', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.optional_sfixed64', index=9,
       number=10, type=16, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_float', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.optional_float', index=10,
       number=11, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_double', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.optional_double', index=11,
       number=12, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_bool', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.optional_bool', index=12,
       number=13, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_string', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.optional_string', index=13,
       number=14, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_bytes', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.optional_bytes', index=14,
       number=15, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_nested_message', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.optional_nested_message', index=15,
       number=18, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_foreign_message', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.optional_foreign_message', index=16,
       number=19, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_nested_enum', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.optional_nested_enum', index=17,
       number=21, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_foreign_enum', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.optional_foreign_enum', index=18,
       number=22, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_string_piece', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.optional_string_piece', index=19,
       number=24, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\002'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\002')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_cord', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.optional_cord', index=20,
       number=25, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\001')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='recursive_message', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.recursive_message', index=21,
       number=27, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_int32', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.repeated_int32', index=22,
       number=31, type=5, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_int64', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.repeated_int64', index=23,
       number=32, type=3, cpp_type=2, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_uint32', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.repeated_uint32', index=24,
       number=33, type=13, cpp_type=3, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_uint64', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.repeated_uint64', index=25,
       number=34, type=4, cpp_type=4, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_sint32', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.repeated_sint32', index=26,
       number=35, type=17, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_sint64', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.repeated_sint64', index=27,
       number=36, type=18, cpp_type=2, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_fixed32', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.repeated_fixed32', index=28,
       number=37, type=7, cpp_type=3, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_fixed64', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.repeated_fixed64', index=29,
       number=38, type=6, cpp_type=4, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_sfixed32', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.repeated_sfixed32', index=30,
       number=39, type=15, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_sfixed64', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.repeated_sfixed64', index=31,
       number=40, type=16, cpp_type=2, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_float', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.repeated_float', index=32,
       number=41, type=2, cpp_type=6, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_double', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.repeated_double', index=33,
       number=42, type=1, cpp_type=5, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_bool', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.repeated_bool', index=34,
       number=43, type=8, cpp_type=7, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_string', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.repeated_string', index=35,
       number=44, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_bytes', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.repeated_bytes', index=36,
       number=45, type=12, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_nested_message', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.repeated_nested_message', index=37,
       number=48, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_foreign_message', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.repeated_foreign_message', index=38,
       number=49, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_nested_enum', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.repeated_nested_enum', index=39,
       number=51, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_foreign_enum', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.repeated_foreign_enum', index=40,
       number=52, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_string_piece', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.repeated_string_piece', index=41,
       number=54, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\002'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\002')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_cord', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.repeated_cord', index=42,
       number=55, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\001')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='map_int32_int32', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.map_int32_int32', index=43,
       number=56, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='map_int64_int64', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.map_int64_int64', index=44,
       number=57, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='map_uint32_uint32', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.map_uint32_uint32', index=45,
       number=58, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='map_uint64_uint64', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.map_uint64_uint64', index=46,
       number=59, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='map_sint32_sint32', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.map_sint32_sint32', index=47,
       number=60, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='map_sint64_sint64', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.map_sint64_sint64', index=48,
       number=61, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='map_fixed32_fixed32', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.map_fixed32_fixed32', index=49,
       number=62, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='map_fixed64_fixed64', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.map_fixed64_fixed64', index=50,
       number=63, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='map_sfixed32_sfixed32', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.map_sfixed32_sfixed32', index=51,
       number=64, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='map_sfixed64_sfixed64', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.map_sfixed64_sfixed64', index=52,
       number=65, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='map_int32_float', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.map_int32_float', index=53,
       number=66, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='map_int32_double', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.map_int32_double', index=54,
       number=67, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='map_bool_bool', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.map_bool_bool', index=55,
       number=68, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='map_string_string', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.map_string_string', index=56,
       number=69, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='map_string_bytes', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.map_string_bytes', index=57,
       number=70, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='map_string_nested_message', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.map_string_nested_message', index=58,
       number=71, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='map_string_foreign_message', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.map_string_foreign_message', index=59,
       number=72, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='map_string_nested_enum', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.map_string_nested_enum', index=60,
       number=73, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='map_string_foreign_enum', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.map_string_foreign_enum', index=61,
       number=74, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='oneof_uint32', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.oneof_uint32', index=62,
       number=111, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='oneof_nested_message', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.oneof_nested_message', index=63,
       number=112, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='oneof_string', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.oneof_string', index=64,
       number=113, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='oneof_bytes', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.oneof_bytes', index=65,
       number=114, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='oneof_bool', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.oneof_bool', index=66,
       number=115, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='oneof_uint64', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.oneof_uint64', index=67,
       number=116, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='oneof_float', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.oneof_float', index=68,
       number=117, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='oneof_double', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.oneof_double', index=69,
       number=118, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='oneof_enum', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.oneof_enum', index=70,
       number=119, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='data', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.data', index=71,
       number=201, type=10, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='fieldname1', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.fieldname1', index=72,
       number=401, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='field_name2', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.field_name2', index=73,
       number=402, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='_field_name3', full_name='protobuf_test_messages.proto2.TestAllTypesProto2._field_name3', index=74,
       number=403, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='field__name4_', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.field__name4_', index=75,
       number=404, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='field0name5', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.field0name5', index=76,
       number=405, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='field_0_name6', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.field_0_name6', index=77,
       number=406, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='fieldName7', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.fieldName7', index=78,
       number=407, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='FieldName8', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.FieldName8', index=79,
       number=408, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='field_Name9', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.field_Name9', index=80,
       number=409, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='Field_Name10', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.Field_Name10', index=81,
       number=410, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='FIELD_NAME11', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.FIELD_NAME11', index=82,
       number=411, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='FIELD_name12', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.FIELD_name12', index=83,
       number=412, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='__field_name13', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.__field_name13', index=84,
       number=413, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='__Field_name14', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.__Field_name14', index=85,
       number=414, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='field__name15', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.field__name15', index=86,
       number=415, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='field__Name16', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.field__Name16', index=87,
       number=416, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='field_name17__', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.field_name17__', index=88,
       number=417, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='Field_name18__', full_name='protobuf_test_messages.proto2.TestAllTypesProto2.Field_name18__', index=89,
       number=418, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1622,24 +1622,24 @@ _TESTALLTYPESPROTO2 = _descriptor.Descriptor(
       index=0, containing_type=None, fields=[]),
   ],
   serialized_start=78,
-  serialized_end=6536,
+  serialized_end=6572,
 )
 
 
-_FOREIGNMESSAGE = _descriptor.Descriptor(
-  name='ForeignMessage',
-  full_name='protobuf_test_messages.proto2.ForeignMessage',
+_FOREIGNMESSAGEPROTO2 = _descriptor.Descriptor(
+  name='ForeignMessageProto2',
+  full_name='protobuf_test_messages.proto2.ForeignMessageProto2',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='c', full_name='protobuf_test_messages.proto2.ForeignMessage.c', index=0,
+      name='c', full_name='protobuf_test_messages.proto2.ForeignMessageProto2.c', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1652,8 +1652,8 @@ _FOREIGNMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6538,
-  serialized_end=6565,
+  serialized_start=6574,
+  serialized_end=6607,
 )
 
 _TESTALLTYPESPROTO2_NESTEDMESSAGE.fields_by_name['corecursive'].message_type = _TESTALLTYPESPROTO2
@@ -1675,25 +1675,25 @@ _TESTALLTYPESPROTO2_MAPSTRINGSTRINGENTRY.containing_type = _TESTALLTYPESPROTO2
 _TESTALLTYPESPROTO2_MAPSTRINGBYTESENTRY.containing_type = _TESTALLTYPESPROTO2
 _TESTALLTYPESPROTO2_MAPSTRINGNESTEDMESSAGEENTRY.fields_by_name['value'].message_type = _TESTALLTYPESPROTO2_NESTEDMESSAGE
 _TESTALLTYPESPROTO2_MAPSTRINGNESTEDMESSAGEENTRY.containing_type = _TESTALLTYPESPROTO2
-_TESTALLTYPESPROTO2_MAPSTRINGFOREIGNMESSAGEENTRY.fields_by_name['value'].message_type = _FOREIGNMESSAGE
+_TESTALLTYPESPROTO2_MAPSTRINGFOREIGNMESSAGEENTRY.fields_by_name['value'].message_type = _FOREIGNMESSAGEPROTO2
 _TESTALLTYPESPROTO2_MAPSTRINGFOREIGNMESSAGEENTRY.containing_type = _TESTALLTYPESPROTO2
 _TESTALLTYPESPROTO2_MAPSTRINGNESTEDENUMENTRY.fields_by_name['value'].enum_type = _TESTALLTYPESPROTO2_NESTEDENUM
 _TESTALLTYPESPROTO2_MAPSTRINGNESTEDENUMENTRY.containing_type = _TESTALLTYPESPROTO2
-_TESTALLTYPESPROTO2_MAPSTRINGFOREIGNENUMENTRY.fields_by_name['value'].enum_type = _FOREIGNENUM
+_TESTALLTYPESPROTO2_MAPSTRINGFOREIGNENUMENTRY.fields_by_name['value'].enum_type = _FOREIGNENUMPROTO2
 _TESTALLTYPESPROTO2_MAPSTRINGFOREIGNENUMENTRY.containing_type = _TESTALLTYPESPROTO2
 _TESTALLTYPESPROTO2_DATA.containing_type = _TESTALLTYPESPROTO2
 _TESTALLTYPESPROTO2_MESSAGESETCORRECT.containing_type = _TESTALLTYPESPROTO2
 _TESTALLTYPESPROTO2_MESSAGESETCORRECTEXTENSION1.containing_type = _TESTALLTYPESPROTO2
 _TESTALLTYPESPROTO2_MESSAGESETCORRECTEXTENSION2.containing_type = _TESTALLTYPESPROTO2
 _TESTALLTYPESPROTO2.fields_by_name['optional_nested_message'].message_type = _TESTALLTYPESPROTO2_NESTEDMESSAGE
-_TESTALLTYPESPROTO2.fields_by_name['optional_foreign_message'].message_type = _FOREIGNMESSAGE
+_TESTALLTYPESPROTO2.fields_by_name['optional_foreign_message'].message_type = _FOREIGNMESSAGEPROTO2
 _TESTALLTYPESPROTO2.fields_by_name['optional_nested_enum'].enum_type = _TESTALLTYPESPROTO2_NESTEDENUM
-_TESTALLTYPESPROTO2.fields_by_name['optional_foreign_enum'].enum_type = _FOREIGNENUM
+_TESTALLTYPESPROTO2.fields_by_name['optional_foreign_enum'].enum_type = _FOREIGNENUMPROTO2
 _TESTALLTYPESPROTO2.fields_by_name['recursive_message'].message_type = _TESTALLTYPESPROTO2
 _TESTALLTYPESPROTO2.fields_by_name['repeated_nested_message'].message_type = _TESTALLTYPESPROTO2_NESTEDMESSAGE
-_TESTALLTYPESPROTO2.fields_by_name['repeated_foreign_message'].message_type = _FOREIGNMESSAGE
+_TESTALLTYPESPROTO2.fields_by_name['repeated_foreign_message'].message_type = _FOREIGNMESSAGEPROTO2
 _TESTALLTYPESPROTO2.fields_by_name['repeated_nested_enum'].enum_type = _TESTALLTYPESPROTO2_NESTEDENUM
-_TESTALLTYPESPROTO2.fields_by_name['repeated_foreign_enum'].enum_type = _FOREIGNENUM
+_TESTALLTYPESPROTO2.fields_by_name['repeated_foreign_enum'].enum_type = _FOREIGNENUMPROTO2
 _TESTALLTYPESPROTO2.fields_by_name['map_int32_int32'].message_type = _TESTALLTYPESPROTO2_MAPINT32INT32ENTRY
 _TESTALLTYPESPROTO2.fields_by_name['map_int64_int64'].message_type = _TESTALLTYPESPROTO2_MAPINT64INT64ENTRY
 _TESTALLTYPESPROTO2.fields_by_name['map_uint32_uint32'].message_type = _TESTALLTYPESPROTO2_MAPUINT32UINT32ENTRY
@@ -1745,8 +1745,8 @@ _TESTALLTYPESPROTO2.oneofs_by_name['oneof_field'].fields.append(
   _TESTALLTYPESPROTO2.fields_by_name['oneof_enum'])
 _TESTALLTYPESPROTO2.fields_by_name['oneof_enum'].containing_oneof = _TESTALLTYPESPROTO2.oneofs_by_name['oneof_field']
 DESCRIPTOR.message_types_by_name['TestAllTypesProto2'] = _TESTALLTYPESPROTO2
-DESCRIPTOR.message_types_by_name['ForeignMessage'] = _FOREIGNMESSAGE
-DESCRIPTOR.enum_types_by_name['ForeignEnum'] = _FOREIGNENUM
+DESCRIPTOR.message_types_by_name['ForeignMessageProto2'] = _FOREIGNMESSAGEPROTO2
+DESCRIPTOR.enum_types_by_name['ForeignEnumProto2'] = _FOREIGNENUMPROTO2
 DESCRIPTOR.extensions_by_name['extension_int32'] = extension_int32
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
@@ -1949,12 +1949,12 @@ _sym_db.RegisterMessage(TestAllTypesProto2.MessageSetCorrect)
 _sym_db.RegisterMessage(TestAllTypesProto2.MessageSetCorrectExtension1)
 _sym_db.RegisterMessage(TestAllTypesProto2.MessageSetCorrectExtension2)
 
-ForeignMessage = _reflection.GeneratedProtocolMessageType('ForeignMessage', (_message.Message,), dict(
-  DESCRIPTOR = _FOREIGNMESSAGE,
+ForeignMessageProto2 = _reflection.GeneratedProtocolMessageType('ForeignMessageProto2', (_message.Message,), dict(
+  DESCRIPTOR = _FOREIGNMESSAGEPROTO2,
   __module__ = 'google.protobuf.test_messages_proto2_pb2'
-  # @@protoc_insertion_point(class_scope:protobuf_test_messages.proto2.ForeignMessage)
+  # @@protoc_insertion_point(class_scope:protobuf_test_messages.proto2.ForeignMessageProto2)
   ))
-_sym_db.RegisterMessage(ForeignMessage)
+_sym_db.RegisterMessage(ForeignMessageProto2)
 
 TestAllTypesProto2.RegisterExtension(extension_int32)
 _TESTALLTYPESPROTO2_MESSAGESETCORRECTEXTENSION1.extensions_by_name['message_set_extension'].message_type = _TESTALLTYPESPROTO2_MESSAGESETCORRECTEXTENSION1

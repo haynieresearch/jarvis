@@ -40,7 +40,7 @@ _TESTMESSAGESETCONTAINER = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -71,7 +71,7 @@ _TESTMESSAGESETEXTENSION1 = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
     _descriptor.FieldDescriptor(
@@ -80,7 +80,7 @@ _TESTMESSAGESETEXTENSION1 = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=True, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   nested_types=[],
   enum_types=[
@@ -109,7 +109,7 @@ _TESTMESSAGESETEXTENSION2 = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
     _descriptor.FieldDescriptor(
@@ -118,7 +118,7 @@ _TESTMESSAGESETEXTENSION2 = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=True, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   nested_types=[],
   enum_types=[
@@ -147,14 +147,14 @@ _RAWMESSAGESET_ITEM = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='message', full_name='protobuf_unittest.RawMessageSet.Item.message', index=1,
       number=3, type=12, cpp_type=9, label=2,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -184,7 +184,7 @@ _RAWMESSAGESET = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],

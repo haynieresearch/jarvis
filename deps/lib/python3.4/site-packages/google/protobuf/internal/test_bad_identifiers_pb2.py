@@ -32,7 +32,7 @@ message = _descriptor.FieldDescriptor(
   has_default_value=True, default_value=_b("foo").decode('utf-8'),
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 DESCRIPTOR_FIELD_NUMBER = 101
 descriptor = _descriptor.FieldDescriptor(
   name='descriptor', full_name='protobuf_unittest.descriptor', index=1,
@@ -40,7 +40,7 @@ descriptor = _descriptor.FieldDescriptor(
   has_default_value=True, default_value=_b("bar").decode('utf-8'),
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 REFLECTION_FIELD_NUMBER = 102
 reflection = _descriptor.FieldDescriptor(
   name='reflection', full_name='protobuf_unittest.reflection', index=2,
@@ -48,7 +48,7 @@ reflection = _descriptor.FieldDescriptor(
   has_default_value=True, default_value=_b("baz").decode('utf-8'),
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 SERVICE_FIELD_NUMBER = 103
 service = _descriptor.FieldDescriptor(
   name='service', full_name='protobuf_unittest.service', index=3,
@@ -56,7 +56,7 @@ service = _descriptor.FieldDescriptor(
   has_default_value=True, default_value=_b("qux").decode('utf-8'),
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 
 
 _TESTBADIDENTIFIERS = _descriptor.Descriptor(

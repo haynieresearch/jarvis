@@ -30,7 +30,7 @@ message_set_extension3 = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=None,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 
 
 _TESTMESSAGESET = _descriptor.Descriptor(
@@ -70,7 +70,7 @@ _TESTMESSAGESETEXTENSION1 = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
     _descriptor.FieldDescriptor(
@@ -79,7 +79,7 @@ _TESTMESSAGESETEXTENSION1 = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=True, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   nested_types=[],
   enum_types=[
@@ -108,7 +108,7 @@ _TESTMESSAGESETEXTENSION2 = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
     _descriptor.FieldDescriptor(
@@ -117,7 +117,7 @@ _TESTMESSAGESETEXTENSION2 = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=True, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   nested_types=[],
   enum_types=[
@@ -146,7 +146,7 @@ _TESTMESSAGESETEXTENSION3 = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],

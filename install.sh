@@ -52,6 +52,7 @@ iptables-persistent dnsutils --yes
 echo "Installing Python3 Requirements"
 sudo pip3 install homeassistant
 sudo pip3 install sqlalchemy
+sudo pip3 install appdaemon
 
 echo "Installing Python2 Requirements"
 sudo pip2 install boto3

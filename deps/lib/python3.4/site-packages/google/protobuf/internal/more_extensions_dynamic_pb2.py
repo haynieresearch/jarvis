@@ -32,7 +32,7 @@ dynamic_int32_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=0,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 DYNAMIC_MESSAGE_EXTENSION_FIELD_NUMBER = 101
 dynamic_message_extension = _descriptor.FieldDescriptor(
   name='dynamic_message_extension', full_name='google.protobuf.internal.dynamic_message_extension', index=1,
@@ -40,7 +40,7 @@ dynamic_message_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=None,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 REPEATED_DYNAMIC_MESSAGE_EXTENSION_FIELD_NUMBER = 102
 repeated_dynamic_message_extension = _descriptor.FieldDescriptor(
   name='repeated_dynamic_message_extension', full_name='google.protobuf.internal.repeated_dynamic_message_extension', index=2,
@@ -48,7 +48,7 @@ repeated_dynamic_message_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 
 
 _DYNAMICMESSAGETYPE = _descriptor.Descriptor(
@@ -64,7 +64,7 @@ _DYNAMICMESSAGETYPE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],

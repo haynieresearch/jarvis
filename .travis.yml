@@ -3,6 +3,7 @@ python:
   - "3.4"
 install:
   - pip3 install homeassistant
+  - pip3 install appdaemon
 script:
   - hass -c . --script check_config
 before_install:

@@ -30,7 +30,7 @@ optional_uint64 = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=0,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 OPTIONAL_INT64_FIELD_NUMBER = 2
 optional_int64 = _descriptor.FieldDescriptor(
   name='optional_int64', full_name='google.protobuf.internal.optional_int64', index=1,
@@ -38,7 +38,7 @@ optional_int64 = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=0,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 
 
 _OUTOFORDERFIELDS = _descriptor.Descriptor(
@@ -54,21 +54,21 @@ _OUTOFORDERFIELDS = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_uint32', full_name='google.protobuf.internal.OutOfOrderFields.optional_uint32', index=1,
       number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_int32', full_name='google.protobuf.internal.OutOfOrderFields.optional_int32', index=2,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],

@@ -151,6 +151,11 @@ class QueryableAttribute(interfaces._MappedAttribute,
 
         return self.comparator._query_clause_element()
 
+    def _bulk_update_tuples(self, value):
+        """Return setter tuples for a bulk UPDATE."""
+
+        return self.comparator._bulk_update_tuples(value)
+
     def adapt_to_entity(self, adapt_to_entity):
         assert not self._of_type
         return self.__class__(adapt_to_entity.entity,
@@ -324,6 +329,8 @@ def create_proxied_attribute(descriptor):
 OP_REMOVE = util.symbol("REMOVE")
 OP_APPEND = util.symbol("APPEND")
 OP_REPLACE = util.symbol("REPLACE")
+OP_BULK_REPLACE = util.symbol("BULK_REPLACE")
+OP_MODIFIED = util.symbol("MODIFIED")
 
 
 class Event(object):
@@ -335,9 +342,9 @@ class Event(object):
     operations.
 
     The :class:`.Event` object is sent as the ``initiator`` argument
-    when dealing with the :meth:`.AttributeEvents.append`,
+    when dealing with events such as :meth:`.AttributeEvents.append`,
     :meth:`.AttributeEvents.set`,
-    and :meth:`.AttributeEvents.remove` events.
+    and :meth:`.AttributeEvents.remove`.
 
     The :class:`.Event` object is currently interpreted by the backref
     event handlers, and is used to control the propagation of operations
@@ -348,8 +355,9 @@ class Event(object):
     :var impl: The :class:`.AttributeImpl` which is the current event
      initiator.
 
-    :var op: The symbol :attr:`.OP_APPEND`, :attr:`.OP_REMOVE` or
-     :attr:`.OP_REPLACE`, indicating the source operation.
+    :var op: The symbol :attr:`.OP_APPEND`, :attr:`.OP_REMOVE`,
+     :attr:`.OP_REPLACE`, or :attr:`.OP_BULK_REPLACE`, indicating the
+     source operation.
 
     """
 
@@ -380,7 +388,7 @@ class AttributeImpl(object):
                  callable_, dispatch, trackparent=False, extension=None,
                  compare_function=None, active_history=False,
                  parent_token=None, expire_missing=True,
-                 send_modified_events=True,
+                 send_modified_events=True, accepts_scalar_loader=None,
                  **kwargs):
         r"""Construct an AttributeImpl.
 
@@ -441,6 +449,11 @@ class AttributeImpl(object):
         else:
             self.is_equal = compare_function
 
+        if accepts_scalar_loader is not None:
+            self.accepts_scalar_loader = accepts_scalar_loader
+        else:
+            self.accepts_scalar_loader = self.default_accepts_scalar_loader
+
         # TODO: pass in the manager here
         # instead of doing a lookup
         attr = manager_of_class(class_)[key]
@@ -452,11 +465,17 @@ class AttributeImpl(object):
             self.dispatch._active_history = True
 
         self.expire_missing = expire_missing
+        self._modified_token = None
 
     __slots__ = (
         'class_', 'key', 'callable_', 'dispatch', 'trackparent',
-        'parent_token', 'send_modified_events', 'is_equal', 'expire_missing'
+        'parent_token', 'send_modified_events', 'is_equal', 'expire_missing',
+        '_modified_token', 'accepts_scalar_loader'
     )
+
+    def _init_modified_token(self):
+        self._modified_token = Event(self, OP_MODIFIED)
+        return self._modified_token
 
     def __str__(self):
         return "%s.%s" % (self.class_.__name__, self.key)
@@ -643,7 +662,7 @@ class AttributeImpl(object):
 class ScalarAttributeImpl(AttributeImpl):
     """represents a scalar value-holding InstrumentedAttribute."""
 
-    accepts_scalar_loader = True
+    default_accepts_scalar_loader = True
     uses_objects = False
     supports_population = True
     collection = False
@@ -729,7 +748,7 @@ class ScalarObjectAttributeImpl(ScalarAttributeImpl):
 
     """
 
-    accepts_scalar_loader = False
+    default_accepts_scalar_loader = False
     uses_objects = True
     supports_population = True
     collection = False
@@ -853,7 +872,7 @@ class CollectionAttributeImpl(AttributeImpl):
     semantics to the orm layer independent of the user data implementation.
 
     """
-    accepts_scalar_loader = False
+    default_accepts_scalar_loader = False
     uses_objects = True
     supports_population = True
     collection = True
@@ -1062,6 +1081,10 @@ class CollectionAttributeImpl(AttributeImpl):
                     iterable = iter(iterable)
         new_values = list(iterable)
 
+        evt = Event(self, OP_BULK_REPLACE)
+
+        self.dispatch.bulk_replace(state, new_values, evt)
+
         old = self.get(state, dict_, passive=PASSIVE_ONLY_PERSISTENT)
         if old is PASSIVE_NO_RESULT:
             old = self.initialize(state, dict_)
@@ -1078,7 +1101,8 @@ class CollectionAttributeImpl(AttributeImpl):
         dict_[self.key] = user_data
 
         collections.bulk_replace(
-            new_values, old_collection, new_collection)
+            new_values, old_collection, new_collection,
+            initiator=evt)
 
         del old._sa_adapter
         self.dispatch.dispose_collection(state, old, old_collection)
@@ -1163,7 +1187,7 @@ def backref_listeners(attribute, key, uselist):
             impl = old_state.manager[key].impl
 
             if initiator.impl is not impl or \
-                    initiator.op not in (OP_REPLACE, OP_REMOVE):
+                    initiator.op is OP_APPEND:
                 impl.pop(old_state,
                          old_dict,
                          state.obj(),
@@ -1179,7 +1203,7 @@ def backref_listeners(attribute, key, uselist):
                     initiator.parent_token is not child_impl.parent_token:
                 _acceptable_key_err(state, initiator, child_impl)
             elif initiator.impl is not child_impl or \
-                    initiator.op not in (OP_APPEND, OP_REPLACE):
+                    initiator.op is OP_REMOVE:
                 child_impl.append(
                     child_state,
                     child_dict,
@@ -1200,7 +1224,7 @@ def backref_listeners(attribute, key, uselist):
                 initiator.parent_token is not child_impl.parent_token:
             _acceptable_key_err(state, initiator, child_impl)
         elif initiator.impl is not child_impl or \
-                initiator.op not in (OP_APPEND, OP_REPLACE):
+                initiator.op is OP_REMOVE:
             child_impl.append(
                 child_state,
                 child_dict,
@@ -1215,7 +1239,7 @@ def backref_listeners(attribute, key, uselist):
                 instance_dict(child)
             child_impl = child_state.manager[key].impl
             if initiator.impl is not child_impl or \
-                    initiator.op not in (OP_REMOVE, OP_REPLACE):
+                    initiator.op is OP_APPEND:
                 child_impl.pop(
                     child_state,
                     child_dict,
@@ -1610,8 +1634,44 @@ def flag_modified(instance, key):
 
     This sets the 'modified' flag on the instance and
     establishes an unconditional change event for the given attribute.
+    The attribute must have a value present, else an
+    :class:`.InvalidRequestError` is raised.
+
+    To mark an object "dirty" without referring to any specific attribute
+    so that it is considered within a flush, use the
+    :func:`.attributes.flag_dirty` call.
+
+    .. seealso::
+
+        :func:`.attributes.flag_dirty`
 
     """
     state, dict_ = instance_state(instance), instance_dict(instance)
     impl = state.manager[key].impl
-    state._modified_event(dict_, impl, NO_VALUE, force=True)
+    impl.dispatch.modified(
+        state, impl._modified_token or impl._init_modified_token())
+    state._modified_event(dict_, impl, NO_VALUE, is_userland=True)
+
+
+def flag_dirty(instance):
+    """Mark an instance as 'dirty' without any specific attribute mentioned.
+
+    This is a special operation that will allow the object to travel through
+    the flush process for interception by events such as
+    :meth:`.SessionEvents.before_flush`.   Note that no SQL will be emitted in
+    the flush process for an object that has no changes, even if marked dirty
+    via this method.  However, a :meth:`.SessionEvents.before_flush` handler
+    will be able to see the object in the :attr:`.Session.dirty` collection and
+    may establish changes on it, which will then be included in the SQL
+    emitted.
+
+    .. versionadded:: 1.2
+
+    .. seealso::
+
+        :func:`.attributes.flag_modified`
+
+    """
+
+    state, dict_ = instance_state(instance), instance_dict(instance)
+    state._modified_event(dict_, None, NO_VALUE, is_userland=True)

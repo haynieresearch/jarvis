@@ -514,8 +514,8 @@
   <text x="-236.141" y="-108.609" id="climate.downstairs" transform="matrix(1.000002, 0, 0, 1, -93.956871, -38.317612)" style="fill: url(#gradient-136); font-family: monospace; font-size: 12px; white-space: pre;">XX</text>
   <text x="-200.316" y="-95.19" id="sensor.average_down_temp" transform="matrix(0.999999, 0, 0, 1, -84.720566, -38.317619)" style="fill: url(#gradient-138); font-family: monospace; font-size: 12px; white-space: pre;">XX</text>
   <text x="-251.492" y="-81.282" id="sensor.average_down_humid" transform="matrix(0.999999, 0, 0, 1, -93.370903, -38.340153)" style="fill: url(#gradient-140); font-family: monospace; font-size: 12px; white-space: pre;">XX</text>
-  <text x="-513.517" y="-174.368" transform="matrix(0.819497, 0, 0, 0.819498, -105.561913, -42.360104)" id="sensor.cpu_use" style="fill: url(#gradient-152); font-family: monospace; font-size: 14.1px; white-space: pre;">X</text>
-  <text x="-547.18" y="-170.154" id="sensor.ram_use" style="fill: url(#gradient-154); font-family: monospace; font-size: 12px; white-space: pre;">X</text>
+  <text x="-513.517" y="-174.368" transform="matrix(0.819497, 0, 0, 0.819498, -105.561913, -42.360104)" id="sensor.cpu_used" style="fill: url(#gradient-152); font-family: monospace; font-size: 14.1px; white-space: pre;">X</text>
+  <text x="-547.18" y="-170.154" id="sensor.ram_used" style="fill: url(#gradient-154); font-family: monospace; font-size: 12px; white-space: pre;">X</text>
   <text x="-534.929" y="-152.58" id="sensor.average_load_1m" style="fill: url(#gradient-156); font-family: monospace; font-size: 12px; white-space: pre;">X</text>
   <text x="-447.488" y="-97.765" id="sensor.average_load_5m" transform="matrix(1, 0, 0, 0.999999, -87.511009, -38.490673)" style="fill: url(#gradient-158); font-family: monospace; font-size: 12px; white-space: pre;">X</text>
   <text x="-534.601" y="-120.27" id="sensor.average_load_15m" style="fill: url(#gradient-159); font-family: monospace; font-size: 12px; white-space: pre;">X</text>

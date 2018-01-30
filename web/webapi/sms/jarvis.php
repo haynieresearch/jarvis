@@ -31,6 +31,10 @@ if (in_array($number, $nwsNumbers))
 	{
 		wx_alert($body);
 	}
+elseif (in_array($number, $blockedNumbers))
+	{
+		$reply = "Error: You have been blocked by Jarvis for abuse of the system.";
+	}
 elseif (in_array($number, $validNumbers) && strtolower(substr($body,0,4)) == "tts:")
 	{
 		tts($body);

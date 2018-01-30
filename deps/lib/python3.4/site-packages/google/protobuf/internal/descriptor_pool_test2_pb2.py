@@ -109,14 +109,14 @@ _DESCRIPTORPOOLTEST3_NESTEDMESSAGE_DEEPNESTEDMESSAGE = _descriptor.Descriptor(
       has_default_value=True, default_value=17,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='nested_field', full_name='google.protobuf.python.internal.DescriptorPoolTest3.NestedMessage.DeepNestedMessage.nested_field', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=True, default_value=_b("sigma").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -147,21 +147,21 @@ _DESCRIPTORPOOLTEST3_NESTEDMESSAGE = _descriptor.Descriptor(
       has_default_value=True, default_value=16,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='nested_field', full_name='google.protobuf.python.internal.DescriptorPoolTest3.NestedMessage.nested_field', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=True, default_value=_b("nu").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='deep_nested_message', full_name='google.protobuf.python.internal.DescriptorPoolTest3.NestedMessage.deep_nested_message', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -192,14 +192,14 @@ _DESCRIPTORPOOLTEST3 = _descriptor.Descriptor(
       has_default_value=True, default_value=14,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='nested_message', full_name='google.protobuf.python.internal.DescriptorPoolTest3.nested_message', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
     _descriptor.FieldDescriptor(
@@ -208,7 +208,7 @@ _DESCRIPTORPOOLTEST3 = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=True, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   nested_types=[_DESCRIPTORPOOLTEST3_NESTEDMESSAGE, ],
   enum_types=[

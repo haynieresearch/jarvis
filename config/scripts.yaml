@@ -24,13 +24,13 @@ sound_alarm:
   sequence:
     - service: homeassistant.turn_on
       data:
-        entity_id: switch.gpio_switch_21
+        entity_id: switch.vibratone_alarm
     - service: shell_command.alarm_sound
     - delay:
         seconds: 0.125
     - service: homeassistant.turn_off
       data:
-        entity_id: switch.gpio_switch_21
+        entity_id: switch.vibratone_alarm
     - service: script.turn_on
       data:
         entity_id: script.sound_alarm_loop
@@ -47,12 +47,12 @@ sound_alarm_long:
   sequence:
     - service: homeassistant.turn_on
       data:
-        entity_id: switch.gpio_switch_21
+        entity_id: switch.vibratone_alarm
     - delay:
         seconds: 2
     - service: homeassistant.turn_off
       data:
-        entity_id: switch.gpio_switch_21
+        entity_id: switch.vibratone_alarm
     - service: script.turn_on
       data:
         entity_id: script.sound_alarm_loop_long
@@ -69,62 +69,62 @@ sos_alarm:
   sequence:
     - service: homeassistant.turn_on
       data:
-        entity_id: switch.gpio_switch_21
+        entity_id: switch.vibratone_alarm
     - delay:
         seconds: 0.125
     - service: homeassistant.turn_off
       data:
-        entity_id: switch.gpio_switch_21
+        entity_id: switch.vibratone_alarm
     - delay:
         seconds: 0
     - service: homeassistant.turn_on
       data:
-        entity_id: switch.gpio_switch_21
+        entity_id: switch.vibratone_alarm
     - delay:
         seconds: 0.125
     - service: homeassistant.turn_off
       data:
-        entity_id: switch.gpio_switch_21
+        entity_id: switch.vibratone_alarm
     - delay:
         seconds: 0
     - service: homeassistant.turn_on
       data:
-        entity_id: switch.gpio_switch_21
+        entity_id: switch.vibratone_alarm
     - delay:
         seconds: 0.125
     - service: homeassistant.turn_off
       data:
-        entity_id: switch.gpio_switch_21
+        entity_id: switch.vibratone_alarm
     - delay:
         seconds: 0
     - service: homeassistant.turn_on
       data:
-        entity_id: switch.gpio_switch_21
+        entity_id: switch.vibratone_alarm
     - delay:
         seconds: 1
     - service: homeassistant.turn_off
       data:
-        entity_id: switch.gpio_switch_21
+        entity_id: switch.vibratone_alarm
     - delay:
         seconds: 0
     - service: homeassistant.turn_on
       data:
-        entity_id: switch.gpio_switch_21
+        entity_id: switch.vibratone_alarm
     - delay:
         seconds: 1
     - service: homeassistant.turn_off
       data:
-        entity_id: switch.gpio_switch_21
+        entity_id: switch.vibratone_alarm
     - delay:
         seconds: 0
     - service: homeassistant.turn_on
       data:
-        entity_id: switch.gpio_switch_21
+        entity_id: switch.vibratone_alarm
     - delay:
         seconds: 1
     - service: homeassistant.turn_off
       data:
-        entity_id: switch.gpio_switch_21
+        entity_id: switch.vibratone_alarm
     - service: script.turn_on
       data:
         entity_id: script.sos_alarm_loop
@@ -136,6 +136,50 @@ sos_alarm_loop:
     - service: script.turn_on
       data:
         entity_id: script.sos_alarm
+
+garage_hazard:
+  sequence:
+    - service: homeassistant.turn_on
+      data:
+        entity_id: switch.garage_warning_light
+    - delay:
+        seconds: 1
+    - service: homeassistant.turn_off
+      data:
+        entity_id: switch.garage_warning_light
+    - service: script.turn_on
+      data:
+        entity_id: script.garage_hazard_loop
+
+garage_hazard_loop:
+  sequence:
+    - delay:
+        seconds: 0
+    - service: script.turn_on
+      data:
+        entity_id: script.garage_hazard
+
+garage_alarm:
+  sequence:
+    - service: homeassistant.turn_on
+      data:
+        entity_id: switch.garage_warning_light
+    - delay:
+        seconds: 0.125
+    - service: homeassistant.turn_off
+      data:
+        entity_id: switch.garage_warning_light
+    - service: script.turn_on
+      data:
+        entity_id: script.garage_alarm_loop
+
+garage_alarm_loop:
+  sequence:
+    - delay:
+        seconds: 0
+    - service: script.turn_on
+      data:
+        entity_id: script.garage_hazard
 
 find_katies_iphone:
   sequence:

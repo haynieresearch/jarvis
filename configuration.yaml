@@ -175,13 +175,9 @@ weblink:
     - name: Home
       url: http://localhost:8123
 
-light:
-  - platform: hue
-    host: 10.0.1.202
-    filename: phue1.conf
-    allow_unreachable: true
-    allow_in_emulated_hue: true
-    allow_hue_groups: true
+hue:
+  bridges:
+    - host: 10.0.1.202
 
 remote:
   - platform: harmony

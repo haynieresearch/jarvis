@@ -19,24 +19,3 @@
 #You should have received a copy of the GNU General Public License along
 #with this program; if not, write to the Free Software Foundation, Inc.,
 #51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
-
-- platform: rpi_gpio
-  ports:
-    02: gpio_sensor_02
-    03: gpio_sensor_03
-    04: gpio_sensor_04
-    17: gpio_sensor_17
-    27: gpio_sensor_27
-    22: gpio_sensor_22
-    10: gpio_sensor_10
-    09: gpio_sensor_09
-    11: gpio_sensor_11
-    05: gpio_sensor_05
-    06: gpio_sensor_06
-    13: gpio_sensor_13
-    19: gpio_sensor_19
-    26: gpio_sensor_26
-  value_high: "On"
-  value_low: "Off"
-  invert_logic: false
-  pull_mode: down

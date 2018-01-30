@@ -791,7 +791,7 @@
         message: "{{ states.sensor.jarvis_greeting.state }}, The average temperature upstairs is getting a bit cold with an average temprature of {{ trigger.to_state.state }}. I am going to turn on the heater."
     - service: notify.twitter
       data_template:
-        message: "It is getting a bit cold upstairs with an average temprature of {{ trigger.to_state.state }}. I am going to turn on the AC. #HomeAutomation #SmartHome"
+        message: "It is getting a bit cold upstairs with an average temprature of {{ trigger.to_state.state }}. I am going to turn on the heater. #HomeAutomation #SmartHome"
 
 - id: hudsons_room_fan_on
   alias: Hudsons Room Fan On
@@ -1464,7 +1464,7 @@
   action:
     - service: script.turn_on
       data:
-        entity_id: script.sound_alarm_long
+        entity_id: script.garage_alarm
 
 - id: security_garage_alarm_off
   alias: Garage Alarm Off
@@ -1476,13 +1476,55 @@
   action:
     - service: script.turn_off
       data:
-        entity_id: script.sound_alarm_long
+        entity_id: script.garage_alarm
     - service: script.turn_off
       data:
-        entity_id: script.sound_alarm_loop_long
+        entity_id: script.garage_alarm_loop
     - service: homeassistant.turn_off
       data:
-        entity_id: switch.gpio_switch_21
+        entity_id: sswitch.garage_warning_light
+
+- id: security_garage_hazard_on
+  alias: Garage hazard On
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_boolean.garage_hazard
+    to: 'on'
+  action:
+    - service: script.turn_on
+      data:
+        entity_id: script.garage_hazard
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "The garage hazard light has been turned on. Do not enter the garage until the red light is no longer flashing."
+
+- id: security_garage_hazard_off
+  alias: Garage hazard Off
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_boolean.garage_hazard
+    to: 'off'
+  action:
+    - service: script.turn_off
+      data:
+        entity_id: script.garage_hazard
+    - service: script.turn_off
+      data:
+        entity_id: script.garage_hazard_loop
+    - service: homeassistant.turn_off
+      data:
+        entity_id: sswitch.garage_warning_light
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "The garage hazard light has been turned off. You are now able to enter the garage."
 
 - id: security_silance_alarm_after_15_min
   alias: Silence Alarm After 15 Minutes
@@ -3963,7 +4005,7 @@
     weekday:
       - fri
   action:
-    - service: shell_command.one_tone
+    - service: shell_command.two_tone
     - delay:
         seconds: 0.125
     - service: shell_command.tts
@@ -3985,7 +4027,7 @@
     weekday:
       - fri
   action:
-    - service: shell_command.one_tone
+    - service: shell_command.two_tone
     - delay:
         seconds: 0.125
     - service: shell_command.tts
@@ -4007,7 +4049,7 @@
     weekday:
       - fri
   action:
-    - service: shell_command.one_tone
+    - service: shell_command.two_tone
     - delay:
         seconds: 0.125
     - service: shell_command.tts
@@ -4029,7 +4071,7 @@
     weekday:
       - fri
   action:
-    - service: shell_command.one_tone
+    - service: shell_command.two_tone
     - delay:
         seconds: 0.125
     - service: shell_command.tts
@@ -4051,7 +4093,7 @@
     weekday:
       - fri
   action:
-    - service: shell_command.one_tone
+    - service: shell_command.two_tone
     - delay:
         seconds: 0.125
     - service: shell_command.tts
@@ -4060,3 +4102,6 @@
     - service: notify.twitter
       data:
         message: "Shabbat Shalom! The sun has set and it is time to start #Shabbat. Break out the candles and lets get this party started. #HomeAutomation #SmartHome"
+    - delay:
+        seconds: 5
+    - service: shell_command.shalom_aleichem

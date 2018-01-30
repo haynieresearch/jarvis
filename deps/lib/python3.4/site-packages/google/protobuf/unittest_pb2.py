@@ -159,7 +159,7 @@ optional_int32_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=0,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 OPTIONAL_INT64_EXTENSION_FIELD_NUMBER = 2
 optional_int64_extension = _descriptor.FieldDescriptor(
   name='optional_int64_extension', full_name='protobuf_unittest.optional_int64_extension', index=1,
@@ -167,7 +167,7 @@ optional_int64_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=0,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 OPTIONAL_UINT32_EXTENSION_FIELD_NUMBER = 3
 optional_uint32_extension = _descriptor.FieldDescriptor(
   name='optional_uint32_extension', full_name='protobuf_unittest.optional_uint32_extension', index=2,
@@ -175,7 +175,7 @@ optional_uint32_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=0,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 OPTIONAL_UINT64_EXTENSION_FIELD_NUMBER = 4
 optional_uint64_extension = _descriptor.FieldDescriptor(
   name='optional_uint64_extension', full_name='protobuf_unittest.optional_uint64_extension', index=3,
@@ -183,7 +183,7 @@ optional_uint64_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=0,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 OPTIONAL_SINT32_EXTENSION_FIELD_NUMBER = 5
 optional_sint32_extension = _descriptor.FieldDescriptor(
   name='optional_sint32_extension', full_name='protobuf_unittest.optional_sint32_extension', index=4,
@@ -191,7 +191,7 @@ optional_sint32_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=0,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 OPTIONAL_SINT64_EXTENSION_FIELD_NUMBER = 6
 optional_sint64_extension = _descriptor.FieldDescriptor(
   name='optional_sint64_extension', full_name='protobuf_unittest.optional_sint64_extension', index=5,
@@ -199,7 +199,7 @@ optional_sint64_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=0,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 OPTIONAL_FIXED32_EXTENSION_FIELD_NUMBER = 7
 optional_fixed32_extension = _descriptor.FieldDescriptor(
   name='optional_fixed32_extension', full_name='protobuf_unittest.optional_fixed32_extension', index=6,
@@ -207,7 +207,7 @@ optional_fixed32_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=0,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 OPTIONAL_FIXED64_EXTENSION_FIELD_NUMBER = 8
 optional_fixed64_extension = _descriptor.FieldDescriptor(
   name='optional_fixed64_extension', full_name='protobuf_unittest.optional_fixed64_extension', index=7,
@@ -215,7 +215,7 @@ optional_fixed64_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=0,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 OPTIONAL_SFIXED32_EXTENSION_FIELD_NUMBER = 9
 optional_sfixed32_extension = _descriptor.FieldDescriptor(
   name='optional_sfixed32_extension', full_name='protobuf_unittest.optional_sfixed32_extension', index=8,
@@ -223,7 +223,7 @@ optional_sfixed32_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=0,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 OPTIONAL_SFIXED64_EXTENSION_FIELD_NUMBER = 10
 optional_sfixed64_extension = _descriptor.FieldDescriptor(
   name='optional_sfixed64_extension', full_name='protobuf_unittest.optional_sfixed64_extension', index=9,
@@ -231,7 +231,7 @@ optional_sfixed64_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=0,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 OPTIONAL_FLOAT_EXTENSION_FIELD_NUMBER = 11
 optional_float_extension = _descriptor.FieldDescriptor(
   name='optional_float_extension', full_name='protobuf_unittest.optional_float_extension', index=10,
@@ -239,7 +239,7 @@ optional_float_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=float(0),
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 OPTIONAL_DOUBLE_EXTENSION_FIELD_NUMBER = 12
 optional_double_extension = _descriptor.FieldDescriptor(
   name='optional_double_extension', full_name='protobuf_unittest.optional_double_extension', index=11,
@@ -247,7 +247,7 @@ optional_double_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=float(0),
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 OPTIONAL_BOOL_EXTENSION_FIELD_NUMBER = 13
 optional_bool_extension = _descriptor.FieldDescriptor(
   name='optional_bool_extension', full_name='protobuf_unittest.optional_bool_extension', index=12,
@@ -255,7 +255,7 @@ optional_bool_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=False,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 OPTIONAL_STRING_EXTENSION_FIELD_NUMBER = 14
 optional_string_extension = _descriptor.FieldDescriptor(
   name='optional_string_extension', full_name='protobuf_unittest.optional_string_extension', index=13,
@@ -263,7 +263,7 @@ optional_string_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=_b("").decode('utf-8'),
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 OPTIONAL_BYTES_EXTENSION_FIELD_NUMBER = 15
 optional_bytes_extension = _descriptor.FieldDescriptor(
   name='optional_bytes_extension', full_name='protobuf_unittest.optional_bytes_extension', index=14,
@@ -271,7 +271,7 @@ optional_bytes_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=_b(""),
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 OPTIONALGROUP_EXTENSION_FIELD_NUMBER = 16
 optionalgroup_extension = _descriptor.FieldDescriptor(
   name='optionalgroup_extension', full_name='protobuf_unittest.optionalgroup_extension', index=15,
@@ -279,7 +279,7 @@ optionalgroup_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=None,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 OPTIONAL_NESTED_MESSAGE_EXTENSION_FIELD_NUMBER = 18
 optional_nested_message_extension = _descriptor.FieldDescriptor(
   name='optional_nested_message_extension', full_name='protobuf_unittest.optional_nested_message_extension', index=16,
@@ -287,7 +287,7 @@ optional_nested_message_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=None,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 OPTIONAL_FOREIGN_MESSAGE_EXTENSION_FIELD_NUMBER = 19
 optional_foreign_message_extension = _descriptor.FieldDescriptor(
   name='optional_foreign_message_extension', full_name='protobuf_unittest.optional_foreign_message_extension', index=17,
@@ -295,7 +295,7 @@ optional_foreign_message_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=None,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 OPTIONAL_IMPORT_MESSAGE_EXTENSION_FIELD_NUMBER = 20
 optional_import_message_extension = _descriptor.FieldDescriptor(
   name='optional_import_message_extension', full_name='protobuf_unittest.optional_import_message_extension', index=18,
@@ -303,7 +303,7 @@ optional_import_message_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=None,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 OPTIONAL_NESTED_ENUM_EXTENSION_FIELD_NUMBER = 21
 optional_nested_enum_extension = _descriptor.FieldDescriptor(
   name='optional_nested_enum_extension', full_name='protobuf_unittest.optional_nested_enum_extension', index=19,
@@ -311,7 +311,7 @@ optional_nested_enum_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=1,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 OPTIONAL_FOREIGN_ENUM_EXTENSION_FIELD_NUMBER = 22
 optional_foreign_enum_extension = _descriptor.FieldDescriptor(
   name='optional_foreign_enum_extension', full_name='protobuf_unittest.optional_foreign_enum_extension', index=20,
@@ -319,7 +319,7 @@ optional_foreign_enum_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=4,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 OPTIONAL_IMPORT_ENUM_EXTENSION_FIELD_NUMBER = 23
 optional_import_enum_extension = _descriptor.FieldDescriptor(
   name='optional_import_enum_extension', full_name='protobuf_unittest.optional_import_enum_extension', index=21,
@@ -327,7 +327,7 @@ optional_import_enum_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=7,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 OPTIONAL_STRING_PIECE_EXTENSION_FIELD_NUMBER = 24
 optional_string_piece_extension = _descriptor.FieldDescriptor(
   name='optional_string_piece_extension', full_name='protobuf_unittest.optional_string_piece_extension', index=22,
@@ -335,7 +335,7 @@ optional_string_piece_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=_b("").decode('utf-8'),
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\002')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\002')), file=DESCRIPTOR)
 OPTIONAL_CORD_EXTENSION_FIELD_NUMBER = 25
 optional_cord_extension = _descriptor.FieldDescriptor(
   name='optional_cord_extension', full_name='protobuf_unittest.optional_cord_extension', index=23,
@@ -343,7 +343,7 @@ optional_cord_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=_b("").decode('utf-8'),
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\001')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\001')), file=DESCRIPTOR)
 OPTIONAL_PUBLIC_IMPORT_MESSAGE_EXTENSION_FIELD_NUMBER = 26
 optional_public_import_message_extension = _descriptor.FieldDescriptor(
   name='optional_public_import_message_extension', full_name='protobuf_unittest.optional_public_import_message_extension', index=24,
@@ -351,7 +351,7 @@ optional_public_import_message_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=None,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 OPTIONAL_LAZY_MESSAGE_EXTENSION_FIELD_NUMBER = 27
 optional_lazy_message_extension = _descriptor.FieldDescriptor(
   name='optional_lazy_message_extension', full_name='protobuf_unittest.optional_lazy_message_extension', index=25,
@@ -359,7 +359,7 @@ optional_lazy_message_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=None,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('(\001')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('(\001')), file=DESCRIPTOR)
 REPEATED_INT32_EXTENSION_FIELD_NUMBER = 31
 repeated_int32_extension = _descriptor.FieldDescriptor(
   name='repeated_int32_extension', full_name='protobuf_unittest.repeated_int32_extension', index=26,
@@ -367,7 +367,7 @@ repeated_int32_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 REPEATED_INT64_EXTENSION_FIELD_NUMBER = 32
 repeated_int64_extension = _descriptor.FieldDescriptor(
   name='repeated_int64_extension', full_name='protobuf_unittest.repeated_int64_extension', index=27,
@@ -375,7 +375,7 @@ repeated_int64_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 REPEATED_UINT32_EXTENSION_FIELD_NUMBER = 33
 repeated_uint32_extension = _descriptor.FieldDescriptor(
   name='repeated_uint32_extension', full_name='protobuf_unittest.repeated_uint32_extension', index=28,
@@ -383,7 +383,7 @@ repeated_uint32_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 REPEATED_UINT64_EXTENSION_FIELD_NUMBER = 34
 repeated_uint64_extension = _descriptor.FieldDescriptor(
   name='repeated_uint64_extension', full_name='protobuf_unittest.repeated_uint64_extension', index=29,
@@ -391,7 +391,7 @@ repeated_uint64_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 REPEATED_SINT32_EXTENSION_FIELD_NUMBER = 35
 repeated_sint32_extension = _descriptor.FieldDescriptor(
   name='repeated_sint32_extension', full_name='protobuf_unittest.repeated_sint32_extension', index=30,
@@ -399,7 +399,7 @@ repeated_sint32_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 REPEATED_SINT64_EXTENSION_FIELD_NUMBER = 36
 repeated_sint64_extension = _descriptor.FieldDescriptor(
   name='repeated_sint64_extension', full_name='protobuf_unittest.repeated_sint64_extension', index=31,
@@ -407,7 +407,7 @@ repeated_sint64_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 REPEATED_FIXED32_EXTENSION_FIELD_NUMBER = 37
 repeated_fixed32_extension = _descriptor.FieldDescriptor(
   name='repeated_fixed32_extension', full_name='protobuf_unittest.repeated_fixed32_extension', index=32,
@@ -415,7 +415,7 @@ repeated_fixed32_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 REPEATED_FIXED64_EXTENSION_FIELD_NUMBER = 38
 repeated_fixed64_extension = _descriptor.FieldDescriptor(
   name='repeated_fixed64_extension', full_name='protobuf_unittest.repeated_fixed64_extension', index=33,
@@ -423,7 +423,7 @@ repeated_fixed64_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 REPEATED_SFIXED32_EXTENSION_FIELD_NUMBER = 39
 repeated_sfixed32_extension = _descriptor.FieldDescriptor(
   name='repeated_sfixed32_extension', full_name='protobuf_unittest.repeated_sfixed32_extension', index=34,
@@ -431,7 +431,7 @@ repeated_sfixed32_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 REPEATED_SFIXED64_EXTENSION_FIELD_NUMBER = 40
 repeated_sfixed64_extension = _descriptor.FieldDescriptor(
   name='repeated_sfixed64_extension', full_name='protobuf_unittest.repeated_sfixed64_extension', index=35,
@@ -439,7 +439,7 @@ repeated_sfixed64_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 REPEATED_FLOAT_EXTENSION_FIELD_NUMBER = 41
 repeated_float_extension = _descriptor.FieldDescriptor(
   name='repeated_float_extension', full_name='protobuf_unittest.repeated_float_extension', index=36,
@@ -447,7 +447,7 @@ repeated_float_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 REPEATED_DOUBLE_EXTENSION_FIELD_NUMBER = 42
 repeated_double_extension = _descriptor.FieldDescriptor(
   name='repeated_double_extension', full_name='protobuf_unittest.repeated_double_extension', index=37,
@@ -455,7 +455,7 @@ repeated_double_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 REPEATED_BOOL_EXTENSION_FIELD_NUMBER = 43
 repeated_bool_extension = _descriptor.FieldDescriptor(
   name='repeated_bool_extension', full_name='protobuf_unittest.repeated_bool_extension', index=38,
@@ -463,7 +463,7 @@ repeated_bool_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 REPEATED_STRING_EXTENSION_FIELD_NUMBER = 44
 repeated_string_extension = _descriptor.FieldDescriptor(
   name='repeated_string_extension', full_name='protobuf_unittest.repeated_string_extension', index=39,
@@ -471,7 +471,7 @@ repeated_string_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 REPEATED_BYTES_EXTENSION_FIELD_NUMBER = 45
 repeated_bytes_extension = _descriptor.FieldDescriptor(
   name='repeated_bytes_extension', full_name='protobuf_unittest.repeated_bytes_extension', index=40,
@@ -479,7 +479,7 @@ repeated_bytes_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 REPEATEDGROUP_EXTENSION_FIELD_NUMBER = 46
 repeatedgroup_extension = _descriptor.FieldDescriptor(
   name='repeatedgroup_extension', full_name='protobuf_unittest.repeatedgroup_extension', index=41,
@@ -487,7 +487,7 @@ repeatedgroup_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 REPEATED_NESTED_MESSAGE_EXTENSION_FIELD_NUMBER = 48
 repeated_nested_message_extension = _descriptor.FieldDescriptor(
   name='repeated_nested_message_extension', full_name='protobuf_unittest.repeated_nested_message_extension', index=42,
@@ -495,7 +495,7 @@ repeated_nested_message_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 REPEATED_FOREIGN_MESSAGE_EXTENSION_FIELD_NUMBER = 49
 repeated_foreign_message_extension = _descriptor.FieldDescriptor(
   name='repeated_foreign_message_extension', full_name='protobuf_unittest.repeated_foreign_message_extension', index=43,
@@ -503,7 +503,7 @@ repeated_foreign_message_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 REPEATED_IMPORT_MESSAGE_EXTENSION_FIELD_NUMBER = 50
 repeated_import_message_extension = _descriptor.FieldDescriptor(
   name='repeated_import_message_extension', full_name='protobuf_unittest.repeated_import_message_extension', index=44,
@@ -511,7 +511,7 @@ repeated_import_message_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 REPEATED_NESTED_ENUM_EXTENSION_FIELD_NUMBER = 51
 repeated_nested_enum_extension = _descriptor.FieldDescriptor(
   name='repeated_nested_enum_extension', full_name='protobuf_unittest.repeated_nested_enum_extension', index=45,
@@ -519,7 +519,7 @@ repeated_nested_enum_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 REPEATED_FOREIGN_ENUM_EXTENSION_FIELD_NUMBER = 52
 repeated_foreign_enum_extension = _descriptor.FieldDescriptor(
   name='repeated_foreign_enum_extension', full_name='protobuf_unittest.repeated_foreign_enum_extension', index=46,
@@ -527,7 +527,7 @@ repeated_foreign_enum_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 REPEATED_IMPORT_ENUM_EXTENSION_FIELD_NUMBER = 53
 repeated_import_enum_extension = _descriptor.FieldDescriptor(
   name='repeated_import_enum_extension', full_name='protobuf_unittest.repeated_import_enum_extension', index=47,
@@ -535,7 +535,7 @@ repeated_import_enum_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 REPEATED_STRING_PIECE_EXTENSION_FIELD_NUMBER = 54
 repeated_string_piece_extension = _descriptor.FieldDescriptor(
   name='repeated_string_piece_extension', full_name='protobuf_unittest.repeated_string_piece_extension', index=48,
@@ -543,7 +543,7 @@ repeated_string_piece_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\002')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\002')), file=DESCRIPTOR)
 REPEATED_CORD_EXTENSION_FIELD_NUMBER = 55
 repeated_cord_extension = _descriptor.FieldDescriptor(
   name='repeated_cord_extension', full_name='protobuf_unittest.repeated_cord_extension', index=49,
@@ -551,7 +551,7 @@ repeated_cord_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\001')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\001')), file=DESCRIPTOR)
 REPEATED_LAZY_MESSAGE_EXTENSION_FIELD_NUMBER = 57
 repeated_lazy_message_extension = _descriptor.FieldDescriptor(
   name='repeated_lazy_message_extension', full_name='protobuf_unittest.repeated_lazy_message_extension', index=50,
@@ -559,7 +559,7 @@ repeated_lazy_message_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('(\001')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('(\001')), file=DESCRIPTOR)
 DEFAULT_INT32_EXTENSION_FIELD_NUMBER = 61
 default_int32_extension = _descriptor.FieldDescriptor(
   name='default_int32_extension', full_name='protobuf_unittest.default_int32_extension', index=51,
@@ -567,7 +567,7 @@ default_int32_extension = _descriptor.FieldDescriptor(
   has_default_value=True, default_value=41,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 DEFAULT_INT64_EXTENSION_FIELD_NUMBER = 62
 default_int64_extension = _descriptor.FieldDescriptor(
   name='default_int64_extension', full_name='protobuf_unittest.default_int64_extension', index=52,
@@ -575,7 +575,7 @@ default_int64_extension = _descriptor.FieldDescriptor(
   has_default_value=True, default_value=42,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 DEFAULT_UINT32_EXTENSION_FIELD_NUMBER = 63
 default_uint32_extension = _descriptor.FieldDescriptor(
   name='default_uint32_extension', full_name='protobuf_unittest.default_uint32_extension', index=53,
@@ -583,7 +583,7 @@ default_uint32_extension = _descriptor.FieldDescriptor(
   has_default_value=True, default_value=43,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 DEFAULT_UINT64_EXTENSION_FIELD_NUMBER = 64
 default_uint64_extension = _descriptor.FieldDescriptor(
   name='default_uint64_extension', full_name='protobuf_unittest.default_uint64_extension', index=54,
@@ -591,7 +591,7 @@ default_uint64_extension = _descriptor.FieldDescriptor(
   has_default_value=True, default_value=44,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 DEFAULT_SINT32_EXTENSION_FIELD_NUMBER = 65
 default_sint32_extension = _descriptor.FieldDescriptor(
   name='default_sint32_extension', full_name='protobuf_unittest.default_sint32_extension', index=55,
@@ -599,7 +599,7 @@ default_sint32_extension = _descriptor.FieldDescriptor(
   has_default_value=True, default_value=-45,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 DEFAULT_SINT64_EXTENSION_FIELD_NUMBER = 66
 default_sint64_extension = _descriptor.FieldDescriptor(
   name='default_sint64_extension', full_name='protobuf_unittest.default_sint64_extension', index=56,
@@ -607,7 +607,7 @@ default_sint64_extension = _descriptor.FieldDescriptor(
   has_default_value=True, default_value=46,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 DEFAULT_FIXED32_EXTENSION_FIELD_NUMBER = 67
 default_fixed32_extension = _descriptor.FieldDescriptor(
   name='default_fixed32_extension', full_name='protobuf_unittest.default_fixed32_extension', index=57,
@@ -615,7 +615,7 @@ default_fixed32_extension = _descriptor.FieldDescriptor(
   has_default_value=True, default_value=47,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 DEFAULT_FIXED64_EXTENSION_FIELD_NUMBER = 68
 default_fixed64_extension = _descriptor.FieldDescriptor(
   name='default_fixed64_extension', full_name='protobuf_unittest.default_fixed64_extension', index=58,
@@ -623,7 +623,7 @@ default_fixed64_extension = _descriptor.FieldDescriptor(
   has_default_value=True, default_value=48,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 DEFAULT_SFIXED32_EXTENSION_FIELD_NUMBER = 69
 default_sfixed32_extension = _descriptor.FieldDescriptor(
   name='default_sfixed32_extension', full_name='protobuf_unittest.default_sfixed32_extension', index=59,
@@ -631,7 +631,7 @@ default_sfixed32_extension = _descriptor.FieldDescriptor(
   has_default_value=True, default_value=49,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 DEFAULT_SFIXED64_EXTENSION_FIELD_NUMBER = 70
 default_sfixed64_extension = _descriptor.FieldDescriptor(
   name='default_sfixed64_extension', full_name='protobuf_unittest.default_sfixed64_extension', index=60,
@@ -639,7 +639,7 @@ default_sfixed64_extension = _descriptor.FieldDescriptor(
   has_default_value=True, default_value=-50,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 DEFAULT_FLOAT_EXTENSION_FIELD_NUMBER = 71
 default_float_extension = _descriptor.FieldDescriptor(
   name='default_float_extension', full_name='protobuf_unittest.default_float_extension', index=61,
@@ -647,7 +647,7 @@ default_float_extension = _descriptor.FieldDescriptor(
   has_default_value=True, default_value=float(51.5),
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 DEFAULT_DOUBLE_EXTENSION_FIELD_NUMBER = 72
 default_double_extension = _descriptor.FieldDescriptor(
   name='default_double_extension', full_name='protobuf_unittest.default_double_extension', index=62,
@@ -655,7 +655,7 @@ default_double_extension = _descriptor.FieldDescriptor(
   has_default_value=True, default_value=float(52000),
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 DEFAULT_BOOL_EXTENSION_FIELD_NUMBER = 73
 default_bool_extension = _descriptor.FieldDescriptor(
   name='default_bool_extension', full_name='protobuf_unittest.default_bool_extension', index=63,
@@ -663,7 +663,7 @@ default_bool_extension = _descriptor.FieldDescriptor(
   has_default_value=True, default_value=True,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 DEFAULT_STRING_EXTENSION_FIELD_NUMBER = 74
 default_string_extension = _descriptor.FieldDescriptor(
   name='default_string_extension', full_name='protobuf_unittest.default_string_extension', index=64,
@@ -671,7 +671,7 @@ default_string_extension = _descriptor.FieldDescriptor(
   has_default_value=True, default_value=_b("hello").decode('utf-8'),
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 DEFAULT_BYTES_EXTENSION_FIELD_NUMBER = 75
 default_bytes_extension = _descriptor.FieldDescriptor(
   name='default_bytes_extension', full_name='protobuf_unittest.default_bytes_extension', index=65,
@@ -679,7 +679,7 @@ default_bytes_extension = _descriptor.FieldDescriptor(
   has_default_value=True, default_value=_b("world"),
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 DEFAULT_NESTED_ENUM_EXTENSION_FIELD_NUMBER = 81
 default_nested_enum_extension = _descriptor.FieldDescriptor(
   name='default_nested_enum_extension', full_name='protobuf_unittest.default_nested_enum_extension', index=66,
@@ -687,7 +687,7 @@ default_nested_enum_extension = _descriptor.FieldDescriptor(
   has_default_value=True, default_value=2,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 DEFAULT_FOREIGN_ENUM_EXTENSION_FIELD_NUMBER = 82
 default_foreign_enum_extension = _descriptor.FieldDescriptor(
   name='default_foreign_enum_extension', full_name='protobuf_unittest.default_foreign_enum_extension', index=67,
@@ -695,7 +695,7 @@ default_foreign_enum_extension = _descriptor.FieldDescriptor(
   has_default_value=True, default_value=5,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 DEFAULT_IMPORT_ENUM_EXTENSION_FIELD_NUMBER = 83
 default_import_enum_extension = _descriptor.FieldDescriptor(
   name='default_import_enum_extension', full_name='protobuf_unittest.default_import_enum_extension', index=68,
@@ -703,7 +703,7 @@ default_import_enum_extension = _descriptor.FieldDescriptor(
   has_default_value=True, default_value=8,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 DEFAULT_STRING_PIECE_EXTENSION_FIELD_NUMBER = 84
 default_string_piece_extension = _descriptor.FieldDescriptor(
   name='default_string_piece_extension', full_name='protobuf_unittest.default_string_piece_extension', index=69,
@@ -711,7 +711,7 @@ default_string_piece_extension = _descriptor.FieldDescriptor(
   has_default_value=True, default_value=_b("abc").decode('utf-8'),
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\002')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\002')), file=DESCRIPTOR)
 DEFAULT_CORD_EXTENSION_FIELD_NUMBER = 85
 default_cord_extension = _descriptor.FieldDescriptor(
   name='default_cord_extension', full_name='protobuf_unittest.default_cord_extension', index=70,
@@ -719,7 +719,7 @@ default_cord_extension = _descriptor.FieldDescriptor(
   has_default_value=True, default_value=_b("123").decode('utf-8'),
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\001')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\001')), file=DESCRIPTOR)
 ONEOF_UINT32_EXTENSION_FIELD_NUMBER = 111
 oneof_uint32_extension = _descriptor.FieldDescriptor(
   name='oneof_uint32_extension', full_name='protobuf_unittest.oneof_uint32_extension', index=71,
@@ -727,7 +727,7 @@ oneof_uint32_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=0,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 ONEOF_NESTED_MESSAGE_EXTENSION_FIELD_NUMBER = 112
 oneof_nested_message_extension = _descriptor.FieldDescriptor(
   name='oneof_nested_message_extension', full_name='protobuf_unittest.oneof_nested_message_extension', index=72,
@@ -735,7 +735,7 @@ oneof_nested_message_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=None,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 ONEOF_STRING_EXTENSION_FIELD_NUMBER = 113
 oneof_string_extension = _descriptor.FieldDescriptor(
   name='oneof_string_extension', full_name='protobuf_unittest.oneof_string_extension', index=73,
@@ -743,7 +743,7 @@ oneof_string_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=_b("").decode('utf-8'),
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 ONEOF_BYTES_EXTENSION_FIELD_NUMBER = 114
 oneof_bytes_extension = _descriptor.FieldDescriptor(
   name='oneof_bytes_extension', full_name='protobuf_unittest.oneof_bytes_extension', index=74,
@@ -751,7 +751,7 @@ oneof_bytes_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=_b(""),
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 MY_EXTENSION_STRING_FIELD_NUMBER = 50
 my_extension_string = _descriptor.FieldDescriptor(
   name='my_extension_string', full_name='protobuf_unittest.my_extension_string', index=75,
@@ -759,7 +759,7 @@ my_extension_string = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=_b("").decode('utf-8'),
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 MY_EXTENSION_INT_FIELD_NUMBER = 5
 my_extension_int = _descriptor.FieldDescriptor(
   name='my_extension_int', full_name='protobuf_unittest.my_extension_int', index=76,
@@ -767,7 +767,7 @@ my_extension_int = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=0,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 PACKED_INT32_EXTENSION_FIELD_NUMBER = 90
 packed_int32_extension = _descriptor.FieldDescriptor(
   name='packed_int32_extension', full_name='protobuf_unittest.packed_int32_extension', index=77,
@@ -775,7 +775,7 @@ packed_int32_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')), file=DESCRIPTOR)
 PACKED_INT64_EXTENSION_FIELD_NUMBER = 91
 packed_int64_extension = _descriptor.FieldDescriptor(
   name='packed_int64_extension', full_name='protobuf_unittest.packed_int64_extension', index=78,
@@ -783,7 +783,7 @@ packed_int64_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')), file=DESCRIPTOR)
 PACKED_UINT32_EXTENSION_FIELD_NUMBER = 92
 packed_uint32_extension = _descriptor.FieldDescriptor(
   name='packed_uint32_extension', full_name='protobuf_unittest.packed_uint32_extension', index=79,
@@ -791,7 +791,7 @@ packed_uint32_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')), file=DESCRIPTOR)
 PACKED_UINT64_EXTENSION_FIELD_NUMBER = 93
 packed_uint64_extension = _descriptor.FieldDescriptor(
   name='packed_uint64_extension', full_name='protobuf_unittest.packed_uint64_extension', index=80,
@@ -799,7 +799,7 @@ packed_uint64_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')), file=DESCRIPTOR)
 PACKED_SINT32_EXTENSION_FIELD_NUMBER = 94
 packed_sint32_extension = _descriptor.FieldDescriptor(
   name='packed_sint32_extension', full_name='protobuf_unittest.packed_sint32_extension', index=81,
@@ -807,7 +807,7 @@ packed_sint32_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')), file=DESCRIPTOR)
 PACKED_SINT64_EXTENSION_FIELD_NUMBER = 95
 packed_sint64_extension = _descriptor.FieldDescriptor(
   name='packed_sint64_extension', full_name='protobuf_unittest.packed_sint64_extension', index=82,
@@ -815,7 +815,7 @@ packed_sint64_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')), file=DESCRIPTOR)
 PACKED_FIXED32_EXTENSION_FIELD_NUMBER = 96
 packed_fixed32_extension = _descriptor.FieldDescriptor(
   name='packed_fixed32_extension', full_name='protobuf_unittest.packed_fixed32_extension', index=83,
@@ -823,7 +823,7 @@ packed_fixed32_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')), file=DESCRIPTOR)
 PACKED_FIXED64_EXTENSION_FIELD_NUMBER = 97
 packed_fixed64_extension = _descriptor.FieldDescriptor(
   name='packed_fixed64_extension', full_name='protobuf_unittest.packed_fixed64_extension', index=84,
@@ -831,7 +831,7 @@ packed_fixed64_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')), file=DESCRIPTOR)
 PACKED_SFIXED32_EXTENSION_FIELD_NUMBER = 98
 packed_sfixed32_extension = _descriptor.FieldDescriptor(
   name='packed_sfixed32_extension', full_name='protobuf_unittest.packed_sfixed32_extension', index=85,
@@ -839,7 +839,7 @@ packed_sfixed32_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')), file=DESCRIPTOR)
 PACKED_SFIXED64_EXTENSION_FIELD_NUMBER = 99
 packed_sfixed64_extension = _descriptor.FieldDescriptor(
   name='packed_sfixed64_extension', full_name='protobuf_unittest.packed_sfixed64_extension', index=86,
@@ -847,7 +847,7 @@ packed_sfixed64_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')), file=DESCRIPTOR)
 PACKED_FLOAT_EXTENSION_FIELD_NUMBER = 100
 packed_float_extension = _descriptor.FieldDescriptor(
   name='packed_float_extension', full_name='protobuf_unittest.packed_float_extension', index=87,
@@ -855,7 +855,7 @@ packed_float_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')), file=DESCRIPTOR)
 PACKED_DOUBLE_EXTENSION_FIELD_NUMBER = 101
 packed_double_extension = _descriptor.FieldDescriptor(
   name='packed_double_extension', full_name='protobuf_unittest.packed_double_extension', index=88,
@@ -863,7 +863,7 @@ packed_double_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')), file=DESCRIPTOR)
 PACKED_BOOL_EXTENSION_FIELD_NUMBER = 102
 packed_bool_extension = _descriptor.FieldDescriptor(
   name='packed_bool_extension', full_name='protobuf_unittest.packed_bool_extension', index=89,
@@ -871,7 +871,7 @@ packed_bool_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')), file=DESCRIPTOR)
 PACKED_ENUM_EXTENSION_FIELD_NUMBER = 103
 packed_enum_extension = _descriptor.FieldDescriptor(
   name='packed_enum_extension', full_name='protobuf_unittest.packed_enum_extension', index=90,
@@ -879,7 +879,7 @@ packed_enum_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')), file=DESCRIPTOR)
 UNPACKED_INT32_EXTENSION_FIELD_NUMBER = 90
 unpacked_int32_extension = _descriptor.FieldDescriptor(
   name='unpacked_int32_extension', full_name='protobuf_unittest.unpacked_int32_extension', index=91,
@@ -887,7 +887,7 @@ unpacked_int32_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')), file=DESCRIPTOR)
 UNPACKED_INT64_EXTENSION_FIELD_NUMBER = 91
 unpacked_int64_extension = _descriptor.FieldDescriptor(
   name='unpacked_int64_extension', full_name='protobuf_unittest.unpacked_int64_extension', index=92,
@@ -895,7 +895,7 @@ unpacked_int64_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')), file=DESCRIPTOR)
 UNPACKED_UINT32_EXTENSION_FIELD_NUMBER = 92
 unpacked_uint32_extension = _descriptor.FieldDescriptor(
   name='unpacked_uint32_extension', full_name='protobuf_unittest.unpacked_uint32_extension', index=93,
@@ -903,7 +903,7 @@ unpacked_uint32_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')), file=DESCRIPTOR)
 UNPACKED_UINT64_EXTENSION_FIELD_NUMBER = 93
 unpacked_uint64_extension = _descriptor.FieldDescriptor(
   name='unpacked_uint64_extension', full_name='protobuf_unittest.unpacked_uint64_extension', index=94,
@@ -911,7 +911,7 @@ unpacked_uint64_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')), file=DESCRIPTOR)
 UNPACKED_SINT32_EXTENSION_FIELD_NUMBER = 94
 unpacked_sint32_extension = _descriptor.FieldDescriptor(
   name='unpacked_sint32_extension', full_name='protobuf_unittest.unpacked_sint32_extension', index=95,
@@ -919,7 +919,7 @@ unpacked_sint32_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')), file=DESCRIPTOR)
 UNPACKED_SINT64_EXTENSION_FIELD_NUMBER = 95
 unpacked_sint64_extension = _descriptor.FieldDescriptor(
   name='unpacked_sint64_extension', full_name='protobuf_unittest.unpacked_sint64_extension', index=96,
@@ -927,7 +927,7 @@ unpacked_sint64_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')), file=DESCRIPTOR)
 UNPACKED_FIXED32_EXTENSION_FIELD_NUMBER = 96
 unpacked_fixed32_extension = _descriptor.FieldDescriptor(
   name='unpacked_fixed32_extension', full_name='protobuf_unittest.unpacked_fixed32_extension', index=97,
@@ -935,7 +935,7 @@ unpacked_fixed32_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')), file=DESCRIPTOR)
 UNPACKED_FIXED64_EXTENSION_FIELD_NUMBER = 97
 unpacked_fixed64_extension = _descriptor.FieldDescriptor(
   name='unpacked_fixed64_extension', full_name='protobuf_unittest.unpacked_fixed64_extension', index=98,
@@ -943,7 +943,7 @@ unpacked_fixed64_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')), file=DESCRIPTOR)
 UNPACKED_SFIXED32_EXTENSION_FIELD_NUMBER = 98
 unpacked_sfixed32_extension = _descriptor.FieldDescriptor(
   name='unpacked_sfixed32_extension', full_name='protobuf_unittest.unpacked_sfixed32_extension', index=99,
@@ -951,7 +951,7 @@ unpacked_sfixed32_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')), file=DESCRIPTOR)
 UNPACKED_SFIXED64_EXTENSION_FIELD_NUMBER = 99
 unpacked_sfixed64_extension = _descriptor.FieldDescriptor(
   name='unpacked_sfixed64_extension', full_name='protobuf_unittest.unpacked_sfixed64_extension', index=100,
@@ -959,7 +959,7 @@ unpacked_sfixed64_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')), file=DESCRIPTOR)
 UNPACKED_FLOAT_EXTENSION_FIELD_NUMBER = 100
 unpacked_float_extension = _descriptor.FieldDescriptor(
   name='unpacked_float_extension', full_name='protobuf_unittest.unpacked_float_extension', index=101,
@@ -967,7 +967,7 @@ unpacked_float_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')), file=DESCRIPTOR)
 UNPACKED_DOUBLE_EXTENSION_FIELD_NUMBER = 101
 unpacked_double_extension = _descriptor.FieldDescriptor(
   name='unpacked_double_extension', full_name='protobuf_unittest.unpacked_double_extension', index=102,
@@ -975,7 +975,7 @@ unpacked_double_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')), file=DESCRIPTOR)
 UNPACKED_BOOL_EXTENSION_FIELD_NUMBER = 102
 unpacked_bool_extension = _descriptor.FieldDescriptor(
   name='unpacked_bool_extension', full_name='protobuf_unittest.unpacked_bool_extension', index=103,
@@ -983,7 +983,7 @@ unpacked_bool_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')), file=DESCRIPTOR)
 UNPACKED_ENUM_EXTENSION_FIELD_NUMBER = 103
 unpacked_enum_extension = _descriptor.FieldDescriptor(
   name='unpacked_enum_extension', full_name='protobuf_unittest.unpacked_enum_extension', index=104,
@@ -991,7 +991,7 @@ unpacked_enum_extension = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=[],
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')))
+  options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')), file=DESCRIPTOR)
 TEST_ALL_TYPES_FIELD_NUMBER = 536860000
 test_all_types = _descriptor.FieldDescriptor(
   name='test_all_types', full_name='protobuf_unittest.test_all_types', index=105,
@@ -999,7 +999,7 @@ test_all_types = _descriptor.FieldDescriptor(
   has_default_value=False, default_value=None,
   message_type=None, enum_type=None, containing_type=None,
   is_extension=True, extension_scope=None,
-  options=None)
+  options=None, file=DESCRIPTOR)
 
 _TESTALLTYPES_NESTEDENUM = _descriptor.EnumDescriptor(
   name='NestedEnum',
@@ -1097,7 +1097,7 @@ _TESTALLTYPES_NESTEDMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1127,7 +1127,7 @@ _TESTALLTYPES_OPTIONALGROUP = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1157,7 +1157,7 @@ _TESTALLTYPES_REPEATEDGROUP = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1187,525 +1187,525 @@ _TESTALLTYPES = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_int64', full_name='protobuf_unittest.TestAllTypes.optional_int64', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_uint32', full_name='protobuf_unittest.TestAllTypes.optional_uint32', index=2,
       number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_uint64', full_name='protobuf_unittest.TestAllTypes.optional_uint64', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_sint32', full_name='protobuf_unittest.TestAllTypes.optional_sint32', index=4,
       number=5, type=17, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_sint64', full_name='protobuf_unittest.TestAllTypes.optional_sint64', index=5,
       number=6, type=18, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_fixed32', full_name='protobuf_unittest.TestAllTypes.optional_fixed32', index=6,
       number=7, type=7, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_fixed64', full_name='protobuf_unittest.TestAllTypes.optional_fixed64', index=7,
       number=8, type=6, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_sfixed32', full_name='protobuf_unittest.TestAllTypes.optional_sfixed32', index=8,
       number=9, type=15, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_sfixed64', full_name='protobuf_unittest.TestAllTypes.optional_sfixed64', index=9,
       number=10, type=16, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_float', full_name='protobuf_unittest.TestAllTypes.optional_float', index=10,
       number=11, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_double', full_name='protobuf_unittest.TestAllTypes.optional_double', index=11,
       number=12, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_bool', full_name='protobuf_unittest.TestAllTypes.optional_bool', index=12,
       number=13, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_string', full_name='protobuf_unittest.TestAllTypes.optional_string', index=13,
       number=14, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_bytes', full_name='protobuf_unittest.TestAllTypes.optional_bytes', index=14,
       number=15, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optionalgroup', full_name='protobuf_unittest.TestAllTypes.optionalgroup', index=15,
       number=16, type=10, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_nested_message', full_name='protobuf_unittest.TestAllTypes.optional_nested_message', index=16,
       number=18, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_foreign_message', full_name='protobuf_unittest.TestAllTypes.optional_foreign_message', index=17,
       number=19, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_import_message', full_name='protobuf_unittest.TestAllTypes.optional_import_message', index=18,
       number=20, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_nested_enum', full_name='protobuf_unittest.TestAllTypes.optional_nested_enum', index=19,
       number=21, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=1,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_foreign_enum', full_name='protobuf_unittest.TestAllTypes.optional_foreign_enum', index=20,
       number=22, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=4,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_import_enum', full_name='protobuf_unittest.TestAllTypes.optional_import_enum', index=21,
       number=23, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=7,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_string_piece', full_name='protobuf_unittest.TestAllTypes.optional_string_piece', index=22,
       number=24, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\002'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\002')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_cord', full_name='protobuf_unittest.TestAllTypes.optional_cord', index=23,
       number=25, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\001')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_public_import_message', full_name='protobuf_unittest.TestAllTypes.optional_public_import_message', index=24,
       number=26, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_lazy_message', full_name='protobuf_unittest.TestAllTypes.optional_lazy_message', index=25,
       number=27, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('(\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('(\001')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_int32', full_name='protobuf_unittest.TestAllTypes.repeated_int32', index=26,
       number=31, type=5, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_int64', full_name='protobuf_unittest.TestAllTypes.repeated_int64', index=27,
       number=32, type=3, cpp_type=2, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_uint32', full_name='protobuf_unittest.TestAllTypes.repeated_uint32', index=28,
       number=33, type=13, cpp_type=3, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_uint64', full_name='protobuf_unittest.TestAllTypes.repeated_uint64', index=29,
       number=34, type=4, cpp_type=4, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_sint32', full_name='protobuf_unittest.TestAllTypes.repeated_sint32', index=30,
       number=35, type=17, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_sint64', full_name='protobuf_unittest.TestAllTypes.repeated_sint64', index=31,
       number=36, type=18, cpp_type=2, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_fixed32', full_name='protobuf_unittest.TestAllTypes.repeated_fixed32', index=32,
       number=37, type=7, cpp_type=3, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_fixed64', full_name='protobuf_unittest.TestAllTypes.repeated_fixed64', index=33,
       number=38, type=6, cpp_type=4, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_sfixed32', full_name='protobuf_unittest.TestAllTypes.repeated_sfixed32', index=34,
       number=39, type=15, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_sfixed64', full_name='protobuf_unittest.TestAllTypes.repeated_sfixed64', index=35,
       number=40, type=16, cpp_type=2, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_float', full_name='protobuf_unittest.TestAllTypes.repeated_float', index=36,
       number=41, type=2, cpp_type=6, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_double', full_name='protobuf_unittest.TestAllTypes.repeated_double', index=37,
       number=42, type=1, cpp_type=5, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_bool', full_name='protobuf_unittest.TestAllTypes.repeated_bool', index=38,
       number=43, type=8, cpp_type=7, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_string', full_name='protobuf_unittest.TestAllTypes.repeated_string', index=39,
       number=44, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_bytes', full_name='protobuf_unittest.TestAllTypes.repeated_bytes', index=40,
       number=45, type=12, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeatedgroup', full_name='protobuf_unittest.TestAllTypes.repeatedgroup', index=41,
       number=46, type=10, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_nested_message', full_name='protobuf_unittest.TestAllTypes.repeated_nested_message', index=42,
       number=48, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_foreign_message', full_name='protobuf_unittest.TestAllTypes.repeated_foreign_message', index=43,
       number=49, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_import_message', full_name='protobuf_unittest.TestAllTypes.repeated_import_message', index=44,
       number=50, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_nested_enum', full_name='protobuf_unittest.TestAllTypes.repeated_nested_enum', index=45,
       number=51, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_foreign_enum', full_name='protobuf_unittest.TestAllTypes.repeated_foreign_enum', index=46,
       number=52, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_import_enum', full_name='protobuf_unittest.TestAllTypes.repeated_import_enum', index=47,
       number=53, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_string_piece', full_name='protobuf_unittest.TestAllTypes.repeated_string_piece', index=48,
       number=54, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\002'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\002')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_cord', full_name='protobuf_unittest.TestAllTypes.repeated_cord', index=49,
       number=55, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\001')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_lazy_message', full_name='protobuf_unittest.TestAllTypes.repeated_lazy_message', index=50,
       number=57, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('(\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('(\001')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='default_int32', full_name='protobuf_unittest.TestAllTypes.default_int32', index=51,
       number=61, type=5, cpp_type=1, label=1,
       has_default_value=True, default_value=41,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='default_int64', full_name='protobuf_unittest.TestAllTypes.default_int64', index=52,
       number=62, type=3, cpp_type=2, label=1,
       has_default_value=True, default_value=42,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='default_uint32', full_name='protobuf_unittest.TestAllTypes.default_uint32', index=53,
       number=63, type=13, cpp_type=3, label=1,
       has_default_value=True, default_value=43,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='default_uint64', full_name='protobuf_unittest.TestAllTypes.default_uint64', index=54,
       number=64, type=4, cpp_type=4, label=1,
       has_default_value=True, default_value=44,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='default_sint32', full_name='protobuf_unittest.TestAllTypes.default_sint32', index=55,
       number=65, type=17, cpp_type=1, label=1,
       has_default_value=True, default_value=-45,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='default_sint64', full_name='protobuf_unittest.TestAllTypes.default_sint64', index=56,
       number=66, type=18, cpp_type=2, label=1,
       has_default_value=True, default_value=46,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='default_fixed32', full_name='protobuf_unittest.TestAllTypes.default_fixed32', index=57,
       number=67, type=7, cpp_type=3, label=1,
       has_default_value=True, default_value=47,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='default_fixed64', full_name='protobuf_unittest.TestAllTypes.default_fixed64', index=58,
       number=68, type=6, cpp_type=4, label=1,
       has_default_value=True, default_value=48,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='default_sfixed32', full_name='protobuf_unittest.TestAllTypes.default_sfixed32', index=59,
       number=69, type=15, cpp_type=1, label=1,
       has_default_value=True, default_value=49,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='default_sfixed64', full_name='protobuf_unittest.TestAllTypes.default_sfixed64', index=60,
       number=70, type=16, cpp_type=2, label=1,
       has_default_value=True, default_value=-50,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='default_float', full_name='protobuf_unittest.TestAllTypes.default_float', index=61,
       number=71, type=2, cpp_type=6, label=1,
       has_default_value=True, default_value=float(51.5),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='default_double', full_name='protobuf_unittest.TestAllTypes.default_double', index=62,
       number=72, type=1, cpp_type=5, label=1,
       has_default_value=True, default_value=float(52000),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='default_bool', full_name='protobuf_unittest.TestAllTypes.default_bool', index=63,
       number=73, type=8, cpp_type=7, label=1,
       has_default_value=True, default_value=True,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='default_string', full_name='protobuf_unittest.TestAllTypes.default_string', index=64,
       number=74, type=9, cpp_type=9, label=1,
       has_default_value=True, default_value=_b("hello").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='default_bytes', full_name='protobuf_unittest.TestAllTypes.default_bytes', index=65,
       number=75, type=12, cpp_type=9, label=1,
       has_default_value=True, default_value=_b("world"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='default_nested_enum', full_name='protobuf_unittest.TestAllTypes.default_nested_enum', index=66,
       number=81, type=14, cpp_type=8, label=1,
       has_default_value=True, default_value=2,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='default_foreign_enum', full_name='protobuf_unittest.TestAllTypes.default_foreign_enum', index=67,
       number=82, type=14, cpp_type=8, label=1,
       has_default_value=True, default_value=5,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='default_import_enum', full_name='protobuf_unittest.TestAllTypes.default_import_enum', index=68,
       number=83, type=14, cpp_type=8, label=1,
       has_default_value=True, default_value=8,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='default_string_piece', full_name='protobuf_unittest.TestAllTypes.default_string_piece', index=69,
       number=84, type=9, cpp_type=9, label=1,
       has_default_value=True, default_value=_b("abc").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\002'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\002')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='default_cord', full_name='protobuf_unittest.TestAllTypes.default_cord', index=70,
       number=85, type=9, cpp_type=9, label=1,
       has_default_value=True, default_value=_b("123").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\001')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='oneof_uint32', full_name='protobuf_unittest.TestAllTypes.oneof_uint32', index=71,
       number=111, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='oneof_nested_message', full_name='protobuf_unittest.TestAllTypes.oneof_nested_message', index=72,
       number=112, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='oneof_string', full_name='protobuf_unittest.TestAllTypes.oneof_string', index=73,
       number=113, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='oneof_bytes', full_name='protobuf_unittest.TestAllTypes.oneof_bytes', index=74,
       number=114, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1740,21 +1740,21 @@ _NESTEDTESTALLTYPES = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='payload', full_name='protobuf_unittest.NestedTestAllTypes.payload', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_child', full_name='protobuf_unittest.NestedTestAllTypes.repeated_child', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1785,7 +1785,7 @@ _TESTDEPRECATEDFIELDS = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\030\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\030\001')), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1840,14 +1840,14 @@ _FOREIGNMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='d', full_name='protobuf_unittest.ForeignMessage.d', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1926,7 +1926,7 @@ _OPTIONALGROUP_EXTENSION = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1957,7 +1957,7 @@ _REPEATEDGROUP_EXTENSION = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -1990,14 +1990,14 @@ _TESTNESTEDEXTENSION = _descriptor.Descriptor(
       has_default_value=True, default_value=_b("test").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=True, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='nested_string_extension', full_name='protobuf_unittest.TestNestedExtension.nested_string_extension', index=1,
       number=1003, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=True, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   nested_types=[],
   enum_types=[
@@ -2026,231 +2026,231 @@ _TESTREQUIRED = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dummy2', full_name='protobuf_unittest.TestRequired.dummy2', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='b', full_name='protobuf_unittest.TestRequired.b', index=2,
       number=3, type=5, cpp_type=1, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dummy4', full_name='protobuf_unittest.TestRequired.dummy4', index=3,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dummy5', full_name='protobuf_unittest.TestRequired.dummy5', index=4,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dummy6', full_name='protobuf_unittest.TestRequired.dummy6', index=5,
       number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dummy7', full_name='protobuf_unittest.TestRequired.dummy7', index=6,
       number=7, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dummy8', full_name='protobuf_unittest.TestRequired.dummy8', index=7,
       number=8, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dummy9', full_name='protobuf_unittest.TestRequired.dummy9', index=8,
       number=9, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dummy10', full_name='protobuf_unittest.TestRequired.dummy10', index=9,
       number=10, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dummy11', full_name='protobuf_unittest.TestRequired.dummy11', index=10,
       number=11, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dummy12', full_name='protobuf_unittest.TestRequired.dummy12', index=11,
       number=12, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dummy13', full_name='protobuf_unittest.TestRequired.dummy13', index=12,
       number=13, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dummy14', full_name='protobuf_unittest.TestRequired.dummy14', index=13,
       number=14, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dummy15', full_name='protobuf_unittest.TestRequired.dummy15', index=14,
       number=15, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dummy16', full_name='protobuf_unittest.TestRequired.dummy16', index=15,
       number=16, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dummy17', full_name='protobuf_unittest.TestRequired.dummy17', index=16,
       number=17, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dummy18', full_name='protobuf_unittest.TestRequired.dummy18', index=17,
       number=18, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dummy19', full_name='protobuf_unittest.TestRequired.dummy19', index=18,
       number=19, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dummy20', full_name='protobuf_unittest.TestRequired.dummy20', index=19,
       number=20, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dummy21', full_name='protobuf_unittest.TestRequired.dummy21', index=20,
       number=21, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dummy22', full_name='protobuf_unittest.TestRequired.dummy22', index=21,
       number=22, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dummy23', full_name='protobuf_unittest.TestRequired.dummy23', index=22,
       number=23, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dummy24', full_name='protobuf_unittest.TestRequired.dummy24', index=23,
       number=24, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dummy25', full_name='protobuf_unittest.TestRequired.dummy25', index=24,
       number=25, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dummy26', full_name='protobuf_unittest.TestRequired.dummy26', index=25,
       number=26, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dummy27', full_name='protobuf_unittest.TestRequired.dummy27', index=26,
       number=27, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dummy28', full_name='protobuf_unittest.TestRequired.dummy28', index=27,
       number=28, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dummy29', full_name='protobuf_unittest.TestRequired.dummy29', index=28,
       number=29, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dummy30', full_name='protobuf_unittest.TestRequired.dummy30', index=29,
       number=30, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dummy31', full_name='protobuf_unittest.TestRequired.dummy31', index=30,
       number=31, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dummy32', full_name='protobuf_unittest.TestRequired.dummy32', index=31,
       number=32, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='c', full_name='protobuf_unittest.TestRequired.c', index=32,
       number=33, type=5, cpp_type=1, label=2,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
     _descriptor.FieldDescriptor(
@@ -2259,14 +2259,14 @@ _TESTREQUIRED = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=True, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='multi', full_name='protobuf_unittest.TestRequired.multi', index=1,
       number=1001, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=True, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   nested_types=[],
   enum_types=[
@@ -2295,21 +2295,21 @@ _TESTREQUIREDFOREIGN = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_message', full_name='protobuf_unittest.TestRequiredForeign.repeated_message', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dummy', full_name='protobuf_unittest.TestRequiredForeign.dummy', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2340,21 +2340,21 @@ _TESTREQUIREDMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_message', full_name='protobuf_unittest.TestRequiredMessage.repeated_message', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='required_message', full_name='protobuf_unittest.TestRequiredMessage.required_message', index=2,
       number=3, type=11, cpp_type=10, label=2,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2385,7 +2385,7 @@ _TESTFOREIGNNESTED = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2488,14 +2488,14 @@ _TESTREALLYLARGETAGNUMBER = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='bb', full_name='protobuf_unittest.TestReallyLargeTagNumber.bb', index=1,
       number=268435455, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2526,14 +2526,14 @@ _TESTRECURSIVEMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='i', full_name='protobuf_unittest.TestRecursiveMessage.i', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2564,7 +2564,7 @@ _TESTMUTUALRECURSIONA_SUBMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2594,14 +2594,14 @@ _TESTMUTUALRECURSIONA_SUBGROUP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='not_in_this_scc', full_name='protobuf_unittest.TestMutualRecursionA.SubGroup.not_in_this_scc', index=1,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2631,14 +2631,14 @@ _TESTMUTUALRECURSIONA = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='subgroup', full_name='protobuf_unittest.TestMutualRecursionA.subgroup', index=1,
       number=2, type=10, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2669,14 +2669,14 @@ _TESTMUTUALRECURSIONB = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_int32', full_name='protobuf_unittest.TestMutualRecursionB.optional_int32', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2707,7 +2707,7 @@ _TESTISINITIALIZED_SUBMESSAGE_SUBGROUP = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2737,7 +2737,7 @@ _TESTISINITIALIZED_SUBMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2767,7 +2767,7 @@ _TESTISINITIALIZED = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2798,7 +2798,7 @@ _TESTDUPFIELDNUMBER_FOO = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2828,7 +2828,7 @@ _TESTDUPFIELDNUMBER_BAR = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2858,21 +2858,21 @@ _TESTDUPFIELDNUMBER = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='foo', full_name='protobuf_unittest.TestDupFieldNumber.foo', index=1,
       number=2, type=10, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='bar', full_name='protobuf_unittest.TestDupFieldNumber.bar', index=2,
       number=3, type=10, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2903,7 +2903,7 @@ _TESTEAGERMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('(\000'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('(\000')), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2934,7 +2934,7 @@ _TESTLAZYMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('(\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('(\001')), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -2965,14 +2965,14 @@ _TESTNESTEDMESSAGEHASBITS_NESTEDMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='nestedmessage_repeated_foreignmessage', full_name='protobuf_unittest.TestNestedMessageHasBits.NestedMessage.nestedmessage_repeated_foreignmessage', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3002,7 +3002,7 @@ _TESTNESTEDMESSAGEHASBITS = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3033,84 +3033,84 @@ _TESTCAMELCASEFIELDNAMES = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='StringField', full_name='protobuf_unittest.TestCamelCaseFieldNames.StringField', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='EnumField', full_name='protobuf_unittest.TestCamelCaseFieldNames.EnumField', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=4,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='MessageField', full_name='protobuf_unittest.TestCamelCaseFieldNames.MessageField', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='StringPieceField', full_name='protobuf_unittest.TestCamelCaseFieldNames.StringPieceField', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\002'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\002')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='CordField', full_name='protobuf_unittest.TestCamelCaseFieldNames.CordField', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\001')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='RepeatedPrimitiveField', full_name='protobuf_unittest.TestCamelCaseFieldNames.RepeatedPrimitiveField', index=6,
       number=7, type=5, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='RepeatedStringField', full_name='protobuf_unittest.TestCamelCaseFieldNames.RepeatedStringField', index=7,
       number=8, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='RepeatedEnumField', full_name='protobuf_unittest.TestCamelCaseFieldNames.RepeatedEnumField', index=8,
       number=9, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='RepeatedMessageField', full_name='protobuf_unittest.TestCamelCaseFieldNames.RepeatedMessageField', index=9,
       number=10, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='RepeatedStringPieceField', full_name='protobuf_unittest.TestCamelCaseFieldNames.RepeatedStringPieceField', index=10,
       number=11, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\002'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\002')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='RepeatedCordField', full_name='protobuf_unittest.TestCamelCaseFieldNames.RepeatedCordField', index=11,
       number=12, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\001')), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3141,14 +3141,14 @@ _TESTFIELDORDERINGS_NESTEDMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='bb', full_name='protobuf_unittest.TestFieldOrderings.NestedMessage.bb', index=1,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3178,28 +3178,28 @@ _TESTFIELDORDERINGS = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='my_int', full_name='protobuf_unittest.TestFieldOrderings.my_int', index=1,
       number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='my_float', full_name='protobuf_unittest.TestFieldOrderings.my_float', index=2,
       number=101, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_nested_message', full_name='protobuf_unittest.TestFieldOrderings.optional_nested_message', index=3,
       number=200, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3230,189 +3230,189 @@ _TESTEXTREMEDEFAULTVALUES = _descriptor.Descriptor(
       has_default_value=True, default_value=_b("\000\001\007\010\014\n\r\t\013\\\'\"\376"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='large_uint32', full_name='protobuf_unittest.TestExtremeDefaultValues.large_uint32', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=True, default_value=4294967295,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='large_uint64', full_name='protobuf_unittest.TestExtremeDefaultValues.large_uint64', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=True, default_value=18446744073709551615,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='small_int32', full_name='protobuf_unittest.TestExtremeDefaultValues.small_int32', index=3,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=True, default_value=-2147483647,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='small_int64', full_name='protobuf_unittest.TestExtremeDefaultValues.small_int64', index=4,
       number=5, type=3, cpp_type=2, label=1,
       has_default_value=True, default_value=-9223372036854775807,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='really_small_int32', full_name='protobuf_unittest.TestExtremeDefaultValues.really_small_int32', index=5,
       number=21, type=5, cpp_type=1, label=1,
       has_default_value=True, default_value=-2147483648,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='really_small_int64', full_name='protobuf_unittest.TestExtremeDefaultValues.really_small_int64', index=6,
       number=22, type=3, cpp_type=2, label=1,
       has_default_value=True, default_value=-9223372036854775808,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='utf8_string', full_name='protobuf_unittest.TestExtremeDefaultValues.utf8_string', index=7,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=True, default_value=_b("\341\210\264").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='zero_float', full_name='protobuf_unittest.TestExtremeDefaultValues.zero_float', index=8,
       number=7, type=2, cpp_type=6, label=1,
       has_default_value=True, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='one_float', full_name='protobuf_unittest.TestExtremeDefaultValues.one_float', index=9,
       number=8, type=2, cpp_type=6, label=1,
       has_default_value=True, default_value=float(1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='small_float', full_name='protobuf_unittest.TestExtremeDefaultValues.small_float', index=10,
       number=9, type=2, cpp_type=6, label=1,
       has_default_value=True, default_value=float(1.5),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='negative_one_float', full_name='protobuf_unittest.TestExtremeDefaultValues.negative_one_float', index=11,
       number=10, type=2, cpp_type=6, label=1,
       has_default_value=True, default_value=float(-1),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='negative_float', full_name='protobuf_unittest.TestExtremeDefaultValues.negative_float', index=12,
       number=11, type=2, cpp_type=6, label=1,
       has_default_value=True, default_value=float(-1.5),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='large_float', full_name='protobuf_unittest.TestExtremeDefaultValues.large_float', index=13,
       number=12, type=2, cpp_type=6, label=1,
       has_default_value=True, default_value=float(2e+08),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='small_negative_float', full_name='protobuf_unittest.TestExtremeDefaultValues.small_negative_float', index=14,
       number=13, type=2, cpp_type=6, label=1,
       has_default_value=True, default_value=float(-8e-28),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='inf_double', full_name='protobuf_unittest.TestExtremeDefaultValues.inf_double', index=15,
       number=14, type=1, cpp_type=5, label=1,
       has_default_value=True, default_value=1e10000,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='neg_inf_double', full_name='protobuf_unittest.TestExtremeDefaultValues.neg_inf_double', index=16,
       number=15, type=1, cpp_type=5, label=1,
       has_default_value=True, default_value=-1e10000,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='nan_double', full_name='protobuf_unittest.TestExtremeDefaultValues.nan_double', index=17,
       number=16, type=1, cpp_type=5, label=1,
       has_default_value=True, default_value=(1e10000 * 0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='inf_float', full_name='protobuf_unittest.TestExtremeDefaultValues.inf_float', index=18,
       number=17, type=2, cpp_type=6, label=1,
       has_default_value=True, default_value=1e10000,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='neg_inf_float', full_name='protobuf_unittest.TestExtremeDefaultValues.neg_inf_float', index=19,
       number=18, type=2, cpp_type=6, label=1,
       has_default_value=True, default_value=-1e10000,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='nan_float', full_name='protobuf_unittest.TestExtremeDefaultValues.nan_float', index=20,
       number=19, type=2, cpp_type=6, label=1,
       has_default_value=True, default_value=(1e10000 * 0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='cpp_trigraph', full_name='protobuf_unittest.TestExtremeDefaultValues.cpp_trigraph', index=21,
       number=20, type=9, cpp_type=9, label=1,
       has_default_value=True, default_value=_b("? ? ?? ?? ??? ??/ ??-").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='string_with_zero', full_name='protobuf_unittest.TestExtremeDefaultValues.string_with_zero', index=22,
       number=23, type=9, cpp_type=9, label=1,
       has_default_value=True, default_value=_b("hel\000lo").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='bytes_with_zero', full_name='protobuf_unittest.TestExtremeDefaultValues.bytes_with_zero', index=23,
       number=24, type=12, cpp_type=9, label=1,
       has_default_value=True, default_value=_b("wor\000ld"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='string_piece_with_zero', full_name='protobuf_unittest.TestExtremeDefaultValues.string_piece_with_zero', index=24,
       number=25, type=9, cpp_type=9, label=1,
       has_default_value=True, default_value=_b("ab\000c").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\002'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\002')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='cord_with_zero', full_name='protobuf_unittest.TestExtremeDefaultValues.cord_with_zero', index=25,
       number=26, type=9, cpp_type=9, label=1,
       has_default_value=True, default_value=_b("12\0003").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\001')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='replacement_string', full_name='protobuf_unittest.TestExtremeDefaultValues.replacement_string', index=26,
       number=27, type=9, cpp_type=9, label=1,
       has_default_value=True, default_value=_b("${unknown}").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3443,7 +3443,7 @@ _SPARSEENUMMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=123,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3474,7 +3474,7 @@ _ONESTRING = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3505,7 +3505,7 @@ _MORESTRING = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3536,7 +3536,7 @@ _ONEBYTES = _descriptor.Descriptor(
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3567,7 +3567,7 @@ _MOREBYTES = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3598,7 +3598,7 @@ _INT32MESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3629,7 +3629,7 @@ _UINT32MESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3660,7 +3660,7 @@ _INT64MESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3691,7 +3691,7 @@ _UINT64MESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3722,7 +3722,7 @@ _BOOLMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3753,14 +3753,14 @@ _TESTONEOF_FOOGROUP = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='b', full_name='protobuf_unittest.TestOneof.FooGroup.b', index=1,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3790,28 +3790,28 @@ _TESTONEOF = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='foo_string', full_name='protobuf_unittest.TestOneof.foo_string', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='foo_message', full_name='protobuf_unittest.TestOneof.foo_message', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='foogroup', full_name='protobuf_unittest.TestOneof.foogroup', index=3,
       number=4, type=10, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3845,14 +3845,14 @@ _TESTONEOFBACKWARDSCOMPATIBLE_FOOGROUP = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='b', full_name='protobuf_unittest.TestOneofBackwardsCompatible.FooGroup.b', index=1,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3882,28 +3882,28 @@ _TESTONEOFBACKWARDSCOMPATIBLE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='foo_string', full_name='protobuf_unittest.TestOneofBackwardsCompatible.foo_string', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='foo_message', full_name='protobuf_unittest.TestOneofBackwardsCompatible.foo_message', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='foogroup', full_name='protobuf_unittest.TestOneofBackwardsCompatible.foogroup', index=3,
       number=4, type=10, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3934,14 +3934,14 @@ _TESTONEOF2_FOOGROUP = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='b', full_name='protobuf_unittest.TestOneof2.FooGroup.b', index=1,
       number=10, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -3971,14 +3971,14 @@ _TESTONEOF2_NESTEDMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='corge_int', full_name='protobuf_unittest.TestOneof2.NestedMessage.corge_int', index=1,
       number=2, type=5, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4008,119 +4008,119 @@ _TESTONEOF2 = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='foo_string', full_name='protobuf_unittest.TestOneof2.foo_string', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='foo_cord', full_name='protobuf_unittest.TestOneof2.foo_cord', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\001')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='foo_string_piece', full_name='protobuf_unittest.TestOneof2.foo_string_piece', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\002'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\002')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='foo_bytes', full_name='protobuf_unittest.TestOneof2.foo_bytes', index=4,
       number=5, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='foo_enum', full_name='protobuf_unittest.TestOneof2.foo_enum', index=5,
       number=6, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=1,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='foo_message', full_name='protobuf_unittest.TestOneof2.foo_message', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='foogroup', full_name='protobuf_unittest.TestOneof2.foogroup', index=7,
       number=8, type=10, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='foo_lazy_message', full_name='protobuf_unittest.TestOneof2.foo_lazy_message', index=8,
       number=11, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('(\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('(\001')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='bar_int', full_name='protobuf_unittest.TestOneof2.bar_int', index=9,
       number=12, type=5, cpp_type=1, label=1,
       has_default_value=True, default_value=5,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='bar_string', full_name='protobuf_unittest.TestOneof2.bar_string', index=10,
       number=13, type=9, cpp_type=9, label=1,
       has_default_value=True, default_value=_b("STRING").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='bar_cord', full_name='protobuf_unittest.TestOneof2.bar_cord', index=11,
       number=14, type=9, cpp_type=9, label=1,
       has_default_value=True, default_value=_b("CORD").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\001')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='bar_string_piece', full_name='protobuf_unittest.TestOneof2.bar_string_piece', index=12,
       number=15, type=9, cpp_type=9, label=1,
       has_default_value=True, default_value=_b("SPIECE").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\002'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\010\002')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='bar_bytes', full_name='protobuf_unittest.TestOneof2.bar_bytes', index=13,
       number=16, type=12, cpp_type=9, label=1,
       has_default_value=True, default_value=_b("BYTES"),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='bar_enum', full_name='protobuf_unittest.TestOneof2.bar_enum', index=14,
       number=17, type=14, cpp_type=8, label=1,
       has_default_value=True, default_value=2,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='baz_int', full_name='protobuf_unittest.TestOneof2.baz_int', index=15,
       number=18, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='baz_string', full_name='protobuf_unittest.TestOneof2.baz_string', index=16,
       number=19, type=9, cpp_type=9, label=1,
       has_default_value=True, default_value=_b("BAZ").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4158,7 +4158,7 @@ _TESTREQUIREDONEOF_NESTEDMESSAGE = _descriptor.Descriptor(
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4188,21 +4188,21 @@ _TESTREQUIREDONEOF = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='foo_string', full_name='protobuf_unittest.TestRequiredOneof.foo_string', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='foo_message', full_name='protobuf_unittest.TestRequiredOneof.foo_message', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4236,98 +4236,98 @@ _TESTPACKEDTYPES = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='packed_int64', full_name='protobuf_unittest.TestPackedTypes.packed_int64', index=1,
       number=91, type=3, cpp_type=2, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='packed_uint32', full_name='protobuf_unittest.TestPackedTypes.packed_uint32', index=2,
       number=92, type=13, cpp_type=3, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='packed_uint64', full_name='protobuf_unittest.TestPackedTypes.packed_uint64', index=3,
       number=93, type=4, cpp_type=4, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='packed_sint32', full_name='protobuf_unittest.TestPackedTypes.packed_sint32', index=4,
       number=94, type=17, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='packed_sint64', full_name='protobuf_unittest.TestPackedTypes.packed_sint64', index=5,
       number=95, type=18, cpp_type=2, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='packed_fixed32', full_name='protobuf_unittest.TestPackedTypes.packed_fixed32', index=6,
       number=96, type=7, cpp_type=3, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='packed_fixed64', full_name='protobuf_unittest.TestPackedTypes.packed_fixed64', index=7,
       number=97, type=6, cpp_type=4, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='packed_sfixed32', full_name='protobuf_unittest.TestPackedTypes.packed_sfixed32', index=8,
       number=98, type=15, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='packed_sfixed64', full_name='protobuf_unittest.TestPackedTypes.packed_sfixed64', index=9,
       number=99, type=16, cpp_type=2, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='packed_float', full_name='protobuf_unittest.TestPackedTypes.packed_float', index=10,
       number=100, type=2, cpp_type=6, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='packed_double', full_name='protobuf_unittest.TestPackedTypes.packed_double', index=11,
       number=101, type=1, cpp_type=5, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='packed_bool', full_name='protobuf_unittest.TestPackedTypes.packed_bool', index=12,
       number=102, type=8, cpp_type=7, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='packed_enum', full_name='protobuf_unittest.TestPackedTypes.packed_enum', index=13,
       number=103, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4358,98 +4358,98 @@ _TESTUNPACKEDTYPES = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='unpacked_int64', full_name='protobuf_unittest.TestUnpackedTypes.unpacked_int64', index=1,
       number=91, type=3, cpp_type=2, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='unpacked_uint32', full_name='protobuf_unittest.TestUnpackedTypes.unpacked_uint32', index=2,
       number=92, type=13, cpp_type=3, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='unpacked_uint64', full_name='protobuf_unittest.TestUnpackedTypes.unpacked_uint64', index=3,
       number=93, type=4, cpp_type=4, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='unpacked_sint32', full_name='protobuf_unittest.TestUnpackedTypes.unpacked_sint32', index=4,
       number=94, type=17, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='unpacked_sint64', full_name='protobuf_unittest.TestUnpackedTypes.unpacked_sint64', index=5,
       number=95, type=18, cpp_type=2, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='unpacked_fixed32', full_name='protobuf_unittest.TestUnpackedTypes.unpacked_fixed32', index=6,
       number=96, type=7, cpp_type=3, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='unpacked_fixed64', full_name='protobuf_unittest.TestUnpackedTypes.unpacked_fixed64', index=7,
       number=97, type=6, cpp_type=4, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='unpacked_sfixed32', full_name='protobuf_unittest.TestUnpackedTypes.unpacked_sfixed32', index=8,
       number=98, type=15, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='unpacked_sfixed64', full_name='protobuf_unittest.TestUnpackedTypes.unpacked_sfixed64', index=9,
       number=99, type=16, cpp_type=2, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='unpacked_float', full_name='protobuf_unittest.TestUnpackedTypes.unpacked_float', index=10,
       number=100, type=2, cpp_type=6, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='unpacked_double', full_name='protobuf_unittest.TestUnpackedTypes.unpacked_double', index=11,
       number=101, type=1, cpp_type=5, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='unpacked_bool', full_name='protobuf_unittest.TestUnpackedTypes.unpacked_bool', index=12,
       number=102, type=8, cpp_type=7, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='unpacked_enum', full_name='protobuf_unittest.TestUnpackedTypes.unpacked_enum', index=13,
       number=103, type=14, cpp_type=8, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4528,7 +4528,7 @@ _TESTDYNAMICEXTENSIONS_DYNAMICMESSAGETYPE = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4558,49 +4558,49 @@ _TESTDYNAMICEXTENSIONS = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='enum_extension', full_name='protobuf_unittest.TestDynamicExtensions.enum_extension', index=1,
       number=2001, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=4,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dynamic_enum_extension', full_name='protobuf_unittest.TestDynamicExtensions.dynamic_enum_extension', index=2,
       number=2002, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=2200,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='message_extension', full_name='protobuf_unittest.TestDynamicExtensions.message_extension', index=3,
       number=2003, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='dynamic_message_extension', full_name='protobuf_unittest.TestDynamicExtensions.dynamic_message_extension', index=4,
       number=2004, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_extension', full_name='protobuf_unittest.TestDynamicExtensions.repeated_extension', index=5,
       number=2005, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='packed_extension', full_name='protobuf_unittest.TestDynamicExtensions.packed_extension', index=6,
       number=2006, type=17, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')), file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4632,42 +4632,42 @@ _TESTREPEATEDSCALARDIFFERENTTAGSIZES = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_int32', full_name='protobuf_unittest.TestRepeatedScalarDifferentTagSizes.repeated_int32', index=1,
       number=13, type=5, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_fixed64', full_name='protobuf_unittest.TestRepeatedScalarDifferentTagSizes.repeated_fixed64', index=2,
       number=2046, type=6, cpp_type=4, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_int64', full_name='protobuf_unittest.TestRepeatedScalarDifferentTagSizes.repeated_int64', index=3,
       number=2047, type=3, cpp_type=2, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_float', full_name='protobuf_unittest.TestRepeatedScalarDifferentTagSizes.repeated_float', index=4,
       number=262142, type=2, cpp_type=6, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_uint64', full_name='protobuf_unittest.TestRepeatedScalarDifferentTagSizes.repeated_uint64', index=5,
       number=262143, type=4, cpp_type=4, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4698,7 +4698,7 @@ _TESTPARSINGMERGE_REPEATEDFIELDSGENERATOR_GROUP1 = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4728,7 +4728,7 @@ _TESTPARSINGMERGE_REPEATEDFIELDSGENERATOR_GROUP2 = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4758,49 +4758,49 @@ _TESTPARSINGMERGE_REPEATEDFIELDSGENERATOR = _descriptor.Descriptor(
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='field2', full_name='protobuf_unittest.TestParsingMerge.RepeatedFieldsGenerator.field2', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='field3', full_name='protobuf_unittest.TestParsingMerge.RepeatedFieldsGenerator.field3', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='group1', full_name='protobuf_unittest.TestParsingMerge.RepeatedFieldsGenerator.group1', index=3,
       number=10, type=10, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='group2', full_name='protobuf_unittest.TestParsingMerge.RepeatedFieldsGenerator.group2', index=4,
       number=20, type=10, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='ext1', full_name='protobuf_unittest.TestParsingMerge.RepeatedFieldsGenerator.ext1', index=5,
       number=1000, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='ext2', full_name='protobuf_unittest.TestParsingMerge.RepeatedFieldsGenerator.ext2', index=6,
       number=1001, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4830,7 +4830,7 @@ _TESTPARSINGMERGE_OPTIONALGROUP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4860,7 +4860,7 @@ _TESTPARSINGMERGE_REPEATEDGROUP = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -4890,35 +4890,35 @@ _TESTPARSINGMERGE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_all_types', full_name='protobuf_unittest.TestParsingMerge.optional_all_types', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_all_types', full_name='protobuf_unittest.TestParsingMerge.repeated_all_types', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optionalgroup', full_name='protobuf_unittest.TestParsingMerge.optionalgroup', index=3,
       number=10, type=10, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeatedgroup', full_name='protobuf_unittest.TestParsingMerge.repeatedgroup', index=4,
       number=20, type=10, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
     _descriptor.FieldDescriptor(
@@ -4927,14 +4927,14 @@ _TESTPARSINGMERGE = _descriptor.Descriptor(
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=True, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_ext', full_name='protobuf_unittest.TestParsingMerge.repeated_ext', index=1,
       number=1001, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=True, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   nested_types=[_TESTPARSINGMERGE_REPEATEDFIELDSGENERATOR, _TESTPARSINGMERGE_OPTIONALGROUP, _TESTPARSINGMERGE_REPEATEDGROUP, ],
   enum_types=[
@@ -4963,7 +4963,7 @@ _TESTCOMMENTINJECTIONMESSAGE = _descriptor.Descriptor(
       has_default_value=True, default_value=_b("*/ <- Neither should this.").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -5138,42 +5138,42 @@ _TESTJSONNAME = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='fieldName2', full_name='protobuf_unittest.TestJsonName.fieldName2', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='FieldName3', full_name='protobuf_unittest.TestJsonName.FieldName3', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='_field_name4', full_name='protobuf_unittest.TestJsonName._field_name4', index=3,
       number=4, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='FIELD_NAME5', full_name='protobuf_unittest.TestJsonName.FIELD_NAME5', index=4,
       number=5, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='field_name6', full_name='protobuf_unittest.TestJsonName.field_name6', index=5,
       number=6, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None, json_name='@type'),
+      options=None, json_name='@type', file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -5204,7 +5204,7 @@ _TESTHUGEFIELDNUMBERS_OPTIONALGROUP = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -5234,14 +5234,14 @@ _TESTHUGEFIELDNUMBERS_STRINGSTRINGMAPENTRY = _descriptor.Descriptor(
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='value', full_name='protobuf_unittest.TestHugeFieldNumbers.StringStringMapEntry.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],
@@ -5271,98 +5271,98 @@ _TESTHUGEFIELDNUMBERS = _descriptor.Descriptor(
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='fixed_32', full_name='protobuf_unittest.TestHugeFieldNumbers.fixed_32', index=1,
       number=536870001, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='repeated_int32', full_name='protobuf_unittest.TestHugeFieldNumbers.repeated_int32', index=2,
       number=536870002, type=5, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\000')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='packed_int32', full_name='protobuf_unittest.TestHugeFieldNumbers.packed_int32', index=3,
       number=536870003, type=5, cpp_type=1, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001'))),
+      options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001')), file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_enum', full_name='protobuf_unittest.TestHugeFieldNumbers.optional_enum', index=4,
       number=536870004, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=4,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_string', full_name='protobuf_unittest.TestHugeFieldNumbers.optional_string', index=5,
       number=536870005, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_bytes', full_name='protobuf_unittest.TestHugeFieldNumbers.optional_bytes', index=6,
       number=536870006, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optional_message', full_name='protobuf_unittest.TestHugeFieldNumbers.optional_message', index=7,
       number=536870007, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='optionalgroup', full_name='protobuf_unittest.TestHugeFieldNumbers.optionalgroup', index=8,
       number=536870008, type=10, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='string_string_map', full_name='protobuf_unittest.TestHugeFieldNumbers.string_string_map', index=9,
       number=536870010, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='oneof_uint32', full_name='protobuf_unittest.TestHugeFieldNumbers.oneof_uint32', index=10,
       number=536870011, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='oneof_test_all_types', full_name='protobuf_unittest.TestHugeFieldNumbers.oneof_test_all_types', index=11,
       number=536870012, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='oneof_string', full_name='protobuf_unittest.TestHugeFieldNumbers.oneof_string', index=12,
       number=536870013, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
       name='oneof_bytes', full_name='protobuf_unittest.TestHugeFieldNumbers.oneof_bytes', index=13,
       number=536870014, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],

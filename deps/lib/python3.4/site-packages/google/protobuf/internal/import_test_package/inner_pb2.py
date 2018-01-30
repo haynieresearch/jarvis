@@ -38,7 +38,7 @@ _INNER = _descriptor.Descriptor(
       has_default_value=True, default_value=57,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
-      options=None),
+      options=None, file=DESCRIPTOR),
   ],
   extensions=[
   ],

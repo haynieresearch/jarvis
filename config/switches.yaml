@@ -22,18 +22,8 @@
 
 - platform: rpi_gpio
   ports:
-    14: gpio_switch_14
-    15: gpio_switch_15
-    18: gpio_switch_18
-    23: gpio_switch_23
-    24: gpio_switch_24
-    25: gpio_switch_25
-    08: gpio_switch_08
-    07: gpio_switch_07
-    12: gpio_switch_12
-    16: gpio_switch_16
-    20: gpio_switch_20
-    21: gpio_switch_21  #Vibratone
+    20: vibratone_alarm
+    21: garage_warning_light
 
 - platform: command_line
   switches:
