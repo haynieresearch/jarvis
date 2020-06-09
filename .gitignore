@@ -36,4 +36,5 @@ config.php
 scfd.php
 passwords.cfg
 deps
-
+.pydevproject
+.project
