@@ -1,4 +1,4 @@
-# Jarvis Home Automation [![Build Status](https://api.travis-ci.org/Haynie-Research-and-Development/jarvis.svg?branch=master)](https://travis-ci.org/Haynie-Research-and-Development/jarvis)
+# Jarvis Home Automation [![Build Status](https://api.travis-ci.org/haynieresearch/jarvis.svg?branch=master)](https://travis-ci.org/haynieresearch/jarvis)
 Jarvis is a Home Assistant (https://home-assistant.io/) implementation with wake word detection, SMS commands,
 and a lot of automation control. While the Conversation component does it's job, it's currently a bit limited
 and without wake word detection it was almost useless to me. I also have tried the AlexaPi implementation as
@@ -6,19 +6,19 @@ well as using Amazon Alexa products. However, creating custom intents was not as
 have liked for quick and easy creation. Between wake word and API.AI for speech handling, it appears to work
 rather well. I have also decoupled the TTS services to make it easier to use that functionality elsewhere.
 
-Note: For those who want to track the network status of local devices the nmap_tracker built into HA does do that job very well. However, I have decided to remove it from my configuration. While it worked as intended, it had an unintended side effect on my Raspberry Pi -- it made it run slow. While I could tweak the interval settings, real time tracking was my goal. 
+Note: For those who want to track the network status of local devices the nmap_tracker built into HA does do that job very well. However, I have decided to remove it from my configuration. While it worked as intended, it had an unintended side effect on my Raspberry Pi -- it made it run slow. While I could tweak the interval settings, real time tracking was my goal.
 
-Firewall Note: The Jarvis firewall is setup so that only local clients and one specific public IP can access. 
-The specific IP that can access Jarvis is a front end server with Apache as a reverse proxy and encryption. 
+Firewall Note: The Jarvis firewall is setup so that only local clients and one specific public IP can access.
+The specific IP that can access Jarvis is a front end server with Apache as a reverse proxy and encryption.
 Any other external clients will connect to the front end server outside of the network that then connects direct to Jarvis.
 
-![Screenshot of Jarvis Wall Mount](https://raw.githubusercontent.com/Haynie-Research-and-Development/jarvis/master/resources/screenshots/jarvis_wall.png)
+![Screenshot of Jarvis Wall Mount](https://raw.githubusercontent.com/haynieresearch/jarvis/master/resources/screenshots/jarvis_wall.png)
 
 Note: SMS commands will require a basic level of experience with PHP.
 
 P.S.: This system is far from perfect, if you make some enhancements or have any ideas please
 feel free to share them. If you find any bugs you would like to report, you can do so via
-the following link: https://github.com/Haynie-Research-and-Development/jarvis/issues
+the following link: https://github.com/haynieresearch/jarvis/issues
 Keep in mind, generally any Home Assistant related issues should be raised on their side. If you are having a
 configuration problem, I would be glad to help.
 
@@ -92,10 +92,10 @@ If you utilize the install script it will set you up with ready to edit configur
       3. Advanced Settings, set the memory split to 16 and audio to force 3.5mm.
       4. Reboot your Pi.
 3. Navigate to /opt "cd /opt" on your Raspberry Pi.
-4. Checkout the latest Jarvis program: 
+4. Checkout the latest Jarvis program:
    1. Install git: sudo apt-get install git
       1. If this command fails, you may need to run: sudo apt-get update
-   2. Then run: sudo git clone https://github.com/Haynie-Research-and-Development/jarvis.git jarvis
+   2. Then run: sudo git clone https://github.com/haynieresearch/jarvis.git jarvis
 5. Update permissions: sudo chown -fR pi:pi jarvis
 6. Navigate to /opt/jarvis "cd /opt/jarvis" and run install.sh
 7. Configure AWS CLI for Amazon Polly TTS: aws configure --profile adminuser
@@ -111,7 +111,7 @@ If you utilize the install script it will set you up with ready to edit configur
       4. Navigate to Export and Import, and RESTORE FROM ZIP: /opt/jarvis/resources/apiai.zip
    2. Amazon AWS
       1. http://docs.aws.amazon.com/general/latest/gr/managing-aws-access-keys.html
-   3. Wit AI Speech 
+   3. Wit AI Speech
       1. https://wit.ai/
 10. Edit the configuration options in /opt/jarvis/stt/config/config.yaml
 11. Update /opt/jarvis/configuration.yaml
@@ -159,8 +159,8 @@ openssl s_client -connect tuner.pandora.com:443 < /dev/null 2> /dev/null | \
     openssl x509 -noout -fingerprint | tr -d ':' | cut -d'=' -f2
 ```
 
-![Screenshot of Jarvis Home](https://raw.githubusercontent.com/Haynie-Research-and-Development/jarvis/master/resources/screenshots/jarvis_home.png)
-![Screenshot of Jarvis Lights](https://raw.githubusercontent.com/Haynie-Research-and-Development/jarvis/master/resources/screenshots/jarvis_lights.png)
-![Screenshot of Jarvis Climate](https://raw.githubusercontent.com/Haynie-Research-and-Development/jarvis/master/resources/screenshots/jarvis_climate.png)
-![Screenshot of Jarvis Security](https://raw.githubusercontent.com/Haynie-Research-and-Development/jarvis/master/resources/screenshots/jarvis_security.png)
-![Screenshot of Jarvis SMS](https://raw.githubusercontent.com/Haynie-Research-and-Development/jarvis/master/resources/screenshots/jarvis_sms.jpeg)
+![Screenshot of Jarvis Home](https://raw.githubusercontent.com/haynieresearch/jarvis/master/resources/screenshots/jarvis_home.png)
+![Screenshot of Jarvis Lights](https://raw.githubusercontent.com/haynieresearch/jarvis/master/resources/screenshots/jarvis_lights.png)
+![Screenshot of Jarvis Climate](https://raw.githubusercontent.com/haynieresearch/jarvis/master/resources/screenshots/jarvis_climate.png)
+![Screenshot of Jarvis Security](https://raw.githubusercontent.com/haynieresearch/jarvis/master/resources/screenshots/jarvis_security.png)
+![Screenshot of Jarvis SMS](https://raw.githubusercontent.com/haynieresearch/jarvis/master/resources/screenshots/jarvis_sms.jpeg)
