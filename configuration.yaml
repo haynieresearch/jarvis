@@ -83,7 +83,6 @@ logbook:
       - sensor.pws_weather
       - sensor.pws_wind_string
       - sensor.ram_use
-      - sensor.time__date
 
 history:
   include:
