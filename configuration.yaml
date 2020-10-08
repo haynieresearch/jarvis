@@ -77,7 +77,6 @@ logbook:
       - sensor.dark_sky_daily_summary
       - sensor.dark_sky_hourly_summary
       - sensor.dark_sky_wind_speed
-      - sensor.disk_use_
       - sensor.pws_pressure_in
       - sensor.pws_relative_humidity
       - sensor.pws_temp_f
