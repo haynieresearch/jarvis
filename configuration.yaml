@@ -150,13 +150,13 @@ twilio:
   auth_token: !secret twilio_token
 
 climate:
-  platform: honeywell
-  username: !secret honeywell_user
-  password: !secret honeywell_pass
-  region: us
-  scan_interval: 600
-  cool_away_temperature: 26
-  heat_away_temperature: 23
+  - platform: honeywell
+    username: !secret honeywell_user
+    password: !secret honeywell_pass
+    region: us
+    scan_interval: 600
+    cool_away_temperature: 26
+    heat_away_temperature: 23
 
 google:
   client_id: !secret google_id

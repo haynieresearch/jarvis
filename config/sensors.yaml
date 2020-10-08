@@ -164,15 +164,6 @@
   name: Internet Status
   command: /opt/jarvis/scripts/internetstatus.sh
 
-- platform: speedtest
-  minute:
-    - 0
-    - 30
-  monitored_conditions:
-    - ping
-    - download
-    - upload
-
 - platform: random
   name: random_outside_lights
   minimum: 1
