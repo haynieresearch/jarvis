@@ -29,6 +29,7 @@ homeassistant:
         - 127.0.0.1
         - 10.0.0.0/8
         - !secret base_ip
+      allow_bypass_login: true
   latitude: !secret latitude_home
   longitude: !secret longitude_home
   elevation: !secret elevation
