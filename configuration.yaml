@@ -205,8 +205,11 @@ shell_command:
 #Alarm Panel
 alarm_control_panel:
   - platform: manual
+    name: Home Alarm
     code: !secret alarm_code
-    name: home_alarm
+    code_arm_required: true
+    delay_time: 300
+    arming_time: 300
     trigger_time: 900
     disarm_after_trigger: false
 
