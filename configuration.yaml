@@ -21,6 +21,7 @@
 #**********************************************************
 homeassistant:
   auth_providers:
+    - type: homeassistant
     - type: legacy_api_password
       api_password: !secret http_password
     - type: trusted_networks
@@ -116,8 +117,6 @@ history:
       - alarm_control_panel.home_alarm
 
 recorder:
-  purge_interval: 7
-  purge_keep_days: 14
   db_url: sqlite:///opt/jarvis/database/jarvis.db
   exclude:
     domains:
@@ -164,11 +163,6 @@ ifttt:
 #**********************************************************
 #* MISC CONFIG
 #**********************************************************
-weblink:
-  entities:
-    - name: Home
-      url: http://localhost:8123
-
 hue:
   bridges:
     - host: 10.0.1.202

@@ -17,7 +17,6 @@
 #limitations under the License.
 
 default_view:
-  view: yes
   entities:
     - group.climatefront
     - group.securitysettingsfront
@@ -28,7 +27,6 @@ default_view:
 
 Lights:
  name: Lights
- view: yes
  entities:
    - group.scenes
    - group.kitchenlights
@@ -42,7 +40,6 @@ Lights:
 
 Climate:
   name: Climate
-  view: yes
   entities:
     - group.upstairsclimate
     - group.downstairsclimate
@@ -52,7 +49,6 @@ Climate:
 
 Media:
  name: Media
- view: yes
  entities:
    - media_player.pandora
    - group.itunes
@@ -62,14 +58,12 @@ Media:
 
 Cameras:
   name: Cameras
-  view: yes
   entities:
     - camera.wxradar
     - camera.living_room
 
 Security:
   name: Security
-  view: yes
   entities:
     - group.securitysettings
     - group.locationswitch
@@ -80,7 +74,6 @@ Security:
 
 Settings:
   name: Settings
-  view: yes
   entities:
     - group.misc
     - group.system
@@ -144,7 +137,6 @@ Weather:
 
 LocationSwitchFront:
   name: Location Switches
-  control: hidden
   entities:
     - input_boolean.lancefirecall
     - script.find_katies_iphone
@@ -153,7 +145,6 @@ LocationSwitchFront:
 
 LocationSwitch:
   name: Location Switches
-  control: hidden
   entities:
     - input_boolean.lancefirecall
 
