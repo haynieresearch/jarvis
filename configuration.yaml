@@ -150,8 +150,8 @@ climate:
     password: !secret honeywell_pass
     region: us
     scan_interval: 600
-    cool_away_temperature: 26
-    heat_away_temperature: 23
+    away_cool_temperature: 26
+    away_heat_temperature: 23
 
 google:
   client_id: !secret google_id
@@ -230,7 +230,6 @@ alarm_control_panel:
   - platform: manual
     code: !secret alarm_code
     name: home_alarm
-    pending_time: 30
     trigger_time: 900
     disarm_after_trigger: false
 
