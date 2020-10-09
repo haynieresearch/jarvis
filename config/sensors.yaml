@@ -16,24 +16,6 @@
 #See the License for the specific language governing permissions and
 #limitations under the License.
 
-- platform: darksky
-  api_key: !secret darksky_key
-  monitored_conditions:
-    - wind_speed
-    - cloud_cover
-    - hourly_summary
-    - daily_summary
-
-- platform: wunderground
-  api_key: !secret wunderground_key
-  monitored_conditions:
-    - weather
-    - temp_f
-    - pressure_in
-    - wind_string
-    - relative_humidity
-    - alerts
-
 - platform: template
   sensors:
     home_address:
