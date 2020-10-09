@@ -23,4 +23,4 @@ export DISPLAY=:0
 /usr/bin/xset -dpms
 /usr/bin/xset s noblank
 
-/usr/bin/chromium-browser --kiosk --incognito --start-fullscreen --disable-session-crashed-bubble --disable-infobars http://localhost:8123/
+/usr/bin/chromium-browser --kiosk --incognito --start-fullscreen --disable-session-crashed-bubble --disable-infobars http://10.0.0.9:8123/
