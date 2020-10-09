@@ -3669,9 +3669,8 @@
   alias: Rule Reminder 5 Min
   initial_state: 'on'
   trigger:
-    platform: time
-    minutes: '/5'
-    seconds: 00
+  - minutes: '/5'
+    platform: time_pattern
   condition:
     condition: and
     conditions:
