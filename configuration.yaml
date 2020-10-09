@@ -253,4 +253,3 @@ input_select: !include config/input_select.yaml
 input_boolean: !include config/input_boolean.yaml
 input_number: !include config/input_number.yaml
 script: !include config/scripts.yaml
-panel_custom: !include config/panel_custom.yaml
