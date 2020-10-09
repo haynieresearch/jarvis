@@ -179,7 +179,7 @@ emulated_hue:
 shell_command:
   command: "{{cmd}}"
   run_sudo: /usr/bin/sudo "{{cmd}}"
-  volume: /usr/bin/amixer set PCM "{{cmd}}"%
+  volume: /usr/bin/amixer set Headphones "{{cmd}}"%
   tts: /opt/jarvis/scripts/tts.sh "{{message}}"
   bomb_sound: /usr/bin/aplay /opt/jarvis/sounds/sound_effects/missle_explosion.wav
   alarm_sound: /usr/bin/aplay /opt/jarvis/sounds/sound_effects/alarm.wav
