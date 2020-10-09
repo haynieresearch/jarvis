@@ -17,4 +17,4 @@
 #See the License for the specific language governing permissions and
 #limitations under the License.
 
-/usr/bin/python3.7 /opt/jarvis/stt/stt.py
+/usr/bin/python2.7 /opt/jarvis/stt/stt.py
