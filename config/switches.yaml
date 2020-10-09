@@ -16,10 +16,10 @@
 #See the License for the specific language governing permissions and
 #limitations under the License.
 
-- platform: rpi_gpio
-  ports:
-    20: vibratone_alarm
-    21: garage_warning_light
+#- platform: rpi_gpio
+#  ports:
+#    20: vibratone_alarm
+#    21: garage_warning_light
 
 - platform: command_line
   switches:
