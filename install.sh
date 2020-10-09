@@ -81,9 +81,9 @@ cp -fR /opt/jarvis/resources/asoundrc /home/pi/.asoundrc
 
 echo "Setting up Configuration Files"
 cd /opt/jarvis
-mv secrets.yaml.example secrets.yaml
+cp secrets.yaml.example secrets.yaml
 cd /opt/jarvis/stt/config
-mv config.yaml.example config.yaml
+cp config.yaml.example config.yaml
 cd /opt/jarvis/web/webapi/sms
-mv config.php.example config.php
+cp config.php.example config.php
 cd /opt/jarvis

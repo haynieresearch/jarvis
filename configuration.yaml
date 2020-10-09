@@ -27,6 +27,7 @@ homeassistant:
     - type: trusted_networks
       trusted_networks:
         - 127.0.0.1
+        - 10.0.0.0/8
         - !secret base_ip
   latitude: !secret latitude_home
   longitude: !secret longitude_home
@@ -137,9 +138,6 @@ dialogflow:
 #**********************************************************
 #* ACCOUNTS
 #**********************************************************
-wink:
-  local_control: true
-
 twilio:
   account_sid: !secret twilio_sid
   auth_token: !secret twilio_token
@@ -153,31 +151,9 @@ climate:
     away_cool_temperature: 26
     away_heat_temperature: 23
 
-google:
-  client_id: !secret google_id
-  client_secret: !secret google_secret
-
-ifttt:
-  key: !secret ifttt_key
-
 #**********************************************************
 #* MISC CONFIG
 #**********************************************************
-hue:
-  bridges:
-    - host: 10.0.1.202
-
-remote:
-  - platform: harmony
-    name: Living Room
-    host: 10.0.1.203
-
-media_player:
-  - platform: itunes
-    host: 10.0.1.100
-  - platform: roku
-  - platform: pandora
-
 notify:
   - name: sms
     platform: twilio_sms
