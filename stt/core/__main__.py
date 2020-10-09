@@ -25,7 +25,6 @@ import sys
 import logging
 import argparse
 
-from .application import application
 from application import USE_STANDARD_MIC, USE_TEXT_MIC, USE_BATCH_MIC
 
 
