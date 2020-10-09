@@ -1,4 +1,7 @@
 # Jarvis Home Automation [![Build Status](https://api.travis-ci.org/haynieresearch/jarvis.svg?branch=master)](https://travis-ci.org/haynieresearch/jarvis)
+
+Note: After about 3 years of a hiatus I am finally able to upgrade Jarvis to work with the new version of Home Assistant. It will probably take me awhile to get everything working 100% but I will try to keep this updated as I go.
+
 Jarvis is a Home Assistant (https://home-assistant.io/) implementation with wake word detection, SMS commands,
 and a lot of automation control. While the Conversation component does it's job, it's currently a bit limited
 and without wake word detection it was almost useless to me. I also have tried the AlexaPi implementation as
