@@ -3744,9 +3744,8 @@
   alias: Rule Reminder 10 Min
   initial_state: 'on'
   trigger:
-    platform: time
-    minutes: '/10'
-    seconds: 00
+  - minutes: '/10'
+    platform: time_pattern
   condition:
     condition: and
     conditions:
@@ -3819,9 +3818,8 @@
   alias: Rule Reminder 15 Min
   initial_state: 'on'
   trigger:
-    platform: time
-    minutes: '/15'
-    seconds: 00
+  - minutes: '/15'
+    platform: time_pattern
   condition:
     condition: and
     conditions:
@@ -3894,9 +3892,8 @@
   alias: Rule Reminder 30 Min
   initial_state: 'on'
   trigger:
-    platform: time
-    minutes: '/30'
-    seconds: 00
+  - minutes: '/30'
+    platform: time_pattern
   condition:
     condition: and
     conditions:
