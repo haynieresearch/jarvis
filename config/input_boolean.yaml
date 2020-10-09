@@ -21,31 +21,6 @@ hvacautomation:
   initial: on
   icon: mdi:thermometer
 
-hudson_grounded:
-  name: Hudson Grounded
-  initial: off
-  icon: mdi:emoticon-sad
-
-wesley_grounded:
-  name: Wesley Grounded
-  initial: off
-  icon: mdi:emoticon-sad
-
-flash_hudson_lights:
-  name: Flash Hudson Lights
-  initial: off
-  icon: mdi:alarm-light
-
-flash_wesley_lights:
-  name: Flash Wesley Lights
-  initial: off
-  icon: mdi:alarm-light
-
-panic:
-  name: Panic Alarm
-  initial: off
-  icon: mdi:alert
-
 sound_alarm:
   name: Sound Alarm
   initial: off
@@ -70,16 +45,6 @@ coalarm:
   name: Carbon Monoxide Alarm
   initial: off
   icon: mdi:skull
-
-lancefirecall:
-  name: Lance on Fire Call
-  initial: off
-  icon: mdi:fire
-
-livingroomtv:
-  name: Living Room TV
-  initial: off
-  icon: mdi:television-guide
 
 nighttimemode:
   name: Night Time Mode

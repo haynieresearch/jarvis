@@ -16,14 +16,6 @@
 #See the License for the specific language governing permissions and
 #limitations under the License.
 
-livingroomharmonyvolume:
-  icon: mdi:volume-high
-  name: Volume
-  initial: 30
-  min: 1
-  max: 100
-  step: 1
-
 systemvolume:
   icon: mdi:volume-high
   name: System Volume

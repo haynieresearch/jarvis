@@ -16,18 +16,6 @@
 #See the License for the specific language governing permissions and
 #limitations under the License.
 
-livingroomharmony:
-  name: Harmony Activity
-  options:
-   - PowerOff
-   - Watch Smart TV
-   - Play PS4
-   - Play XBOX 360
-   - Netflix
-   - Play Wii
-  initial: PowerOff
-  icon: mdi:remote
-
 rule_freq:
   name: Rule Frequency (Minutes)
   options:

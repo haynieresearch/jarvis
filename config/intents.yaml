@@ -44,36 +44,6 @@ Spell:
   speech:
     text: This functionality is not enabled yet.
 
-HarmonyRemotes:
-  speech:
-    text: I am changing {{ HarmonyDevices | replace('_', ' ') }} to {{ HarmonyInput }}
-  action:
-    - service: remote.turn_on
-      data_template:
-        entity_id: "remote.{{ HarmonyDevices }}"
-        activity: "{{ HarmonyInput }}"
-
-HarmonyVolume:
-  speech:
-    text: I am changing the volume on {{ HarmonyDevices | replace('_', ' ') }}
-  action:
-    - service: script.turn_on
-      data_template:
-        entity_id: >-
-          {%- if HarmonyDevices == "living_room" -%}
-            {%- if VolUpDown == "Up" -%}
-              script.living_room_tv_up
-            {%- elif VolUpDown == "Down" -%}
-              script.living_room_tv_down
-            {%- elif VolUpDown == "Mute" -%}
-              script.living_room_tv_mute
-            {%- endif -%}
-          {%- endif -%}
-
-Say:
-  speech:
-    text: "{{ text }}"
-
 SwitchOnOff:
   speech:
     text: I have turned {{ (((Switches | replace('_', ' ') | replace('switch.', '')) | replace('light.', '')) | replace('group.', '')) }} {{ OnOff }}.
