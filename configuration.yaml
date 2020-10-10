@@ -199,9 +199,9 @@ alarm_control_panel:
     name: Home Alarm
     code: !secret alarm_code
     code_arm_required: true
-    delay_time: 300
-    arming_time: 300
-    trigger_time: 900
+    delay_time: 60
+    arming_time: 60
+    trigger_time: 120
     disarm_after_trigger: false
 
 #**********************************************************
