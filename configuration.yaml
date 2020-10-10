@@ -41,10 +41,9 @@ homeassistant:
 
 lovelace:
   mode: yaml
-
-resources:
-  - url: /opt/jarvis/resources/layout-card.js
-    type: module
+  resources:
+    - url: /opt/jarvis/resources/layout-card.js
+      type: module
 
 logger:
   default: error
