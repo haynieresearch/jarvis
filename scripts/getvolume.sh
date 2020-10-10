@@ -17,4 +17,4 @@
 #See the License for the specific language governing permissions and
 #limitations under the License.
 
-/usr/bin/awk -F"[][]" '/dB/ { print $2 }' <(/usr/bin/amixer sget PCM) | sed 's/.$//'
+/usr/bin/awk -F"[][]" '/dB/ { print $2 }' <(/usr/bin/amixer -c 0 sget Headphone) | sed 's/.$//'
