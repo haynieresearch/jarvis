@@ -1426,7 +1426,7 @@
         message: "Excessive heat detected in {{ trigger.to_state.name }} with a temperature of {{ trigger.to_state.state }}. The seat of the fire may be nearby."
         target:
           - !secret lance_cell
-          - !secret katie_celll
+          - !secret katie_cell
 
 - id: motion_when_fire
   alias: Motion Sensors Changed When Fire Alarm
