@@ -40,10 +40,7 @@ homeassistant:
   customize: !include config/customize.yaml
 
 lovelace:
-  mode: yaml
-  resources:
-    - url: /opt/jarvis/resources/layout-card.js
-      type: module
+#  mode: yaml
 
 logger:
   default: error
