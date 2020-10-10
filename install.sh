@@ -40,7 +40,7 @@ sudo rpi-update
 echo "Installing System Requirements"
 sudo apt-get install python-pip python3-dev python3-pip mpg123 python-dev \
 bison libasound2-dev libportaudio-dev python-pyaudio xorg chromium-browser \
-nginx php-fpm php-apcu pianobar net-tools nmap npm php-curl \
+nginx php-fpm php-apcu pianobar net-tools nmap npm php-curl unclutter \
 iptables-persistent dnsutils python-pyalsa python3-pyalsa jackd2 --yes
 
 echo "Installing Python3 Requirements"

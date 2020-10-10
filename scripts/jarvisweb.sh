@@ -23,4 +23,5 @@ export DISPLAY=:0
 /usr/bin/xset -dpms
 /usr/bin/xset s noblank
 
+/usr/bin/unclutter &
 /usr/bin/chromium-browser --kiosk --incognito --start-fullscreen --disable-session-crashed-bubble --disable-infobars --noerrdialogs --no-first-run --fast --fast-start --enable-use-zoom-for-dsf http://10.0.0.9:8123/
