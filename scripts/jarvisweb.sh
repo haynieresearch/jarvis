@@ -23,4 +23,4 @@ export DISPLAY=:0
 /usr/bin/xset -dpms
 /usr/bin/xset s noblank
 
-/usr/bin/chromium-browser --kiosk --incognito --start-fullscreen --disable-session-crashed-bubble --disable-infobars --force-device-scale-factor=0.75 http://10.0.0.9:8123/
+/usr/bin/chromium-browser --kiosk --incognito --start-fullscreen --disable-session-crashed-bubble --disable-infobars --noerrdialogs --no-first-run --fast --fast-start --enable-use-zoom-for-dsf --force-device-scale-factor=0.75 http://10.0.0.9:8123/
