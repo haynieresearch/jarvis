@@ -39,6 +39,9 @@ homeassistant:
   unit_system: imperial
   customize: !include config/customize.yaml
 
+lovelace:
+  mode: yaml
+
 logger:
   default: error
   logs:
