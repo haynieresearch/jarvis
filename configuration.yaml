@@ -162,12 +162,6 @@ notify:
   - name: call
     platform: twilio_call
     from_number: !secret twilio_from
-  - name: twitter
-    platform: twitter
-    consumer_key: !secret twitter_consumer_key
-    consumer_secret: !secret twitter_consumer_secret
-    access_token: !secret twitter_access_token
-    access_token_secret: !secret twitter_access_token_secret
 
 #Track the Sun
 sun:

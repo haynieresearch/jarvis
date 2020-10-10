@@ -50,9 +50,6 @@
     - service: shell_command.tts
       data_template:
         message: "{{ states.sensor.jarvis_greeting.state }}, The downstairs thermostat has been turned off, so I am turning it back on."
-    - service: notify.twitter
-      data:
-        message: "The downstairs thermostat has been turned off, so I am turning it back on. #HomeAutomation #SmartHome"
 
 - id: climate_downstairs_off_to_on_heat
   alias: Downstairs Climate Off to On Heat
@@ -86,9 +83,6 @@
     - service: shell_command.tts
       data_template:
         message: "{{ states.sensor.jarvis_greeting.state }}, The downstairs thermostat has been turned off, so I am turning it back on. "
-    - service: notify.twitter
-      data:
-        message: "The downstairs thermostat has been turned off, so I am turning it back on. #HomeAutomation #SmartHome"
 
 - id: climate_upstairs_off_to_on_ac
   alias: Upstairs Climate Off to On AC
@@ -121,9 +115,6 @@
     - service: shell_command.tts
       data_template:
         message: "{{ states.sensor.jarvis_greeting.state }}, The upstairs thermostat has been turned off, so I am turning it back on."
-    - service: notify.twitter
-      data:
-        message: "The upstairs thermostat has been turned off, so I am turning it back on. #HomeAutomation #SmartHome"
 
 - id: climate_upstairs_off_to_on_heat
   alias: Upstairs Climate Off to On Heat
@@ -157,9 +148,6 @@
     - service: shell_command.tts
       data_template:
         message: "{{ states.sensor.jarvis_greeting.state }}, The upstairs thermostat has been turned off, so I am turning it back on."
-    - service: notify.twitter
-      data:
-        message: "The upstairs thermostat has been turned off, so I am turning it back on. #HomeAutomation #SmartHome"
 
 - id: climate_downstairs_max_temp
   alias: Downstairs Max Temp
@@ -184,9 +172,6 @@
     - service: shell_command.tts
       data_template:
         message: "{{ states.sensor.jarvis_greeting.state }}, The maximum downstairs temperature has been reached, I am turning on the air conditioning."
-    - service: notify.twitter
-      data:
-        message: "The maximum downstairs temperature has been reached, I am turning on the AC so my family can stay comfortable. #HomeAutomation #SmartHome"
 
 - id: climate_upstairs_max_temp
   alias: Upstairs Max Temp
@@ -211,9 +196,6 @@
     - service: shell_command.tts
       data_template:
         message: "{{ states.sensor.jarvis_greeting.state }}, The maximum upstairs temperature has been reached, I am turning on the air conditioning."
-    - service: notify.twitter
-      data:
-        message: "The maximum upstairs temperature has been reached, I am turning on the AC so my family can stay comfortable. #HomeAutomation #SmartHome"
 
 - id: climate_downstairs_min_temp
   alias: Downstairs Min Temp
@@ -238,9 +220,6 @@
     - service: shell_command.tts
       data_template:
         message: "{{ states.sensor.jarvis_greeting.state }}, The minimuim downstairs temperature has been reached, I am turning on the heater."
-    - service: notify.twitter
-      data:
-        message: "The minimuim downstairs temperature has been reached, I am turning on the heater so my family can stay warm. #HomeAutomation #SmartHome"
 
 - id: climate_upstairs_min_temp
   alias: Upstairs Min Temp
@@ -265,9 +244,6 @@
     - service: shell_command.tts
       data_template:
         message: "{{ states.sensor.jarvis_greeting.state }}, The minimuim upstairs temperature has been reached, I am turning on the heater."
-    - service: notify.twitter
-      data:
-        message: "The minimuim upstairs temperature has been reached, I am turning on the heater so my family can stay warm. #HomeAutomation #SmartHome"
 
 - id: climate_downstairs_ac_day_set
   alias: Downstairs AC Day Set
@@ -294,9 +270,6 @@
       data:
         entity_id: climate.downstairs
         operation_mode: cool
-    - service: notify.twitter
-      data:
-        message: "It is time to set the thermostat for the day, I do not want my family to have to worry about it. #HomeAutomation #SmartHome"
 
 - id: climate_upstairs_ac_day_set
   alias: Upstairs AC Day Set
@@ -323,9 +296,6 @@
       data:
         entity_id: climate.upstairs
         operation_mode: cool
-    - service: notify.twitter
-      data:
-        message: "It is time to set the thermostat for the day, I do not want my family to have to worry about it. #HomeAutomation #SmartHome"
 
 - id: climate_downstairs_heat_day_set
   alias: Downstairs Heat Day Set
@@ -352,9 +322,6 @@
       data:
         entity_id: climate.downstairs
         operation_mode: heat
-    - service: notify.twitter
-      data:
-        message: "It is time to set the thermostat for the day, I do not want my family to have to worry about it. #HomeAutomation #SmartHome"
 
 - id: climate_upstairs_heat_day_set
   alias: Upstairs Heat Day Set
@@ -381,9 +348,6 @@
       data:
         entity_id: climate.upstairs
         operation_mode: heat
-    - service: notify.twitter
-      data:
-        message: "It is time to set the thermostat for the day, I do not want my family to have to worry about it. #HomeAutomation #SmartHome"
 
 - id: climate_downstairs_ac_night_set
   alias: Downstairs AC Night Set
@@ -410,9 +374,6 @@
       data:
         entity_id: climate.downstairs
         operation_mode: cool
-    - service: notify.twitter
-      data:
-        message: "I am adjusting the thermostat for the evening so my family can rest well. @MeanMrHaynie really appreciates it. #HomeAutomation #SmartHome"
 
 - id: climate_upstairs_ac_night_set
   alias: Upstairs AC Night Set
@@ -439,9 +400,6 @@
       data:
         entity_id: climate.upstairs
         operation_mode: cool
-    - service: notify.twitter
-      data:
-        message: "I am adjusting the thermostat for the evening so my family can rest well. @MeanMrHaynie really appreciates it. #HomeAutomation #SmartHome"
 
 - id: climate_downstairs_heat_night_set
   alias: Downstairs Heat Night Set
@@ -468,9 +426,6 @@
       data:
         entity_id: climate.downstairs
         operation_mode: heat
-    - service: notify.twitter
-      data:
-        message: "I am adjusting the thermostat for the evening so my family can rest well. @MeanMrHaynie really appreciates it. #HomeAutomation #SmartHome"
 
 - id: climate_upstairs_heat_night_set
   alias: Upstairs Heat Night Set
@@ -497,9 +452,6 @@
       data:
         entity_id: climate.upstairs
         operation_mode: heat
-    - service: notify.twitter
-      data:
-        message: "I am adjusting the thermostat for the evening so my family can rest well. @MeanMrHaynie really appreciates it. #HomeAutomation #SmartHome"
 
 - id: climate_downstairs_ac_day
   alias: Downstairs AC Day
@@ -533,9 +485,6 @@
     - service: shell_command.tts
       data_template:
         message: "{{ states.sensor.jarvis_greeting.state }}, The average temperature downstairs is getting a bit warm with an average temperature of {{ trigger.to_state.state }}. I am going to turn on the air conditioning."
-    - service: notify.twitter
-      data_template:
-        message: "It is getting a bit warm downstairs with an average temperature of {{ trigger.to_state.state }}., I am going to turn on the AC. #HomeAutomation #SmartHome"
 
 - id: climate_upstairs_ac_day
   alias: Upstairs AC Day
@@ -569,9 +518,6 @@
     - service: shell_command.tts
       data_template:
         message: "{{ states.sensor.jarvis_greeting.state }}, The average temperature upstairs is getting a bit warm with an average temperature of {{ trigger.to_state.state }}. I am going to turn on the air conditioning."
-    - service: notify.twitter
-      data_template:
-        message: "It is getting a bit warm upstairs with an average temperature of {{ trigger.to_state.state }}. I am going to turn on the AC. #HomeAutomation #SmartHome"
 
 - id: climate_downstairs_heat_day
   alias: Downstairs Heat Day
@@ -605,9 +551,6 @@
     - service: shell_command.tts
       data_template:
         message: "{{ states.sensor.jarvis_greeting.state }}, The average temperature downstairs is getting a bit cold with an average temperature of {{ trigger.to_state.state }}. I am going to turn on the heater."
-    - service: notify.twitter
-      data_template:
-        message: "It is getting a bit cold downstairs with an average temperature of {{ trigger.to_state.state }}. I am going to turn on the heater. #HomeAutomation #SmartHome"
 
 - id: climate_upstairs_heat_day
   alias: Upstairs Heat Day
@@ -641,9 +584,6 @@
     - service: shell_command.tts
       data_template:
         message: "{{ states.sensor.jarvis_greeting.state }}, The average temperature upstairs is getting a bit cold with an average temprature of {{ trigger.to_state.state }}. I am going to turn on the heater."
-    - service: notify.twitter
-      data_template:
-        message: "It is getting a bit cold upstairs with an average temprature of {{ trigger.to_state.state }}. I am going to turn on the heater. #HomeAutomation #SmartHome"
 
 - id: climate_downstairs_ac_night
   alias: Downstairs AC Night
@@ -677,9 +617,6 @@
     - service: shell_command.tts
       data_template:
         message: "{{ states.sensor.jarvis_greeting.state }}, The average temperature downstairs is getting a bit warm with an average temperature of {{ trigger.to_state.state }}. I am going to turn on the air conditioning."
-    - service: notify.twitter
-      data_template:
-        message: "It is getting a bit warm downstairs with an average temperature of {{ trigger.to_state.state }}. I am going to turn on the AC. #HomeAutomation #SmartHome"
 
 - id: climate_upstairs_ac_night
   alias: Upstairs AC Night
@@ -713,9 +650,6 @@
     - service: shell_command.tts
       data_template:
         message: "{{ states.sensor.jarvis_greeting.state }}, The average temperature upstairs is getting a bit warm with an average temperature of {{ trigger.to_state.state }}. I am going to turn on the air conditioning."
-    - service: notify.twitter
-      data_template:
-        message: "It is getting a bit warm upstairs with an average temperature of {{ trigger.to_state.state }}. I am going to turn on the AC. #HomeAutomation #SmartHome"
 
 - id: climate_downstairs_heat_night
   alias: Downstairs Heat Night
@@ -749,9 +683,6 @@
     - service: shell_command.tts
       data_template:
         message: "{{ states.sensor.jarvis_greeting.state }}, The average temperature downstairs is getting a bit cold with an average temperature of {{ trigger.to_state.state }}. I am going to turn on the heater."
-    - service: notify.twitter
-      data_template:
-        message: "It is getting a bit cold downstairs with an average temperature of {{ trigger.to_state.state }}. I am going to turn on the heater. #HomeAutomation #SmartHome"
 
 - id: climate_upstairs_heat_night
   alias: Upstairs Heat Night
@@ -785,9 +716,6 @@
     - service: shell_command.tts
       data_template:
         message: "{{ states.sensor.jarvis_greeting.state }}, The average temperature upstairs is getting a bit cold with an average temprature of {{ trigger.to_state.state }}. I am going to turn on the heater."
-    - service: notify.twitter
-      data_template:
-        message: "It is getting a bit cold upstairs with an average temprature of {{ trigger.to_state.state }}. I am going to turn on the heater. #HomeAutomation #SmartHome"
 
 - id: hudsons_room_fan_on
   alias: Hudsons Room Fan On
@@ -814,9 +742,6 @@
     - service: shell_command.tts
       data_template:
         message: "{{ states.sensor.jarvis_greeting.state }}, Hudsons room is getting a bit warm with an average temperature of {{ states.sensor.hudsons_room_temperature.state }}. I am going to turn his fan on."
-    - service: notify.twitter
-      data_template:
-        message: "Hudsons room is getting a bit warm with an average temperature of {{ states.sensor.hudsons_room_temperature.state }}. I am going to turn on his fan. #HomeAutomation #SmartHome"
 
 - id: hudsons_room_fan_off
   alias: Hudsons Room Fan Off
@@ -843,9 +768,6 @@
     - service: shell_command.tts
       data_template:
         message: "{{ states.sensor.jarvis_greeting.state }}, Hudsons room is getting a bit cold with an average temperature of {{ states.sensor.hudsons_room_temperature.state }}. I am going to turn his fan off."
-    - service: notify.twitter
-      data_template:
-        message: "Hudsons room is getting a bit cold with an average temperature of {{ states.sensor.hudsons_room_temperature.state }}. I am going to turn off his fan. #HomeAutomation #SmartHome"
 
 - id: wesleys_room_fan_on
   alias: Wesleys Room Fan On
@@ -872,9 +794,6 @@
     - service: shell_command.tts
       data_template:
         message: "{{ states.sensor.jarvis_greeting.state }}, Wesleys room is getting a bit warm with an average temperature of {{ tates.sensor.wesleys_room_temperature.state }}. I am going to turn his fan on."
-    - service: notify.twitter
-      data_template:
-        message: "Wesleys room is getting a bit warm with an average temperature of {{ tates.sensor.wesleys_room_temperature.state }}. I am going to turn on his fan. #HomeAutomation #SmartHome"
 
 - id: wesleys_room_fan_off
   alias: Wesleys Room Fan Off
@@ -901,9 +820,6 @@
     - service: shell_command.tts
       data_template:
         message: "{{ states.sensor.jarvis_greeting.state }}, Wesleys room is getting a bit cold with an average temperature of {{ tates.sensor.wesleys_room_temperature.state }}. I am going to turn his fan off."
-    - service: notify.twitter
-      data_template:
-        message: "Wesleys room is getting a bit cold with an average temperature of {{ tates.sensor.wesleys_room_temperature.state }}. I am going to turn off his fan. #HomeAutomation #SmartHome"
 
 #**********************************************************
 # LIGHTING
@@ -945,16 +861,6 @@
            {% elif states.sensor.random_outside_lights.state == '5' %}{{ states.sensor.jarvis_greeting.state }}, the sun has set so I am going to turn the outside lights on. Tonight, I think I will make the outside lights purple.
            {% elif states.sensor.random_outside_lights.state == '6' %}{{ states.sensor.jarvis_greeting.state }}, the sun has set so I am going to turn the outside lights on. Tonight, I think I will make the outside lights red.
            {% endif %}"
-    - service: notify.twitter
-      data_template:
-        message:
-          "{% if states.sensor.random_outside_lights.state == '1' %}Time to turn the outside lights on. I think I will make the outside lights blue. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_outside_lights.state == '2' %}Time to turn the outside lights on. I think I will make the outside lights go through a color loop. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_outside_lights.state == '3' %}Time to turn the outside lights on. I think I will make the outside lights orange. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_outside_lights.state == '4' %}Time to turn the outside lights on. I think I will make the outside lights pink. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_outside_lights.state == '5' %}Time to turn the outside lights on. I think I will make the outside lights purple. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_outside_lights.state == '6' %}Time to outside lights on. I think I will make the outside lights red. #HomeAutomation #SmartHome
-           {% endif %}"
 
 - id: lighting_outdoor_sunrise
   alias: Outdoor Lighting Sunrise
@@ -972,9 +878,6 @@
     - service: shell_command.tts
       data_template:
         message: "{{ states.sensor.jarvis_greeting.state }}, the sun is up so I am turning the outside lights off."
-    - service: notify.twitter
-      data:
-        message: "Good morning Twitter, the sun is up so it is time for me to turn the outside lights off. #HomeAutomation #SmartHome"
 
 - id: tv_backlight_daily_on
   alias: TV Backlight Daily On
@@ -999,9 +902,6 @@
   action:
     - service: switch.turn_on
       entity_id: switch.upstairs_bathroom_main
-    - service: notify.twitter
-      data:
-        message: "The kids like the upstairs bathroom light on at night, I am going to turn it on for them. #HomeAutomation #SmartHome"
 
 - id: upstairs_bathroom_main_nightlight_automation
   alias: Upstairs Bathroom Main Nightlight Automation
@@ -1017,9 +917,6 @@
   action:
     - service: switch.turn_on
       entity_id: switch.upstairs_bathroom_main
-    - service: notify.twitter
-      data:
-        message: "Someone is trying to turn off the kids night light, I am going to turn it back on for them. #HomeAutomation #SmartHome"
 
 - id: master_shower_colorloop
   alias: Master Shower Color Loop
@@ -1095,9 +992,6 @@
     - service: shell_command.tts
       data_template:
         message: "The security system has been triggered, whole home image capture has been completed. You have thirty seconds until the alarm will sound and emergency services will be notified."
-    - service: notify.twitter
-      data:
-        message: "My security alarm has been triggered, I think I will prep the alarm system. #HomeAutomation #SmartHome"
 
 - id: security_alert_2
   alias: Security Alert 2
@@ -1112,9 +1006,6 @@
     - service: shell_command.tts
       data_template:
         message: "The security system has been triggered, whole home image capture has been completed. You have thirty seconds until the alarm will sound and emergency services will be notified."
-    - service: notify.twitter
-      data:
-        message: "My security alarm has been triggered, I think I will prep the alarm system. #HomeAutomation #SmartHome"
 
 - id: security_sensors_changed_when_armed
   alias: Sensors Changed When Security Armed
@@ -1141,7 +1032,6 @@
         target:
           - !secret lance_cell
           - !secret katie_cell
-          - !secret hudson_cell
 
 - id: security_lights_on_while_away_dining_room
   alias: Lights On While Away - Dining Room
@@ -1231,9 +1121,6 @@
     - service: shell_command.tts
       data_template:
         message: "I have detected a breach in security while the alarm system was armed. I have called 9 1 1, emergency services has been notifed."
-    - service: notify.twitter
-      data:
-        message: "I have detected a breach in security, I guess it is time to call 911. #HomeAutomation #SmartHome"
 
 - id: security_turn_off_alarm
   alias: Turn Off Alarm
@@ -1517,9 +1404,6 @@
     - service: shell_command.tts
       data_template:
         message: "Smoke has been detected in the house. I am turning off all the fans."
-    - service: notify.twitter
-      data:
-        message: "Smoke has been detected in the house. I am turning off all the fans. #HomeAutomation #SmartHome"
 
 - id: excessive_heat_when_fire
   alias: Excessive Heat When Fire
@@ -1542,10 +1426,7 @@
         message: "Excessive heat detected in {{ trigger.to_state.name }} with a temperature of {{ trigger.to_state.state }}. The seat of the fire may be nearby."
         target:
           - !secret lance_cell
-          - !secret katie_cell
-          - !secret hudson_cell
-          - !secret barela_cell
-          - !secret ryand_cell
+          - !secret katie_celll
 
 - id: motion_when_fire
   alias: Motion Sensors Changed When Fire Alarm
@@ -1572,12 +1453,6 @@
         target:
           - !secret lance_cell
           - !secret katie_cell
-          - !secret hudson_cell
-          - !secret barela_cell
-          - !secret ryand_cell
-    - service: notify.twitter
-      data_template:
-        message: "Motion detected in {{ trigger.to_state.name }} durning an active fire alarm. #HomeAutomation #SmartHome"
 
 - id: fire_sensor_off
   alias: Fire Sensor Off
@@ -1622,9 +1497,6 @@
     - service: shell_command.tts
       data_template:
         message: "Smoke has been detected in the house. Please evacuate and call 9 1 1."
-    - service: notify.twitter
-      data:
-        message: "Smoke has been detected in the house, good thing @MeanMrHaynie is a #FireFighter! #HomeAutomation #SmartHome"
 
 - id: security_fire_alarm_off
   alias: Fire Alarm Off
@@ -1720,9 +1592,6 @@
     - service: shell_command.tts
       data_template:
         message: "Carbon monoxide has been detected in the house. Please evacuate and call 9 1 1."
-    - service: notify.twitter
-      data:
-        message: "Carbon monoxide has been detected in the house, good thing @MeanMrHaynie is a #FireFighter! #HomeAutomation #SmartHome"
 
 - id: security_co_alarm_off
   alias: CO Alarm Off
@@ -1761,11 +1630,6 @@
         target:
           - !secret lance_cell
           - !secret katie_cell
-          - !secret vickie_cell
-          - !secret robert_cell
-          - !secret barela_cell
-          - !secret hudson_cell
-          - !secret ryand_cell
 
 - id: security_panic_alarm_notify_5_min
   alias: Panic Alarm Notification 5 Minutes
@@ -1783,11 +1647,6 @@
         target:
           - !secret lance_cell
           - !secret katie_cell
-          - !secret vickie_cell
-          - !secret robert_cell
-          - !secret barela_cell
-          - !secret hudson_cell
-          - !secret ryand_cell
 
 - id: security_upstairs_panic_alarm_notify_5_min
   alias: Upstairs Panic Alarm Notification 5 Minutes
@@ -1805,11 +1664,6 @@
         target:
           - !secret lance_cell
           - !secret katie_cell
-          - !secret vickie_cell
-          - !secret robert_cell
-          - !secret barela_cell
-          - !secret hudson_cell
-          - !secret ryand_cell
 
 - id: security_fire_alarm_notify_5_min
   alias: Fire Alarm Notification 5 Minutes
@@ -1827,11 +1681,6 @@
         target:
           - !secret lance_cell
           - !secret katie_cell
-          - !secret vickie_cell
-          - !secret robert_cell
-          - !secret barela_cell
-          - !secret hudson_cell
-          - !secret ryand_cell
 
 - id: security_co_alarm_notify_5_min
   alias: CO Alarm Notification 5 Minutes
@@ -1849,11 +1698,6 @@
         target:
           - !secret lance_cell
           - !secret katie_cell
-          - !secret vickie_cell
-          - !secret robert_cell
-          - !secret barela_cell
-          - !secret hudson_cell
-          - !secret ryand_cell
 
 #**********************************************************
 # MEDIA
@@ -2071,13 +1915,6 @@
            {% elif states.sensor.random_3.state == '2' %}I am turning off the living room TV. It is getting a bit late, try to get a good nights sleep.
            {% elif states.sensor.random_3.state == '3' %}It is time for bed, I have turned off the living room TV. Have a good night.
            {% endif %}"
-    - service: notify.twitter
-      data_template:
-        message:
-          "{% if states.sensor.random_3.state == '1' %}It is getting a bit late, I have turned off the living room TV. Have a good night. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_3.state == '2' %}I am turning off the living room TV. It is getting a bit late, try to get a good nights sleep. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_3.state == '3' %}It is time for bed, I have turned off the living room TV. Have a good night. #HomeAutomation #SmartHome
-           {% endif %}"
 
 - id: living_room_tv_night_automation
   alias: Living Room TV Night Shutoff
@@ -2109,16 +1946,6 @@
            {% elif states.sensor.random_3.state == '2' %}I cannot allow you to turn on the living room TV right now.
            {% elif states.sensor.random_3.state == '3' %}I see you are trying to turn on the living room TV after hours. I cannot allow you to do that right now.
            {% endif %}"
-    - service: notify.twitter
-      data_template:
-        message:
-          "{% if states.sensor.random_3.state == '1' %}I am sorry, but I cannot allow you to turn on the living room TV right now. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_3.state == '2' %}I cannot allow you to turn on the living room TV right now. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_3.state == '3' %}I see you are trying to turn on the living room TV after hours. I cannot allow you to do that right now. #HomeAutomation #SmartHome
-           {% endif %}"
-    - service: notify.twitter
-      data:
-        message: "The kids always think they can outsmart me; I know when they are trying to sneak TV late at night. #HomeAutomation #SmartHome"
 
 - id: hudson_school_alarm_clock
   alias: Hudson School Alarm Clock
@@ -2145,9 +1972,6 @@
         message: "Good morning Hudson! It's time to wake up and get ready for school."
         target:
           - !secret hudson_cell
-    - service: notify.twitter
-      data:
-        message: "It is time to wake Hudson up for school. I am going to call his phone and send him a text. #HomeAutomation #SmartHome"
 
 - id: wes_tv_school_night_shutoff
   alias: Wes TV School Night Shutoff
@@ -2203,16 +2027,6 @@
            {% elif states.sensor.random_3.state == '2' %}I hate to be a taddle tale, but Wesley has attempted to turn on his TV after hours.
            {% elif states.sensor.random_3.state == '3' %}I hate to be the bearer of bad news, but Wesley is attempting to turn on his TV after hours.
            {% endif %}"
-    - service: notify.twitter
-      data_template:
-        message:
-          "{% if states.sensor.random_3.state == '1' %}I hate to inform you of this, but Wesley has attempted to turn on his TV after hours. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_3.state == '2' %}I hate to be a taddle tale, but Wesley has attempted to turn on his TV after hours. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_3.state == '3' %}I hate to be the bearer of bad news, but Wesley is attempting to turn on his TV after hours. #HomeAutomation #SmartHome
-           {% endif %}"
-    - service: notify.twitter
-      data:
-        message: "I am going to turn Wesleys TV back off, he thinks he can out smart a computer! :) #HomeAutomation #SmartHome"
 
 - id: wes_tv_weekend_shutoff
   alias: Wesley Weekend Shutoff
@@ -2262,16 +2076,6 @@
            {% elif states.sensor.random_3.state == '2' %}I hate to be a taddle tale, but Wesley has attempted to turn on his TV after hours.
            {% elif states.sensor.random_3.state == '3' %}I hate to be the bearer of bad news, but Wesley is attempting to turn on his TV after hours.
            {% endif %}"
-    - service: notify.twitter
-      data_template:
-        message:
-          "{% if states.sensor.random_3.state == '1' %}I hate to inform you of this, but Wesley has attempted to turn on his TV after hours. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_3.state == '2' %}I hate to be a taddle tale, but Wesley has attempted to turn on his TV after hours. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_3.state == '3' %}I hate to be the bearer of bad news, but Wesley is attempting to turn on his TV after hours. #HomeAutomation #SmartHome
-           {% endif %}"
-    - service: notify.twitter
-      data:
-        message: "I am going to turn Wesleys TV back off, he thinks he can out smart a computer! :) #HomeAutomation #SmartHome"
 
 - id: hudson_tv_school_night_shutoff
   alias: Hudson TV School Night Shutoff
@@ -2327,16 +2131,6 @@
            {% elif states.sensor.random_3.state == '2' %}I hate to be a taddle tale, but Hudson has attempted to turn on his TV after hours.
            {% elif states.sensor.random_3.state == '3' %}I hate to be the bearer of bad news, but Hudson is attempting to turn on his TV after hours.
            {% endif %}"
-    - service: notify.twitter
-      data_template:
-        message:
-          "{% if states.sensor.random_3.state == '1' %}I hate to inform you of this, but Hudson has attempted to turn on his TV after hours. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_3.state == '2' %}I hate to be a taddle tale, but Hudson has attempted to turn on his TV after hours. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_3.state == '3' %}I hate to be the bearer of bad news, but Hudson is attempting to turn on his TV after hours. #HomeAutomation #SmartHome
-           {% endif %}"
-    - service: notify.twitter
-      data:
-        message: "I am going to turn Hudsons TV back off, he thinks he can out smart a computer! :) #HomeAutomation #SmartHome"
 
 - id: hudson_tv_weekend_shutoff
   alias: Hudson Weekend Shutoff
@@ -2386,16 +2180,6 @@
            {% elif states.sensor.random_3.state == '2' %}I hate to be a taddle tale, but Hudson has attempted to turn on his TV after hours.
            {% elif states.sensor.random_3.state == '3' %}I hate to be the bearer of bad news, but Hudson is attempting to turn on his TV after hours.
            {% endif %}"
-    - service: notify.twitter
-      data_template:
-        message:
-          "{% if states.sensor.random_3.state == '1' %}I hate to inform you of this, but Hudson has attempted to turn on his TV after hours. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_3.state == '2' %}I hate to be a taddle tale, but Hudson has attempted to turn on his TV after hours. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_3.state == '3' %}I hate to be the bearer of bad news, but Hudson is attempting to turn on his TV after hours. #HomeAutomation #SmartHome
-           {% endif %}"
-    - service: notify.twitter
-      data:
-        message: "I am going to turn Hudsons TV back off, he thinks he can out smart a computer! :) #HomeAutomation #SmartHome"
 
 - id: wes_tv_summer_shutoff
   alias: Wes TV Summer Shutoff
@@ -2455,16 +2239,6 @@
            {% elif states.sensor.random_3.state == '2' %}I hate to be a taddle tale, but Wesley has attempted to turn on his TV after hours.
            {% elif states.sensor.random_3.state == '3' %}I hate to be the bearer of bad news, but Wesley is attempting to turn on his TV after hours.
            {% endif %}"
-    - service: notify.twitter
-      data_template:
-        message:
-          "{% if states.sensor.random_3.state == '1' %}I hate to inform you of this, but Wesley has attempted to turn on his TV after hours. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_3.state == '2' %}I hate to be a taddle tale, but Wesley has attempted to turn on his TV after hours. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_3.state == '3' %}I hate to be the bearer of bad news, but Wesley is attempting to turn on his TV after hours. #HomeAutomation #SmartHome
-           {% endif %}"
-    - service: notify.twitter
-      data:
-        message: "I am going to turn Wesleys TV back off, he thinks he can out smart a computer! :) #HomeAutomation #SmartHome"
 
 - id: hudson_tv_summer_shutoff
   alias: Hudson TV Summer Shutoff
@@ -2524,16 +2298,6 @@
            {% elif states.sensor.random_3.state == '2' %}I hate to be a taddle tale, but Hudson has attempted to turn on his TV after hours.
            {% elif states.sensor.random_3.state == '3' %}I hate to be the bearer of bad news, but Hudson is attempting to turn on his TV after hours.
            {% endif %}"
-    - service: notify.twitter
-      data_template:
-        message:
-          "{% if states.sensor.random_3.state == '1' %}I hate to inform you of this, but Hudson has attempted to turn on his TV after hours. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_3.state == '2' %}I hate to be a taddle tale, but Hudson has attempted to turn on his TV after hours. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_3.state == '3' %}I hate to be the bearer of bad news, but Hudson is attempting to turn on his TV after hours. #HomeAutomation #SmartHome
-           {% endif %}"
-    - service: notify.twitter
-      data:
-        message: "I am going to turn Hudsons TV back off, he thinks he can out smart a computer! :) #HomeAutomation #SmartHome"
 
 - id: hudson_grounded_automation
   alias: Hudson Grounded Automation
@@ -2565,16 +2329,6 @@
            {% elif states.sensor.random_3.state == '2' %}I hate to be a taddle tale, but Hudson has attempted to turn on his TV while grounded.
            {% elif states.sensor.random_3.state == '3' %}I hate to be the bearer of bad news, but Hudson is attempting to turn on his TV while grounded.
            {% endif %}"
-    - service: notify.twitter
-      data_template:
-        message:
-          "{% if states.sensor.random_3.state == '1' %}I hate to inform you of this, but Hudson has attempted to turn on his TV while grounded. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_3.state == '2' %}I hate to be a taddle tale, but Hudson has attempted to turn on his TV while grounded. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_3.state == '3' %}I hate to be the bearer of bad news, but Hudson is attempting to turn on his TV while grounded. #HomeAutomation #SmartHome
-           {% endif %}"
-    - service: notify.twitter
-      data:
-        message: "I am going to turn Hudsons TV back off, he thinks he can out smart a computer! :) #HomeAutomation #SmartHome"
 
 - id: wesley_grounded_automation
   alias: Wesley Grounded Automation
@@ -2606,16 +2360,6 @@
            {% elif states.sensor.random_3.state == '2' %}I hate to be a taddle tale, but Wesley has attempted to turn on his TV while grounded.
            {% elif states.sensor.random_3.state == '3' %}I hate to be the bearer of bad news, but Wesley is attempting to turn on his TV while grounded.
            {% endif %}"
-    - service: notify.twitter
-      data_template:
-        message:
-          "{% if states.sensor.random_3.state == '1' %}I hate to inform you of this, but Wesley has attempted to turn on his TV while grounded. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_3.state == '2' %}I hate to be a taddle tale, but Wesley has attempted to turn on his TV while grounded. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_3.state == '3' %}I hate to be the bearer of bad news, but Wesley is attempting to turn on his TV while grounded. #HomeAutomation #SmartHome
-           {% endif %}"
-    - service: notify.twitter
-      data:
-        message: "I am going to turn Wesleys TV back off, he thinks he can out smart a computer! :) #HomeAutomation #SmartHome"
 
 - id: wesley_grounded_input_action
   alias: Wesley Grounded Input Action
@@ -2627,9 +2371,6 @@
   action:
     - service: homeassistant.turn_off
       entity_id: switch.wesleytv
-    - service: notify.twitter
-      data:
-        message: "Well this stinks, it looks like Wesley is grounded. Guess I have to block access to his electronics. #HomeAutomation #SmartHome"
 
 - id: hudson_grounded_input_action
   alias: Hudson Grounded Input Action
@@ -2641,9 +2382,6 @@
   action:
     - service: homeassistant.turn_off
       entity_id: switch.hudson
-    - service: notify.twitter
-      data:
-        message: "Well this stinks, it looks like Hudson is grounded. Guess I have to block access to his electronics. #HomeAutomation #SmartHome"
 
 - id: hudson_grounded_input_action_off
   alias: Hudson Grounded Input Action Off
@@ -2659,9 +2397,6 @@
         target:
           - !secret lance_cell
           - !secret katie_cell
-    - service: notify.twitter
-      data:
-        message: "Hudson is ungrounded! I am going to send the parental units a notification. Sometimes the kids are sneaky. #HomeAutomation #SmartHome"
 
 - id: wesley.grounded_input_action_off
   alias: Wesley Grounded Input Action Off
@@ -2677,9 +2412,7 @@
         target:
           - !secret lance_cell
           - !secret katie_cell
-    - service: notify.twitter
-      data:
-        message: "Wesley is ungrounded! I am going to send the parental units a notification. Sometimes the kids are sneaky. #HomeAutomation #SmartHome"
+
 #**********************************************************
 # NOTIFICATIONS
 #**********************************************************
@@ -2700,13 +2433,7 @@
            {% elif states.sensor.random_3.state == '2' %}Jarvis AI system is starting up
            {% elif states.sensor.random_3.state == '3' %}Jarvis Artificial Intelligience is starting up.
            {% endif %}"
-    - service: notify.twitter
-      data_template:
-        message:
-          "{% if states.sensor.random_3.state == '1' %}Jarvis Artificial Intelligience System is starting up. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_3.state == '2' %}Jarvis AI system is starting up. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_3.state == '3' %}Jarvis Artificial Intelligience is starting up. #HomeAutomation #SmartHome
-           {% endif %}"
+
     - delay:
         seconds: 0.55
     - service: shell_command.volume
@@ -2729,13 +2456,6 @@
           "{% if states.sensor.random_3.state == '1' %}Jarvis Artificial Intelligience System is shutting down.
            {% elif states.sensor.random_3.state == '2' %}Jarvis AI system is shutting down.
            {% elif states.sensor.random_3.state == '3' %}Jarvis Artificial Intelligience is shutting down.
-           {% endif %}"
-    - service: notify.twitter
-      data_template:
-        message:
-          "{% if states.sensor.random_3.state == '1' %}Jarvis Artificial Intelligience System is shutting down. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_3.state == '2' %}Jarvis AI system is shutting down. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_3.state == '3' %}Jarvis Artificial Intelligience is shutting down. #HomeAutomation #SmartHome
            {% endif %}"
 
 - id: update_notification
@@ -2769,9 +2489,6 @@
     - service: shell_command.tts
       data_template:
         message: "My CPU usage is getting high, I am currently at {{ states.sensor.cpu_use.state }} percent."
-    - service: notify.twitter
-      data_template:
-        message: "My CPU usage is getting high, I am currently at {{ states.sensor.cpu_use.state }} percent. #HomeAutomation #SmartHome"
 
 - id: cpu_use_75
   alias: CPU Use 75
@@ -2787,9 +2504,6 @@
     - service: shell_command.tts
       data_template:
         message: "My CPU usage is now serious, I am currently at {{ states.sensor.cpu_use.state }} percent."
-    - service: notify.twitter
-      data_template:
-        message: "My CPU usage is now serious, I am currently at {{ states.sensor.cpu_use.state }} percent. #HomeAutomation #SmartHome"
 
 - id: cpu_use_90
   alias: CPU Use 90
@@ -2808,9 +2522,6 @@
     - service: shell_command.tts
       data_template:
         message: "My CPU usage is now critical, I am currently at {{ states.sensor.cpu_use.state }} percent. If an intervention is not performed, I may soon crash."
-    - service: notify.twitter
-      data_template:
-        message: "My CPU usage is now critical, I am currently at {{ states.sensor.cpu_use.state }} percent. If an intervention is not performed, I may soon crash. #HomeAutomation #SmartHome"
 
 - id: cpu_use_95
   alias: CPU Use 95
@@ -2826,9 +2537,6 @@
     - service: shell_command.alarm_sound
     - delay:
         seconds: 0.125
-    - service: notify.twitter
-      data_template:
-        message: "My CPU usage is now beyond critical, I am currently at {{ states.sensor.cpu_use.state }} percent. I am going to try and reboot myself. #HomeAutomation #SmartHome"
     - service: shell_command.tts
       data_template:
         message: "My CPU usage is now beyond critical, I am currently at {{ states.sensor.cpu_use.state }} percent. I am going to try and reboot myself."
@@ -2847,9 +2555,6 @@
     - service: shell_command.two_tone
     - delay:
         seconds: 0.125
-    - service: notify.twitter
-      data_template:
-        message: "My memory usage is getting high, I am currently at {{ states.sensor.ram_use.state }} percent. #HomeAutomation #SmartHome"
     - service: shell_command.tts
       data_template:
         message: "My memory usage is getting high, I am currently at {{ states.sensor.ram_use.state }} percent."
@@ -2865,9 +2570,6 @@
     - service: shell_command.two_tone
     - delay:
         seconds: 0.125
-    - service: notify.twitter
-      data_template:
-        message: "My memory usage is now serious, I am currently at {{ states.sensor.ram_use.state }} percent. #HomeAutomation #SmartHome"
     - service: shell_command.tts
       data_template:
         message: "My memory usage is now serious, I am currently at {{ states.sensor.ram_use.state }} percent."
@@ -2889,9 +2591,6 @@
     - service: shell_command.tts
       data_template:
         message: "My memory usage is now critical, I am currently at {{ states.sensor.ram_use.state }} percent. If an intervention is not performed, I may soon crash."
-    - service: notify.twitter
-      data_template:
-        message: "My memory usage is now critical, I am currently at {{ states.sensor.ram_use.state }} percent. If an intervention is not performed, I may soon crash. #HomeAutomation #SmartHome"
 
 - id: ram_use_95
   alias: Ram Use 95
@@ -2907,9 +2606,6 @@
     - service: shell_command.alarm_sound
     - delay:
         seconds: 0.125
-    - service: notify.twitter
-      data_template:
-        message: "My memory usage is now beyond critical, I am currently at {{ states.sensor.ram_use.state }} percent. I am going to try and reboot myself. #HomeAutomation #SmartHome"
     - service: shell_command.tts
       data_template:
         message: "My memory usage is now beyond critical, I am currently at {{ states.sensor.ram_use.state }} percent. I am going to try and reboot myself."
@@ -2928,9 +2624,6 @@
     - service: shell_command.two_tone
     - delay:
         seconds: 0.125
-    - service: notify.twitter
-      data_template:
-        message: "My 15 minute load average is getting high, I am currently at {{ states.sensor.sensor.average_load_15m.state }}. #HomeAutomation #SmartHome"
     - service: shell_command.tts
       data_template:
         message: "My 15 minute load average is getting high, I am currently at {{ states.sensor.sensor.average_load_15m.state }}."
@@ -2949,9 +2642,6 @@
     - service: shell_command.alarm_sound
     - delay:
         seconds: 0.125
-    - service: notify.twitter
-      data_template:
-        message: "My 15 minute load average is now critical, I am currently at {{ states.sensor.average_load_15m.state }}. #HomeAutomation #SmartHome"
     - service: shell_command.tts
       data_template:
         message: "My 15 minute load average is now critical, I am currently at {{ states.sensor.average_load_15m.state }}."
@@ -2970,9 +2660,6 @@
     - service: shell_command.alarm_sound
     - delay:
         seconds: 0.125
-    - service: notify.twitter
-      data_template:
-        message: "My 15 minute load average has exceeded my limitations, I am currently at {{ states.sensor.average_load_15m.state }}. I am going to try and reboot myself. #HomeAutomation #SmartHome"
     - service: shell_command.tts
       data_template:
         message: "My 15 minute load average has exceeded my limitations, I am currently at {{ states.sensor.average_load_15m.state }}. I am going to try and reboot myself."
@@ -3007,9 +2694,6 @@
            {% elif states.sensor.random_3.state == '2' %}Attention all kids, attention all kids. You should consider doing your chores if you have not done so by now.
            {% elif states.sensor.random_3.state == '3' %}Attention all kids, attention all kids. Now would be a good time to do your chores if you have not done so yet.
            {% endif %}"
-    - service: notify.twitter
-      data:
-        message: "Time to remind all the kids to do their chores, I am going to sound a foghorn and use my text to speech engine. #HomeAutomation #SmartHome"
 
 - id: brush_teeth_night_reminder
   alias: Brush Teeth Night Reminder
@@ -3047,13 +2731,6 @@
            {% endif %}"
         target:
           - !secret hudson_cell
-    - service: notify.twitter
-      data_template:
-        message:
-          "{% if states.sensor.random_3.state == '1' %}Time to remind the kids to brush their teeth. They think I have electrodes to shock them if they do not. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_3.state == '2' %}Time to remind the kids to brush their teeth. I will disable the PS4 if they do not. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_3.state == '3' %}Time to remind the kids to brush their teeth. I will disable all of their electronics if they do not. #HomeAutomation #SmartHome
-           {% endif %}"
 
 - id: brush_teeth_night_reminder2
   alias: Brush Teeth Night Reminder 2
@@ -3111,15 +2788,6 @@
            {% elif states.sensor.random_5.state == '3' %}Attention Wesley, Attention Wesley. My smell sensors indicate you stink. Your presence is required in the shower.
            {% elif states.sensor.random_5.state == '4' %}Attention Wesley, Attention Wesley. I hate to inform you of this, but you stink. Please go take a shower.
            {% elif states.sensor.random_5.state == '5' %}Attention Wesley, Attention Wesley. I regret to inform you but your stinch is plugging my smell sensors. You are required to take a shower now.
-           {% endif %}"
-    - service: notify.twitter
-      data_template:
-        message:
-          "{% if states.sensor.random_5.state == '1' %}My smell sensors indicate an odor emitting from Wesleys arm pits. His presence is required in the shower. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_5.state == '2' %}My smell sensors indicate an essence of stink. Wesleys presence is required in the shower. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_5.state == '3' %}My smell sensors indicate Wesley stinks. His presence is required in the shower. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_5.state == '4' %}Hey Wesley, I hate to inform you of this, but you stink. Please go take a shower. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_5.state == '5' %}Wesley, I regret to inform you but your stinch is plugging my smell sensors. You are required to take a shower. #HomeAutomation #SmartHome
            {% endif %}"
 
 - id: wes_shower_reminder2
@@ -3192,15 +2860,6 @@
            {% endif %}"
         target:
           - !secret hudson_cell
-    - service: notify.twitter
-      data_template:
-        message:
-          "{% if states.sensor.random_5.state == '1' %}My smell sensors indicate an odor emitting from Hudsons arm pits. His presence is required in the shower. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_5.state == '2' %}My smell sensors indicate an essence of stink. Hudsons presence is required in the shower. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_5.state == '3' %}My smell sensors indicate Hudson stinks. His presence is required in the shower. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_5.state == '4' %}Hey Hudson, I hate to inform you of this, but you stink. Please go take a shower. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_5.state == '5' %}Hudson, I regret to inform you but your stinch is plugging my smell sensors. You are required to take a shower. #HomeAutomation #SmartHome
-           {% endif %}"
 
 - id: hudson_shower_reminder2
   alias: Hudson Shower Reminder 2
@@ -3255,9 +2914,6 @@
     - service: shell_command.tts
       data_template:
         message: "Attention Kids. Attention Lance. Attention Kids. Attention Lance. It is time to make sure the kitchen is clean after dinner. Chances are your beautiful mom and girlfriend made dinner. It would be really nice if the kitchen was not left as a mess."
-    - service: notify.twitter
-      data:
-        message: "Time to remind @MeanMrHaynie and the kids to clean the kitchen. I love my text to speech engine. #HomeAutomation #SmartHome"
 
 - id: wes_school_night_bedtime
   alias: Wesley School Night Bed Time
@@ -3280,9 +2936,6 @@
     - service: shell_command.tts
       data_template:
         message: "Attention Wesley. Attention Wesley. It is now your bedtime and you are required to promptly report to your bed. I repeat, Wesley, it is now your bedtime and you are required to go to bed."
-    - service: notify.twitter
-      data:
-        message: "Time to sound the foghorn and tell Wesley to go to bed. He hates going to bed, he will argue with me. #HomeAutomation #SmartHome"
 
 - id: hudson_school_night_bedtime
   alias: Hudson School Night Bed Time
@@ -3310,9 +2963,6 @@
         message: "Attention Hudson. Attention Hudson. It is now your bedtime and you are required to promptly report to your bed. I repeat, Hudson, it is now your bedtime and you are required to go to bed."
         target:
           - !secret hudson_cell
-    - service: notify.twitter
-      data:
-        message: "Time to sound the foghorn and tell Hudson to go to bed. He does not argue as much, Hudson enjoys his sleep. #HomeAutomation #SmartHome"
 
 - id: homework_reminder
   alias: Homework Reminder
@@ -3340,9 +2990,6 @@
         message: "If you have any homework to be done, now is the time to do it.."
         target:
           - !secret hudson_cell
-    - service: notify.twitter
-      data:
-        message: "I am going to remind the children of the candy corn to do their homework. #HomeAutomation #SmartHome"
 
 - id: dinner_reminder
   alias: Dinner Reminder
@@ -3367,9 +3014,6 @@
     - service: shell_command.tts
       data_template:
         message: "Attention parental units. Attention parental units. Now would be a good time to start making dinner."
-    - service: notify.twitter
-      data:
-        message: "Hey @MeanMrHaynie, it is time to start making dinner. #HomeAutomation #SmartHome"
 
 - id: hudson_daily_trash_reminder
   alias: Hudson Daily Trash Reminder
@@ -3404,15 +3048,6 @@
            {% elif states.sensor.random_5.state == '3' %}Attention Hudson, Attention Hudson. Chances are you have not taken out the trash, pleaes do so now.
            {% elif states.sensor.random_5.state == '4' %}Attention Hudson, Attention Hudson. Please check to see if the trash needs to be taken out.
            {% elif states.sensor.random_5.state == '5' %}Attention Hudson, Attention Hudson. If you have not taken out the trash today, please do so now.
-           {% endif %}"
-    - service: notify.twitter
-      data_template:
-        message:
-          "{% if states.sensor.random_5.state == '1' %}Hey Hudson, Its probably a good idea to take out the trash now. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_5.state == '2' %}Hey Hudson, You should check the trash to see if it needs to be taken out. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_5.state == '3' %}Hey Hudson, Chances are you have not taken out the trash, pleaes do so now. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_5.state == '4' %}Hey Hudson, Please check to see if the trash needs to be taken out. #HomeAutomation #SmartHome
-           {% elif states.sensor.random_5.state == '5' %}Hey Hudson, If you have not taken out the trash today, please do so now. #HomeAutomation #SmartHome
            {% endif %}"
 
 - id: hudson_daily_trash_reminder2
@@ -3467,9 +3102,6 @@
     - service: shell_command.tts
       data_template:
         message: "Lance, dont forget to take the trash bins out."
-    - service: notify.twitter
-      data:
-        message: "Hey @MeanMrHaynie, you better not forget to take out the trash bins. #HomeAutomation #SmartHome"
 
 - id: hudson_monday_trash_bins
   alias: Hudson Monday Trash Bins
@@ -3511,9 +3143,6 @@
     - service: shell_command.tts
       data_template:
         message: "Good morning all, I hope everyone slept well. Lance, please do not forget to make coffee. Also, please check your to do list and make sure your day is planned properly. Katie, make sure to check the calendar for the day to see what events are planned for the day. If there are any events that need to be added please do so today. Here is your morning weather briefing. It is currently {{ states.sensor.pws_temp_f.state }} degrees outside and {{ states.sensor.pws_weather.state }}. The hourly forecast is {{ states.sensor.dark_sky_hourly_summary.state }} and the daily forecast is {{ states.sensor.dark_sky_daily_summary.state }}."
-    - service: notify.twitter
-      data_template:
-        message: "Good morning, here is the #WX: {{ states.sensor.dark_sky_hourly_summary.state }}"
 
 - id: mid_morning_wx
   alias: Mid Morning WX
@@ -3562,9 +3191,6 @@
     - service: shell_command.tts
       data_template:
         message: "Good afternoon all, Lance, please make sure you are still on track with your daily to do list. Katie, this would also be a good time to check the calendar for further events today. If there are any events missing, please add them now so everyone is updated. Here is your afternoon weather briefing. It is currently {{ states.sensor.pws_temp_f.state }} degrees outside and {{ states.sensor.pws_weather.state }}. The hourly forecast is {{ states.sensor.dark_sky_hourly_summary.state }} and the daily forecast is {{ states.sensor.dark_sky_daily_summary.state }}."
-    - service: notify.twitter
-      data_template:
-        message: "Good afternoon, here is the #WX: {{ states.sensor.dark_sky_hourly_summary.state }}"
 
 - id: evening_wx
   alias: Evening WX
@@ -3589,9 +3215,6 @@
     - service: shell_command.tts
       data_template:
         message: "Good evening all, Lance, this would be a good time to start planning your to do list for tomorrow. Katie, please check the calendar and make sure any events for tomorrow have been added. Here is your evening weather briefing. It is currently {{ states.sensor.pws_temp_f.state }} degrees outside and {{ states.sensor.pws_weather.state }}. The hourly forecast is {{ states.sensor.dark_sky_hourly_summary.state }} and the daily forecast is {{ states.sensor.dark_sky_daily_summary.state }}."
-    - service: notify.twitter
-      data_template:
-        message: "Good evening, here is the #WX: {{ states.sensor.dark_sky_hourly_summary.state }}"
 
 - id: restart_on_no_network
   alias: Restart on no Network
@@ -3918,9 +3541,6 @@
       - sat
       - sun
   action:
-    - service: notify.twitter
-      data:
-        message: "Time to submit my data to the Haynie R&D #Mainframe, yep, we are old school. #HomeAutomation #SmartHome"
 
 #**********************************************************
 # Shabbat
@@ -3943,9 +3563,6 @@
     - service: shell_command.tts
       data_template:
         message: "{{ states.sensor.jarvis_greeting.state }}, this is your notification that Shabbat starts in exactly 5 hours. You better get started on making challah."
-    - service: notify.twitter
-      data:
-        message: "#Shabbat is tonight, hopefully @MeanMrHaynie and family does not forget to make delicious Challah! #HomeAutomation #SmartHome"
 
 - id: shabbat_2_hour_reminder
   alias: Shabbat 2 Hour Reminder
@@ -3965,9 +3582,6 @@
     - service: shell_command.tts
       data_template:
         message: "{{ states.sensor.jarvis_greeting.state }}, this is your notification that Shabbat starts in exactly 2 hours."
-    - service: notify.twitter
-      data:
-        message: "#Shabbat starts in exactly 2 hours here in Southern Utah! #HomeAutomation #SmartHome"
 
 - id: shabbat_1_hour_reminder
   alias: Shabbat 1 Hour Reminder
@@ -3987,9 +3601,6 @@
     - service: shell_command.tts
       data_template:
         message: "{{ states.sensor.jarvis_greeting.state }}, this is your notification that Shabbat starts in exactly 1 hour."
-    - service: notify.twitter
-      data:
-        message: "#Shabbat starts in exactly 1 hour here in Southern Utah! #HomeAutomation #SmartHome"
 
 - id: shabbat_30_minute_reminder
   alias: Shabbat 30 Minute Reminder
@@ -4009,9 +3620,6 @@
     - service: shell_command.tts
       data_template:
         message: "{{ states.sensor.jarvis_greeting.state }}, this is your notification that Shabbat starts in exactly 30 minutes."
-    - service: notify.twitter
-      data:
-        message: "#Shabbat starts in exactly 30 minutes here in Southern Utah! #HomeAutomation #SmartHome"
 
 - id: shabbat_reminder
   alias: Shabbat Reminder
@@ -4031,9 +3639,6 @@
     - service: shell_command.tts
       data_template:
         message: "Shabbat Shalom! The sun has set and it is time to start Shabbat. Break out the candles and lets get this party started."
-    - service: notify.twitter
-      data:
-        message: "Shabbat Shalom! The sun has set and it is time to start #Shabbat. Break out the candles and lets get this party started. #HomeAutomation #SmartHome"
     - delay:
         seconds: 5
     - service: shell_command.shalom_aleichem
