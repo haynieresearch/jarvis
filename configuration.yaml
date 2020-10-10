@@ -32,7 +32,6 @@ homeassistant:
       trusted_users:
         127.0.0.1: !secret user_id
         10.0.0.0/8: !secret user_id
-        !secret base_ip: !secret user_id
       allow_bypass_login: true
   latitude: !secret latitude_home
   longitude: !secret longitude_home
