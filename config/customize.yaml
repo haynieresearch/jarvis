@@ -182,15 +182,6 @@
        icon: mdi:water-percent
        friendly_name: 'Outdoor Humidity'
 
-     sensor.dark_sky_cloud_coverage:
-       friendly_name: 'Cloud Coverage'
-
-     sensor.dark_sky_daily_summary:
-       friendly_name: 'Daily Summary'
-
-     sensor.dark_sky_hourly_summary:
-       friendly_name: 'Hourly Summary'
-
      group.weather:
        icon: mdi:weather-pouring
 

@@ -24,9 +24,6 @@
     jarvis_greeting:
       value_template: '{% if is_state("sensor.random_4", "1") %}Pardon me{% elif is_state("sensor.random_4", "2") %}Pardon the interruption{% elif is_state("sensor.random_4", "3") %}Excusez-moi{% elif is_state("sensor.random_4", "4") %}Pardon{% else %}Excuse me{% endif %}'
 
-    livingroom_harmony:
-      value_template: '{{ states.remote.living_room.attributes.current_activity }}'
-
     climate_downstairs_op_mode:
       value_template: '{{ states.climate.downstairs.attributes.operation_mode }}'
 
