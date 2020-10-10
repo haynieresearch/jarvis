@@ -21,18 +21,12 @@
 #**********************************************************
 homeassistant:
   auth_providers:
-    - type: homeassistant
-    - type: legacy_api_password
-      api_password: !secret http_password
     - type: trusted_networks
       trusted_networks:
         - 127.0.0.1
         - 10.0.0.0/8
-        - !secret base_ip
-      trusted_users:
-        127.0.0.1: !secret user_id
-        10.0.0.0/8: !secret user_id
       allow_bypass_login: true
+    - type: homeassistant
   latitude: !secret latitude_home
   longitude: !secret longitude_home
   elevation: !secret elevation
