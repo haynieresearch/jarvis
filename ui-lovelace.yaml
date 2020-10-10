@@ -1,0 +1,135 @@
+#**********************************************************
+#* CATEGORY    UI
+#* GROUP       HOME AUTOMATION
+#* AUTHOR      LANCE HAYNIE <LANCE@HAYNIEMAIL.COM>
+#**********************************************************
+#Jarvis Home Automation
+#Copyright 2020 Haynie IPHC, LLC
+#Developed by Haynie Research & Development, LLC
+#Licensed under the Apache License, Version 2.0 (the "License");
+#you may not use this file except in compliance with the License.#
+#You may obtain a copy of the License at
+#http://www.apache.org/licenses/LICENSE-2.0
+#Unless required by applicable law or agreed to in writing, software
+#distributed under the License is distributed on an "AS IS" BASIS,
+#WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#See the License for the specific language governing permissions and
+#limitations under the License.
+title: Jarvis Home Automation
+views:
+  - title: ''
+    path: home
+    theme: Dark Theme
+    panel: true
+    icon: 'mdi:home'
+    badges: []
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: vertical-stack
+            cards:
+              - type: thermostat
+                entity: climate.downstairs
+                name: Downstairs
+              - type: thermostat
+                entity: climate.downstairs
+                name: Upstairs
+              - type: entity
+                entity: input_boolean.hvacautomation
+          - type: vertical-stack
+            cards:
+              - type: alarm-panel
+                states:
+                  - arm_home
+                  - arm_away
+                entity: alarm_control_panel.home_alarm
+              - type: entities
+                entities:
+                  - entity: input_number.systemvolume
+                  - entity: input_select.rule_freq
+                    name: Rule Reminder
+                  - entity: script.leaving_in_15_min
+                    name: Leave in 15 Minutes
+                    icon: 'mdi:car'
+                  - entity: script.restart_system
+                    name: Restart Jarvis
+                    icon: 'mdi:power'
+                  - entity: light.tv_backlight
+                show_header_toggle: false
+                state_color: true
+  - icon: 'mdi:lightbulb'
+    panel: true
+    badges: []
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: vertical-stack
+            cards:
+              - type: vertical-stack
+                cards:
+                  - type: light
+                    entity: light.tv_backlight
+                    icon: 'mdi:television'
+                  - type: light
+                    entity: light.family_room_desk_led
+          - type: vertical-stack
+            cards:
+              - type: vertical-stack
+                cards:
+                  - type: light
+                    entity: light.front_porch
+                  - type: light
+                    entity: light.back_porch
+  - panel: true
+    icon: 'mdi:pulse'
+    path: system
+    badges: []
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: vertical-stack
+            cards:
+              - type: sensor
+                entity: sensor.processor_use
+                graph: line
+              - type: sensor
+                entity: sensor.memory_use_percent
+                graph: line
+              - type: sensor
+                entity: sensor.disk_use_percent
+                graph: line
+          - type: vertical-stack
+            cards:
+              - type: gauge
+                entity: sensor.load_1m
+                max: 4
+                severity:
+                  green: 1
+                  yellow: 2
+                  red: 3
+                min: 0
+              - type: gauge
+                entity: sensor.load_5m
+                max: 4
+                severity:
+                  green: 1
+                  yellow: 2
+                  red: 3
+              - type: gauge
+                entity: sensor.load_15m
+                min: 0
+                max: 4
+                severity:
+                  green: 1
+                  yellow: 2
+                  red: 3
+              - type: entities
+                entities:
+                  - entity: script.restart_jarvis_base
+                    icon: 'mdi:power'
+                  - entity: script.restart_jarvis_tts
+                    icon: 'mdi:power'
+                  - entity: script.restart_jarvis_stt
+                    icon: 'mdi:power'
+                  - entity: script.restart_system
+                    icon: 'mdi:power'
