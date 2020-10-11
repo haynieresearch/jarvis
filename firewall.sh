@@ -12,9 +12,9 @@
 #limitations under the License.
 
 #Default Open Ports
-publicip="192.169.218.133"
+publicip=$(curl -s checkip.amazonaws.com)
 ports="8123"
-localnet=$(dig +short haynie.net)
+localnet=$(dig +short jarvis.haynie.net) #local FQDN
 
 IPT=/sbin/iptables
 WGET=/usr/bin/wget

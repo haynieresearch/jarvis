@@ -38,3 +38,4 @@ passwords.cfg
 deps
 .pydevproject
 .project
+config.json
