@@ -2243,7 +2243,7 @@
     platform: homeassistant
     event: start
   action:
-    - service: shell_command.one_tone
+    - service: shell_command.two_tone
     - delay:
         seconds: 0.125
     - service: shell_command.tts
@@ -2267,7 +2267,7 @@
     platform: homeassistant
     event: shutdown
   action:
-    - service: shell_command.one_tone
+    - service: shell_command.two_tone
     - delay:
         seconds: 0.125
     - service: shell_command.tts
