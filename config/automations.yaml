@@ -2691,7 +2691,7 @@
         seconds: 0.125
     - service: shell_command.tts
       data_template:
-        message: "Good morning all, I hope everyone slept well. Lance, please do not forget to make coffee. Also, please check your to do list and make sure your day is planned properly. Katie, make sure to check the calendar for the day to see what events are planned for the day. If there are any events that need to be added please do so today. Here is your morning weather briefing. It is currently {{ states.sensor.pws_temp_f.state }} degrees outside and {{ states.sensor.pws_weather.state }}. The hourly forecast is {{ states.sensor.dark_sky_hourly_summary.state }} and the daily forecast is {{ states.sensor.dark_sky_daily_summary.state }}."
+        message: "Good morning all, I hope everyone slept well. Lance, please do not forget to make coffee. Also, please check your to do list and make sure your day is planned properly. Katie, make sure to check the calendar for the day to see what events are planned for the day. If there are any events that need to be added please do so today. Here is your morning weather briefing. It is currently {{ states.sensor.openweathermap_temperature.state }} degrees outside and {{ states.sensor.openweathermap_condition.state }}. The forecasted high today is {{ states.sensor.openweathermap_forecast_temperature.state }} and should be {{ states.sensor.openweathermap_forecast_condition.state }}."
 
 - id: mid_morning_wx
   alias: Mid Morning WX
@@ -2715,7 +2715,7 @@
         seconds: 0.125
     - service: shell_command.tts
       data_template:
-        message: "Good morning all, Lance, please check your to do list and make sure your day is planned properly. Katie, make sure to check the calendar for the day to see what events are planned for the day. If there are any events that need to be added please do so today. Here is your morning weather briefing. It is currently {{ states.sensor.pws_temp_f.state }} degrees outside and {{ states.sensor.pws_weather.state }}. The hourly forecast is {{ states.sensor.dark_sky_hourly_summary.state }} and the daily forecast is {{ states.sensor.dark_sky_daily_summary.state }}."
+        message: "Good morning all, Lance, please check your to do list and make sure your day is planned properly. Katie, make sure to check the calendar for the day to see what events are planned for the day. If there are any events that need to be added please do so today. Here is your morning weather briefing. It is currently {{ states.sensor.openweathermap_temperature.state }} degrees outside and {{ states.sensor.openweathermap_condition.state }}. The forecasted high today is {{ states.sensor.openweathermap_forecast_temperature.state }} and should be {{ states.sensor.openweathermap_forecast_condition.state }}."
 
 - id: afternoon_wx
   alias: Afternoon WX
@@ -2739,7 +2739,7 @@
         seconds: 0.125
     - service: shell_command.tts
       data_template:
-        message: "Good afternoon all, Lance, please make sure you are still on track with your daily to do list. Katie, this would also be a good time to check the calendar for further events today. If there are any events missing, please add them now so everyone is updated. Here is your afternoon weather briefing. It is currently {{ states.sensor.pws_temp_f.state }} degrees outside and {{ states.sensor.pws_weather.state }}. The hourly forecast is {{ states.sensor.dark_sky_hourly_summary.state }} and the daily forecast is {{ states.sensor.dark_sky_daily_summary.state }}."
+        message: "Good afternoon all, Lance, please make sure you are still on track with your daily to do list. Katie, this would also be a good time to check the calendar for further events today. If there are any events missing, please add them now so everyone is updated. Here is your afternoon weather briefing. It is currently {{ states.sensor.openweathermap_temperature.state }} degrees outside and {{ states.sensor.openweathermap_condition.state }}. The forecasted high today is {{ states.sensor.openweathermap_forecast_temperature.state }} and should be {{ states.sensor.openweathermap_forecast_condition.state }}."
 
 - id: evening_wx
   alias: Evening WX
@@ -2763,7 +2763,7 @@
         seconds: 0.125
     - service: shell_command.tts
       data_template:
-        message: "Good evening all, Lance, this would be a good time to start planning your to do list for tomorrow. Katie, please check the calendar and make sure any events for tomorrow have been added. Here is your evening weather briefing. It is currently {{ states.sensor.pws_temp_f.state }} degrees outside and {{ states.sensor.pws_weather.state }}. The hourly forecast is {{ states.sensor.dark_sky_hourly_summary.state }} and the daily forecast is {{ states.sensor.dark_sky_daily_summary.state }}."
+        message: "Good evening all, Lance, this would be a good time to start planning your to do list for tomorrow. Katie, please check the calendar and make sure any events for tomorrow have been added. Here is your evening weather briefing. It is currently {{ states.sensor.openweathermap_temperature.state }} degrees outside and {{ states.sensor.openweathermap_condition.state }}. The forecasted high today is {{ states.sensor.openweathermap_forecast_temperature.state }} and should be {{ states.sensor.openweathermap_forecast_condition.state }}."
 
 - id: restart_on_no_network
   alias: Restart on no Network
