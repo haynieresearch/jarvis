@@ -26,6 +26,8 @@ homeassistant:
         - 127.0.0.1
         - 10.0.0.0/8
       allow_bypass_login: true
+    - type: legacy_api_password
+      api_password: !secret http_password
     - type: homeassistant
   latitude: !secret latitude_home
   longitude: !secret longitude_home
