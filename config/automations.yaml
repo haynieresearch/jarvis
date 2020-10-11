@@ -3091,6 +3091,23 @@
       - sun
   action:
 
+- id: minecraft_user_change
+  alias: Minecraft User Change
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.minecraft_players_online
+   condition:
+    platform: template
+    value_template: '{{ trigger.to_state.state > trigger.from_state.state }}'
+  action:
+    - service: shell_command.one_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "Pardon the interruption, if any of you are curious, someone has joined the Minecraft server. There are now {{ states.sensor.minecraft_players_online.state }} people playing Minecraft."
+
 #**********************************************************
 # Shabbat
 #**********************************************************
