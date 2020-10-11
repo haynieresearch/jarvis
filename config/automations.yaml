@@ -3099,9 +3099,10 @@
     entity_id: sensor.minecraft_players_online
   condition:
     condition: and
+    conditions:
       - condition: numeric_state
         entity_id: sensor.minecraft_players_online
-        above: 0  
+        above: 0
       - condition: template
         value_template: "{{ trigger.to_state.state > trigger.from_state.state }}"
   action:
