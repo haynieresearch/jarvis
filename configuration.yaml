@@ -149,6 +149,10 @@ climate:
     away_cool_temperature: 26
     away_heat_temperature: 23
 
+icloud:
+  - username: !secret icloud_user
+  - password: !secret icloud_pass
+
 #**********************************************************
 #* MISC CONFIG
 #**********************************************************

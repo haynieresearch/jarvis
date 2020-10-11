@@ -2492,7 +2492,7 @@
   initial_state: 'on'
   trigger:
     platform: time
-    at: '15:00:00'
+    at: '18:00:00'
   condition:
     condition: time
     weekday:
@@ -2520,44 +2520,7 @@
   initial_state: 'on'
   trigger:
     platform: time
-    at: '20:00:00'
-  condition:
-    condition: time
-    weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
-      - sat
-      - sun
-  action:
-    - service: shell_command.foghorn
-    - delay:
-        seconds: 0.125
-    - service: shell_command.tts
-      data_template:
-        message:
-          "{% if states.sensor.random_3.state == '1' %}Attention all kids, attention all kids. You better go brush your teeth now. I have electrodes to shock you if you do not brush your teeth.
-           {% elif states.sensor.random_3.state == '2' %}Attention all kids, attention all kids. You better go brush your teeth now. I will disable the play station four if you do not brush your teeth.
-           {% elif states.sensor.random_3.state == '3' %}Attention all kids, attention all kids. You better go brush your teeth now. I will disable all of your electronics if you do not brush your teeth.
-           {% endif %}"
-    - service: notify.sms
-      data_template:
-        message:
-          "{% if states.sensor.random_3.state == '1' %}Attention all kids, attention all kids. You better go brush your teeth now. I have electrodes to shock you if you do not brush your teeth.
-           {% elif states.sensor.random_3.state == '2' %}Attention all kids, attention all kids. You better go brush your teeth now. I will disable the play station four if you do not brush your teeth.
-           {% elif states.sensor.random_3.state == '3' %}Attention all kids, attention all kids. You better go brush your teeth now. I will disable all of your electronics if you do not brush your teeth.
-           {% endif %}"
-        target:
-          - !secret hudson_cell
-
-- id: brush_teeth_night_reminder2
-  alias: Brush Teeth Night Reminder 2
-  initial_state: 'on'
-  trigger:
-    platform: time
-    at: '20:05:00'
+    at: '21:00:00'
   condition:
     condition: time
     weekday:
@@ -2585,7 +2548,7 @@
   initial_state: 'on'
   trigger:
     platform: time
-    at: '19:30:00'
+    at: '20:30:00'
   condition:
     condition: time
     weekday:
@@ -2609,138 +2572,13 @@
            {% elif states.sensor.random_5.state == '4' %}Attention Wesley, Attention Wesley. I hate to inform you of this, but you stink. Please go take a shower.
            {% elif states.sensor.random_5.state == '5' %}Attention Wesley, Attention Wesley. I regret to inform you but your stinch is plugging my smell sensors. You are required to take a shower now.
            {% endif %}"
-
-- id: wes_shower_reminder2
-  alias: Wes Shower Reminder 2
-  initial_state: 'on'
-  trigger:
-    platform: time
-    at: '19:35:00'
-  condition:
-    condition: time
-    weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
-      - sat
-      - sun
-  action:
-    - service: shell_command.foghorn
-    - delay:
-        seconds: 0.125
-    - service: shell_command.tts
-      data_template:
-        message:
-          "{% if states.sensor.random_5.state == '1' %}Attention Wesley, Attention Wesley. My smell sensors indicate an odor emitting from your arm pits. Your presence is required in the shower.
-           {% elif states.sensor.random_5.state == '2' %}Attention Wesley, Attention Wesley. My smell sensors indicate an essence of stink. Your presence is required in the shower.
-           {% elif states.sensor.random_5.state == '3' %}Attention Wesley, Attention Wesley. My smell sensors indicate you stink. Your presence is required in the shower.
-           {% elif states.sensor.random_5.state == '4' %}Attention Wesley, Attention Wesley. I hate to inform you of this, but you stink. Please go take a shower.
-           {% elif states.sensor.random_5.state == '5' %}Attention Wesley, Attention Wesley. I regret to inform you but your stinch is plugging my smell sensors. You are required to take a shower now.
-           {% endif %}"
-
-- id: hudson_shower_reminder
-  alias: Hudson Shower Reminder
-  initial_state: 'on'
-  trigger:
-    platform: time
-    at: '19:45:00'
-  condition:
-    condition: time
-    weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
-      - sat
-      - sun
-  action:
-    - service: shell_command.foghorn
-    - delay:
-        seconds: 0.125
-    - service: shell_command.tts
-      data_template:
-        message:
-          "{% if states.sensor.random_5.state == '1' %}Attention Hudson, Attention Hudson. My smell sensors indicate an odor emitting from your arm pits. Your presence is required in the shower.
-           {% elif states.sensor.random_5.state == '2' %}Attention Hudson, Attention Hudson. My smell sensors indicate an essence of stink. Your presence is required in the shower.
-           {% elif states.sensor.random_5.state == '3' %}Attention Hudson, Attention Hudson. My smell sensors indicate you stink. Your presence is required in the shower.
-           {% elif states.sensor.random_5.state == '4' %}Attention Hudson, Attention Hudson. I hate to inform you of this, but you stink. Please go take a shower.
-           {% elif states.sensor.random_5.state == '5' %}Attention Hudson, Attention Hudson. I regret to inform you but your stinch is plugging my smell sensors. You are required to take a shower now.
-           {% endif %}"
-    - service: notify.sms
-      data_template:
-        message:
-          "{% if states.sensor.random_5.state == '1' %}Attention Hudson, Attention Hudson. My smell sensors indicate an odor emitting from your arm pits. Your presence is required in the shower.
-           {% elif states.sensor.random_5.state == '2' %}Attention Hudson, Attention Hudson. My smell sensors indicate an essence of stink. Your presence is required in the shower.
-           {% elif states.sensor.random_5.state == '3' %}Attention Hudson, Attention Hudson. My smell sensors indicate you stink. Your presence is required in the shower.
-           {% elif states.sensor.random_5.state == '4' %}Attention Hudson, Attention Hudson. I hate to inform you of this, but you stink. Please go take a shower.
-           {% elif states.sensor.random_5.state == '5' %}Attention Hudson, Attention Hudson. I regret to inform you but your stinch is plugging my smell sensors. You are required to take a shower now.
-           {% endif %}"
-        target:
-          - !secret hudson_cell
-
-- id: hudson_shower_reminder2
-  alias: Hudson Shower Reminder 2
-  initial_state: 'on'
-  trigger:
-    platform: time
-    at: '19:50:00'
-  condition:
-    condition: time
-    weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
-      - sat
-      - sun
-  action:
-    - service: shell_command.foghorn
-    - delay:
-        seconds: 0.125
-    - service: shell_command.tts
-      data_template:
-        message:
-          "{% if states.sensor.random_5.state == '1' %}Attention Hudson, Attention Hudson. My smell sensors indicate an odor emitting from your arm pits. Your presence is required in the shower.
-           {% elif states.sensor.random_5.state == '2' %}Attention Hudson, Attention Hudson. My smell sensors indicate an essence of stink. Your presence is required in the shower.
-           {% elif states.sensor.random_5.state == '3' %}Attention Hudson, Attention Hudson. My smell sensors indicate you stink. Your presence is required in the shower.
-           {% elif states.sensor.random_5.state == '4' %}Attention Hudson, Attention Hudson. I hate to inform you of this, but you stink. Please go take a shower.
-           {% elif states.sensor.random_5.state == '5' %}Attention Hudson, Attention Hudson. I regret to inform you but your stinch is plugging my smell sensors. You are required to take a shower now.
-           {% endif %}"
-
-- id: clean_kitchen_reminder
-  alias: Clean Kitchen Reminder
-  initial_state: 'on'
-  trigger:
-    platform: time
-    at: '19:15:00'
-  condition:
-    condition: time
-    weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
-      - sat
-      - sun
-  action:
-    - service: shell_command.foghorn
-    - delay:
-        seconds: 0.125
-    - service: shell_command.tts
-      data_template:
-        message: "Attention Kids. Attention Lance. Attention Kids. Attention Lance. It is time to make sure the kitchen is clean after dinner. Chances are your beautiful mom and girlfriend made dinner. It would be really nice if the kitchen was not left as a mess."
 
 - id: wes_school_night_bedtime
   alias: Wesley School Night Bed Time
   initial_state: 'on'
   trigger:
     platform: time
-    at: '20:30:00'
+    at: '20:45:00'
   condition:
     condition: time
     weekday:
@@ -2756,33 +2594,6 @@
     - service: shell_command.tts
       data_template:
         message: "Attention Wesley. Attention Wesley. It is now your bedtime and you are required to promptly report to your bed. I repeat, Wesley, it is now your bedtime and you are required to go to bed."
-
-- id: hudson_school_night_bedtime
-  alias: Hudson School Night Bed Time
-  initial_state: 'on'
-  trigger:
-    platform: time
-    at: '21:30:00'
-  condition:
-    condition: time
-    weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - sun
-  action:
-    - service: shell_command.foghorn
-    - delay:
-        seconds: 0.125
-    - service: shell_command.tts
-      data_template:
-        message: "Attention Hudson. Attention Hudson. It is now your bedtime and you are required to promptly report to your bed. I repeat, Hudson, it is now your bedtime and you are required to go to bed."
-    - service: notify.sms
-      data_template:
-        message: "Attention Hudson. Attention Hudson. It is now your bedtime and you are required to promptly report to your bed. I repeat, Hudson, it is now your bedtime and you are required to go to bed."
-        target:
-          - !secret hudson_cell
 
 - id: homework_reminder
   alias: Homework Reminder
@@ -2807,7 +2618,7 @@
         message: "Attention all kids. Attention all kids. If you have any homework to be done, now is the time to do it."
     - service: notify.sms
       data_template:
-        message: "If you have any homework to be done, now is the time to do it.."
+        message: "If you have any homework to be done, now is the time to do it..."
         target:
           - !secret hudson_cell
 
@@ -2835,71 +2646,6 @@
       data_template:
         message: "Attention parental units. Attention parental units. Now would be a good time to start making dinner."
 
-- id: hudson_daily_trash_reminder
-  alias: Hudson Daily Trash Reminder
-  initial_state: 'on'
-  trigger:
-    platform: time
-    at: '17:45:00'
-  condition:
-    condition: time
-    weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
-      - sat
-      - sun
-  action:
-    - service: notify.sms
-      data_template:
-        message: "Hudson: You need to take out the trash."
-        target:
-          - !secret hudson_cell
-    - service: shell_command.foghorn
-    - delay:
-        seconds: 0.125
-    - service: shell_command.tts
-      data_template:
-        message:
-          "{% if states.sensor.random_5.state == '1' %}Attention Hudson, Attention Hudson. Its probably a good idea to take out the trash now.
-           {% elif states.sensor.random_5.state == '2' %}Attention Hudson, Attention Hudson. You should check the trash to see if it needs to be taken out.
-           {% elif states.sensor.random_5.state == '3' %}Attention Hudson, Attention Hudson. Chances are you have not taken out the trash, pleaes do so now.
-           {% elif states.sensor.random_5.state == '4' %}Attention Hudson, Attention Hudson. Please check to see if the trash needs to be taken out.
-           {% elif states.sensor.random_5.state == '5' %}Attention Hudson, Attention Hudson. If you have not taken out the trash today, please do so now.
-           {% endif %}"
-
-- id: hudson_daily_trash_reminder2
-  alias: Hudson Daily Trash Reminder 2
-  initial_state: 'on'
-  trigger:
-    platform: time
-    at: '17:50:00'
-  condition:
-    condition: time
-    weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
-      - sat
-      - sun
-  action:
-    - service: shell_command.foghorn
-    - delay:
-        seconds: 0.125
-    - service: shell_command.tts
-      data_template:
-        message:
-          "{% if states.sensor.random_5.state == '1' %}Attention Hudson, Attention Hudson. Its probably a good idea to take out the trash now.
-           {% elif states.sensor.random_5.state == '2' %}Attention Hudson, Attention Hudson. You should check the trash to see if it needs to be taken out.
-           {% elif states.sensor.random_5.state == '3' %}Attention Hudson, Attention Hudson. Chances are you have not taken out the trash, pleaes do so now.
-           {% elif states.sensor.random_5.state == '4' %}Attention Hudson, Attention Hudson. Please check to see if the trash needs to be taken out.
-           {% elif states.sensor.random_5.state == '5' %}Attention Hudson, Attention Hudson. If you have not taken out the trash today, please do so now.
-           {% endif %}"
-
 - id: lance_sunday_trash_reminder
   alias: Lance Sunday Trash Reminder
   initial_state: 'on'
@@ -2922,23 +2668,6 @@
     - service: shell_command.tts
       data_template:
         message: "Lance, dont forget to take the trash bins out."
-
-- id: hudson_monday_trash_bins
-  alias: Hudson Monday Trash Bins
-  initial_state: 'on'
-  trigger:
-    platform: time
-    at: '15:30:00'
-  condition:
-    condition: time
-    weekday:
-      - mon
-  action:
-    - service: notify.sms
-      data_template:
-        message: "Hudson: If you have not already brought the trash bins in, you need to do it now. This includes BOTH bins, and the recycling bin if it is out."
-        target:
-          - !secret hudson_cell
 
 - id: morning_wx
   alias: Morning WX
