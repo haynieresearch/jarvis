@@ -3097,7 +3097,7 @@
   trigger:
     platform: state
     entity_id: sensor.minecraft_players_online
-   condition:
+  condition:
     platform: template
     value_template: '{{ trigger.to_state.state > trigger.from_state.state }}'
   action:
