@@ -3098,8 +3098,8 @@
     platform: state
     entity_id: sensor.minecraft_players_online
   condition:
-    platform: template
-    value_template: '{{ trigger.to_state.state > trigger.from_state.state }}'
+    - condition: template
+      value_template: "{{ trigger.to_state.state > trigger.from_state.state }}"
   action:
     - service: shell_command.one_tone
     - delay:
