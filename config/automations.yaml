@@ -3194,6 +3194,75 @@
           {% elif states.sensor.random10.state == '10' %} relax10
           {% endif %}"
 
+- id: speedtest_download
+  alias: Speedtest Download
+  initial_state: 'on'
+  trigger:
+  - minutes: '/15'
+    platform: time_pattern
+  condition:
+    condition: and
+    conditions:
+      - condition: numeric_state
+        entity_id: sensor.speedtest_download
+        below: !secret download_mbps_trigger
+      - condition: time
+        before: '22:00:00'
+        after: '08:00:00'
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "Warning, our uplink download speed is low. My last check shows a download speed of {{ states.sensor.speedtest_download.state }} mega bits per second."
+
+- id: speedtest_upload
+  alias: Speedtest Upload
+  initial_state: 'on'
+  trigger:
+  - minutes: '/30'
+    platform: time_pattern
+  condition:
+    condition: and
+    conditions:
+      - condition: numeric_state
+        entity_id: sensor.speedtest_upload
+        below: !secret upload_mbps_trigger
+      - condition: time
+        before: '22:00:00'
+        after: '08:00:00'
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "Warning, our uplink upload speed is low. My last check shows an upload speed of {{ states.sensor.speedtest_upload.state }} mega bits per second."
+
+- id: speedtest_ping
+  alias: Speedtest Ping
+  initial_state: 'on'
+  trigger:
+  - minutes: '/45'
+    platform: time_pattern
+  condition:
+    condition: and
+    conditions:
+      - condition: numeric_state
+        entity_id: sensor.speedtest_ping
+        above: !secret ping_trigger
+      - condition: time
+        before: '22:00:00'
+        after: '08:00:00'
+  action:
+    - service: shell_command.two_tone
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "Warning, our uplink latency is high. My last check shows a ping of {{ states.sensor.speedtest_ping.state }} miliseconds."
+
 #**********************************************************
 # Shabbat
 #**********************************************************
