@@ -3198,7 +3198,7 @@
   alias: Speedtest Download
   initial_state: 'on'
   trigger:
-  - minutes: '/15'
+  - minutes: '/45'
     platform: time_pattern
   condition:
     condition: and
@@ -3221,7 +3221,7 @@
   alias: Speedtest Upload
   initial_state: 'on'
   trigger:
-  - minutes: '/30'
+  - minutes: '/45'
     platform: time_pattern
   condition:
     condition: and
@@ -3262,6 +3262,19 @@
     - service: shell_command.tts
       data_template:
         message: "Warning, our uplink latency is high. My last check shows a ping of {{ states.sensor.speedtest_ping.state }} miliseconds."
+
+- id: ifttt_webhook
+  alias: ifttt webhook
+  initial_state: 'on'
+  trigger:
+    - platform: event
+      event_type: ifttt_webhook_received
+      event_data:
+        action: 'call_service'
+  action:
+    - service_template: '{{ trigger.event.data.service }}'
+      data_template:
+        entity_id: '{{ trigger.event.data.entity_id }}'
 
 #**********************************************************
 # Shabbat
