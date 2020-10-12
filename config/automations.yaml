@@ -3266,6 +3266,22 @@
       data_template:
         message: "Warning, our uplink latency is high. My last check shows a ping of {{ states.sensor.speedtest_ping.state }} miliseconds."
 
+- id: love
+  alias: Love
+  initial_state: 'on'
+  trigger:
+  - platform: time_pattern
+    hours: '*'
+    minutes: '0'
+  condition:
+    - condition: time
+      before: '22:00:00'
+      after: '08:00:00'
+  action:
+    - service: shell_command.tts
+      data_template:
+        message: "Katie, this is your hourly reminder that Lance loves you very much! He told me to let you know that he will always love you more than anything."
+
 - id: ifttt_webhook
   alias: ifttt webhook
   initial_state: 'on'
