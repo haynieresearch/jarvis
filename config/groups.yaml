@@ -16,12 +16,13 @@
 #See the License for the specific language governing permissions and
 #limitations under the License.
 
-exterior_lights:
-  name: Exterior Lights
-  entities:
-    - light.front_porch_color_1
-    - light.front_porch_color_2
-    - light.front_porch_color_3
-    - light.front_porch_left
-    - light.front_porch_right
-    - light.back_porch
+light:
+  - platform: group
+    name: exterior_lights
+    entities:
+      - light.front_porch_color_1
+      - light.front_porch_color_2
+      - light.front_porch_color_3
+      - light.front_porch_left
+      - light.front_porch_right
+      - light.back_porch
