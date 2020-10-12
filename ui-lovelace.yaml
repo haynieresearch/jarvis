@@ -71,7 +71,7 @@ views:
               #Left Column
               - type: vertical-stack
                 cards:
-                  - type: light
+                  - type: group
                     entity: group.exterior_lights
                   - type: light
                     entity: light.tv_backlight
