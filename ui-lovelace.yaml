@@ -81,6 +81,7 @@ views:
                   - type: light
                     entity: light.family_room_desk_led
                     name: Family Room Desk
+                    icon: 'mdi:desk'
 
           #Right Column
           - type: vertical-stack
@@ -88,9 +89,15 @@ views:
               - type: vertical-stack
                 cards:
                   - type: light
+                    entity: light.dining_room
+                    name: Dining Room
+                    icon: 'mdi:silverware'
+                  - type: light
                     entity: light.front_porch
+                    name: Front Porch
                   - type: light
                     entity: light.back_porch
+                    name: Back Porch
 
   #System Information
   - panel: true

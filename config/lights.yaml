@@ -25,3 +25,10 @@
     - light.front_porch_left
     - light.front_porch_right
     - light.back_porch
+
+- platform: group
+  name: dining_room
+  entities:
+    - light.dining_room_1
+    - light.dining_room_2
+    - light.dining_room_3
