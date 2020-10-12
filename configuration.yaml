@@ -220,7 +220,7 @@ alarm_control_panel:
 automation: !include config/automations.yaml
 intent_script: !include config/intents.yaml
 camera: !include config/cameras.yaml
-group: !include config/groups.yaml
+light: !include config/lights.yaml
 sensor: !include config/sensors.yaml
 switch: !include config/switches.yaml
 binary_sensor: !include config/binary_sensors.yaml
