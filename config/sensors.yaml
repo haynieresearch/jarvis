@@ -119,7 +119,7 @@
     {{ '%02d' % hours }}:{{ '%02d' % minutes }}
 
 - platform: command_line
-  name: System volume
+  name: System Volume
   command: /opt/jarvis/scripts/getvolume.sh
   unit_of_measurement: percent
 

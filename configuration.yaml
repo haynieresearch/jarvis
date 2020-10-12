@@ -173,11 +173,8 @@ shell_command:
   command: "{{cmd}}"
   run_sudo: /usr/bin/sudo "{{cmd}}"
   volume: /usr/bin/amixer -c 0 set Headphone "{{cmd}}"%
-  volume50: /usr/bin/amixer -c 0 set Headphone 50%
-  volume75: /usr/bin/amixer -c 0 set Headphone 75%
-  volume90: /usr/bin/amixer -c 0 set Headphone 90%
-  volume100: /usr/bin/amixer -c 0 set Headphone 100%
   tts: /opt/jarvis/scripts/tts.sh "{{message}}"
+  relax: /opt/jarvis/scripts/relax.sh "{{track}}"
   bomb_sound: /usr/bin/aplay /opt/jarvis/sounds/sound_effects/missle_explosion.wav
   alarm_sound: /usr/bin/aplay /opt/jarvis/sounds/sound_effects/alarm.wav
   fart_sound: /usr/bin/aplay /opt/jarvis/sounds/sound_effects/fart.wav
@@ -198,16 +195,6 @@ shell_command:
   restart_jarvis_base: /opt/jarvis/scripts/restart_jarvis_base.sh
   restart_jarvis_stt: /opt/jarvis/scripts/restart_jarvis_stt.sh
   restart_jarvis_tts: /opt/jarvis/scripts/restart_jarvis_tts.sh
-  relax01: /usr/bin/mplayer /opt/jarvis/sounds/relax/relax01.m4a
-  relax02: /usr/bin/mplayer /opt/jarvis/sounds/relax/relax02.m4a
-  relax03: /usr/bin/mplayer /opt/jarvis/sounds/relax/relax03.m4a
-  relax04: /usr/bin/mplayer /opt/jarvis/sounds/relax/relax04.m4a
-  relax05: /usr/bin/mplayer /opt/jarvis/sounds/relax/relax05.m4a
-  relax06: /usr/bin/mplayer /opt/jarvis/sounds/relax/relax06.m4a
-  relax07: /usr/bin/mplayer /opt/jarvis/sounds/relax/relax07.m4a
-  relax08: /usr/bin/mplayer /opt/jarvis/sounds/relax/relax08.m4a
-  relax09: /usr/bin/mplayer /opt/jarvis/sounds/relax/relax09.m4a
-  relax10: /usr/bin/mplayer /opt/jarvis/sounds/relax/relax10.m4a
 
 #Alarm Panel
 alarm_control_panel:

@@ -1707,11 +1707,11 @@
   initial_state: 'on'
   trigger:
     platform: state
-    entity_id: input_slider.systemvolume
+    entity_id: input_number.systemvolume
   action:
     - service: shell_command.volume
       data_template:
-        cmd: "{{ states.input_slider.systemvolume.state }}"
+        cmd: "{{ states.input_number.systemvolume.state }}"
 
 - id: system_volume
   alias: System Volume
@@ -1720,9 +1720,9 @@
     platform: state
     entity_id: sensor.system_volume
   action:
-     service: input_slider.select_value
+     service: input_number.select_value
      data_template:
-       entity_id: input_slider.systemvolume
+       entity_id: input_number.systemvolume
        value: "{{ states.sensor.system_volume.state }}"
 
 - id: system_volume_day
@@ -2684,7 +2684,10 @@
       - thu
       - fri
   action:
-    - service: shell_command.volume90
+  action:
+    - service: shell_command.volume
+      data_template:
+        cmd: "90"
     - delay:
         seconds: 0.125
     - service: shell_command.one_tone
@@ -2695,36 +2698,39 @@
         message: "Good morning all, Lance, please do not forget to make coffee. Here is your morning weather briefing. It is currently {{ states.sensor.openweathermap_temperature.state }} degrees outside and {{ states.sensor.openweathermap_condition.state }}. The forecasted high today is {{ states.sensor.openweathermap_forecast_temperature.state }} and should be {{ states.sensor.openweathermap_forecast_condition.state }}."
     - delay:
         seconds: 10
-    - service: shell_command.run
+    - service: shell_command.relax
       data_template:
-        entity_id: >-
-          {% if states.sensor.random10.state == '1' %} shell_command.relax01
-          {% elif states.sensor.random10.state == '2' %} shell_command.relax02
-          {% elif states.sensor.random10.state == '3' %} shell_command.relax03
-          {% elif states.sensor.random10.state == '4' %} shell_command.relax04
-          {% elif states.sensor.random10.state == '5' %} shell_command.relax05
-          {% elif states.sensor.random10.state == '6' %} shell_command.relax06
-          {% elif states.sensor.random10.state == '7' %} shell_command.relax07
-          {% elif states.sensor.random10.state == '8' %} shell_command.relax08
-          {% elif states.sensor.random10.state == '9' %} shell_command.relax09
-          {% elif states.sensor.random10.state == '10' %} shell_command.relax10
+        track:
+          {% if states.sensor.random10.state == '1' %} relax01
+          {% elif states.sensor.random10.state == '2' %} relax02
+          {% elif states.sensor.random10.state == '3' %} relax03
+          {% elif states.sensor.random10.state == '4' %} relax04
+          {% elif states.sensor.random10.state == '5' %} relax05
+          {% elif states.sensor.random10.state == '6' %} relax06
+          {% elif states.sensor.random10.state == '7' %} relax07
+          {% elif states.sensor.random10.state == '8' %} relax08
+          {% elif states.sensor.random10.state == '9' %} relax09
+          {% elif states.sensor.random10.state == '10' %} relax10
           {% endif %}
     - delay:
         seconds: 630
-    - service: shell_command.volume100
-    - service: shell_command.run
+  action:
+    - service: shell_command.volume
       data_template:
-        entity_id: >-
-          {% if states.sensor.random10.state == '1' %} shell_command.relax01
-          {% elif states.sensor.random10.state == '2' %} shell_command.relax02
-          {% elif states.sensor.random10.state == '3' %} shell_command.relax03
-          {% elif states.sensor.random10.state == '4' %} shell_command.relax04
-          {% elif states.sensor.random10.state == '5' %} shell_command.relax05
-          {% elif states.sensor.random10.state == '6' %} shell_command.relax06
-          {% elif states.sensor.random10.state == '7' %} shell_command.relax07
-          {% elif states.sensor.random10.state == '8' %} shell_command.relax08
-          {% elif states.sensor.random10.state == '9' %} shell_command.relax09
-          {% elif states.sensor.random10.state == '10' %} shell_command.relax10
+        cmd: "100"
+    - service: shell_command.relax
+      data_template:
+        track:
+          {% if states.sensor.random10.state == '1' %} relax01
+          {% elif states.sensor.random10.state == '2' %} relax02
+          {% elif states.sensor.random10.state == '3' %} relax03
+          {% elif states.sensor.random10.state == '4' %} relax04
+          {% elif states.sensor.random10.state == '5' %} relax05
+          {% elif states.sensor.random10.state == '6' %} relax06
+          {% elif states.sensor.random10.state == '7' %} relax07
+          {% elif states.sensor.random10.state == '8' %} relax08
+          {% elif states.sensor.random10.state == '9' %} relax09
+          {% elif states.sensor.random10.state == '10' %} relax10
           {% endif %}
 
 - id: mid_morning_wx
@@ -3152,7 +3158,7 @@
   initial_state: 'on'
   trigger:
     platform: time
-    at: '21:00:00'
+    at: '21:30:00'
   condition:
     condition: time
     weekday:
@@ -3164,25 +3170,28 @@
       - sat
       - sun
   action:
-    - service: shell_command.volume90
+  action:
+    - service: shell_command.volume
+      data_template:
+        cmd: "90"
     - service: shell_command.tts
       data_template:
         message: "It's time to say goodnight. I am going to turn the volume down and play some relaxing music for a little bit."
     - delay:
         seconds: 5
-    - service: shell_command.run
+    - service: shell_command.relax
       data_template:
-        entity_id: >-
-          {% if states.sensor.random10.state == '1' %} shell_command.relax01
-          {% elif states.sensor.random10.state == '2' %} shell_command.relax02
-          {% elif states.sensor.random10.state == '3' %} shell_command.relax03
-          {% elif states.sensor.random10.state == '4' %} shell_command.relax04
-          {% elif states.sensor.random10.state == '5' %} shell_command.relax05
-          {% elif states.sensor.random10.state == '6' %} shell_command.relax06
-          {% elif states.sensor.random10.state == '7' %} shell_command.relax07
-          {% elif states.sensor.random10.state == '8' %} shell_command.relax08
-          {% elif states.sensor.random10.state == '9' %} shell_command.relax09
-          {% elif states.sensor.random10.state == '10' %} shell_command.relax10
+        track:
+          {% if states.sensor.random10.state == '1' %} relax01
+          {% elif states.sensor.random10.state == '2' %} relax02
+          {% elif states.sensor.random10.state == '3' %} relax03
+          {% elif states.sensor.random10.state == '4' %} relax04
+          {% elif states.sensor.random10.state == '5' %} relax05
+          {% elif states.sensor.random10.state == '6' %} relax06
+          {% elif states.sensor.random10.state == '7' %} relax07
+          {% elif states.sensor.random10.state == '8' %} relax08
+          {% elif states.sensor.random10.state == '9' %} relax09
+          {% elif states.sensor.random10.state == '10' %} relax10
           {% endif %}
 
 #**********************************************************
