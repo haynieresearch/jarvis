@@ -72,7 +72,7 @@ views:
               - type: vertical-stack
                 cards:
                   - type: light
-                    entity: group.group.exterior_lights
+                    entity: group.exterior_lights
                   - type: light
                     entity: light.tv_backlight
                     icon: 'mdi:television'
