@@ -3113,6 +3113,42 @@
       data_template:
         message: "Pardon the interruption, if any of you are curious, someone has joined the Mine Craft server. There are currently {{ states.sensor.minecraft_players_online.state }} players logged into the  Mine Craft server.."
 
+- id: relax_night
+  alias: Relax Night
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '21:00:00'
+  condition:
+    condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
+      - sat
+      - sun
+  action:
+    - service: shell_command.volume75
+    - service: shell_command.tts
+      data_template:
+        message: "It's time to say goodnight. I am going to turn the volume down and play some relaxing music for a little bit."
+    - delay:
+        seconds: 5
+    - service_template:
+        {% if states.sensor.random10.state == '1' %} shell_command.relax01
+        {% elif states.sensor.random10.state == '2' %} shell_command.relax02
+        {% elif states.sensor.random10.state == '3' %} shell_command.relax03
+        {% elif states.sensor.random10.state == '4' %} shell_command.relax04
+        {% elif states.sensor.random10.state == '5' %} shell_command.relax05
+        {% elif states.sensor.random10.state == '6' %} shell_command.relax06
+        {% elif states.sensor.random10.state == '7' %} shell_command.relax07
+        {% elif states.sensor.random10.state == '8' %} shell_command.relax08
+        {% elif states.sensor.random10.state == '9' %} shell_command.relax09
+        {% elif states.sensor.random10.state == '10' %} shell_command.relax10
+        {% endif %}
+
 #**********************************************************
 # Shabbat
 #**********************************************************
