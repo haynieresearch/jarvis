@@ -1707,11 +1707,11 @@
   initial_state: 'on'
   trigger:
     platform: state
-    entity_id: input_slider.systemvolume
+    entity_id: input_number.systemvolume
   action:
     - service: shell_command.volume
       data_template:
-        cmd: "{{ states.input_slider.systemvolume.state }}"
+        cmd: "{{ states.input_number.systemvolume.state }}"
 
 - id: system_volume
   alias: System Volume
@@ -1720,9 +1720,9 @@
     platform: state
     entity_id: sensor.system_volume
   action:
-     service: input_slider.select_value
+     service: input_number.select_value
      data_template:
-       entity_id: input_slider.systemvolume
+       entity_id: input_number.systemvolume
        value: "{{ states.sensor.system_volume.state }}"
 
 - id: system_volume_day
