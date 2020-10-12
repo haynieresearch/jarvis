@@ -3111,7 +3111,7 @@
         seconds: 0.125
     - service: shell_command.tts
       data_template:
-        message: "Pardon the interruption, if any of you are curious, someone has joined the Minecraft server. There are now {{ states.sensor.minecraft_players_online.state }} people playing Minecraft."
+        message: "Pardon the interruption, if any of you are curious, someone has joined the Mine Craft server. There are currently {{ states.sensor.minecraft_players_online.state }} players logged into the  Mine Craft server.."
 
 #**********************************************************
 # Shabbat
