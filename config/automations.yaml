@@ -3280,7 +3280,13 @@
   action:
     - service: shell_command.tts
       data_template:
-        message: "Katie, this is your hourly reminder that Lance loves you very much! He told me to let you know that he will always love you more than anything. Also, he thinks you have a nice rear end!"
+        message:
+          "{% if states.sensor.random_5.state == '1' %}Katie, this is your hourly reminder that Lance, loves you very much! He told me to let you know that he will always love you more than anything. Also, he thinks you have a nice, rear end!
+           {% elif states.sensor.random_5.state == '2' %}Katie, this is your hourly reminder that Lance, loves you very much! He told me to let you know that he will always love you more than anything. Also, he thinks you are the most, gorgeous woman on the planet!
+           {% elif states.sensor.random_5.state == '3' %}Katie, this is your hourly reminder that Lance, loves you very much! He told me to let you know that he will always love you more than anything. Also, he thinks you have the most, amazing smile!
+           {% elif states.sensor.random_5.state == '4' %}Katie, this is your hourly reminder that Lance, loves you very much! He told me to let you know that he will always love you more than anything. Also, he thinks you are, flawless!
+           {% elif states.sensor.random_5.state == '5' %}Katie, this is your hourly reminder that Lance, loves you very much! He told me to let you know that he will always love you more than anything. Also, he thinks you are, perfect!
+           {% endif %}"
 
 - id: ifttt_webhook
   alias: ifttt webhook
