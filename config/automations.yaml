@@ -3198,8 +3198,8 @@
   alias: Speedtest Download
   initial_state: 'on'
   trigger:
-  - minutes: '/45'
-    platform: time_pattern
+  - minutes: '15'
+    platform: time
   condition:
     condition: and
     conditions:
@@ -3221,8 +3221,8 @@
   alias: Speedtest Upload
   initial_state: 'on'
   trigger:
-  - minutes: '/45'
-    platform: time_pattern
+  - minutes: '/30'
+    platform: time
   condition:
     condition: and
     conditions:
@@ -3244,8 +3244,8 @@
   alias: Speedtest Ping
   initial_state: 'on'
   trigger:
-  - minutes: '/45'
-    platform: time_pattern
+  - minutes: '45'
+    platform: time
   condition:
     condition: and
     conditions:
