@@ -2674,7 +2674,7 @@
   initial_state: 'on'
   trigger:
     platform: time
-    at: '8:00:00'
+    at: '7:30:00'
   condition:
     condition: time
     weekday:
@@ -2683,22 +2683,56 @@
       - wed
       - thu
       - fri
-      - sat
-      - sun
   action:
+    - service: shell_command.volume90
+    - delay:
+        seconds: 0.125
     - service: shell_command.one_tone
     - delay:
         seconds: 0.125
     - service: shell_command.tts
       data_template:
         message: "Good morning all, Lance, please do not forget to make coffee. Here is your morning weather briefing. It is currently {{ states.sensor.openweathermap_temperature.state }} degrees outside and {{ states.sensor.openweathermap_condition.state }}. The forecasted high today is {{ states.sensor.openweathermap_forecast_temperature.state }} and should be {{ states.sensor.openweathermap_forecast_condition.state }}."
+    - delay:
+        seconds: 10
+    - service: shell_command.run
+      data_template:
+        entity_id: >-
+          {% if states.sensor.random10.state == '1' %} shell_command.relax01
+          {% elif states.sensor.random10.state == '2' %} shell_command.relax02
+          {% elif states.sensor.random10.state == '3' %} shell_command.relax03
+          {% elif states.sensor.random10.state == '4' %} shell_command.relax04
+          {% elif states.sensor.random10.state == '5' %} shell_command.relax05
+          {% elif states.sensor.random10.state == '6' %} shell_command.relax06
+          {% elif states.sensor.random10.state == '7' %} shell_command.relax07
+          {% elif states.sensor.random10.state == '8' %} shell_command.relax08
+          {% elif states.sensor.random10.state == '9' %} shell_command.relax09
+          {% elif states.sensor.random10.state == '10' %} shell_command.relax10
+          {% endif %}
+    - delay:
+        seconds: 630
+    - service: shell_command.volume100
+    - service: shell_command.run
+      data_template:
+        entity_id: >-
+          {% if states.sensor.random10.state == '1' %} shell_command.relax01
+          {% elif states.sensor.random10.state == '2' %} shell_command.relax02
+          {% elif states.sensor.random10.state == '3' %} shell_command.relax03
+          {% elif states.sensor.random10.state == '4' %} shell_command.relax04
+          {% elif states.sensor.random10.state == '5' %} shell_command.relax05
+          {% elif states.sensor.random10.state == '6' %} shell_command.relax06
+          {% elif states.sensor.random10.state == '7' %} shell_command.relax07
+          {% elif states.sensor.random10.state == '8' %} shell_command.relax08
+          {% elif states.sensor.random10.state == '9' %} shell_command.relax09
+          {% elif states.sensor.random10.state == '10' %} shell_command.relax10
+          {% endif %}
 
 - id: mid_morning_wx
   alias: Mid Morning WX
   initial_state: 'on'
   trigger:
     platform: time
-    at: '10:00:00'
+    at: '8:45:00'
   condition:
     condition: time
     weekday:
@@ -3130,7 +3164,7 @@
       - sat
       - sun
   action:
-    - service: shell_command.volume75
+    - service: shell_command.volume90
     - service: shell_command.tts
       data_template:
         message: "It's time to say goodnight. I am going to turn the volume down and play some relaxing music for a little bit."

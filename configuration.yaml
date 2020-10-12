@@ -175,6 +175,7 @@ shell_command:
   volume: /usr/bin/amixer -c 0 set Headphone "{{cmd}}"%
   volume50: /usr/bin/amixer -c 0 set Headphone 50%
   volume75: /usr/bin/amixer -c 0 set Headphone 75%
+  volume90: /usr/bin/amixer -c 0 set Headphone 90%
   volume100: /usr/bin/amixer -c 0 set Headphone 100%
   tts: /opt/jarvis/scripts/tts.sh "{{message}}"
   bomb_sound: /usr/bin/aplay /opt/jarvis/sounds/sound_effects/missle_explosion.wav
