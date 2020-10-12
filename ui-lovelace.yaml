@@ -57,6 +57,8 @@ views:
                   - entity: light.tv_backlight
                 show_header_toggle: false
                 state_color: true
+
+  #Lights
   - icon: 'mdi:lightbulb'
     panel: true
     badges: []
@@ -65,6 +67,8 @@ views:
         cards:
           - type: vertical-stack
             cards:
+
+              #Left Column
               - type: vertical-stack
                 cards:
                   - type: light
@@ -72,6 +76,8 @@ views:
                     icon: 'mdi:television'
                   - type: light
                     entity: light.family_room_desk_led
+
+          #Right Column
           - type: vertical-stack
             cards:
               - type: vertical-stack
@@ -80,6 +86,8 @@ views:
                     entity: light.front_porch
                   - type: light
                     entity: light.back_porch
+
+  #System Information
   - panel: true
     icon: 'mdi:pulse'
     path: system
