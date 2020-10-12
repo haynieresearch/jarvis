@@ -74,6 +74,7 @@ views:
                   - type: light
                     entity: light.exterior_lights
                     name: Exterior Lights
+                    icon: 'mdi:lightbulb-group'
                   - type: light
                     entity: light.tv_backlight
                     name: Living Room TV
@@ -95,9 +96,11 @@ views:
                   - type: light
                     entity: light.front_porch
                     name: Front Porch
+                    icon: 'mdi:lightbulb-group'
                   - type: light
                     entity: light.back_porch
                     name: Back Porch
+                    icon: 'mdi:lightbulb-group'
 
   #System Information
   - panel: true
