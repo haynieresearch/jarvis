@@ -121,6 +121,15 @@ views:
               - type: sensor
                 entity: sensor.disk_use_percent
                 graph: line
+              - type: sensor
+                entity: sensor.speedtest_download
+                graph: line
+              - type: sensor
+                entity: sensor.speedtest_upload
+                graph: line
+              - type: sensor
+                entity: sensor.speedtest_ping
+                graph: line
           - type: vertical-stack
             cards:
               - type: gauge
