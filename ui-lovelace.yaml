@@ -71,13 +71,16 @@ views:
               #Left Column
               - type: vertical-stack
                 cards:
-                  - type: group
-                    entity: group.exterior_lights
+                  - type: light
+                    entity: light.exterior_lights
+                    name: Exterior Lights
                   - type: light
                     entity: light.tv_backlight
+                    name: Living Room TV
                     icon: 'mdi:television'
                   - type: light
-                    entity: light.family_room_desk_led
+                    entity: light.family_room_desk
+                    name: Family Room Desk
 
           #Right Column
           - type: vertical-stack
