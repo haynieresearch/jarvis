@@ -19,7 +19,3 @@
 
 /usr/bin/X -nocursor
 sleep 5
-export DISPLAY=:0
-/usr/bin/xset s off
-/usr/bin/xset -dpms
-/usr/bin/xset s noblank

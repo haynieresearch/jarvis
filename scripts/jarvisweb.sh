@@ -19,9 +19,9 @@
 
 sleep 15
 export DISPLAY=:0
-/usr/bin/xset s off
 /usr/bin/xset -dpms
 /usr/bin/xset s noblank
+/usr/bin/xset s off
 
 /usr/bin/unclutter &
 /usr/bin/chromium-browser --kiosk --incognito --start-fullscreen --disable-session-crashed-bubble --enable-features=OverlayScrollbar --disable-infobars --noerrdialogs --no-first-run --fast --fast-start --enable-use-zoom-for-dsf http://10.0.0.9:8123/

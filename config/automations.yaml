@@ -3280,7 +3280,7 @@
   action:
     - service: shell_command.tts
       data_template:
-        message: "Katie, this is your hourly reminder that Lance loves you very much! He told me to let you know that he will always love you more than anything. Also, he thinks you have a nice butt!"
+        message: "Katie, this is your hourly reminder that Lance loves you very much! He told me to let you know that he will always love you more than anything. Also, he thinks you have a nice rear end!"
 
 - id: ifttt_webhook
   alias: ifttt webhook
