@@ -19,7 +19,6 @@ title: Jarvis Home Automation
 views:
   - title: ''
     path: home
-    theme: Dark Theme
     panel: true
     icon: 'mdi:home'
     badges: []

@@ -3281,11 +3281,11 @@
     - service: shell_command.tts
       data_template:
         message:
-          "{% if states.sensor.random_5.state == '1' %}Katie, this is your hourly reminder that Lance, loves you very much! He told me to let you know that he will always love you more than anything. Also, he thinks you have a nice, rear end!
-           {% elif states.sensor.random_5.state == '2' %}Katie, this is your hourly reminder that Lance, loves you very much! He told me to let you know that he will always love you more than anything. Also, he thinks you are the most, gorgeous woman on the planet!
-           {% elif states.sensor.random_5.state == '3' %}Katie, this is your hourly reminder that Lance, loves you very much! He told me to let you know that he will always love you more than anything. Also, he thinks you have the most, amazing smile!
-           {% elif states.sensor.random_5.state == '4' %}Katie, this is your hourly reminder that Lance, loves you very much! He told me to let you know that he will always love you more than anything. Also, he thinks you are, flawless!
-           {% elif states.sensor.random_5.state == '5' %}Katie, this is your hourly reminder that Lance, loves you very much! He told me to let you know that he will always love you more than anything. Also, he thinks you are, perfect!
+          "{% if states.sensor.random_5.state == '1' %}Katie, this is your reminder that Lance, loves you very much! He told me to let you know that he will always love you more than anything. Also, he thinks you have a nice, rear end!
+           {% elif states.sensor.random_5.state == '2' %}Zachary, Mommy and Daddy want you to know they love you very much!
+           {% elif states.sensor.random_5.state == '3' %}Emma, Mommy and Daddy love you so very much. Do not ever stop being so energetic and chasing fun.
+           {% elif states.sensor.random_5.state == '4' %}Wesley, Mommy and Daddy are so proud of you and your bubbly personality. They love you very much!
+           {% elif states.sensor.random_5.state == '5' %}Hudson, you have so much potential, we all believe in you. Keep learning to be the best you that you can be. Mommy and Daddy love you very much.
            {% endif %}"
 
 - id: ifttt_webhook
