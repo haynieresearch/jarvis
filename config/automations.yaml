@@ -3272,7 +3272,7 @@
   trigger:
   - platform: time_pattern
     hours: '*'
-    minutes: '0'
+    minutes: '10'
   condition:
     - condition: time
       before: '20:00:00'
