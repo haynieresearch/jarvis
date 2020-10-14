@@ -79,7 +79,7 @@ views:
                     name: Living Room TV
                     icon: 'mdi:television'
                   - type: light
-                    entity: light.family_room_desk_led
+                    entity: light.family_room_desk
                     name: Family Room Desk
                     icon: 'mdi:desk'
 
