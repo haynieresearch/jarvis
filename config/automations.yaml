@@ -3170,7 +3170,6 @@
       - sat
       - sun
   action:
-  action:
     - service: shell_command.volume
       data_template:
         cmd: "90"
