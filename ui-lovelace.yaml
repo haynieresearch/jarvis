@@ -101,6 +101,62 @@ views:
                     name: Back Porch
                     icon: 'mdi:lightbulb-group'
 
+  #Cameras
+  - icon: 'mdi:cctv'
+    panel: true
+    badges: []
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: vertical-stack
+            cards:
+
+              #Left Column
+              - type: vertical-stack
+                cards:
+                  - type: camera
+                    entity: camera.front_porch_cam
+                    name: Front Porch
+                  - type: camera
+                    entity: camera.family_room_cam
+                    name: Family Room
+                  - type: camera
+                    entity: camera.dining_room_cam
+                    name: Dining Room
+                  - type: camera
+                    entity: camera.stairs_cam
+                    name: Stairs
+                  - type: camera
+                    entity: camera.garage_cam
+                    name: Garage
+                  - type: camera
+                    entity: camera.front_yard_cam
+                    name: Front Yard
+
+          #Right Column
+          - type: vertical-stack
+            cards:
+              - type: vertical-stack
+                cards:
+                  - type: camera
+                    entity: camera.back_porch_cam
+                    name: Back Porch
+                  - type: camera
+                    entity: camera.living_room_cam
+                    name: Living Room
+                  - type: camera
+                    entity: camera.kitchen_cam
+                    name: Kitchen
+                  - type: camera
+                    entity: camera.upstairs_cam
+                    name: Upstairs
+                  - type: camera
+                    entity: camera.driveway_cam
+                    name: Driveway
+                  - type: camera
+                    entity: camera.back_yard_cam
+                    name: Back Yard
+
   #Network Information
   - panel: true
     icon: 'mdi:wifi'

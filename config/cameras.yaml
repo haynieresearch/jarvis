@@ -21,56 +21,61 @@
   still_image_url: https://radblast.wunderground.com/cgi-bin/radar/WUNIDS_map?station=ICX&brand=wui&num=1&delay=100&type=NTP&frame=0&scale=1&noclutter=0&showstorms=5&mapx=400&mapy=240&centerx=400&centery=240&transx=0&transy=0&showlabels=1&severe=0&rainsnow=0&lightning=0&smooth=0&rand=24427697&lat=0&lon=0&label=you%20name:%20RadarGA%20-%20
 
 - platform: ffmpeg
-  name: Front Porch
+  name: front_porch_cam
   input: -rtsp_transport tcp -i !secret front_porch_cam
   extra_arguments: '-vf "scale=384:216"'
 
 - platform: ffmpeg
-  name: Back Porch
+  name: back_porch_cam
   input: -rtsp_transport tcp -i !secret back_porch_cam
   extra_arguments: '-vf "scale=384:216"'
 
 - platform: ffmpeg
-  name: Family Room
+  name: family_room_cam
   input: -rtsp_transport tcp -i !secret family_room_cam
   extra_arguments: '-vf "scale=384:216"'
 
 - platform: ffmpeg
-  name: Living Room
+  name: living_room_cam
   input: -rtsp_transport tcp -i !secret living_room_cam
   extra_arguments: '-vf "scale=384:216"'
 
 - platform: ffmpeg
-  name: Dining Room
+  name: dining_room_cam
   input: -rtsp_transport tcp -i !secret dining_room_cam
   extra_arguments: '-vf "scale=384:216"'
 
 - platform: ffmpeg
-  name: Kitchen
+  name: kitchen_cam
   input: -rtsp_transport tcp -i !secret kitchen_cam
   extra_arguments: '-vf "scale=384:216"'
 
 - platform: ffmpeg
-  name: Stairs
+  name: stairs_cam
   input: -rtsp_transport tcp -i !secret stairs_cam
   extra_arguments: '-vf "scale=384:216"'
 
 - platform: ffmpeg
-  name: Upstairs
+  name: upstairs_cam
   input: -rtsp_transport tcp -i !secret upstairs_cam
   extra_arguments: '-vf "scale=384:216"'
 
 - platform: ffmpeg
-  name: Garage
+  name: garage_cam
   input: -rtsp_transport tcp -i !secret garage_cam
   extra_arguments: '-vf "scale=384:216"'
 
 - platform: ffmpeg
-  name: Front Yard
+  name: front_yard_cam
   input: -rtsp_transport tcp -i !secret front_yard_cam
   extra_arguments: '-vf "scale=384:216"'
 
 - platform: ffmpeg
-  name: Back Yard
+  name: back_yard_cam
   input: -rtsp_transport tcp -i !secret back_yard_cam
+  extra_arguments: '-vf "scale=384:216"'
+
+- platform: ffmpeg
+  name: driveway_cam
+  input: -rtsp_transport tcp -i !secret driveway_cam
   extra_arguments: '-vf "scale=384:216"'
