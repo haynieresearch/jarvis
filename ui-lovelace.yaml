@@ -114,22 +114,22 @@ views:
               #Left Column
               - type: vertical-stack
                 cards:
-                  - type: camera
+                  - type: picture-entity
                     entity: camera.front_porch_cam
                     name: Front Porch
-                  - type: camera
+                  - type: picture-entity
                     entity: camera.family_room_cam
                     name: Family Room
-                  - type: camera
+                  - type: picture-entity
                     entity: camera.dining_room_cam
                     name: Dining Room
-                  - type: camera
+                  - type: picture-entity
                     entity: camera.stairs_cam
                     name: Stairs
-                  - type: camera
+                  - type: picture-entity
                     entity: camera.garage_cam
                     name: Garage
-                  - type: camera
+                  - type: picture-entity
                     entity: camera.front_yard_cam
                     name: Front Yard
 
@@ -138,22 +138,22 @@ views:
             cards:
               - type: vertical-stack
                 cards:
-                  - type: camera
+                  - type: picture-entity
                     entity: camera.back_porch_cam
                     name: Back Porch
-                  - type: camera
+                  - type: picture-entity
                     entity: camera.living_room_cam
                     name: Living Room
-                  - type: camera
+                  - type: picture-entity
                     entity: camera.kitchen_cam
                     name: Kitchen
-                  - type: camera
+                  - type: picture-entity
                     entity: camera.upstairs_cam
                     name: Upstairs
-                  - type: camera
+                  - type: picture-entity
                     entity: camera.driveway_cam
                     name: Driveway
-                  - type: camera
+                  - type: picture-entity
                     entity: camera.back_yard_cam
                     name: Back Yard
 
