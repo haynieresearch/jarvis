@@ -1,0 +1,3212 @@
+{
+    "version": 1,
+    "key": "core.restore_state",
+    "data": [
+        {
+            "state": {
+                "entity_id": "person.haynie",
+                "state": "unknown",
+                "attributes": {
+                    "editable": true,
+                    "id": "haynie",
+                    "source": "person.haynie",
+                    "user_id": "81e7cef731ff4742b0fa9c4d314d2c6d",
+                    "friendly_name": "HAYNIE"
+                },
+                "last_changed": "2021-11-05T17:45:43.242923+00:00",
+                "last_updated": "2021-11-05T17:45:43.242923+00:00",
+                "context": {
+                    "id": "32d7c9883e6011ec96b287368e5b085e",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "input_number.systemvolume",
+                "state": "100.0",
+                "attributes": {
+                    "initial": 100.0,
+                    "editable": false,
+                    "min": 1.0,
+                    "max": 100.0,
+                    "step": 1.0,
+                    "mode": "slider",
+                    "friendly_name": "System Volume",
+                    "icon": "mdi:volume-high"
+                },
+                "last_changed": "2021-11-05T17:45:47.174353+00:00",
+                "last_updated": "2021-11-05T17:45:47.174353+00:00",
+                "context": {
+                    "id": "352fab183e6011ecb0c3b33b47ef21c2",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "input_select.rule_freq",
+                "state": "Paused",
+                "attributes": {
+                    "options": [
+                        "Paused",
+                        "5",
+                        "10",
+                        "15",
+                        "30"
+                    ],
+                    "editable": false,
+                    "friendly_name": "Rule Frequency (Minutes)",
+                    "icon": "mdi:timer"
+                },
+                "last_changed": "2021-11-05T17:45:47.175080+00:00",
+                "last_updated": "2021-11-05T17:45:47.175080+00:00",
+                "context": {
+                    "id": "352fc9663e6011ec896f9986fc45e499",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "input_boolean.hvacautomation",
+                "state": "on",
+                "attributes": {
+                    "editable": false,
+                    "friendly_name": "HVAC Automation",
+                    "icon": "mdi:nest-thermostat"
+                },
+                "last_changed": "2021-11-05T17:45:47.175857+00:00",
+                "last_updated": "2021-11-05T17:45:47.175857+00:00",
+                "context": {
+                    "id": "352fe5483e6011ec9b61590b8d88ae0f",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "input_boolean.sound_alarm",
+                "state": "off",
+                "attributes": {
+                    "editable": false,
+                    "friendly_name": "Sound Alarm",
+                    "icon": "mdi:alarm-bell"
+                },
+                "last_changed": "2021-11-05T17:45:47.176578+00:00",
+                "last_updated": "2021-11-05T17:45:47.176578+00:00",
+                "context": {
+                    "id": "353003943e6011ec94ae73fb095eed64",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "input_boolean.garage_hazard",
+                "state": "off",
+                "attributes": {
+                    "editable": false,
+                    "friendly_name": "Garage Hazard",
+                    "icon": "mdi:alert-outline"
+                },
+                "last_changed": "2021-11-05T17:45:47.180999+00:00",
+                "last_updated": "2021-11-05T17:45:47.180999+00:00",
+                "context": {
+                    "id": "3530ae623e6011eca4b84564e9b97cf8",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "input_boolean.garage_alarm",
+                "state": "off",
+                "attributes": {
+                    "editable": false,
+                    "friendly_name": "Garage Alarm",
+                    "icon": "mdi:alarm-bell"
+                },
+                "last_changed": "2021-11-05T17:45:47.181853+00:00",
+                "last_updated": "2021-11-05T17:45:47.181853+00:00",
+                "context": {
+                    "id": "3530d0b03e6011eca674ef55bc1d8ce3",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "input_boolean.firealarm",
+                "state": "off",
+                "attributes": {
+                    "editable": false,
+                    "friendly_name": "Fire Alarm",
+                    "icon": "mdi:fire"
+                },
+                "last_changed": "2021-11-05T17:45:47.182612+00:00",
+                "last_updated": "2021-11-05T17:45:47.182612+00:00",
+                "context": {
+                    "id": "3530ef2e3e6011ecbcee91c7651e5376",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "input_boolean.coalarm",
+                "state": "off",
+                "attributes": {
+                    "editable": false,
+                    "friendly_name": "Carbon Monoxide Alarm",
+                    "icon": "mdi:skull"
+                },
+                "last_changed": "2021-11-05T17:45:47.183641+00:00",
+                "last_updated": "2021-11-05T17:45:47.183641+00:00",
+                "context": {
+                    "id": "353116b03e6011ec9f91236f8427c7a1",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "input_boolean.nighttimemode",
+                "state": "on",
+                "attributes": {
+                    "editable": false,
+                    "friendly_name": "Night Time Mode",
+                    "icon": "mdi:weather-night"
+                },
+                "last_changed": "2021-11-05T17:45:47.184282+00:00",
+                "last_updated": "2021-11-05T17:45:47.184282+00:00",
+                "context": {
+                    "id": "353131943e6011ec93e8a17a99525456",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "input_boolean.whitenoise",
+                "state": "off",
+                "attributes": {
+                    "editable": false,
+                    "friendly_name": "White Noise",
+                    "icon": "mdi:volume-high"
+                },
+                "last_changed": "2021-11-05T17:45:47.184852+00:00",
+                "last_updated": "2021-11-05T17:45:47.184852+00:00",
+                "context": {
+                    "id": "3531483e3e6011eca8489d72b6727248",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "alarm_control_panel.home_alarm",
+                "state": "disarmed",
+                "attributes": {
+                    "code_format": "number",
+                    "changed_by": null,
+                    "code_arm_required": true,
+                    "friendly_name": "Home Security",
+                    "supported_features": 31,
+                    "icon": "mdi:security-home"
+                },
+                "last_changed": "2021-11-05T17:45:48.847010+00:00",
+                "last_updated": "2021-11-05T17:45:48.847010+00:00",
+                "context": {
+                    "id": "362ee1f63e6011ec99f6a3e8db748e74",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.downstairs_climate_off_to_on_ac",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "climate_downstairs_off_to_on_ac",
+                    "friendly_name": "Downstairs Climate Off to On AC"
+                },
+                "last_changed": "2021-11-05T17:45:49.400082+00:00",
+                "last_updated": "2021-11-05T17:45:49.400082+00:00",
+                "context": {
+                    "id": "36833fbe3e6011ec92b7bbb2f2b1d279",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.downstairs_climate_off_to_on_heat",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "climate_downstairs_off_to_on_heat",
+                    "friendly_name": "Downstairs Climate Off to On Heat"
+                },
+                "last_changed": "2021-11-05T17:45:49.402474+00:00",
+                "last_updated": "2021-11-05T17:45:49.402474+00:00",
+                "context": {
+                    "id": "3683a6523e6011eca4793f423a373555",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.upstairs_climate_off_to_on_ac",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "climate_upstairs_off_to_on_ac",
+                    "friendly_name": "Upstairs Climate Off to On AC"
+                },
+                "last_changed": "2021-11-05T17:45:49.403328+00:00",
+                "last_updated": "2021-11-05T17:45:49.403328+00:00",
+                "context": {
+                    "id": "3683caf03e6011ecb7fcf51d6bebde0c",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.upstairs_climate_off_to_on_heat",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "climate_upstairs_off_to_on_heat",
+                    "friendly_name": "Upstairs Climate Off to On Heat"
+                },
+                "last_changed": "2021-11-05T17:45:49.404124+00:00",
+                "last_updated": "2021-11-05T17:45:49.404124+00:00",
+                "context": {
+                    "id": "3683eada3e6011ecbd4addd0305f923a",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.downstairs_max_temp",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "climate_downstairs_max_temp",
+                    "friendly_name": "Downstairs Max Temp"
+                },
+                "last_changed": "2021-11-05T17:45:49.404909+00:00",
+                "last_updated": "2021-11-05T17:45:49.404909+00:00",
+                "context": {
+                    "id": "368409943e6011eca46e0164428a6000",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.upstairs_max_temp",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "climate_upstairs_max_temp",
+                    "friendly_name": "Upstairs Max Temp"
+                },
+                "last_changed": "2021-11-05T17:45:49.405703+00:00",
+                "last_updated": "2021-11-05T17:45:49.405703+00:00",
+                "context": {
+                    "id": "3684289c3e6011ec86ef33204fa7e070",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.downstairs_min_temp",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "climate_downstairs_min_temp",
+                    "friendly_name": "Downstairs Min Temp"
+                },
+                "last_changed": "2021-11-05T17:45:49.413171+00:00",
+                "last_updated": "2021-11-05T17:45:49.413171+00:00",
+                "context": {
+                    "id": "368549903e6011ecb7f13fe893a3f6a6",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.upstairs_min_temp",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "climate_upstairs_min_temp",
+                    "friendly_name": "Upstairs Min Temp"
+                },
+                "last_changed": "2021-11-05T17:45:49.414171+00:00",
+                "last_updated": "2021-11-05T17:45:49.414171+00:00",
+                "context": {
+                    "id": "3685730c3e6011ec9522fdebe1d047c2",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.downstairs_ac_day_set",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "climate_downstairs_ac_day_set",
+                    "friendly_name": "Downstairs AC Day Set"
+                },
+                "last_changed": "2021-11-05T17:45:49.414967+00:00",
+                "last_updated": "2021-11-05T17:45:49.414967+00:00",
+                "context": {
+                    "id": "368592943e6011ec90e73b2fef20ad68",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.upstairs_ac_day_set",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "climate_upstairs_ac_day_set",
+                    "friendly_name": "Upstairs AC Day Set"
+                },
+                "last_changed": "2021-11-05T17:45:49.415870+00:00",
+                "last_updated": "2021-11-05T17:45:49.415870+00:00",
+                "context": {
+                    "id": "3685b1ca3e6011ec99db41d9b0879861",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.downstairs_heat_day_set",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "climate_downstairs_heat_day_set",
+                    "friendly_name": "Downstairs Heat Day Set"
+                },
+                "last_changed": "2021-11-05T17:45:49.416812+00:00",
+                "last_updated": "2021-11-05T17:45:49.416812+00:00",
+                "context": {
+                    "id": "3685da1e3e6011ecb6c437ea2ca96eb1",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.upstairs_heat_day_set",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "climate_upstairs_heat_day_set",
+                    "friendly_name": "Upstairs Heat Day Set"
+                },
+                "last_changed": "2021-11-05T17:45:49.418102+00:00",
+                "last_updated": "2021-11-05T17:45:49.418102+00:00",
+                "context": {
+                    "id": "3685fa1a3e6011ec86d887d32ebb1f29",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.downstairs_ac_night_set",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "climate_downstairs_ac_night_set",
+                    "friendly_name": "Downstairs AC Night Set"
+                },
+                "last_changed": "2021-11-05T17:45:49.419840+00:00",
+                "last_updated": "2021-11-05T17:45:49.419840+00:00",
+                "context": {
+                    "id": "36864f3a3e6011ec8953edc90b049475",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.upstairs_ac_night_set",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "climate_upstairs_ac_night_set",
+                    "friendly_name": "Upstairs AC Night Set"
+                },
+                "last_changed": "2021-11-05T17:45:49.420741+00:00",
+                "last_updated": "2021-11-05T17:45:49.420741+00:00",
+                "context": {
+                    "id": "368673d43e6011eca5e7fdcf86647657",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.downstairs_heat_night_set",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "climate_downstairs_heat_night_set",
+                    "friendly_name": "Downstairs Heat Night Set"
+                },
+                "last_changed": "2021-11-05T17:45:49.421537+00:00",
+                "last_updated": "2021-11-05T17:45:49.421537+00:00",
+                "context": {
+                    "id": "368691e23e6011ecba787b7b7238cbfd",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.upstairs_heat_night_set",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "climate_upstairs_heat_night_set",
+                    "friendly_name": "Upstairs Heat Night Set"
+                },
+                "last_changed": "2021-11-05T17:45:49.422269+00:00",
+                "last_updated": "2021-11-05T17:45:49.422269+00:00",
+                "context": {
+                    "id": "3686afec3e6011ecab5b8f416c15d45f",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.downstairs_ac_day",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "climate_downstairs_ac_day",
+                    "friendly_name": "Downstairs AC Day"
+                },
+                "last_changed": "2021-11-05T17:45:49.423150+00:00",
+                "last_updated": "2021-11-05T17:45:49.423150+00:00",
+                "context": {
+                    "id": "3686d1e63e6011ec857c556d2434e560",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.upstairs_ac_day",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "climate_upstairs_ac_day",
+                    "friendly_name": "Upstairs AC Day"
+                },
+                "last_changed": "2021-11-05T17:45:49.423951+00:00",
+                "last_updated": "2021-11-05T17:45:49.423951+00:00",
+                "context": {
+                    "id": "3686f1663e6011ecb58c7b6eb4977d21",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.downstairs_heat_day",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "climate_downstairs_heat_day",
+                    "friendly_name": "Downstairs Heat Day"
+                },
+                "last_changed": "2021-11-05T17:45:49.425545+00:00",
+                "last_updated": "2021-11-05T17:45:49.425545+00:00",
+                "context": {
+                    "id": "36872d283e6011ec802cb9a94eb2069d",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.upstairs_heat_day",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "climate_upstairs_heat_day",
+                    "friendly_name": "Upstairs Heat Day"
+                },
+                "last_changed": "2021-11-05T17:45:49.426529+00:00",
+                "last_updated": "2021-11-05T17:45:49.426529+00:00",
+                "context": {
+                    "id": "368754263e6011eca9e5dd2dbd61b6a4",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.downstairs_ac_night",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "climate_downstairs_ac_night",
+                    "friendly_name": "Downstairs AC Night"
+                },
+                "last_changed": "2021-11-05T17:45:49.427338+00:00",
+                "last_updated": "2021-11-05T17:45:49.427338+00:00",
+                "context": {
+                    "id": "368775063e6011ec86b3438715db820f",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.upstairs_ac_night",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "climate_upstairs_ac_night",
+                    "friendly_name": "Upstairs AC Night"
+                },
+                "last_changed": "2021-11-05T17:45:49.428131+00:00",
+                "last_updated": "2021-11-05T17:45:49.428131+00:00",
+                "context": {
+                    "id": "368794c83e6011ecad550feff6582959",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.downstairs_heat_night",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "climate_downstairs_heat_night",
+                    "friendly_name": "Downstairs Heat Night"
+                },
+                "last_changed": "2021-11-05T17:45:49.428944+00:00",
+                "last_updated": "2021-11-05T17:45:49.428944+00:00",
+                "context": {
+                    "id": "3687b4763e6011ec86e06f00f4482a7f",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.upstairs_heat_night",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "climate_upstairs_heat_night",
+                    "friendly_name": "Upstairs Heat Night"
+                },
+                "last_changed": "2021-11-05T17:45:49.429977+00:00",
+                "last_updated": "2021-11-05T17:45:49.429977+00:00",
+                "context": {
+                    "id": "3687dc243e6011ec81d8672c19d1bb86",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.hudsons_room_fan_on",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "hudsons_room_fan_on",
+                    "friendly_name": "Hudsons Room Fan On"
+                },
+                "last_changed": "2021-11-05T17:45:49.430816+00:00",
+                "last_updated": "2021-11-05T17:45:49.430816+00:00",
+                "context": {
+                    "id": "3687fd643e6011ecac81c3df101be742",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.hudsons_room_fan_off",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "hudsons_room_fan_off",
+                    "friendly_name": "Hudsons Room Fan Off"
+                },
+                "last_changed": "2021-11-05T17:45:49.431592+00:00",
+                "last_updated": "2021-11-05T17:45:49.431592+00:00",
+                "context": {
+                    "id": "36881bfe3e6011ec92b06b9da9021d59",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.wesleys_room_fan_on",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "wesleys_room_fan_on",
+                    "friendly_name": "Wesleys Room Fan On"
+                },
+                "last_changed": "2021-11-05T17:45:49.432330+00:00",
+                "last_updated": "2021-11-05T17:45:49.432330+00:00",
+                "context": {
+                    "id": "368838383e6011ecb939a91d7e0c4b94",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.wesleys_room_fan_off",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "wesleys_room_fan_off",
+                    "friendly_name": "Wesleys Room Fan Off"
+                },
+                "last_changed": "2021-11-05T17:45:49.433081+00:00",
+                "last_updated": "2021-11-05T17:45:49.433081+00:00",
+                "context": {
+                    "id": "368856403e6011ec902cdb12d44944dc",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.outdoor_lighting_sunset",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "lighting_outdoor_sunset",
+                    "friendly_name": "Outdoor Lighting Sunset"
+                },
+                "last_changed": "2021-11-05T17:45:49.433858+00:00",
+                "last_updated": "2021-11-05T17:45:49.433858+00:00",
+                "context": {
+                    "id": "368874643e6011ecb65727d280fc966c",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.outdoor_lighting_sunrise",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "lighting_outdoor_sunrise",
+                    "friendly_name": "Outdoor Lighting Sunrise"
+                },
+                "last_changed": "2021-11-05T17:45:49.434881+00:00",
+                "last_updated": "2021-11-05T17:45:49.434881+00:00",
+                "context": {
+                    "id": "36889bb43e6011ec88131b6b98f3d8df",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.tv_backlight_daily_on",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "tv_backlight_daily_on",
+                    "friendly_name": "TV Backlight Daily On"
+                },
+                "last_changed": "2021-11-05T17:45:49.435919+00:00",
+                "last_updated": "2021-11-05T17:45:49.435919+00:00",
+                "context": {
+                    "id": "3688c3fe3e6011ec89833103c46f8bdd",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.upstairs_bathroom_main_nightlight_on",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "upstairs_bathroom_main_nightlight_on",
+                    "friendly_name": "Upstairs Bathroom Main Nightlight On"
+                },
+                "last_changed": "2021-11-05T17:45:49.436874+00:00",
+                "last_updated": "2021-11-05T17:45:49.436874+00:00",
+                "context": {
+                    "id": "3688e9c83e6011ec83799977b32c343a",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.upstairs_bathroom_main_nightlight_automation",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "upstairs_bathroom_main_nightlight_automation",
+                    "friendly_name": "Upstairs Bathroom Main Nightlight Automation"
+                },
+                "last_changed": "2021-11-05T17:45:49.437887+00:00",
+                "last_updated": "2021-11-05T17:45:49.437887+00:00",
+                "context": {
+                    "id": "3689115c3e6011ec85dcb73138bc959c",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.master_shower_color_loop",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "master_shower_colorloop",
+                    "friendly_name": "Master Shower Color Loop"
+                },
+                "last_changed": "2021-11-05T17:45:49.438699+00:00",
+                "last_updated": "2021-11-05T17:45:49.438699+00:00",
+                "context": {
+                    "id": "368931903e6011ec96bf9b0f2141feba",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.security_armed",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "security_armed",
+                    "friendly_name": "Security Armed"
+                },
+                "last_changed": "2021-11-05T17:45:49.439481+00:00",
+                "last_updated": "2021-11-05T17:45:49.439481+00:00",
+                "context": {
+                    "id": "36894f083e6011ec868155693d535fe0",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.security_armed_home",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "security_disarmed",
+                    "friendly_name": "Security Armed Home"
+                },
+                "last_changed": "2021-11-05T17:45:49.440728+00:00",
+                "last_updated": "2021-11-05T17:45:49.440728+00:00",
+                "context": {
+                    "id": "36897f343e6011ec88790d6265afe8fd",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.security_alert_1",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "security_alert_1",
+                    "friendly_name": "Security Alert 1"
+                },
+                "last_changed": "2021-11-05T17:45:49.441618+00:00",
+                "last_updated": "2021-11-05T17:45:49.441618+00:00",
+                "context": {
+                    "id": "3689a3423e6011ec845179d50f7261f1",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.security_alert_2",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "security_alert_2",
+                    "friendly_name": "Security Alert 2"
+                },
+                "last_changed": "2021-11-05T17:45:49.442406+00:00",
+                "last_updated": "2021-11-05T17:45:49.442406+00:00",
+                "context": {
+                    "id": "3689c2483e6011ec966983c42349fc24",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.sensors_changed_when_security_armed",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "security_sensors_changed_when_armed",
+                    "friendly_name": "Sensors Changed When Security Armed"
+                },
+                "last_changed": "2021-11-05T17:45:49.443190+00:00",
+                "last_updated": "2021-11-05T17:45:49.443190+00:00",
+                "context": {
+                    "id": "3689e0ee3e6011ec906a69345d81aa71",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.lights_on_while_away_dining_room",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "security_lights_on_while_away_dining_room",
+                    "friendly_name": "Lights On While Away - Dining Room"
+                },
+                "last_changed": "2021-11-05T17:45:49.443975+00:00",
+                "last_updated": "2021-11-05T17:45:49.443975+00:00",
+                "context": {
+                    "id": "3689ff9e3e6011ecb53c2147436884b8",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.turn_off_lights_while_away_dining_room",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "security_lights_off_while_away_dining_room",
+                    "friendly_name": "Turn Off Lights While Away - Dining Room"
+                },
+                "last_changed": "2021-11-05T17:45:49.444966+00:00",
+                "last_updated": "2021-11-05T17:45:49.444966+00:00",
+                "context": {
+                    "id": "368a25e23e6011ecadec9358b50e6ec8",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.lights_on_while_away_kitchen",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "security_lights_on_while_away_kitchen",
+                    "friendly_name": "Lights On While Away - Kitchen"
+                },
+                "last_changed": "2021-11-05T17:45:49.446188+00:00",
+                "last_updated": "2021-11-05T17:45:49.446188+00:00",
+                "context": {
+                    "id": "368a54f03e6011eca990d1eeba5d2327",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.turn_off_lights_while_away_kitchen",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "security_lights_off_while_away_kitchen",
+                    "friendly_name": "Turn Off Lights While Away - Kitchen"
+                },
+                "last_changed": "2021-11-05T17:45:49.447077+00:00",
+                "last_updated": "2021-11-05T17:45:49.447077+00:00",
+                "context": {
+                    "id": "368a78863e6011ecb1a8e7b1f6225f2a",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.turn_on_alarm",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "security_turn_on_alarm",
+                    "friendly_name": "Turn On Alarm"
+                },
+                "last_changed": "2021-11-05T17:45:49.448455+00:00",
+                "last_updated": "2021-11-05T17:45:49.448455+00:00",
+                "context": {
+                    "id": "368aab363e6011ec96c7890825fb4b0e",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.turn_off_alarm",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "security_turn_off_alarm",
+                    "friendly_name": "Turn Off Alarm"
+                },
+                "last_changed": "2021-11-05T17:45:49.449833+00:00",
+                "last_updated": "2021-11-05T17:45:49.449833+00:00",
+                "context": {
+                    "id": "368ae2c03e6011ecae135974472a7771",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.panic_alarm_on",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "security_panic_alarm_on",
+                    "friendly_name": "Panic Alarm On"
+                },
+                "last_changed": "2021-11-05T17:45:49.451131+00:00",
+                "last_updated": "2021-11-05T17:45:49.451131+00:00",
+                "context": {
+                    "id": "368b15de3e6011ecade73115524d6503",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.panic_alarm_off",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "security_panic_alarm_off",
+                    "friendly_name": "Panic Alarm Off"
+                },
+                "last_changed": "2021-11-05T17:45:49.452103+00:00",
+                "last_updated": "2021-11-05T17:45:49.452103+00:00",
+                "context": {
+                    "id": "368b3cac3e6011ecabacf3472b9393b1",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.upstairs_panic_alarm_on",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "security_upstairs_panic_alarm_on",
+                    "friendly_name": "Upstairs Panic Alarm On"
+                },
+                "last_changed": "2021-11-05T17:45:49.452929+00:00",
+                "last_updated": "2021-11-05T17:45:49.452929+00:00",
+                "context": {
+                    "id": "368b5d523e6011ec804e33cc84b7e8d2",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.upstairs_panic_alarm_off",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "security_upstairs_panic_alarm_off",
+                    "friendly_name": "Upstairs Panic Alarm Off"
+                },
+                "last_changed": "2021-11-05T17:45:49.453717+00:00",
+                "last_updated": "2021-11-05T17:45:49.453717+00:00",
+                "context": {
+                    "id": "368b7c3a3e6011ecb405a1a1a3b860ab",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.sound_alarm_on",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "security_sound_alarm_on",
+                    "friendly_name": "Sound Alarm On"
+                },
+                "last_changed": "2021-11-05T17:45:49.454484+00:00",
+                "last_updated": "2021-11-05T17:45:49.454484+00:00",
+                "context": {
+                    "id": "368b991a3e6011ec8b5b55160ef3b3b9",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.sound_alarm_off",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "security_sound_alarm_off",
+                    "friendly_name": "Sound Alarm Off"
+                },
+                "last_changed": "2021-11-05T17:45:49.455462+00:00",
+                "last_updated": "2021-11-05T17:45:49.455462+00:00",
+                "context": {
+                    "id": "368bbea63e6011ec9b5b63383ce899cb",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.garage_alarm_on",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "security_garage_alarm_on",
+                    "friendly_name": "Garage Alarm On"
+                },
+                "last_changed": "2021-11-05T17:45:49.456924+00:00",
+                "last_updated": "2021-11-05T17:45:49.456924+00:00",
+                "context": {
+                    "id": "368bf7ca3e6011eca570158433e6445a",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.garage_alarm_off",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "security_garage_alarm_off",
+                    "friendly_name": "Garage Alarm Off"
+                },
+                "last_changed": "2021-11-05T17:45:49.457909+00:00",
+                "last_updated": "2021-11-05T17:45:49.457909+00:00",
+                "context": {
+                    "id": "368c1f7a3e6011eca883bf931eed62e8",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.garage_hazard_on",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "security_garage_hazard_on",
+                    "friendly_name": "Garage hazard On"
+                },
+                "last_changed": "2021-11-05T17:45:49.458712+00:00",
+                "last_updated": "2021-11-05T17:45:49.458712+00:00",
+                "context": {
+                    "id": "368c3f543e6011ec98cd9d2f7577fd19",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.garage_hazard_off",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "security_garage_hazard_off",
+                    "friendly_name": "Garage hazard Off"
+                },
+                "last_changed": "2021-11-05T17:45:49.459487+00:00",
+                "last_updated": "2021-11-05T17:45:49.459487+00:00",
+                "context": {
+                    "id": "368c5c583e6011ec93fb590d2ef365e7",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.silence_alarm_after_15_minutes",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "security_silance_alarm_after_15_min",
+                    "friendly_name": "Silence Alarm After 15 Minutes"
+                },
+                "last_changed": "2021-11-05T17:45:49.460213+00:00",
+                "last_updated": "2021-11-05T17:45:49.460213+00:00",
+                "context": {
+                    "id": "368c7a0c3e6011ec9e71ad75aa0238be",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.fire_sensor_on",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "fire_sensor_on",
+                    "friendly_name": "Fire Sensor On"
+                },
+                "last_changed": "2021-11-05T17:45:49.460999+00:00",
+                "last_updated": "2021-11-05T17:45:49.460999+00:00",
+                "context": {
+                    "id": "368c98a83e6011eca864d73828ebe37c",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.fans_off_when_fire",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "fans_off_when_fire",
+                    "friendly_name": "Fans off When Fire"
+                },
+                "last_changed": "2021-11-05T17:45:49.461912+00:00",
+                "last_updated": "2021-11-05T17:45:49.461912+00:00",
+                "context": {
+                    "id": "368cbbc83e6011ecb49f45ccae63432f",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.excessive_heat_when_fire",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "excessive_heat_when_fire",
+                    "friendly_name": "Excessive Heat When Fire"
+                },
+                "last_changed": "2021-11-05T17:45:49.462775+00:00",
+                "last_updated": "2021-11-05T17:45:49.462775+00:00",
+                "context": {
+                    "id": "368cdde23e6011ecba23f95de40fb38c",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.motion_sensors_changed_when_fire_alarm",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "motion_when_fire",
+                    "friendly_name": "Motion Sensors Changed When Fire Alarm"
+                },
+                "last_changed": "2021-11-05T17:45:49.463561+00:00",
+                "last_updated": "2021-11-05T17:45:49.463561+00:00",
+                "context": {
+                    "id": "368cfcb03e6011ec9d623505df15505e",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.fire_sensor_off",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "fire_sensor_off",
+                    "friendly_name": "Fire Sensor Off"
+                },
+                "last_changed": "2021-11-05T17:45:49.464280+00:00",
+                "last_updated": "2021-11-05T17:45:49.464280+00:00",
+                "context": {
+                    "id": "368d191c3e6011ec98419fb56ed22d96",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.fire_alarm_on",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "security_fire_alarm_on",
+                    "friendly_name": "Fire Alarm On"
+                },
+                "last_changed": "2021-11-05T17:45:49.465071+00:00",
+                "last_updated": "2021-11-05T17:45:49.465071+00:00",
+                "context": {
+                    "id": "368d37c03e6011eca28543160ca6482e",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.fire_alarm_off",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "security_fire_alarm_off",
+                    "friendly_name": "Fire Alarm Off"
+                },
+                "last_changed": "2021-11-05T17:45:49.465918+00:00",
+                "last_updated": "2021-11-05T17:45:49.465918+00:00",
+                "context": {
+                    "id": "368d58523e6011ec835a13d34f068d8f",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.co_sensor_on",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "co_sensor_on",
+                    "friendly_name": "CO Sensor On"
+                },
+                "last_changed": "2021-11-05T17:45:49.466781+00:00",
+                "last_updated": "2021-11-05T17:45:49.466781+00:00",
+                "context": {
+                    "id": "368d7a5e3e6011ecb0029587ab2308da",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.fans_on_when_co",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "fans_on_when_co",
+                    "friendly_name": "Fans on When CO"
+                },
+                "last_changed": "2021-11-05T17:45:49.467583+00:00",
+                "last_updated": "2021-11-05T17:45:49.467583+00:00",
+                "context": {
+                    "id": "368d99d03e6011ec9db76993d3a48cd9",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.co_sensor_off",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "co_sensor_off",
+                    "friendly_name": "CO Sensor Off"
+                },
+                "last_changed": "2021-11-05T17:45:49.468325+00:00",
+                "last_updated": "2021-11-05T17:45:49.468325+00:00",
+                "context": {
+                    "id": "368db65a3e6011ecb6e0437c6f3995ae",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.co_alarm_on",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "security_co_alarm_on",
+                    "friendly_name": "CO Alarm On"
+                },
+                "last_changed": "2021-11-05T17:45:49.469078+00:00",
+                "last_updated": "2021-11-05T17:45:49.469078+00:00",
+                "context": {
+                    "id": "368dd46c3e6011ec86685b713b654c1b",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.co_alarm_off",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "security_co_alarm_off",
+                    "friendly_name": "CO Alarm Off"
+                },
+                "last_changed": "2021-11-05T17:45:49.469839+00:00",
+                "last_updated": "2021-11-05T17:45:49.469839+00:00",
+                "context": {
+                    "id": "368df2123e6011ec83bb9943c865d7fb",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.alarm_notification_5_minutes",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "security_alarm_notify_5_min",
+                    "friendly_name": "Alarm Notification 5 Minutes"
+                },
+                "last_changed": "2021-11-05T17:45:49.471937+00:00",
+                "last_updated": "2021-11-05T17:45:49.471937+00:00",
+                "context": {
+                    "id": "368e423a3e6011eca1580325a4a15262",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.panic_alarm_notification_5_minutes",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "security_panic_alarm_notify_5_min",
+                    "friendly_name": "Panic Alarm Notification 5 Minutes"
+                },
+                "last_changed": "2021-11-05T17:45:49.473656+00:00",
+                "last_updated": "2021-11-05T17:45:49.473656+00:00",
+                "context": {
+                    "id": "368e85683e6011ec86655568c2698a45",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.upstairs_panic_alarm_notification_5_minutes",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "security_upstairs_panic_alarm_notify_5_min",
+                    "friendly_name": "Upstairs Panic Alarm Notification 5 Minutes"
+                },
+                "last_changed": "2021-11-05T17:45:49.474601+00:00",
+                "last_updated": "2021-11-05T17:45:49.474601+00:00",
+                "context": {
+                    "id": "368eab883e6011eca0e9810368749920",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.fire_alarm_notification_5_minutes",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "security_fire_alarm_notify_5_min",
+                    "friendly_name": "Fire Alarm Notification 5 Minutes"
+                },
+                "last_changed": "2021-11-05T17:45:49.475466+00:00",
+                "last_updated": "2021-11-05T17:45:49.475466+00:00",
+                "context": {
+                    "id": "368ecc3a3e6011ecb645f1b8e7cec770",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.co_alarm_notification_5_minutes",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "security_co_alarm_notify_5_min",
+                    "friendly_name": "CO Alarm Notification 5 Minutes"
+                },
+                "last_changed": "2021-11-05T17:45:49.476781+00:00",
+                "last_updated": "2021-11-05T17:45:49.476781+00:00",
+                "context": {
+                    "id": "368eff6c3e6011ec96e44d7336ee144d",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.system_volume_slider",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": "2021-11-05T17:33:43.162721+00:00",
+                    "mode": "single",
+                    "current": 0,
+                    "id": "system_volume_slider",
+                    "friendly_name": "System Volume Slider"
+                },
+                "last_changed": "2021-11-05T17:45:49.477662+00:00",
+                "last_updated": "2021-11-05T17:45:49.477662+00:00",
+                "context": {
+                    "id": "368f23483e6011ecb3be2bd0248df1a9",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.system_volume",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": "2021-11-05T17:30:56.745588+00:00",
+                    "mode": "single",
+                    "current": 0,
+                    "id": "system_volume",
+                    "friendly_name": "System Volume"
+                },
+                "last_changed": "2021-11-05T17:45:49.478419+00:00",
+                "last_updated": "2021-11-05T17:45:49.478419+00:00",
+                "context": {
+                    "id": "368f41303e6011ecae813b126a729242",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.system_volume_day",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "system_volume_day",
+                    "friendly_name": "System Volume Day"
+                },
+                "last_changed": "2021-11-05T17:45:49.479163+00:00",
+                "last_updated": "2021-11-05T17:45:49.479163+00:00",
+                "context": {
+                    "id": "368f5e403e6011ec947ae763d8fc9d77",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.system_volume_night",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "system_volume_night",
+                    "friendly_name": "System Volume Night"
+                },
+                "last_changed": "2021-11-05T17:45:49.479879+00:00",
+                "last_updated": "2021-11-05T17:45:49.479879+00:00",
+                "context": {
+                    "id": "368f7a4a3e6011ecb343e5ba8893f131",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.hudson_school_alarm_clock",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "hudson_school_alarm_clock",
+                    "friendly_name": "Hudson School Alarm Clock"
+                },
+                "last_changed": "2021-11-05T17:45:49.480577+00:00",
+                "last_updated": "2021-11-05T17:45:49.480577+00:00",
+                "context": {
+                    "id": "368f95a43e6011ec8244a3c59c3440bb",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.wes_tv_school_night_shutoff",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "wes_tv_school_night_shutoff",
+                    "friendly_name": "Wes TV School Night Shutoff"
+                },
+                "last_changed": "2021-11-05T17:45:49.481294+00:00",
+                "last_updated": "2021-11-05T17:45:49.481294+00:00",
+                "context": {
+                    "id": "368fb1083e6011ec8d4171ea49adb5aa",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.wes_tv_school_night_automation",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "wes_tv_school_night_automation",
+                    "friendly_name": "Wes TV School Night Automation"
+                },
+                "last_changed": "2021-11-05T17:45:49.482051+00:00",
+                "last_updated": "2021-11-05T17:45:49.482051+00:00",
+                "context": {
+                    "id": "368fcf0a3e6011ec9fcfeb0d53e2edf4",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.wesley_weekend_shutoff",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "wes_tv_weekend_shutoff",
+                    "friendly_name": "Wesley Weekend Shutoff"
+                },
+                "last_changed": "2021-11-05T17:45:49.482762+00:00",
+                "last_updated": "2021-11-05T17:45:49.482762+00:00",
+                "context": {
+                    "id": "368feafa3e6011ecb1c227fdc1c7ecd4",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.wesley_weekend_automation",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "wes_tv_weekend_automation",
+                    "friendly_name": "Wesley Weekend Automation"
+                },
+                "last_changed": "2021-11-05T17:45:49.483464+00:00",
+                "last_updated": "2021-11-05T17:45:49.483464+00:00",
+                "context": {
+                    "id": "3690065e3e6011ec98fa351de9c1f6f3",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.hudson_tv_school_night_shutoff",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "hudson_tv_school_night_shutoff",
+                    "friendly_name": "Hudson TV School Night Shutoff"
+                },
+                "last_changed": "2021-11-05T17:45:49.484173+00:00",
+                "last_updated": "2021-11-05T17:45:49.484173+00:00",
+                "context": {
+                    "id": "3690221e3e6011ec9c0e37ea659a97b3",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.hudson_tv_school_night_automation",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "hudson_tv_school_night_automation",
+                    "friendly_name": "Hudson TV School Night Automation"
+                },
+                "last_changed": "2021-11-05T17:45:49.484881+00:00",
+                "last_updated": "2021-11-05T17:45:49.484881+00:00",
+                "context": {
+                    "id": "36903da83e6011ec9e041b6f58aa401a",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.hudson_weekend_shutoff",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "hudson_tv_weekend_shutoff",
+                    "friendly_name": "Hudson Weekend Shutoff"
+                },
+                "last_changed": "2021-11-05T17:45:49.485580+00:00",
+                "last_updated": "2021-11-05T17:45:49.485580+00:00",
+                "context": {
+                    "id": "369059103e6011ec9a2b2b7ec57dbe85",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.hudson_weekend_automation",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "hudson_tv_weekend_automation",
+                    "friendly_name": "Hudson Weekend Automation"
+                },
+                "last_changed": "2021-11-05T17:45:49.486522+00:00",
+                "last_updated": "2021-11-05T17:45:49.486522+00:00",
+                "context": {
+                    "id": "369079223e6011ec889feb681381bc7c",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.wes_tv_summer_shutoff",
+                "state": "off",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "wes_tv_summer_shutoff",
+                    "friendly_name": "Wes TV Summer Shutoff"
+                },
+                "last_changed": "2021-11-05T17:45:49.487308+00:00",
+                "last_updated": "2021-11-05T17:45:49.487308+00:00",
+                "context": {
+                    "id": "36909c303e6011ec99c4831229c0955a",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.wes_tv_summer_automation",
+                "state": "off",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "wes_tv_summer_automation",
+                    "friendly_name": "Wes TV Summer Automation"
+                },
+                "last_changed": "2021-11-05T17:45:49.487932+00:00",
+                "last_updated": "2021-11-05T17:45:49.487932+00:00",
+                "context": {
+                    "id": "3690b5023e6011ecb40213376ba74505",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.hudson_tv_summer_shutoff",
+                "state": "off",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "hudson_tv_summer_shutoff",
+                    "friendly_name": "Hudson TV Summer Shutoff"
+                },
+                "last_changed": "2021-11-05T17:45:49.488580+00:00",
+                "last_updated": "2021-11-05T17:45:49.488580+00:00",
+                "context": {
+                    "id": "3690ce223e6011ecaaac6d7f50100504",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.hudson_tv_summer_automation",
+                "state": "off",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "hudson_tv_summer_automation",
+                    "friendly_name": "Hudson TV Summer Automation"
+                },
+                "last_changed": "2021-11-05T17:45:49.489211+00:00",
+                "last_updated": "2021-11-05T17:45:49.489211+00:00",
+                "context": {
+                    "id": "3690e6da3e6011ec8bd35b130481a8c1",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.hudson_grounded_automation",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "hudson_grounded_automation",
+                    "friendly_name": "Hudson Grounded Automation"
+                },
+                "last_changed": "2021-11-05T17:45:49.489857+00:00",
+                "last_updated": "2021-11-05T17:45:49.489857+00:00",
+                "context": {
+                    "id": "369100223e6011ec9672bff58a1b9790",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.wesley_grounded_automation",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "wesley_grounded_automation",
+                    "friendly_name": "Wesley Grounded Automation"
+                },
+                "last_changed": "2021-11-05T17:45:49.490561+00:00",
+                "last_updated": "2021-11-05T17:45:49.490561+00:00",
+                "context": {
+                    "id": "36911ba43e6011ec8646cd4666203f0f",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.wesley_grounded_input_action",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "wesley_grounded_input_action",
+                    "friendly_name": "Wesley Grounded Input Action"
+                },
+                "last_changed": "2021-11-05T17:45:49.491264+00:00",
+                "last_updated": "2021-11-05T17:45:49.491264+00:00",
+                "context": {
+                    "id": "369137283e6011ecb232f315adeed522",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.hudson_grounded_input_action",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "hudson_grounded_input_action",
+                    "friendly_name": "Hudson Grounded Input Action"
+                },
+                "last_changed": "2021-11-05T17:45:49.492125+00:00",
+                "last_updated": "2021-11-05T17:45:49.492125+00:00",
+                "context": {
+                    "id": "369157c03e6011ec99e967ea0cddda09",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.hudson_grounded_input_action_off",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "hudson_grounded_input_action_off",
+                    "friendly_name": "Hudson Grounded Input Action Off"
+                },
+                "last_changed": "2021-11-05T17:45:49.492939+00:00",
+                "last_updated": "2021-11-05T17:45:49.492939+00:00",
+                "context": {
+                    "id": "3691781e3e6011ec99eeb1882af998fa",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.wesley_grounded_input_action_off",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "wesley.grounded_input_action_off",
+                    "friendly_name": "Wesley Grounded Input Action Off"
+                },
+                "last_changed": "2021-11-05T17:45:49.493665+00:00",
+                "last_updated": "2021-11-05T17:45:49.493665+00:00",
+                "context": {
+                    "id": "369194b43e6011ecb375b76df6930468",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.white_noise_loop_on",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": "2021-11-05T17:41:43.109514+00:00",
+                    "mode": "single",
+                    "current": 0,
+                    "id": "white_noise_loop_on",
+                    "friendly_name": "White Noise Loop On"
+                },
+                "last_changed": "2021-11-05T17:45:49.494397+00:00",
+                "last_updated": "2021-11-05T17:45:49.494397+00:00",
+                "context": {
+                    "id": "3691b16c3e6011ec9667ff5904fa7425",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.white_noise_loop_off",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": "2021-11-05T17:41:42.730956+00:00",
+                    "mode": "single",
+                    "current": 0,
+                    "id": "white_noise_loop_off",
+                    "friendly_name": "White Noise Loop Off"
+                },
+                "last_changed": "2021-11-05T17:45:49.495156+00:00",
+                "last_updated": "2021-11-05T17:45:49.495156+00:00",
+                "context": {
+                    "id": "3691cefa3e6011ec8ccc2b917f468902",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.home_assistant_start",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": "2021-11-05T17:30:08.016247+00:00",
+                    "mode": "single",
+                    "current": 0,
+                    "id": "home_assistant_start",
+                    "friendly_name": "Home Assistant Start"
+                },
+                "last_changed": "2021-11-05T17:45:49.496007+00:00",
+                "last_updated": "2021-11-05T17:45:49.496007+00:00",
+                "context": {
+                    "id": "3691ef943e6011eca2aa3ff9daf012db",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.home_assistant_shutdown",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "home_assistant_shutdown",
+                    "friendly_name": "Home Assistant Shutdown"
+                },
+                "last_changed": "2021-11-05T17:45:49.497112+00:00",
+                "last_updated": "2021-11-05T17:45:49.497112+00:00",
+                "context": {
+                    "id": "36920eb43e6011ec8f8889bc725c4aee",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.update_available_notification",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "update_notification",
+                    "friendly_name": "Update Available Notification"
+                },
+                "last_changed": "2021-11-05T17:45:49.498011+00:00",
+                "last_updated": "2021-11-05T17:45:49.498011+00:00",
+                "context": {
+                    "id": "36923de63e6011ec98339359c85e4c62",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.cpu_use_50",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "cpu_use_50",
+                    "friendly_name": "CPU Use 50"
+                },
+                "last_changed": "2021-11-05T17:45:49.498748+00:00",
+                "last_updated": "2021-11-05T17:45:49.498748+00:00",
+                "context": {
+                    "id": "36925b543e6011ecbfa135b6096e7b35",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.cpu_use_75",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "cpu_use_75",
+                    "friendly_name": "CPU Use 75"
+                },
+                "last_changed": "2021-11-05T17:45:49.499452+00:00",
+                "last_updated": "2021-11-05T17:45:49.499452+00:00",
+                "context": {
+                    "id": "369276ee3e6011ecbc4fb583c33e6352",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.cpu_use_90",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "cpu_use_90",
+                    "friendly_name": "CPU Use 90"
+                },
+                "last_changed": "2021-11-05T17:45:49.500140+00:00",
+                "last_updated": "2021-11-05T17:45:49.500140+00:00",
+                "context": {
+                    "id": "369291f03e6011ec84b6a7301350a6b2",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.cpu_use_95",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "cpu_use_95",
+                    "friendly_name": "CPU Use 95"
+                },
+                "last_changed": "2021-11-05T17:45:49.500898+00:00",
+                "last_updated": "2021-11-05T17:45:49.500898+00:00",
+                "context": {
+                    "id": "3692af483e6011ec9ef6fbcc764e8ec3",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.ram_use_70",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "ram_use_70",
+                    "friendly_name": "Ram Use 70"
+                },
+                "last_changed": "2021-11-05T17:45:49.501626+00:00",
+                "last_updated": "2021-11-05T17:45:49.501626+00:00",
+                "context": {
+                    "id": "3692cbd23e6011ec873fb37772b91be8",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.ram_use_80",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "ram_use_80",
+                    "friendly_name": "Ram Use 80"
+                },
+                "last_changed": "2021-11-05T17:45:49.502366+00:00",
+                "last_updated": "2021-11-05T17:45:49.502366+00:00",
+                "context": {
+                    "id": "3692e8ac3e6011ec92c963849e53c821",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.ram_use_90",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "ram_use_90",
+                    "friendly_name": "Ram Use 90"
+                },
+                "last_changed": "2021-11-05T17:45:49.503103+00:00",
+                "last_updated": "2021-11-05T17:45:49.503103+00:00",
+                "context": {
+                    "id": "369305803e6011ec89b40ffee8762f48",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.ram_use_95",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "ram_use_95",
+                    "friendly_name": "Ram Use 95"
+                },
+                "last_changed": "2021-11-05T17:45:49.503829+00:00",
+                "last_updated": "2021-11-05T17:45:49.503829+00:00",
+                "context": {
+                    "id": "369321c83e6011ec9688f19a501ab383",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.15_min_load_3",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "15_min_load_3",
+                    "friendly_name": "15 Min Load 3"
+                },
+                "last_changed": "2021-11-05T17:45:49.504535+00:00",
+                "last_updated": "2021-11-05T17:45:49.504535+00:00",
+                "context": {
+                    "id": "36933d863e6011ecb3b93fc4af607204",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.15_min_load_4",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "15_min_load_4",
+                    "friendly_name": "15 Min Load 4"
+                },
+                "last_changed": "2021-11-05T17:45:49.505247+00:00",
+                "last_updated": "2021-11-05T17:45:49.505247+00:00",
+                "context": {
+                    "id": "3693595e3e6011ec83d64736b59fc87f",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.15_min_load_5",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "15_min_load_5",
+                    "friendly_name": "15 Min Load 5"
+                },
+                "last_changed": "2021-11-05T17:45:49.506051+00:00",
+                "last_updated": "2021-11-05T17:45:49.506051+00:00",
+                "context": {
+                    "id": "3693780c3e6011eca6e9a16a1e657965",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.chore_reminder",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "chore_reminder",
+                    "friendly_name": "Chore Reminder"
+                },
+                "last_changed": "2021-11-05T17:45:49.506826+00:00",
+                "last_updated": "2021-11-05T17:45:49.506826+00:00",
+                "context": {
+                    "id": "369396c03e6011ecba592d8bff17d736",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.brush_teeth_night_reminder",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "brush_teeth_night_reminder",
+                    "friendly_name": "Brush Teeth Night Reminder"
+                },
+                "last_changed": "2021-11-05T17:45:49.507537+00:00",
+                "last_updated": "2021-11-05T17:45:49.507537+00:00",
+                "context": {
+                    "id": "3693b2b03e6011ec9200af63ee19fd0f",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.wes_shower_reminder",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "wes_shower_reminder",
+                    "friendly_name": "Wes Shower Reminder"
+                },
+                "last_changed": "2021-11-05T17:45:49.508237+00:00",
+                "last_updated": "2021-11-05T17:45:49.508237+00:00",
+                "context": {
+                    "id": "3693ce283e6011ecb8dad3fd51152022",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.wesley_school_night_bed_time",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "wes_school_night_bedtime",
+                    "friendly_name": "Wesley School Night Bed Time"
+                },
+                "last_changed": "2021-11-05T17:45:49.508933+00:00",
+                "last_updated": "2021-11-05T17:45:49.508933+00:00",
+                "context": {
+                    "id": "3693e9383e6011ec90c26365feb286b2",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.homework_reminder",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "homework_reminder",
+                    "friendly_name": "Homework Reminder"
+                },
+                "last_changed": "2021-11-05T17:45:49.509622+00:00",
+                "last_updated": "2021-11-05T17:45:49.509622+00:00",
+                "context": {
+                    "id": "3694043a3e6011ecb0aecd4413178c38",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.dinner_reminder",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "dinner_reminder",
+                    "friendly_name": "Dinner Reminder"
+                },
+                "last_changed": "2021-11-05T17:45:49.510315+00:00",
+                "last_updated": "2021-11-05T17:45:49.510315+00:00",
+                "context": {
+                    "id": "36941f623e6011ec9b88075955dc5b4e",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.lance_sunday_trash_reminder",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "lance_sunday_trash_reminder",
+                    "friendly_name": "Lance Sunday Trash Reminder"
+                },
+                "last_changed": "2021-11-05T17:45:49.511037+00:00",
+                "last_updated": "2021-11-05T17:45:49.511037+00:00",
+                "context": {
+                    "id": "36943b5e3e6011eca838d9d6cdc8d232",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.morning_wx",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "morning_wx",
+                    "friendly_name": "Morning WX"
+                },
+                "last_changed": "2021-11-05T17:45:49.511776+00:00",
+                "last_updated": "2021-11-05T17:45:49.511776+00:00",
+                "context": {
+                    "id": "3694578c3e6011ec999ee5e3c8e93c05",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.mid_morning_wx",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "mid_morning_wx",
+                    "friendly_name": "Mid Morning WX"
+                },
+                "last_changed": "2021-11-05T17:45:49.512670+00:00",
+                "last_updated": "2021-11-05T17:45:49.512670+00:00",
+                "context": {
+                    "id": "369479663e6011ecae7f8dfc5fddd544",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.afternoon_wx",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "afternoon_wx",
+                    "friendly_name": "Afternoon WX"
+                },
+                "last_changed": "2021-11-05T17:45:49.513445+00:00",
+                "last_updated": "2021-11-05T17:45:49.513445+00:00",
+                "context": {
+                    "id": "3694995a3e6011ec89f84172dff570ef",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.evening_wx",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "evening_wx",
+                    "friendly_name": "Evening WX"
+                },
+                "last_changed": "2021-11-05T17:45:49.514170+00:00",
+                "last_updated": "2021-11-05T17:45:49.514170+00:00",
+                "context": {
+                    "id": "3694b5dc3e6011ec8ce93d8286135fe3",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.restart_on_no_network",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "restart_on_no_network",
+                    "friendly_name": "Restart on no Network"
+                },
+                "last_changed": "2021-11-05T17:45:49.514871+00:00",
+                "last_updated": "2021-11-05T17:45:49.514871+00:00",
+                "context": {
+                    "id": "3694d1283e6011eca16111e57d5d1d19",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.rule_reminder_5_min",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "rule_reminder_5",
+                    "friendly_name": "Rule Reminder 5 Min"
+                },
+                "last_changed": "2021-11-05T17:45:49.515563+00:00",
+                "last_updated": "2021-11-05T17:45:49.515563+00:00",
+                "context": {
+                    "id": "3694ec3e3e6011ecaa2c679bfbd70039",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.rule_reminder_10_min",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "rule_reminder_10",
+                    "friendly_name": "Rule Reminder 10 Min"
+                },
+                "last_changed": "2021-11-05T17:45:49.516337+00:00",
+                "last_updated": "2021-11-05T17:45:49.516337+00:00",
+                "context": {
+                    "id": "36950a683e6011ec9a3421970483b6e7",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.rule_reminder_15_min",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "rule_reminder_15",
+                    "friendly_name": "Rule Reminder 15 Min"
+                },
+                "last_changed": "2021-11-05T17:45:49.517045+00:00",
+                "last_updated": "2021-11-05T17:45:49.517045+00:00",
+                "context": {
+                    "id": "369526403e6011ec886a89c9e058ade7",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.rule_reminder_30_min",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "rule_reminder_30",
+                    "friendly_name": "Rule Reminder 30 Min"
+                },
+                "last_changed": "2021-11-05T17:45:49.517743+00:00",
+                "last_updated": "2021-11-05T17:45:49.517743+00:00",
+                "context": {
+                    "id": "369541523e6011ec9b7acbd807eabe34",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.backup_system_data",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "backup_system_data",
+                    "friendly_name": "Backup System Data"
+                },
+                "last_changed": "2021-11-05T17:45:49.518439+00:00",
+                "last_updated": "2021-11-05T17:45:49.518439+00:00",
+                "context": {
+                    "id": "36955ca23e6011eca745cd758adebb38",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.minecraft_user_change",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "minecraft_user_change",
+                    "friendly_name": "Minecraft User Change"
+                },
+                "last_changed": "2021-11-05T17:45:49.519140+00:00",
+                "last_updated": "2021-11-05T17:45:49.519140+00:00",
+                "context": {
+                    "id": "3695781a3e6011ecb928dd3b6087aed5",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.relax_night",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "relax_night",
+                    "friendly_name": "Relax Night"
+                },
+                "last_changed": "2021-11-05T17:45:49.519836+00:00",
+                "last_updated": "2021-11-05T17:45:49.519836+00:00",
+                "context": {
+                    "id": "369593463e6011ec86c747b601bae375",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.speedtest_download",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "speedtest_download",
+                    "friendly_name": "Speedtest Download"
+                },
+                "last_changed": "2021-11-05T17:45:49.520527+00:00",
+                "last_updated": "2021-11-05T17:45:49.520527+00:00",
+                "context": {
+                    "id": "3695ae343e6011ec9109933d0dccfbc5",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.speedtest_upload",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "speedtest_upload",
+                    "friendly_name": "Speedtest Upload"
+                },
+                "last_changed": "2021-11-05T17:45:49.521220+00:00",
+                "last_updated": "2021-11-05T17:45:49.521220+00:00",
+                "context": {
+                    "id": "3695c95e3e6011ecb006197c16f7b552",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.speedtest_ping",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "speedtest_ping",
+                    "friendly_name": "Speedtest Ping"
+                },
+                "last_changed": "2021-11-05T17:45:49.521918+00:00",
+                "last_updated": "2021-11-05T17:45:49.521918+00:00",
+                "context": {
+                    "id": "3695e4943e6011ec9f0329f1ceafba7d",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.love",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": "2021-11-05T17:10:00.009058+00:00",
+                    "mode": "single",
+                    "current": 0,
+                    "id": "love",
+                    "friendly_name": "Love"
+                },
+                "last_changed": "2021-11-05T17:45:49.523665+00:00",
+                "last_updated": "2021-11-05T17:45:49.523665+00:00",
+                "context": {
+                    "id": "369626b43e6011ecac3809eb561fe65a",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.ifttt_webhook",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "ifttt_webhook",
+                    "friendly_name": "ifttt webhook"
+                },
+                "last_changed": "2021-11-05T17:45:49.524636+00:00",
+                "last_updated": "2021-11-05T17:45:49.524636+00:00",
+                "context": {
+                    "id": "36964dc23e6011ec9ca9df38d63ee731",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.shabbat_challah_reminder",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "shabbat_challah_reminder",
+                    "friendly_name": "Shabbat Challah Reminder"
+                },
+                "last_changed": "2021-11-05T17:45:49.525373+00:00",
+                "last_updated": "2021-11-05T17:45:49.525373+00:00",
+                "context": {
+                    "id": "36966b763e6011ecab05f93d8873af31",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.shabbat_2_hour_reminder",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "shabbat_2_hour_reminder",
+                    "friendly_name": "Shabbat 2 Hour Reminder"
+                },
+                "last_changed": "2021-11-05T17:45:49.526208+00:00",
+                "last_updated": "2021-11-05T17:45:49.526208+00:00",
+                "context": {
+                    "id": "36968b6e3e6011ec92aaff229fd4ef63",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.shabbat_1_hour_reminder",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "shabbat_1_hour_reminder",
+                    "friendly_name": "Shabbat 1 Hour Reminder"
+                },
+                "last_changed": "2021-11-05T17:45:49.527165+00:00",
+                "last_updated": "2021-11-05T17:45:49.527165+00:00",
+                "context": {
+                    "id": "3696b0e63e6011ec9cb94d6498e846bb",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.shabbat_30_minute_reminder",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "shabbat_30_minute_reminder",
+                    "friendly_name": "Shabbat 30 Minute Reminder"
+                },
+                "last_changed": "2021-11-05T17:45:49.527897+00:00",
+                "last_updated": "2021-11-05T17:45:49.527897+00:00",
+                "context": {
+                    "id": "3696cdee3e6011ec8231f35ac8aa866f",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        },
+        {
+            "state": {
+                "entity_id": "automation.shabbat_reminder",
+                "state": "on",
+                "attributes": {
+                    "last_triggered": null,
+                    "mode": "single",
+                    "current": 0,
+                    "id": "shabbat_reminder",
+                    "friendly_name": "Shabbat Reminder"
+                },
+                "last_changed": "2021-11-05T17:45:49.528596+00:00",
+                "last_updated": "2021-11-05T17:45:49.528596+00:00",
+                "context": {
+                    "id": "3696e9743e6011ecbbe2cb1f20de66ce",
+                    "parent_id": null,
+                    "user_id": null
+                }
+            },
+            "last_seen": "2021-11-05T17:45:58.873571+00:00"
+        }
+    ]
+}

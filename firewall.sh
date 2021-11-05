@@ -14,7 +14,7 @@
 #Default Open Ports
 publicip=$(curl -s checkip.amazonaws.com)
 ports="8123"
-localnet=$(dig +short jarvis.haynie.net) #local FQDN
+localnet=$(dig +short jarvis.local) #local FQDN
 
 IPT=/sbin/iptables
 WGET=/usr/bin/wget
@@ -31,8 +31,8 @@ $IPT -A OUTPUT -o lo -j ACCEPT
 #Allow Local
 $IPT -A INPUT -s 10.0.0.0/8 -j ACCEPT
 $IPT -A OUTPUT -s 10.0.0.0/8 -j ACCEPT
-$IPT -A INPUT -s 192.168.0.0/16 -j ACCEPT
-$IPT -A OUTPUT -s 192.168.0.0/16 -j ACCEPT
+$IPT -A INPUT -s 192.168.0.0/8 -j ACCEPT
+$IPT -A OUTPUT -s 192.168.0.0/8 -j ACCEPT
 
 #Allow Local
 $IPT -A INPUT -s $localnet -j ACCEPT

@@ -41,7 +41,7 @@ echo "Installing System Requirements"
 sudo apt-get install python-pip python3-dev python3-pip mpg123 python-dev \
 bison libasound2-dev libportaudio-dev python-pyaudio xorg chromium-browser \
 nginx php-fpm php-apcu pianobar net-tools nmap npm php-curl unclutter \
-iptables-persistent dnsutils python-pyalsa python3-pyalsa jackd2 --yes
+iptables-persistent dnsutils python-pyalsa python3-pyalsa jackd2 omxplayer --yes
 
 echo "Installing Python3 Requirements"
 sudo pip3 install homeassistant

@@ -308,3 +308,16 @@ wesey_tv_automation_bypass:
       entity_id: automation.wes_tv_school_night_shutoff
     - service: homeassistant.turn_on
       entity_id: automation.wesley_weekend_shutoff
+
+whitenoise:
+  sequence:
+    - alias: "White Noise Loop"
+      repeat:
+        while:
+          - condition: state
+            entity_id: input_boolean.whitenoise
+            state: "on"
+        sequence:
+          - service: shell_command.whitenoise
+          - delay:
+              seconds: 120 

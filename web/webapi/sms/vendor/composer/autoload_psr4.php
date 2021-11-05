@@ -6,5 +6,5 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Twilio\\' => array($vendorDir . '/twilio/sdk/Twilio'),
+    'Twilio\\' => array($vendorDir . '/twilio/sdk/src/Twilio'),
 );

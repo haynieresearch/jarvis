@@ -24,7 +24,7 @@ homeassistant:
     - type: trusted_networks
       trusted_networks:
         - 127.0.0.1
-        - 10.0.0.0/8
+        - 10.10.0.0/16
       allow_bypass_login: true
     - type: legacy_api_password
       api_password: !secret http_password
@@ -40,6 +40,11 @@ homeassistant:
 
 lovelace:
   mode: yaml
+
+ffmpeg:
+  ffmpeg_bin: /usr/bin/ffmpeg
+
+stream:
 
 logger:
   default: error
@@ -195,6 +200,8 @@ shell_command:
   restart_jarvis_base: /opt/jarvis/scripts/restart_jarvis_base.sh
   restart_jarvis_stt: /opt/jarvis/scripts/restart_jarvis_stt.sh
   restart_jarvis_tts: /opt/jarvis/scripts/restart_jarvis_tts.sh
+  whitenoise: /usr/bin/omxplayer /opt/jarvis/sounds/whitenoise.mp3
+  killwhitenoise: kill $(ps aux | grep '/usr/bin/omxplayer.bin /opt/jarvis/sounds/whitenoise.mp3' | awk '{print $2}')
 
 #Alarm Panel
 alarm_control_panel:
@@ -229,3 +236,4 @@ input_select: !include config/input_select.yaml
 input_boolean: !include config/input_boolean.yaml
 input_number: !include config/input_number.yaml
 script: !include config/scripts.yaml
+

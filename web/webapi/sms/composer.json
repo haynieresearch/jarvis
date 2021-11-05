@@ -1,5 +1,5 @@
 {
     "require": {
-        "twilio/sdk": "^5.13"
+        "twilio/sdk": "^6.11"
     }
 }

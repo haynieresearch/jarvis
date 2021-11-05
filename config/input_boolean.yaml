@@ -50,3 +50,8 @@ nighttimemode:
   name: Night Time Mode
   initial: on
   icon: mdi:weather-night
+
+whitenoise:
+  name: White Noise
+  initial: off
+  icon: mdi:volume-high

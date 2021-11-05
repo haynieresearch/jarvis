@@ -22,60 +22,61 @@
 
 - platform: ffmpeg
   name: front_porch_cam
-  input: -rtsp_transport tcp -i !secret front_porch_cam
+  input: -rtsp_transport udp -i rtsp://haynienet:Qz9Zt269J7@10.0.0.145/live
   extra_arguments: '-vf "scale=384:216"'
 
 - platform: ffmpeg
   name: back_porch_cam
-  input: -rtsp_transport tcp -i !secret back_porch_cam
+  input: -rtsp_transport udp -i rtsp://haynienet:Qz9Zt269J7@10.0.0.1/live
   extra_arguments: '-vf "scale=384:216"'
 
 - platform: ffmpeg
   name: family_room_cam
-  input: -rtsp_transport tcp -i !secret family_room_cam
+  input: -rtsp_transport udp -i rtsp://haynienet:Qz9Zt269J7@10.0.0.132/live
   extra_arguments: '-vf "scale=384:216"'
 
 - platform: ffmpeg
   name: living_room_cam
-  input: -rtsp_transport tcp -i !secret living_room_cam
+  input: -rtsp_transport udp -i !secret living_room_cam
   extra_arguments: '-vf "scale=384:216"'
 
 - platform: ffmpeg
   name: dining_room_cam
-  input: -rtsp_transport tcp -i !secret dining_room_cam
+  input: -rtsp_transport udp -i rtsp://haynienet:Qz9Zt269J7@10.0.0.143/live
   extra_arguments: '-vf "scale=384:216"'
 
 - platform: ffmpeg
   name: kitchen_cam
-  input: -rtsp_transport tcp -i !secret kitchen_cam
+  input: -rtsp_transport udp -i rtsp://haynienet:Qz9Zt269J7@10.0.0.136/live
   extra_arguments: '-vf "scale=384:216"'
 
 - platform: ffmpeg
   name: stairs_cam
-  input: -rtsp_transport tcp -i !secret stairs_cam
+  input: -rtsp_transport udp -i rtsp://haynienet:Qz9Zt269J7@10.0.0.142/live
   extra_arguments: '-vf "scale=384:216"'
 
 - platform: ffmpeg
   name: upstairs_cam
-  input: -rtsp_transport tcp -i !secret upstairs_cam
+  input: -rtsp_transport udp -i rtsp://haynienet:Qz9Zt269J7@10.0.0.146/live
   extra_arguments: '-vf "scale=384:216"'
 
 - platform: ffmpeg
   name: garage_cam
-  input: -rtsp_transport tcp -i !secret garage_cam
+  input: -rtsp_transport udp -i rtsp://haynienet:Qz9Zt269J7@10.0.0.133/live
   extra_arguments: '-vf "scale=384:216"'
 
 - platform: ffmpeg
   name: front_yard_cam
-  input: -rtsp_transport tcp -i !secret front_yard_cam
+  input: -rtsp_transport udp -i rtsp://haynienet:Qz9Zt269J7@10.0.0.1/live
   extra_arguments: '-vf "scale=384:216"'
 
 - platform: ffmpeg
   name: back_yard_cam
-  input: -rtsp_transport tcp -i !secret back_yard_cam
+  input: -rtsp_transport udp -i rtsp://haynienet:Qz9Zt269J7@10.0.0.105/live
   extra_arguments: '-vf "scale=384:216"'
 
 - platform: ffmpeg
   name: driveway_cam
-  input: -rtsp_transport tcp -i !secret driveway_cam
+  input: -rtsp_transport udp -i !secret driveway_cam
   extra_arguments: '-vf "scale=384:216"'
+
