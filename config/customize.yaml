@@ -41,11 +41,6 @@
      binary_sensor.smoke_and_co_smoke_detected:
        friendly_name: Smoke Sensor
 
-     binary_sensor.hudsons_room_presence:
-       icon: mdi:run-fast
-       friendly_name: Hudsons Room Motion
-       device_class: motion
-
      binary_sensor.wesleys_room_presence:
        icon: mdi:run-fast
        friendly_name: Wesleys Room Motion
@@ -54,10 +49,6 @@
      media_player.roku_yu005p719382:
        icon: mdi:television-guide
        friendly_name: Office Roku
-
-     switch.hudsontv:
-       icon: mdi:television
-       friendly_name: Hudson TV
 
      switch.wesleytv:
        icon: mdi:television
@@ -75,10 +66,6 @@
        icon: mdi:television
        friendly_name: 'Living Room Plex (Smart TV)'
 
-     media_player.hudson_tv_un40j5200:
-       icon: mdi:television
-       friendly_name: 'Hudson TV'
-
      script.game_timer:
        icon: mdi:timer-sand
        friendly_name: 'Game Timer'
@@ -86,10 +73,6 @@
      group.all_automations:
        hidden: false
        friendly_name: All Automations
-
-     switch.hudson_tv:
-       icon: mdi:television-guide
-       friendly_name: Hudson TV
 
      switch.wesleys_tv:
        icon: mdi:television-guide
@@ -111,14 +94,6 @@
        icon: mdi:lightbulb
        friendly_name: Pantry Hallway
 
-     switch.hudsons_light:
-      icon: mdi:lightbulb
-      friendly_name: Hudsons Light
-
-     switch.hudsons_fan:
-       icon: mdi:fan
-       friendly_name: Hudsons Fan
-
      switch.wesleys_light:
        icon: mdi:lightbulb
        friendly_name: Wesleys Light
@@ -138,10 +113,6 @@
      script.find_lances_iphone:
        icon: mdi:phone-outgoing
        friendly_name: Find Lances Phone
-
-     script.find_hudsons_iphone:
-       icon: mdi:phone-outgoing
-       friendly_name: Find Hudsons Phone
 
      scene.outdoor_blue:
        icon: mdi:lightbulb-on
@@ -279,11 +250,3 @@
      sensor.wesleys_room_humidity:
        icon: mdi:water-percent
        friendly_name: Wesleys Room Humidity
-
-     sensor.hudsons_room_temperature:
-       icon: mdi:thermometer
-       friendly_name: Hudsons Room Temperature
-
-     sensor.hudsons_room_humidity:
-       icon: mdi:water-percent
-       friendly_name: Hudsons Room Humidity

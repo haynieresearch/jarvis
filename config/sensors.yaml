@@ -45,7 +45,7 @@
       friendly_name: 'Average Upstairs Temperature'
       unit_of_measurement: '°F'
       value_template: >-
-        {{ ((float(states.sensor.upstairs_hallway_temperature.state) + float(states.climate.upstairs.attributes.current_temperature) + float(states.sensor.hudsons_room_temperature.state) + float(states.sensor.wesleys_room_temperature.state)) / 4) | round(0) }}
+        {{ ((float(states.sensor.upstairs_hallway_temperature.state) + float(states.climate.upstairs.attributes.current_temperature) + float(states.sensor.wesleys_room_temperature.state)) / 4) | round(0) }}
 
     average_down_temp:
       friendly_name: 'Average Downstairs Temperature'
@@ -57,13 +57,13 @@
       friendly_name: 'Average Home Temperature'
       unit_of_measurement: '°F'
       value_template: >-
-        {{ ((float(states.sensor.upstairs_hallway_temperature.state) + float(states.climate.upstairs.attributes.current_temperature) + float(states.sensor.kitchen_temperature.state) + float(states.sensor.master_bedroom_temperature.state) + float(states.climate.downstairs.attributes.current_temperature) + float(states.sensor.hudsons_room_temperature.state) + float(states.sensor.wesleys_room_temperature.state)) / 7) | round(0) }}
+        {{ ((float(states.sensor.upstairs_hallway_temperature.state) + float(states.climate.upstairs.attributes.current_temperature) + float(states.sensor.kitchen_temperature.state) + float(states.sensor.master_bedroom_temperature.state) + float(states.climate.downstairs.attributes.current_temperature) + float(states.sensor.wesleys_room_temperature.state)) / 7) | round(0) }}
 
     average_up_humid:
       friendly_name: 'Average Upstairs Humidity'
       unit_of_measurement: '%'
       value_template: >-
-        {{ ((float(states.sensor.upstairs_hallway_humidity.state) + float(states.sensor.hudsons_room_humidity.state) + float(states.sensor.wesleys_room_humidity.state)) / 3) | round(0) }}
+        {{ ((float(states.sensor.upstairs_hallway_humidity.state) + float(states.sensor.wesleys_room_humidity.state)) / 3) | round(0) }}
 
     average_down_humid:
       friendly_name: 'Average Downstairs Humdity'
@@ -75,7 +75,7 @@
       friendly_name: 'Average Home Humidity'
       unit_of_measurement: '°%'
       value_template: >-
-        {{ ((float(states.sensor.upstairs_hallway_humidity.state) + float(states.sensor.kitchen_humidity.state) + float(states.sensor.master_bedroom_humidity.state) + float(states.sensor.hudsons_room_humidity.state) + float(states.sensor.wesleys_room_humidity.state)) / 5) | round(0) }}
+        {{ ((float(states.sensor.upstairs_hallway_humidity.state) + float(states.sensor.kitchen_humidity.state) + float(states.sensor.master_bedroom_humidity.state) + float(states.sensor.wesleys_room_humidity.state)) / 5) | round(0) }}
 
 - platform: systemmonitor
   resources:
