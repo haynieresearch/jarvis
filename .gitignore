@@ -39,3 +39,4 @@ deps
 .pydevproject
 .project
 config.json
+.storage
