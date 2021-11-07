@@ -55,3 +55,13 @@ whitenoise:
   name: White Noise
   initial: off
   icon: mdi:volume-high
+
+naturesounds:
+  name: Nature Sounds
+  initial: off
+  icon: mdi:volume-high
+
+relaxingmusic:
+  name: Relaxing Music
+  initial: off
+  icon: mdi:volume-high

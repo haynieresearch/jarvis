@@ -245,15 +245,12 @@ leaving_in_15_min:
 game_timer:
   alias: Game Timer
   sequence:
-    - service: shell_command.foghorn
+    - service: shell_command.alert
     - service: shell_command.tts
       data_template:
-        message: "The game timer has been activated, you have twenty minutes to play."
-    - service: notify.twitter
-      data_template:
-        message: "The game timer was activated, the kids have 20 minutes to play. #HomeAutomation #SmartHome"
+        message: "The game timer has been activated, you have one hour to play."
     - delay:
-        minutes: 10
+        minutes: 50
     - service: shell_command.tts
       data_template:
         message: "This is your ten minute warning, you have ten minutes of game time remaining."
@@ -275,39 +272,13 @@ game_timer:
         message: "Only 1 more minute on the kids game timer, I hope they are saving like they were told to. #HomeAutomation #SmartHome"
     - delay:
         minutes: 1
-    - service: shell_command.foghorn
+    - service: shell_command.alert
     - service: shell_command.tts
       data_template:
         message: "The game timer is now up. Please exit your game immediatly, you have had exactly twenty minutes to play."
     - service: notify.twitter
       data_template:
         message: "Time is up on the game timer! I am going to turn their system off, otherwise they will play forever. #HomeAutomation #SmartHome"
-
-wesey_tv_automation_bypass:
-  alias: Wesley TV Automation Bypass
-  sequence:
-    - service: homeassistant.turn_off
-      entity_id: automation.wes_tv_school_night_automation
-    - service: homeassistant.turn_off
-      entity_id: automation.wes_tv_weekend_automation
-    - service: homeassistant.turn_off
-      entity_id: automation.wes_tv_school_night_shutoff
-    - service: homeassistant.turn_off
-      entity_id: automation.wesley_weekend_shutoff
-    - service: homeassistant.turn_on
-      entity_id: switch.wesleytv
-    - delay:
-        minutes: 45
-    - service: homeassistant.turn_off
-      entity_id: switch.wesleytv
-    - service: homeassistant.turn_on
-      entity_id: automation.wes_tv_school_night_automation
-    - service: homeassistant.turn_on
-      entity_id: automation.wes_tv_weekend_automation
-    - service: homeassistant.turn_on
-      entity_id: automation.wes_tv_school_night_shutoff
-    - service: homeassistant.turn_on
-      entity_id: automation.wesley_weekend_shutoff
 
 whitenoise:
   sequence:
@@ -320,4 +291,4 @@ whitenoise:
         sequence:
           - service: shell_command.whitenoise
           - delay:
-              seconds: 120 
+              seconds: 120

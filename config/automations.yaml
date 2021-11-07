@@ -33,18 +33,18 @@
         entity_id: input_boolean.hvacautomation
         state: 'on'
       - condition: numeric_state
-        entity_id: sensor.pws_temp_f
+        entity_id: state.outside_temp
         above: !secret hvac_outside_trigger_temp
   action:
     - service: climate.set_temperature
       data:
         entity_id: climate.downstairs
         temperature: !secret hvac_set_temp_ac_day
-        operation_mode: cool
+        state: cool
     - service: climate.set_operation_mode
       data:
         entity_id: climate.downstairs
-    - service: shell_command.one_tone
+    - service: shell_command.alert
     - delay:
         seconds: 0.125
     - service: shell_command.tts
@@ -65,19 +65,19 @@
         entity_id: input_boolean.hvacautomation
         state: 'on'
       - condition: numeric_state
-        entity_id: sensor.pws_temp_f
+        entity_id: state.outside_temp
         below: !secret hvac_outside_trigger_temp
   action:
     - service: climate.set_temperature
       data:
         entity_id: climate.downstairs
         temperature: !secret hvac_set_temp_heat_day
-        operation_mode: heat
+        state: heat
     - service: climate.set_operation_mode
       data:
         entity_id: climate.downstairs
-        operation_mode: heat
-    - service: shell_command.one_tone
+        state: heat
+    - service: shell_command.alert
     - delay:
         seconds: 0.125
     - service: shell_command.tts
@@ -98,18 +98,18 @@
         entity_id: input_boolean.hvacautomation
         state: 'on'
       - condition: numeric_state
-        entity_id: sensor.pws_temp_f
+        entity_id: state.outside_temp
         above: !secret hvac_outside_trigger_temp
   action:
     - service: climate.set_temperature
       data:
         entity_id: climate.upstairs
         temperature: !secret hvac_set_temp_ac_day
-        operation_mode: cool
+        state: cool
     - service: climate.set_operation_mode
       data:
         entity_id: climate.upstairs
-    - service: shell_command.one_tone
+    - service: shell_command.alert
     - delay:
         seconds: 0.125
     - service: shell_command.tts
@@ -130,19 +130,19 @@
         entity_id: input_boolean.hvacautomation
         state: 'on'
       - condition: numeric_state
-        entity_id: sensor.pws_temp_f
+        entity_id: state.outside_temp
         below: !secret hvac_outside_trigger_temp
   action:
     - service: climate.set_temperature
       data:
         entity_id: climate.upstairs
         temperature: !secret hvac_set_temp_heat_day
-        operation_mode: heat
+        state: heat
     - service: climate.set_operation_mode
       data:
         entity_id: climate.upstairs
-        operation_mode: heat
-    - service: shell_command.one_tone
+        state: heat
+    - service: shell_command.alert
     - delay:
         seconds: 0.125
     - service: shell_command.tts
@@ -161,12 +161,12 @@
       data:
         entity_id: climate.downstairs
         temperature: !secret hvac_set_temp_ac_day
-        operation_mode: cool
+        state: cool
     - service: climate.set_operation_mode
       data:
         entity_id: climate.downstairs
-        operation_mode: cool
-    - service: shell_command.one_tone
+        state: cool
+    - service: shell_command.alert
     - delay:
         seconds: 0.125
     - service: shell_command.tts
@@ -185,12 +185,12 @@
       data:
         entity_id: climate.upstairs
         temperature: !secret hvac_set_temp_ac_day
-        operation_mode: cool
+        state: cool
     - service: climate.set_operation_mode
       data:
         entity_id: climate.upstairs
-        operation_mode: cool
-    - service: shell_command.one_tone
+        state: cool
+    - service: shell_command.alert
     - delay:
         seconds: 0.125
     - service: shell_command.tts
@@ -209,12 +209,12 @@
       data:
         entity_id: climate.downstairs
         temperature: !secret hvac_set_temp_heat_day
-        operation_mode: heat
+        state: heat
     - service: climate.set_operation_mode
       data:
         entity_id: climate.downstairs
-        operation_mode: heat
-    - service: shell_command.one_tone
+        state: heat
+    - service: shell_command.alert
     - delay:
         seconds: 0.125
     - service: shell_command.tts
@@ -233,12 +233,12 @@
       data:
         entity_id: climate.upstairs
         temperature: !secret hvac_set_temp_heat_day
-        operation_mode: heat
+        state: heat
     - service: climate.set_operation_mode
       data:
         entity_id: climate.upstairs
-        operation_mode: heat
-    - service: shell_command.one_tone
+        state: heat
+    - service: shell_command.alert
     - delay:
         seconds: 0.125
     - service: shell_command.tts
@@ -258,18 +258,18 @@
         entity_id: input_boolean.hvacautomation
         state: 'on'
       - condition: numeric_state
-        entity_id: sensor.pws_temp_f
+        entity_id: state.outside_temp
         above: !secret hvac_outside_trigger_temp
   action:
     - service: climate.set_temperature
       data:
         entity_id: climate.downstairs
         temperature: !secret hvac_set_temp_ac_day
-        operation_mode: cool
+        state: cool
     - service: climate.set_operation_mode
       data:
         entity_id: climate.downstairs
-        operation_mode: cool
+        state: cool
 
 - id: climate_upstairs_ac_day_set
   alias: Upstairs AC Day Set
@@ -284,18 +284,18 @@
         entity_id: input_boolean.hvacautomation
         state: 'on'
       - condition: numeric_state
-        entity_id: sensor.pws_temp_f
+        entity_id: state.outside_temp
         above: !secret hvac_outside_trigger_temp
   action:
     - service: climate.set_temperature
       data:
         entity_id: climate.upstairs
         temperature: !secret hvac_set_temp_ac_day
-        operation_mode: cool
+        state: cool
     - service: climate.set_operation_mode
       data:
         entity_id: climate.upstairs
-        operation_mode: cool
+        state: cool
 
 - id: climate_downstairs_heat_day_set
   alias: Downstairs Heat Day Set
@@ -310,18 +310,18 @@
         entity_id: input_boolean.hvacautomation
         state: 'on'
       - condition: numeric_state
-        entity_id: sensor.pws_temp_f
+        entity_id: state.outside_temp
         below: !secret hvac_outside_trigger_temp
   action:
     - service: climate.set_temperature
       data:
         entity_id: climate.downstairs
         temperature: !secret hvac_set_temp_heat_day
-        operation_mode: heat
+        state: heat
     - service: climate.set_operation_mode
       data:
         entity_id: climate.downstairs
-        operation_mode: heat
+        state: heat
 
 - id: climate_upstairs_heat_day_set
   alias: Upstairs Heat Day Set
@@ -336,18 +336,18 @@
         entity_id: input_boolean.hvacautomation
         state: 'on'
       - condition: numeric_state
-        entity_id: sensor.pws_temp_f
+        entity_id: state.outside_temp
         below: !secret hvac_outside_trigger_temp
   action:
     - service: climate.set_temperature
       data:
         entity_id: climate.upstairs
         temperature: !secret hvac_set_temp_heat_day
-        operation_mode: heat
+        state: heat
     - service: climate.set_operation_mode
       data:
         entity_id: climate.upstairs
-        operation_mode: heat
+        state: heat
 
 - id: climate_downstairs_ac_night_set
   alias: Downstairs AC Night Set
@@ -362,18 +362,18 @@
         entity_id: input_boolean.hvacautomation
         state: 'on'
       - condition: numeric_state
-        entity_id: sensor.pws_temp_f
+        entity_id: state.outside_temp
         above: !secret hvac_outside_trigger_temp
   action:
     - service: climate.set_temperature
       data:
         entity_id: climate.downstairs
         temperature: !secret hvac_set_temp_ac_night
-        operation_mode: cool
+        state: cool
     - service: climate.set_operation_mode
       data:
         entity_id: climate.downstairs
-        operation_mode: cool
+        state: cool
 
 - id: climate_upstairs_ac_night_set
   alias: Upstairs AC Night Set
@@ -388,18 +388,18 @@
         entity_id: input_boolean.hvacautomation
         state: 'on'
       - condition: numeric_state
-        entity_id: sensor.pws_temp_f
+        entity_id: state.outside_temp
         above: !secret hvac_outside_trigger_temp
   action:
     - service: climate.set_temperature
       data:
         entity_id: climate.upstairs
         temperature: !secret hvac_set_temp_ac_night
-        operation_mode: cool
+        state: cool
     - service: climate.set_operation_mode
       data:
         entity_id: climate.upstairs
-        operation_mode: cool
+        state: cool
 
 - id: climate_downstairs_heat_night_set
   alias: Downstairs Heat Night Set
@@ -414,18 +414,18 @@
         entity_id: input_boolean.hvacautomation
         state: 'on'
       - condition: numeric_state
-        entity_id: sensor.pws_temp_f
+        entity_id: state.outside_temp
         below: !secret hvac_outside_trigger_temp
   action:
     - service: climate.set_temperature
       data:
         entity_id: climate.downstairs
         temperature: !secret hvac_set_temp_heat_night
-        operation_mode: heat
+        state: heat
     - service: climate.set_operation_mode
       data:
         entity_id: climate.downstairs
-        operation_mode: heat
+        state: heat
 
 - id: climate_upstairs_heat_night_set
   alias: Upstairs Heat Night Set
@@ -440,18 +440,18 @@
         entity_id: input_boolean.hvacautomation
         state: 'on'
       - condition: numeric_state
-        entity_id: sensor.pws_temp_f
+        entity_id: state.outside_temp
         below: !secret hvac_outside_trigger_temp
   action:
     - service: climate.set_temperature
       data:
         entity_id: climate.upstairs
         temperature: !secret hvac_set_temp_heat_night
-        operation_mode: heat
+        state: heat
     - service: climate.set_operation_mode
       data:
         entity_id: climate.upstairs
-        operation_mode: heat
+        state: heat
 
 - id: climate_downstairs_ac_day
   alias: Downstairs AC Day
@@ -474,12 +474,12 @@
       data:
         entity_id: climate.downstairs
         temperature: !secret hvac_set_temp_ac_day
-        operation_mode: cool
+        state: cool
     - service: climate.set_operation_mode
       data:
         entity_id: climate.downstairs
-        operation_mode: cool
-    - service: shell_command.one_tone
+        state: cool
+    - service: shell_command.alert
     - delay:
         seconds: 0.125
     - service: shell_command.tts
@@ -507,12 +507,12 @@
       data:
         entity_id: climate.upstairs
         temperature: !secret hvac_set_temp_ac_day
-        operation_mode: cool
+        state: cool
     - service: climate.set_operation_mode
       data:
         entity_id: climate.upstairs
-        operation_mode: cool
-    - service: shell_command.one_tone
+        state: cool
+    - service: shell_command.alert
     - delay:
         seconds: 0.125
     - service: shell_command.tts
@@ -540,12 +540,12 @@
       data:
         entity_id: climate.downstairs
         temperature: !secret hvac_set_temp_heat_day
-        operation_mode: heat
+        state: heat
     - service: climate.set_operation_mode
       data:
         entity_id: climate.downstairs
-        operation_mode: heat
-    - service: shell_command.one_tone
+        state: heat
+    - service: shell_command.alert
     - delay:
         seconds: 0.125
     - service: shell_command.tts
@@ -573,12 +573,12 @@
       data:
         entity_id: climate.upstairs
         temperature: !secret hvac_set_temp_heat_day
-        operation_mode: heat
+        state: heat
     - service: climate.set_operation_mode
       data:
         entity_id: climate.upstairs
-        operation_mode: heat
-    - service: shell_command.one_tone
+        state: heat
+    - service: shell_command.alert
     - delay:
         seconds: 0.125
     - service: shell_command.tts
@@ -606,12 +606,12 @@
       data:
         entity_id: climate.downstairs
         temperature: !secret hvac_set_temp_ac_night
-        operation_mode: cool
+        state: cool
     - service: climate.set_operation_mode
       data:
         entity_id: climate.downstairs
-        operation_mode: cool
-    - service: shell_command.one_tone
+        state: cool
+    - service: shell_command.alert
     - delay:
         seconds: 0.125
     - service: shell_command.tts
@@ -639,12 +639,12 @@
       data:
         entity_id: climate.upstairs
         temperature: !secret hvac_set_temp_ac_night
-        operation_mode: cool
+        state: cool
     - service: climate.set_operation_mode
       data:
         entity_id: climate.upstairs
-        operation_mode: cool
-    - service: shell_command.one_tone
+        state: cool
+    - service: shell_command.alert
     - delay:
         seconds: 0.125
     - service: shell_command.tts
@@ -672,12 +672,12 @@
       data:
         entity_id: climate.downstairs
         temperature: !secret hvac_set_temp_heat_night
-        operation_mode: heat
+        state: heat
     - service: climate.set_operation_mode
       data:
         entity_id: climate.downstairs
-        operation_mode: heat
-    - service: shell_command.one_tone
+        state: heat
+    - service: shell_command.alert
     - delay:
         seconds: 0.125
     - service: shell_command.tts
@@ -705,69 +705,17 @@
       data:
         entity_id: climate.upstairs
         temperature: !secret hvac_set_temp_heat_night
-        operation_mode: heat
+        state: heat
     - service: climate.set_operation_mode
       data:
         entity_id: climate.upstairs
-        operation_mode: heat
-    - service: shell_command.one_tone
+        state: heat
+    - service: shell_command.alert
     - delay:
         seconds: 0.125
     - service: shell_command.tts
       data_template:
         message: "{{ states.sensor.jarvis_greeting.state }}, The average temperature upstairs is getting a bit cold with an average temprature of {{ trigger.to_state.state }}. I am going to turn on the heater."
-
-- id: wesleys_room_fan_on
-  alias: Wesleys Room Fan On
-  initial_state: 'on'
-  trigger:
-    - platform: numeric_state
-      entity_id: sensor.wesleys_room_temperature
-      above: !secret max_hvac_temp
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: switch.wesleys_fan
-        state: 'off'
-      - condition: numeric_state
-        entity_id: sensor.wesleys_room_temperature
-        above: !secret max_hvac_temp
-  action:
-    - service: homeassistant.turn_on
-      entity_id: switch.wesleys_fan
-    - service: shell_command.one_tone
-    - delay:
-        seconds: 0.125
-    - service: shell_command.tts
-      data_template:
-        message: "{{ states.sensor.jarvis_greeting.state }}, Wesleys room is getting a bit warm with an average temperature of {{ tates.sensor.wesleys_room_temperature.state }}. I am going to turn his fan on."
-
-- id: wesleys_room_fan_off
-  alias: Wesleys Room Fan Off
-  initial_state: 'on'
-  trigger:
-    - platform: numeric_state
-      entity_id: sensor.wesleys_room_temperature
-      below: !secret min_hvac_temp
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: switch.wesleys_fan
-        state: 'on'
-      - condition: numeric_state
-        entity_id: sensor.wesleys_room_temperature
-        below: !secret min_hvac_temp
-  action:
-    - service: homeassistant.turn_off
-      entity_id: switch.wesleys_fan
-    - service: shell_command.one_tone
-    - delay:
-        seconds: 0.125
-    - service: shell_command.tts
-      data_template:
-        message: "{{ states.sensor.jarvis_greeting.state }}, Wesleys room is getting a bit cold with an average temperature of {{ tates.sensor.wesleys_room_temperature.state }}. I am going to turn his fan off."
 
 #**********************************************************
 # LIGHTING
@@ -776,9 +724,8 @@
   alias: Outdoor Lighting Sunset
   initial_state: 'on'
   trigger:
-    platform: sun
-    event: sunset
-    offset: '00:00:00'
+    platform: time
+    at: '19:00:00'
   action:
     - service: light.turn_on
       entity_id: group.outsidelights
@@ -788,44 +735,43 @@
       data_template:
         entity_id:
           "{% if states.sensor.random_outside_lights.state == '1' %}scene.outside_blue
-           {% elif states.sensor.random_outside_lights.state == '2' %}scene.color_loop
-           {% elif states.sensor.random_outside_lights.state == '3' %}scene.outside_orange
-           {% elif states.sensor.random_outside_lights.state == '4' %}scene.outside_pink
-           {% elif states.sensor.random_outside_lights.state == '5' %}scene.outside_purple
-           {% elif states.sensor.random_outside_lights.state == '6' %}scene.outside_red
-           {% endif %}"
+          {% elif states.sensor.random_outside_lights.state == '2' %}scene.color_loop
+          {% elif states.sensor.random_outside_lights.state == '3' %}scene.outside_orange
+          {% elif states.sensor.random_outside_lights.state == '4' %}scene.outside_pink
+          {% elif states.sensor.random_outside_lights.state == '5' %}scene.outside_purple
+          {% elif states.sensor.random_outside_lights.state == '6' %}scene.outside_red
+          {% endif %}"
     - delay:
         seconds: 0.5
-    - service: shell_command.one_tone
+    - service: shell_command.alert
     - delay:
         seconds: 0.125
     - service: shell_command.tts
       data_template:
         message:
-          "{% if states.sensor.random_outside_lights.state == '1' %}{{ states.sensor.jarvis_greeting.state }}, the sun has set so I am going to turn the outside lights on. Tonight, I think I will make the outside lights blue.
-           {% elif states.sensor.random_outside_lights.state == '2' %}{{ states.sensor.jarvis_greeting.state }}, the sun has set so I am going to turn the outside lights on. Tonight, I think I will make the outside lights go through a color loop.
-           {% elif states.sensor.random_outside_lights.state == '3' %}{{ states.sensor.jarvis_greeting.state }}, the sun has set so I am going to turn the outside lights on. Tonight, I think I will make the outside lights orange.
-           {% elif states.sensor.random_outside_lights.state == '4' %}{{ states.sensor.jarvis_greeting.state }}, the sun has set so I am going to turn the outside lights on. Tonight, I think I will make the outside lights pink.
-           {% elif states.sensor.random_outside_lights.state == '5' %}{{ states.sensor.jarvis_greeting.state }}, the sun has set so I am going to turn the outside lights on. Tonight, I think I will make the outside lights purple.
-           {% elif states.sensor.random_outside_lights.state == '6' %}{{ states.sensor.jarvis_greeting.state }}, the sun has set so I am going to turn the outside lights on. Tonight, I think I will make the outside lights red.
-           {% endif %}"
+          "{% if states.sensor.random_outside_lights.state == '1' %}{{ states.sensor.jarvis_greeting.state }}, its getting dark outside so I am going to turn the outside lights on. Tonight, I think I will make the outside lights blue.
+          {% elif states.sensor.random_outside_lights.state == '2' %}{{ states.sensor.jarvis_greeting.state }}, its getting dark outside so I am going to turn the outside lights on. Tonight, I think I will make the outside lights go through a color loop.
+          {% elif states.sensor.random_outside_lights.state == '3' %}{{ states.sensor.jarvis_greeting.state }}, its getting dark outside so I am going to turn the outside lights on. Tonight, I think I will make the outside lights orange.
+          {% elif states.sensor.random_outside_lights.state == '4' %}{{ states.sensor.jarvis_greeting.state }}, its getting dark outside so I am going to turn the outside lights on. Tonight, I think I will make the outside lights pink.
+          {% elif states.sensor.random_outside_lights.state == '5' %}{{ states.sensor.jarvis_greeting.state }}, its getting dark outside so I am going to turn the outside lights on. Tonight, I think I will make the outside lights purple.
+          {% elif states.sensor.random_outside_lights.state == '6' %}{{ states.sensor.jarvis_greeting.state }}, its getting dark outside so I am going to turn the outside lights on. Tonight, I think I will make the outside lights red.
+          {% endif %}"
 
 - id: lighting_outdoor_sunrise
   alias: Outdoor Lighting Sunrise
   initial_state: 'on'
   trigger:
-    platform: sun
-    event: sunrise
-    offset: '+00:00:00'
+    platform: time
+    at: '07:00:00'
   action:
     - service: light.turn_off
       entity_id: group.outsidelights
-    - service: shell_command.one_tone
+    - service: shell_command.alert
     - delay:
         seconds: 0.125
     - service: shell_command.tts
       data_template:
-        message: "{{ states.sensor.jarvis_greeting.state }}, the sun is up so I am turning the outside lights off."
+        message: "{{ states.sensor.jarvis_greeting.state }}, just so you are aware, I am turning the outside lights off."
 
 - id: tv_backlight_daily_on
   alias: TV Backlight Daily On
@@ -840,31 +786,6 @@
         seconds: 0.5
     - service: scene.turn_on
       entity_id: scene.tv_blue
-
-- id: upstairs_bathroom_main_nightlight_on
-  alias: Upstairs Bathroom Main Nightlight On
-  initial_state: 'on'
-  trigger:
-    platform: time
-    at: '20:00:00'
-  action:
-    - service: switch.turn_on
-      entity_id: switch.upstairs_bathroom_main
-
-- id: upstairs_bathroom_main_nightlight_automation
-  alias: Upstairs Bathroom Main Nightlight Automation
-  initial_state: 'on'
-  trigger:
-    platform: state
-    entity_id: switch.upstairs_bathroom_main
-    to: 'off'
-  condition:
-    condition: time
-    before: '08:00:00'
-    after: '20:00:00'
-  action:
-    - service: switch.turn_on
-      entity_id: switch.upstairs_bathroom_main
 
 - id: master_shower_colorloop
   alias: Master Shower Color Loop
@@ -980,72 +901,6 @@
         target:
           - !secret lance_cell
           - !secret katie_cell
-
-- id: security_lights_on_while_away_dining_room
-  alias: Lights On While Away - Dining Room
-  initial_state: 'on'
-  trigger:
-    platform: sun
-    event: sunset
-    offset: "00:45:00"
-  condition:
-    condition: state
-    entity_id: alarm_control_panel.home_alarm
-    state: 'armed_away'
-  action:
-    - service: light.turn_on
-      entity_id: group.diningroomlights
-
-- id: security_lights_off_while_away_dining_room
-  alias: Turn Off Lights While Away - Dining Room
-  initial_state: 'on'
-  trigger:
-    platform: sun
-    event: sunset
-    offset: "02:45:00"
-  condition:
-    - condition: state
-      entity_id: alarm_control_panel.home_alarm
-      state: 'armed_away'
-    - condition: state
-      entity_id: group.diningroomlights
-      state: 'on'
-  action:
-    - service: light.turn_off
-      entity_id: group.diningroomlights
-
-- id: security_lights_on_while_away_kitchen
-  alias: Lights On While Away - Kitchen
-  initial_state: 'on'
-  trigger:
-    platform: sun
-    event: sunset
-    offset: "03:00:00"
-  condition:
-    condition: state
-    entity_id: alarm_control_panel.home_alarm
-    state: 'armed_away'
-  action:
-    - service: light.turn_on
-      entity_id: light.kitchen
-
-- id: security_lights_off_while_away_kitchen
-  alias: Turn Off Lights While Away - Kitchen
-  initial_state: 'on'
-  trigger:
-    platform: sun
-    event: sunset
-    offset: "04:00:00"
-  condition:
-    - condition: state
-      entity_id: alarm_control_panel.home_alarm
-      state: 'armed_away'
-    - condition: state
-      entity_id: group.diningroomlights
-      state: 'on'
-  action:
-    - service: light.turn_off
-      entity_id: light.kitchen
 
 - id: security_turn_on_alarm
   alias: Turn On Alarm
@@ -1264,7 +1119,7 @@
     - service: script.turn_on
       data:
         entity_id: script.garage_hazard
-    - service: shell_command.two_tone
+    - service: shell_command.alert
     - delay:
         seconds: 0.125
     - service: shell_command.tts
@@ -1288,7 +1143,7 @@
     - service: homeassistant.turn_off
       data:
         entity_id: sswitch.garage_warning_light
-    - service: shell_command.two_tone
+    - service: shell_command.alert
     - delay:
         seconds: 0.125
     - service: shell_command.tts
@@ -1711,63 +1566,6 @@
       data_template:
         cmd: "90"
 
-- id: wesley_grounded_automation
-  alias: Wesley Grounded Automation
-  initial_state: 'on'
-  trigger:
-    platform: state
-    entity_id: switch.wesleytv
-    to: 'on'
-  condition:
-    condition: state
-    entity_id: input_boolean.wesley_grounded
-    state: 'on'
-  action:
-    - service: homeassistant.turn_off
-      entity_id: switch.wesleytv
-    - service: notify.sms
-      data:
-        message: "Wesley attempted to turn on his TV when grounded."
-        target:
-          - !secret lance_cell
-          - !secret katie_cell
-    - service: shell_command.one_tone
-    - delay:
-        seconds: 0.125
-    - service: shell_command.tts
-      data_template:
-        message:
-          "{% if states.sensor.random_3.state == '1' %}I hate to inform you of this, but Wesley has attempted to turn on his TV while grounded.
-           {% elif states.sensor.random_3.state == '2' %}I hate to be a taddle tale, but Wesley has attempted to turn on his TV while grounded.
-           {% elif states.sensor.random_3.state == '3' %}I hate to be the bearer of bad news, but Wesley is attempting to turn on his TV while grounded.
-           {% endif %}"
-
-- id: wesley_grounded_input_action
-  alias: Wesley Grounded Input Action
-  initial_state: 'on'
-  trigger:
-    platform: state
-    entity_id: input_boolean.wesley_grounded
-    to: 'on'
-  action:
-    - service: homeassistant.turn_off
-      entity_id: switch.wesleytv
-
-- id: wesley.grounded_input_action_off
-  alias: Wesley Grounded Input Action Off
-  initial_state: 'on'
-  trigger:
-    platform: state
-    entity_id: input_boolean.wesley_grounded
-    to: 'off'
-  action:
-    - service: notify.sms
-      data:
-        message: "Wesley grounded switch has been turned off."
-        target:
-          - !secret lance_cell
-          - !secret katie_cell
-
 - id: white_noise_loop_on
   alias: White Noise Loop On
   initial_state: 'on'
@@ -1778,6 +1576,8 @@
   action:
     - service: script.turn_on
       entity_id: script.whitenoise
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.naturesounds
 
 - id: white_noise_loop_off
   alias: White Noise Loop Off
@@ -1791,8 +1591,56 @@
       entity_id: script.whitenoise
     - service: shell_command.killwhitenoise
 
+- id: nature_sounds_loop_on
+  alias: Nature Sounds Loop On
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_boolean.naturesounds
+    to: 'on'
+  action:
+    - service: script.turn_on
+      entity_id: script.naturesounds
+    - service: input_boolean.turn_off
+      entity_id: input_boolean.whitenoise
+
+- id: nature_sounds_loop_off
+  alias: Nature Sounds Loop Off
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_boolean.naturesounds
+    to: 'off'
+  action:
+    - service: script.turn_off
+      entity_id: script.naturesounds
+    - service: shell_command.killnaturesounds
+
+- id: relaxing_music_loop_on
+  alias: Relaxing Music Loop On
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_boolean.relaxingmusic
+    to: 'on'
+  action:
+    - service: script.turn_on
+      entity_id: script.relaxingmusic
+
+- id: relaxing_music_loop_off
+  alias: Relaxing Music Loop Off
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: input_boolean.relaxingmusic
+    to: 'off'
+  action:
+    - service: script.turn_off
+      entity_id: script.relaxingmusic
+    - service: shell_command.killrelaxingmusic
+
 #**********************************************************
-# NOTIFICATIONS
+# NOTIFICATIONS & MISC
 #**********************************************************
 - id: home_assistant_start
   alias: Home Assistant Start
@@ -1801,40 +1649,18 @@
     platform: homeassistant
     event: start
   action:
-    - service: shell_command.two_tone
-    - delay:
-        seconds: 0.125
-    - service: shell_command.tts
-      data_template:
-        message:
-          "{% if states.sensor.random_3.state == '1' %}Jarvis Artificial Intelligience System is starting up.
-           {% elif states.sensor.random_3.state == '2' %}Jarvis AI system is starting up
-           {% elif states.sensor.random_3.state == '3' %}Jarvis Artificial Intelligience is starting up.
-           {% endif %}"
-
-    - delay:
-        seconds: 0.55
     - service: shell_command.volume
       data_template:
         cmd: "100"
 
-- id: home_assistant_shutdown
-  alias: Home Assistant Shutdown
+- id: home_assistant_stop
+  alias: Home Assistant Stop
   initial_state: 'on'
   trigger:
     platform: homeassistant
-    event: shutdown
+    event: stop
   action:
-    - service: shell_command.two_tone
-    - delay:
-        seconds: 0.125
-    - service: shell_command.tts
-      data_template:
-        message:
-          "{% if states.sensor.random_3.state == '1' %}Jarvis Artificial Intelligience System is shutting down.
-           {% elif states.sensor.random_3.state == '2' %}Jarvis AI system is shutting down.
-           {% elif states.sensor.random_3.state == '3' %}Jarvis Artificial Intelligience is shutting down.
-           {% endif %}"
+    - service: shell_command.winxpstop
 
 - id: update_notification
   alias: Update Available Notification
@@ -1861,12 +1687,12 @@
     entity_id: sensor.cpu_use
     above: 50
   action:
-    - service: shell_command.two_tone
+    - service: shell_command.alert
     - delay:
         seconds: 0.125
     - service: shell_command.tts
       data_template:
-        message: "My CPU usage is getting high, I am currently at {{ states.sensor.cpu_use.state }} percent."
+        message: "My CPU usage is getting high, I am currently at {{ states.sensor.cpu_use.state }} per cent."
 
 - id: cpu_use_75
   alias: CPU Use 75
@@ -1876,12 +1702,12 @@
     entity_id: sensor.cpu_use
     above: 75
   action:
-    - service: shell_command.two_tone
+    - service: shell_command.alert
     - delay:
         seconds: 0.125
     - service: shell_command.tts
       data_template:
-        message: "My CPU usage is now serious, I am currently at {{ states.sensor.cpu_use.state }} percent."
+        message: "My CPU usage is now serious, I am currently at {{ states.sensor.cpu_use.state }} per cent."
 
 - id: cpu_use_90
   alias: CPU Use 90
@@ -1930,12 +1756,12 @@
     entity_id: sensor.ram_use
     above: 70
   action:
-    - service: shell_command.two_tone
+    - service: shell_command.alert
     - delay:
         seconds: 0.125
     - service: shell_command.tts
       data_template:
-        message: "My memory usage is getting high, I am currently at {{ states.sensor.ram_use.state }} percent."
+        message: "My memory usage is getting high, I am currently at {{ states.sensor.ram_use.state }} per cent."
 
 - id: ram_use_80
   alias: Ram Use 80
@@ -1945,12 +1771,12 @@
     entity_id: sensor.ram_use
     above: 80
   action:
-    - service: shell_command.two_tone
+    - service: shell_command.alert
     - delay:
         seconds: 0.125
     - service: shell_command.tts
       data_template:
-        message: "My memory usage is now serious, I am currently at {{ states.sensor.ram_use.state }} percent."
+        message: "My memory usage is now serious, I am currently at {{ states.sensor.ram_use.state }} per cent."
 
 - id: ram_use_90
   alias: Ram Use 90
@@ -1999,7 +1825,7 @@
     entity_id: sensor.average_load_15m
     above: 3
   action:
-    - service: shell_command.two_tone
+    - service: shell_command.alert
     - delay:
         seconds: 0.125
     - service: shell_command.tts
@@ -2045,104 +1871,6 @@
         seconds: 5
     - service: shell_command.restart_system
 
-- id: wes_shower_reminder
-  alias: Wes Shower Reminder
-  initial_state: 'on'
-  trigger:
-    platform: time
-    at: '20:30:00'
-  condition:
-    condition: time
-    weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
-      - sat
-      - sun
-  action:
-    - service: shell_command.foghorn
-    - delay:
-        seconds: 0.125
-    - service: shell_command.tts
-      data_template:
-        message:
-          "{% if states.sensor.random_5.state == '1' %}Attention Wesley, Attention Wesley. My smell sensors indicate an odor emitting from your arm pits. Your presence is required in the shower.
-           {% elif states.sensor.random_5.state == '2' %}Attention Wesley, Attention Wesley. My smell sensors indicate an essence of stink. Your presence is required in the shower.
-           {% elif states.sensor.random_5.state == '3' %}Attention Wesley, Attention Wesley. My smell sensors indicate you stink. Your presence is required in the shower.
-           {% elif states.sensor.random_5.state == '4' %}Attention Wesley, Attention Wesley. I hate to inform you of this, but you stink. Please go take a shower.
-           {% elif states.sensor.random_5.state == '5' %}Attention Wesley, Attention Wesley. I regret to inform you but your stinch is plugging my smell sensors. You are required to take a shower now.
-           {% endif %}"
-
-- id: wes_school_night_bedtime
-  alias: Wesley School Night Bed Time
-  initial_state: 'on'
-  trigger:
-    platform: time
-    at: '21:30:00'
-  condition:
-    condition: time
-    weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - sun
-  action:
-    - service: shell_command.foghorn
-    - delay:
-        seconds: 0.125
-    - service: shell_command.tts
-      data_template:
-        message: "Attention Wesley. Attention Wesley. It is now your bedtime and you are required to promptly report to your bed. I repeat, Wesley, it is now your bedtime and you are required to go to bed."
-
-- id: homework_reminder
-  alias: Homework Reminder
-  initial_state: 'on'
-  trigger:
-    platform: time
-    at: '16:00:00'
-  condition:
-    condition: time
-    weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
-  action:
-    - service: shell_command.foghorn
-    - delay:
-        seconds: 0.125
-    - service: shell_command.tts
-      data_template:
-        message: "Attention all kids. Attention all kids. If you have any homework to be done, now is the time to do it."
-
-- id: dinner_reminder
-  alias: Dinner Reminder
-  initial_state: 'on'
-  trigger:
-    platform: time
-    at: '17:30:00'
-  condition:
-    condition: time
-    weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
-      - sat
-      - sun
-  action:
-    - service: shell_command.one_tone
-    - delay:
-        seconds: 0.125
-    - service: shell_command.tts
-      data_template:
-        message: "Attention parental units. Attention parental units. Now would be a good time to start making dinner."
-
 - id: lance_sunday_trash_reminder
   alias: Lance Sunday Trash Reminder
   initial_state: 'on'
@@ -2159,7 +1887,7 @@
         message: "Lance: Take the trash bins out."
         target:
           - !secret lance_cell
-    - service: shell_command.one_tone
+    - service: shell_command.alert
     - delay:
         seconds: 0.125
     - service: shell_command.tts
@@ -2183,12 +1911,12 @@
       - sat
       - sun
   action:
-    - service: shell_command.one_tone
+    - service: shell_command.alert
     - delay:
         seconds: 0.125
     - service: shell_command.tts
       data_template:
-        message: "Good morning all, Here is your mid morning weather briefing. It is currently {{ states.sensor.openweathermap_temperature.state }} degrees outside and {{ states.sensor.openweathermap_condition.state }}. The forecasted high today is {{ states.sensor.openweathermap_forecast_temperature.state }} and should be {{ states.sensor.openweathermap_forecast_condition.state }}."
+        message: "Good morning all, Here is your mid morning weather briefing. It is currently {{ states.sensor.outside_temp.state }} degrees outside and {{ states.weather.home.state }}."
 
 - id: afternoon_wx
   alias: Afternoon WX
@@ -2207,12 +1935,12 @@
       - sat
       - sun
   action:
-    - service: shell_command.one_tone
+    - service: shell_command.alert
     - delay:
         seconds: 0.125
     - service: shell_command.tts
       data_template:
-        message: "Good afternoon all, Here is your afternoon weather briefing. It is currently {{ states.sensor.openweathermap_temperature.state }} degrees outside and {{ states.sensor.openweathermap_condition.state }}. The forecasted high today is {{ states.sensor.openweathermap_forecast_temperature.state }} and should be {{ states.sensor.openweathermap_forecast_condition.state }}."
+        message: "Good afternoon all, Here is your afternoon weather briefing. It is currently {{ states.sensor.outside_temp.state }} degrees outside and {{ states.weather.home.state }}."
 
 - id: evening_wx
   alias: Evening WX
@@ -2231,12 +1959,12 @@
       - sat
       - sun
   action:
-    - service: shell_command.one_tone
+    - service: shell_command.alert
     - delay:
         seconds: 0.125
     - service: shell_command.tts
       data_template:
-        message: "Good evening all, Here is your evening weather briefing. It is currently {{ states.sensor.openweathermap_temperature.state }} degrees outside and {{ states.sensor.openweathermap_condition.state }}. The forecasted high today is {{ states.sensor.openweathermap_forecast_temperature.state }} and should be {{ states.sensor.openweathermap_forecast_condition.state }}."
+        message: "Good evening all, Here is your evening weather briefing. It is currently {{ states.sensor.outside_temp.state }} degrees outside and {{ states.weather.home.state }}."
 
 - id: restart_on_no_network
   alias: Restart on no Network
@@ -2249,302 +1977,6 @@
         minutes: 15
   action:
     - service: shell_command.restart_system
-
-- id: rule_reminder_5
-  alias: Rule Reminder 5 Min
-  initial_state: 'on'
-  trigger:
-  - minutes: '/5'
-    platform: time_pattern
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: input_select.rule_freq
-        state: '5'
-      - condition: time
-        before: '20:00:00'
-        after: '08:00:00'
-  action:
-    - service: shell_command.one_tone
-    - delay:
-        seconds: 0.125
-    - service: shell_command.tts
-      data_template:
-        message:
-          "{% if states.sensor.random_rules.state == '1' %}If you make a mess, clean that mess up. Not later, not in a minute, right after you are done.
-           {% elif states.sensor.random_rules.state == '2' %}When you take off your clothes, they belong with the dirty clothes. Do not leave them lying around the house.
-           {% elif states.sensor.random_rules.state == '3' %}Do not leave your shoes all over the house. If you put them up when you take them off, you can find them easier.
-           {% elif states.sensor.random_rules.state == '4' %}When you are done eating, your dish should be rinsed and put in the dish washer.
-           {% elif states.sensor.random_rules.state == '5' %}When you are done with a toy or item, put it up. Do not leave it lying around the house.
-           {% elif states.sensor.random_rules.state == '6' %}Clean up after yourself, do not make mom do it.
-           {% elif states.sensor.random_rules.state == '7' %}Tell your mom how much you love and appreciate her, she can never hear it enough.
-           {% elif states.sensor.random_rules.state == '8' %}Dishes are not to be left in the sink. Rinse them and put them in the dishwasher.
-           {% elif states.sensor.random_rules.state == '9' %}Clean common areas after each use. Do not leave belongings around the house.
-           {% elif states.sensor.random_rules.state == '10' %}Do not borrow anything from anyone without permission.
-           {% elif states.sensor.random_rules.state == '11' %}You are responsible for the actions of your friends while they are in the house.
-           {% elif states.sensor.random_rules.state == '12' %}Treat family and property with respect. This includes not leaving messes for your mother to pick up.
-           {% elif states.sensor.random_rules.state == '13' %}Clean up after yourself before leaving a room.
-           {% elif states.sensor.random_rules.state == '14' %}You must obtain permission before leaving the house.
-           {% elif states.sensor.random_rules.state == '15' %}Treat everyone with respect. Remember to say please, thank you, im sorry, and you are welcome.
-           {% elif states.sensor.random_rules.state == '16' %}Tell the truth, do not omit or leave out details. Say what you mean and follow through on your word.
-           {% elif states.sensor.random_rules.state == '17' %}Be thankful for what you have, be aware of how lucky you are and show gratitude towards each other.
-           {% elif states.sensor.random_rules.state == '18' %}Thank about others and not just yourself. Do nice things for each other.
-           {% elif states.sensor.random_rules.state == '19' %}Food and drink only in the kitchen and dining room. Only bottled water is allowed outside of food areas.
-           {% elif states.sensor.random_rules.state == '20' %}If you make a mess, clean it up.
-           {% elif states.sensor.random_rules.state == '21' %}Children cannot enforce a punishment, do not try to be a parent.
-           {% elif states.sensor.random_rules.state == '22' %}Only Mom and Lance can punish other children, you are not a parent yet.
-           {% elif states.sensor.random_rules.state == '23' %}If you get it out, you put it away.
-           {% elif states.sensor.random_rules.state == '24' %}Respect the furniture, do not sit on it improperly.
-           {% elif states.sensor.random_rules.state == '25' %}Do not make unnecessary messes. Make sure to pick up after yourself.
-           {% elif states.sensor.random_rules.state == '26' %}No arguing until mom has had her coffee.
-           {% elif states.sensor.random_rules.state == '27' %}If you ask for something over and over, you will not get whatever you are asking for.
-           {% elif states.sensor.random_rules.state == '28' %}Treat others the way you wish to be treated.
-           {% elif states.sensor.random_rules.state == '29' %}If you make a mess, you will clean that mess.
-           {% elif states.sensor.random_rules.state == '30' %}If you take it out, put it back.
-           {% elif states.sensor.random_rules.state == '31' %}If you open it, close it.
-           {% elif states.sensor.random_rules.state == '32' %}If you drop it, pick it back up.
-           {% elif states.sensor.random_rules.state == '33' %}If you see a mess, clean it up, do not make mom do it.
-           {% elif states.sensor.random_rules.state == '34' %}If you take it off, hang it back up.
-           {% elif states.sensor.random_rules.state == '35' %}If you break it, fix it. If you cannot fix it, find someone who can.
-           {% elif states.sensor.random_rules.state == '36' %}If you spill it, clean it up.
-           {% elif states.sensor.random_rules.state == '37' %}If it is not yours, ask before you play or use it.
-           {% elif states.sensor.random_rules.state == '38' %}If it is not your concern, stay out of it.
-           {% elif states.sensor.random_rules.state == '39' %}If you bring a blanket down stairs, put it back up when you are done.
-           {% elif states.sensor.random_rules.state == '40' %}If you see something on the floor that doesnt belong there, pick it up.
-           {% elif states.sensor.random_rules.state == '41' %}Do not bug your mom all day long, she deserves a break too.
-           {% elif states.sensor.random_rules.state == '42' %}Tell your mom you love her.
-           {% elif states.sensor.random_rules.state == '43' %}Do not argue over everything, if you are told no that is final.
-           {% elif states.sensor.random_rules.state == '44' %}Do not run inside, go outside if you want to run around.
-           {% elif states.sensor.random_rules.state == '45' %}Do not throw any object indoors. You can throw stuff all you want outside.
-           {% elif states.sensor.random_rules.state == '46' %}Always listen the first time you are told to do something. Do not make your mom repeat herself.
-           {% elif states.sensor.random_rules.state == '47' %}Always answer when spoken to. Listen and do not interrupt or contradict.
-           {% elif states.sensor.random_rules.state == '48' %}Always do what is right, even if no one is looking.
-           {% elif states.sensor.random_rules.state == '49' %}Do not mock, tease, or make fun of others. No one likes a bully, do not be one.
-           {% elif states.sensor.random_rules.state == '50' %}Quickly admit when you have done something wrong. Do not wait until you are caught.
-           {% endif %}"
-
-- id: rule_reminder_10
-  alias: Rule Reminder 10 Min
-  initial_state: 'on'
-  trigger:
-  - minutes: '/10'
-    platform: time_pattern
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: input_select.rule_freq
-        state: '10'
-      - condition: time
-        before: '20:00:00'
-        after: '08:00:00'
-  action:
-    - service: shell_command.one_tone
-    - delay:
-        seconds: 0.125
-    - service: shell_command.tts
-      data_template:
-        message:
-          "{% if states.sensor.random_rules.state == '1' %}If you make a mess, clean that mess up. Not later, not in a minute, right after you are done.
-           {% elif states.sensor.random_rules.state == '2' %}When you take off your clothes, they belong with the dirty clothes. Do not leave them lying around the house.
-           {% elif states.sensor.random_rules.state == '3' %}Do not leave your shoes all over the house. If you put them up when you take them off, you can find them easier.
-           {% elif states.sensor.random_rules.state == '4' %}When you are done eating, your dish should be rinsed and put in the dish washer.
-           {% elif states.sensor.random_rules.state == '5' %}When you are done with a toy or item, put it up. Do not leave it lying around the house.
-           {% elif states.sensor.random_rules.state == '6' %}Clean up after yourself, do not make mom do it.
-           {% elif states.sensor.random_rules.state == '7' %}Tell your mom how much you love and appreciate her, she can never hear it enough.
-           {% elif states.sensor.random_rules.state == '8' %}Dishes are not to be left in the sink. Rinse them and put them in the dishwasher.
-           {% elif states.sensor.random_rules.state == '9' %}Clean common areas after each use. Do not leave belongings around the house.
-           {% elif states.sensor.random_rules.state == '10' %}Do not borrow anything from anyone without permission.
-           {% elif states.sensor.random_rules.state == '11' %}You are responsible for the actions of your friends while they are in the house.
-           {% elif states.sensor.random_rules.state == '12' %}Treat family and property with respect. This includes not leaving messes for your mother to pick up.
-           {% elif states.sensor.random_rules.state == '13' %}Clean up after yourself before leaving a room.
-           {% elif states.sensor.random_rules.state == '14' %}You must obtain permission before leaving the house.
-           {% elif states.sensor.random_rules.state == '15' %}Treat everyone with respect. Remember to say please, thank you, im sorry, and you are welcome.
-           {% elif states.sensor.random_rules.state == '16' %}Tell the truth, do not omit or leave out details. Say what you mean and follow through on your word.
-           {% elif states.sensor.random_rules.state == '17' %}Be thankful for what you have, be aware of how lucky you are and show gratitude towards each other.
-           {% elif states.sensor.random_rules.state == '18' %}Thank about others and not just yourself. Do nice things for each other.
-           {% elif states.sensor.random_rules.state == '19' %}Food and drink only in the kitchen and dining room. Only bottled water is allowed outside of food areas.
-           {% elif states.sensor.random_rules.state == '20' %}If you make a mess, clean it up.
-           {% elif states.sensor.random_rules.state == '21' %}Children cannot enforce a punishment, do not try to be a parent.
-           {% elif states.sensor.random_rules.state == '22' %}Only Mom and Lance can punish other children, you are not a parent yet.
-           {% elif states.sensor.random_rules.state == '23' %}If you get it out, you put it away.
-           {% elif states.sensor.random_rules.state == '24' %}Respect the furniture, do not sit on it improperly.
-           {% elif states.sensor.random_rules.state == '25' %}Do not make unnecessary messes. Make sure to pick up after yourself.
-           {% elif states.sensor.random_rules.state == '26' %}No arguing until mom has had her coffee.
-           {% elif states.sensor.random_rules.state == '27' %}If you ask for something over and over, you will not get whatever you are asking for.
-           {% elif states.sensor.random_rules.state == '28' %}Treat others the way you wish to be treated.
-           {% elif states.sensor.random_rules.state == '29' %}If you make a mess, you will clean that mess.
-           {% elif states.sensor.random_rules.state == '30' %}If you take it out, put it back.
-           {% elif states.sensor.random_rules.state == '31' %}If you open it, close it.
-           {% elif states.sensor.random_rules.state == '32' %}If you drop it, pick it back up.
-           {% elif states.sensor.random_rules.state == '33' %}If you see a mess, clean it up, do not make mom do it.
-           {% elif states.sensor.random_rules.state == '34' %}If you take it off, hang it back up.
-           {% elif states.sensor.random_rules.state == '35' %}If you break it, fix it. If you cannot fix it, find someone who can.
-           {% elif states.sensor.random_rules.state == '36' %}If you spill it, clean it up.
-           {% elif states.sensor.random_rules.state == '37' %}If it is not yours, ask before you play or use it.
-           {% elif states.sensor.random_rules.state == '38' %}If it is not your concern, stay out of it.
-           {% elif states.sensor.random_rules.state == '39' %}If you bring a blanket down stairs, put it back up when you are done.
-           {% elif states.sensor.random_rules.state == '40' %}If you see something on the floor that doesnt belong there, pick it up.
-           {% elif states.sensor.random_rules.state == '41' %}Do not bug your mom all day long, she deserves a break too.
-           {% elif states.sensor.random_rules.state == '42' %}Tell your mom you love her.
-           {% elif states.sensor.random_rules.state == '43' %}Do not argue over everything, if you are told no that is final.
-           {% elif states.sensor.random_rules.state == '44' %}Do not run inside, go outside if you want to run around.
-           {% elif states.sensor.random_rules.state == '45' %}Do not throw any object indoors. You can throw stuff all you want outside.
-           {% elif states.sensor.random_rules.state == '46' %}Always listen the first time you are told to do something. Do not make your mom repeat herself.
-           {% elif states.sensor.random_rules.state == '47' %}Always answer when spoken to. Listen and do not interrupt or contradict.
-           {% elif states.sensor.random_rules.state == '48' %}Always do what is right, even if no one is looking.
-           {% elif states.sensor.random_rules.state == '49' %}Do not mock, tease, or make fun of others. No one likes a bully, do not be one.
-           {% elif states.sensor.random_rules.state == '50' %}Quickly admit when you have done something wrong. Do not wait until you are caught.
-           {% endif %}"
-
-- id: rule_reminder_15
-  alias: Rule Reminder 15 Min
-  initial_state: 'on'
-  trigger:
-  - minutes: '/15'
-    platform: time_pattern
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: input_select.rule_freq
-        state: '15'
-      - condition: time
-        before: '20:00:00'
-        after: '08:00:00'
-  action:
-    - service: shell_command.one_tone
-    - delay:
-        seconds: 0.125
-    - service: shell_command.tts
-      data_template:
-        message:
-          "{% if states.sensor.random_rules.state == '1' %}If you make a mess, clean that mess up. Not later, not in a minute, right after you are done.
-           {% elif states.sensor.random_rules.state == '2' %}When you take off your clothes, they belong with the dirty clothes. Do not leave them lying around the house.
-           {% elif states.sensor.random_rules.state == '3' %}Do not leave your shoes all over the house. If you put them up when you take them off, you can find them easier.
-           {% elif states.sensor.random_rules.state == '4' %}When you are done eating, your dish should be rinsed and put in the dish washer.
-           {% elif states.sensor.random_rules.state == '5' %}When you are done with a toy or item, put it up. Do not leave it lying around the house.
-           {% elif states.sensor.random_rules.state == '6' %}Clean up after yourself, do not make mom do it.
-           {% elif states.sensor.random_rules.state == '7' %}Tell your mom how much you love and appreciate her, she can never hear it enough.
-           {% elif states.sensor.random_rules.state == '8' %}Dishes are not to be left in the sink. Rinse them and put them in the dishwasher.
-           {% elif states.sensor.random_rules.state == '9' %}Clean common areas after each use. Do not leave belongings around the house.
-           {% elif states.sensor.random_rules.state == '10' %}Do not borrow anything from anyone without permission.
-           {% elif states.sensor.random_rules.state == '11' %}You are responsible for the actions of your friends while they are in the house.
-           {% elif states.sensor.random_rules.state == '12' %}Treat family and property with respect. This includes not leaving messes for your mother to pick up.
-           {% elif states.sensor.random_rules.state == '13' %}Clean up after yourself before leaving a room.
-           {% elif states.sensor.random_rules.state == '14' %}You must obtain permission before leaving the house.
-           {% elif states.sensor.random_rules.state == '15' %}Treat everyone with respect. Remember to say please, thank you, im sorry, and you are welcome.
-           {% elif states.sensor.random_rules.state == '16' %}Tell the truth, do not omit or leave out details. Say what you mean and follow through on your word.
-           {% elif states.sensor.random_rules.state == '17' %}Be thankful for what you have, be aware of how lucky you are and show gratitude towards each other.
-           {% elif states.sensor.random_rules.state == '18' %}Thank about others and not just yourself. Do nice things for each other.
-           {% elif states.sensor.random_rules.state == '19' %}Food and drink only in the kitchen and dining room. Only bottled water is allowed outside of food areas.
-           {% elif states.sensor.random_rules.state == '20' %}If you make a mess, clean it up.
-           {% elif states.sensor.random_rules.state == '21' %}Children cannot enforce a punishment, do not try to be a parent.
-           {% elif states.sensor.random_rules.state == '22' %}Only Mom and Lance can punish other children, you are not a parent yet.
-           {% elif states.sensor.random_rules.state == '23' %}If you get it out, you put it away.
-           {% elif states.sensor.random_rules.state == '24' %}Respect the furniture, do not sit on it improperly.
-           {% elif states.sensor.random_rules.state == '25' %}Do not make unnecessary messes. Make sure to pick up after yourself.
-           {% elif states.sensor.random_rules.state == '26' %}No arguing until mom has had her coffee.
-           {% elif states.sensor.random_rules.state == '27' %}If you ask for something over and over, you will not get whatever you are asking for.
-           {% elif states.sensor.random_rules.state == '28' %}Treat others the way you wish to be treated.
-           {% elif states.sensor.random_rules.state == '29' %}If you make a mess, you will clean that mess.
-           {% elif states.sensor.random_rules.state == '30' %}If you take it out, put it back.
-           {% elif states.sensor.random_rules.state == '31' %}If you open it, close it.
-           {% elif states.sensor.random_rules.state == '32' %}If you drop it, pick it back up.
-           {% elif states.sensor.random_rules.state == '33' %}If you see a mess, clean it up, do not make mom do it.
-           {% elif states.sensor.random_rules.state == '34' %}If you take it off, hang it back up.
-           {% elif states.sensor.random_rules.state == '35' %}If you break it, fix it. If you cannot fix it, find someone who can.
-           {% elif states.sensor.random_rules.state == '36' %}If you spill it, clean it up.
-           {% elif states.sensor.random_rules.state == '37' %}If it is not yours, ask before you play or use it.
-           {% elif states.sensor.random_rules.state == '38' %}If it is not your concern, stay out of it.
-           {% elif states.sensor.random_rules.state == '39' %}If you bring a blanket down stairs, put it back up when you are done.
-           {% elif states.sensor.random_rules.state == '40' %}If you see something on the floor that doesnt belong there, pick it up.
-           {% elif states.sensor.random_rules.state == '41' %}Do not bug your mom all day long, she deserves a break too.
-           {% elif states.sensor.random_rules.state == '42' %}Tell your mom you love her.
-           {% elif states.sensor.random_rules.state == '43' %}Do not argue over everything, if you are told no that is final.
-           {% elif states.sensor.random_rules.state == '44' %}Do not run inside, go outside if you want to run around.
-           {% elif states.sensor.random_rules.state == '45' %}Do not throw any object indoors. You can throw stuff all you want outside.
-           {% elif states.sensor.random_rules.state == '46' %}Always listen the first time you are told to do something. Do not make your mom repeat herself.
-           {% elif states.sensor.random_rules.state == '47' %}Always answer when spoken to. Listen and do not interrupt or contradict.
-           {% elif states.sensor.random_rules.state == '48' %}Always do what is right, even if no one is looking.
-           {% elif states.sensor.random_rules.state == '49' %}Do not mock, tease, or make fun of others. No one likes a bully, do not be one.
-           {% elif states.sensor.random_rules.state == '50' %}Quickly admit when you have done something wrong. Do not wait until you are caught.
-           {% endif %}"
-
-- id: rule_reminder_30
-  alias: Rule Reminder 30 Min
-  initial_state: 'on'
-  trigger:
-  - minutes: '/30'
-    platform: time_pattern
-  condition:
-    condition: and
-    conditions:
-      - condition: state
-        entity_id: input_select.rule_freq
-        state: '30'
-      - condition: time
-        before: '20:00:00'
-        after: '08:00:00'
-  action:
-    - service: shell_command.one_tone
-    - delay:
-        seconds: 0.125
-    - service: shell_command.tts
-      data_template:
-        message:
-          "{% if states.sensor.random_rules.state == '1' %}If you make a mess, clean that mess up. Not later, not in a minute, right after you are done.
-           {% elif states.sensor.random_rules.state == '2' %}When you take off your clothes, they belong with the dirty clothes. Do not leave them lying around the house.
-           {% elif states.sensor.random_rules.state == '3' %}Do not leave your shoes all over the house. If you put them up when you take them off, you can find them easier.
-           {% elif states.sensor.random_rules.state == '4' %}When you are done eating, your dish should be rinsed and put in the dish washer.
-           {% elif states.sensor.random_rules.state == '5' %}When you are done with a toy or item, put it up. Do not leave it lying around the house.
-           {% elif states.sensor.random_rules.state == '6' %}Clean up after yourself, do not make mom do it.
-           {% elif states.sensor.random_rules.state == '7' %}Tell your mom how much you love and appreciate her, she can never hear it enough.
-           {% elif states.sensor.random_rules.state == '8' %}Dishes are not to be left in the sink. Rinse them and put them in the dishwasher.
-           {% elif states.sensor.random_rules.state == '9' %}Clean common areas after each use. Do not leave belongings around the house.
-           {% elif states.sensor.random_rules.state == '10' %}Do not borrow anything from anyone without permission.
-           {% elif states.sensor.random_rules.state == '11' %}You are responsible for the actions of your friends while they are in the house.
-           {% elif states.sensor.random_rules.state == '12' %}Treat family and property with respect. This includes not leaving messes for your mother to pick up.
-           {% elif states.sensor.random_rules.state == '13' %}Clean up after yourself before leaving a room.
-           {% elif states.sensor.random_rules.state == '14' %}You must obtain permission before leaving the house.
-           {% elif states.sensor.random_rules.state == '15' %}Treat everyone with respect. Remember to say please, thank you, im sorry, and you are welcome.
-           {% elif states.sensor.random_rules.state == '16' %}Tell the truth, do not omit or leave out details. Say what you mean and follow through on your word.
-           {% elif states.sensor.random_rules.state == '17' %}Be thankful for what you have, be aware of how lucky you are and show gratitude towards each other.
-           {% elif states.sensor.random_rules.state == '18' %}Thank about others and not just yourself. Do nice things for each other.
-           {% elif states.sensor.random_rules.state == '19' %}Food and drink only in the kitchen and dining room. Only bottled water is allowed outside of food areas.
-           {% elif states.sensor.random_rules.state == '20' %}If you make a mess, clean it up.
-           {% elif states.sensor.random_rules.state == '21' %}Children cannot enforce a punishment, do not try to be a parent.
-           {% elif states.sensor.random_rules.state == '22' %}Only Mom and Lance can punish other children, you are not a parent yet.
-           {% elif states.sensor.random_rules.state == '23' %}If you get it out, you put it away.
-           {% elif states.sensor.random_rules.state == '24' %}Respect the furniture, do not sit on it improperly.
-           {% elif states.sensor.random_rules.state == '25' %}Do not make unnecessary messes. Make sure to pick up after yourself.
-           {% elif states.sensor.random_rules.state == '26' %}No arguing until mom has had her coffee.
-           {% elif states.sensor.random_rules.state == '27' %}If you ask for something over and over, you will not get whatever you are asking for.
-           {% elif states.sensor.random_rules.state == '28' %}Treat others the way you wish to be treated.
-           {% elif states.sensor.random_rules.state == '29' %}If you make a mess, you will clean that mess.
-           {% elif states.sensor.random_rules.state == '30' %}If you take it out, put it back.
-           {% elif states.sensor.random_rules.state == '31' %}If you open it, close it.
-           {% elif states.sensor.random_rules.state == '32' %}If you drop it, pick it back up.
-           {% elif states.sensor.random_rules.state == '33' %}If you see a mess, clean it up, do not make mom do it.
-           {% elif states.sensor.random_rules.state == '34' %}If you take it off, hang it back up.
-           {% elif states.sensor.random_rules.state == '35' %}If you break it, fix it. If you cannot fix it, find someone who can.
-           {% elif states.sensor.random_rules.state == '36' %}If you spill it, clean it up.
-           {% elif states.sensor.random_rules.state == '37' %}If it is not yours, ask before you play or use it.
-           {% elif states.sensor.random_rules.state == '38' %}If it is not your concern, stay out of it.
-           {% elif states.sensor.random_rules.state == '39' %}If you bring a blanket down stairs, put it back up when you are done.
-           {% elif states.sensor.random_rules.state == '40' %}If you see something on the floor that doesnt belong there, pick it up.
-           {% elif states.sensor.random_rules.state == '41' %}Do not bug your mom all day long, she deserves a break too.
-           {% elif states.sensor.random_rules.state == '42' %}Tell your mom you love her.
-           {% elif states.sensor.random_rules.state == '43' %}Do not argue over everything, if you are told no that is final.
-           {% elif states.sensor.random_rules.state == '44' %}Do not run inside, go outside if you want to run around.
-           {% elif states.sensor.random_rules.state == '45' %}Do not throw any object indoors. You can throw stuff all you want outside.
-           {% elif states.sensor.random_rules.state == '46' %}Always listen the first time you are told to do something. Do not make your mom repeat herself.
-           {% elif states.sensor.random_rules.state == '47' %}Always answer when spoken to. Listen and do not interrupt or contradict.
-           {% elif states.sensor.random_rules.state == '48' %}Always do what is right, even if no one is looking.
-           {% elif states.sensor.random_rules.state == '49' %}Do not mock, tease, or make fun of others. No one likes a bully, do not be one.
-           {% elif states.sensor.random_rules.state == '50' %}Quickly admit when you have done something wrong. Do not wait until you are caught.
-           {% endif %}"
 
 - id: backup_system_data
   alias: Backup System Data
@@ -2581,7 +2013,7 @@
         before: '22:00:00'
         after: '08:00:00'
   action:
-    - service: shell_command.two_tone
+    - service: shell_command.alert
     - delay:
         seconds: 0.125
     - service: shell_command.tts
@@ -2605,7 +2037,7 @@
         before: '22:00:00'
         after: '08:00:00'
   action:
-    - service: shell_command.two_tone
+    - service: shell_command.alert
     - delay:
         seconds: 0.125
     - service: shell_command.tts
@@ -2629,7 +2061,7 @@
         before: '22:00:00'
         after: '08:00:00'
   action:
-    - service: shell_command.two_tone
+    - service: shell_command.alert
     - delay:
         seconds: 0.125
     - service: shell_command.tts
@@ -2648,3 +2080,123 @@
     - service_template: '{{ trigger.event.data.service }}'
       data_template:
         message: '{{ trigger.event.data.cmd }}'
+
+- id: katie_iphone_battery_50
+  alias: Katie Phone Battery 50
+  initial_state: 'on'
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.katies_iphone_battery_state
+    below: 50
+  action:
+    - service: shell_command.alert
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, Katie, your iPhone battery has reached {{ states.sensor.katies_iphone_battery_state.state }} per cent."
+
+- id: katie_iphone_battery_25
+  alias: Katie Phone Battery 25
+  initial_state: 'on'
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.katies_iphone_battery_state
+    below: 50
+  action:
+    - service: shell_command.alert
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, Katie, your iPhone battery is now critically low and has reached {{ states.sensor.katies_iphone_battery_state.state }} per cent."
+
+- id: lance_iphone_battery_50
+  alias: Lance Phone Battery 50
+  initial_state: 'on'
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.myphone_battery_state
+    below: 50
+  action:
+    - service: shell_command.alert
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, Lance, your iPhone battery has reached {{ states.sensor.myphone_battery_state.state }} per cent."
+
+- id: lance_iphone_battery_25
+  alias: Lance Phone Battery 25
+  initial_state: 'on'
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.myphone_battery_state
+    below: 50
+  action:
+    - service: shell_command.alert
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, Lance, your iPhone battery is now critically low and has reached {{ states.sensor.myphone_battery_state.state }} per cent."
+
+- id: wes_iphone_battery_50
+  alias: Wes Phone Battery 50
+  initial_state: 'on'
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.wesleys_iphone_battery_state
+    below: 50
+  action:
+    - service: shell_command.alert
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, Wesley, your iPhone battery has reached {{ states.sensor.wesleys_iphone_battery_state.state }} per cent."
+
+- id: wes_iphone_battery_25
+  alias: Wes Phone Battery 25
+  initial_state: 'on'
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.wesleys_iphone_battery_state
+    below: 50
+  action:
+    - service: shell_command.alert
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, Wesley, your iPhone battery is now critically low and has reached {{ states.sensor.wesleys_iphone_battery_state.state }} per cent."
+
+- id: emma_iphone_battery_50
+  alias: Emma Phone Battery 50
+  initial_state: 'on'
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.littles_iphone_6_plus_battery_state
+    below: 50
+  action:
+    - service: shell_command.alert
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, Emma, your iPhone battery has reached {{ states.sensor.littles_iphone_6_plus_battery_state.state }} per cent."
+
+- id: emma_iphone_battery_25
+  alias: Emma Phone Battery 25
+  initial_state: 'on'
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.littles_iphone_6_plus_battery_state
+    below: 50
+  action:
+    - service: shell_command.alert
+    - delay:
+        seconds: 0.125
+    - service: shell_command.tts
+      data_template:
+        message: "{{ states.sensor.jarvis_greeting.state }}, Emma, your iPhone battery is now critically low and has reached {{ states.sensor.littles_iphone_6_plus_battery_state.state }} per cent."

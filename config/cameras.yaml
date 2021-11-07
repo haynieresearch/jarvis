@@ -22,7 +22,7 @@
 
 - platform: ffmpeg
   name: front_porch_cam
-  input: -rtsp_transport udp -i rtsp://haynienet:Qz9Zt269J7@10.0.0.145/live
+  input: -rtsp_transport udp -i !secret front_porch_cam
   extra_arguments: '-vf "scale=384:216"'
 
 - platform: ffmpeg
@@ -79,4 +79,3 @@
   name: driveway_cam
   input: -rtsp_transport udp -i !secret driveway_cam
   extra_arguments: '-vf "scale=384:216"'
-

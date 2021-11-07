@@ -42,7 +42,7 @@ class Conversation(i18n.GettextMixin):
 
     def greet(self):
         salutation = self.gettext("Jarvis speech to text engine is online.")
-        self.mic.say(salutation)
+        #self.mic.say(salutation)
 
     def handleForever(self):
         """

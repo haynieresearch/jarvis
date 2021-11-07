@@ -25,10 +25,10 @@
       value_template: '{% if is_state("sensor.random_4", "1") %}Pardon me{% elif is_state("sensor.random_4", "2") %}Pardon the interruption{% elif is_state("sensor.random_4", "3") %}Excusez-moi{% elif is_state("sensor.random_4", "4") %}Pardon{% else %}Excuse me{% endif %}'
 
     climate_downstairs_op_mode:
-      value_template: '{{ states.climate.downstairs.attributes.operation_mode }}'
+      value_template: '{{ states.climate.downstairs.state }}'
 
     climate_upstairs_op_mode:
-      value_template: '{{ states.climate.upstairs.attributes.operation_mode }}'
+      value_template: '{{ states.climate.upstairs.state }}'
 
     climate_downstairs_temp:
       value_template: '{{ states.climate.downstairs.attributes.current_temperature }}'
@@ -41,41 +41,9 @@
 
     climate_upstairs_temp_set:
       value_template: '{{ states.climate.upstairs.attributes.temperature }}'
-    average_up_temp:
-      friendly_name: 'Average Upstairs Temperature'
-      unit_of_measurement: '°F'
-      value_template: >-
-        {{ ((float(states.sensor.upstairs_hallway_temperature.state) + float(states.climate.upstairs.attributes.current_temperature) + float(states.sensor.wesleys_room_temperature.state)) / 4) | round(0) }}
 
-    average_down_temp:
-      friendly_name: 'Average Downstairs Temperature'
-      unit_of_measurement: '°F'
-      value_template: >-
-        {{ ((float(states.sensor.kitchen_temperature.state) + float(states.sensor.master_bedroom_temperature.state) + float(states.climate.downstairs.attributes.current_temperature)) / 3) | round(0) }}
-
-    average_home_temp:
-      friendly_name: 'Average Home Temperature'
-      unit_of_measurement: '°F'
-      value_template: >-
-        {{ ((float(states.sensor.upstairs_hallway_temperature.state) + float(states.climate.upstairs.attributes.current_temperature) + float(states.sensor.kitchen_temperature.state) + float(states.sensor.master_bedroom_temperature.state) + float(states.climate.downstairs.attributes.current_temperature) + float(states.sensor.wesleys_room_temperature.state)) / 7) | round(0) }}
-
-    average_up_humid:
-      friendly_name: 'Average Upstairs Humidity'
-      unit_of_measurement: '%'
-      value_template: >-
-        {{ ((float(states.sensor.upstairs_hallway_humidity.state) + float(states.sensor.wesleys_room_humidity.state)) / 3) | round(0) }}
-
-    average_down_humid:
-      friendly_name: 'Average Downstairs Humdity'
-      unit_of_measurement: '°%'
-      value_template: >-
-        {{ ((float(states.sensor.kitchen_humidity.state) + float(states.sensor.master_bedroom_humidity.state)) / 2) | round(0) }}
-
-    average_home_humid:
-      friendly_name: 'Average Home Humidity'
-      unit_of_measurement: '°%'
-      value_template: >-
-        {{ ((float(states.sensor.upstairs_hallway_humidity.state) + float(states.sensor.kitchen_humidity.state) + float(states.sensor.master_bedroom_humidity.state) + float(states.sensor.wesleys_room_humidity.state)) / 5) | round(0) }}
+    outside_temp:
+      value_template: '{{ states.weather.home.attributes.temperature }}'
 
 - platform: systemmonitor
   resources:

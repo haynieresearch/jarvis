@@ -32,7 +32,7 @@ homeassistant:
   latitude: !secret latitude_home
   longitude: !secret longitude_home
   elevation: !secret elevation
-  name: Home
+  name: JARVIS
   temperature_unit: F
   time_zone: America/Denver
   unit_system: imperial
@@ -53,91 +53,22 @@ logger:
     homeassistant.components.shell_command: debug
 
 logbook:
-  include:
-    domains:
-      - automation
-      - alarm_control_panel
-      - scene
   exclude:
-    domains:
-      - sun
-      - device_tracker
-      - group
-      - climate
     entities:
-      - sensor.kitchen_proximity
-      - binary_sensor.kitchen_presence
-      - sensor.master_bedroom_proximity
-      - binary_sensor.master_bedroom_presence
-      - sensor.upstairs_hallway_proximity
-      - binary_sensor.upstairs_hallway_presence
-      - sensor.hudsons_room_proximity
-      - binary_sensor.hudsons_room_presence
-      - sensor.wesleys_room_proximity
-      - binary_sensor.wesleys_room_presence
-      - sensor.average_load_15m
-      - sensor.average_load_1m
-      - sensor.average_load_5m
-      - sensor.cpu_use
-      - sensor.pws_pressure_in
-      - sensor.pws_relative_humidity
-      - sensor.pws_temp_f
-      - sensor.pws_weather
-      - sensor.pws_wind_string
-      - sensor.ram_use
-
-history:
-  include:
-    entities:
-      - climate.downstairs
-      - sensor.average_down_temp
-      - climate.upstairs
-      - sensor.average_up_temp
-      - sensor.average_home_temp
-      - input_boolean.hvacautomation
-      - input_boolean.lancefirecall
-      - input_boolean.panic
-      - input_select.alarmstatus
-      - input_select.homestatus
-      - sensor.kitchen_humidity
-      - sensor.kitchen_temperature
-      - sensor.master_bedroom_humidity
-      - sensor.master_bedroom_temperature
-      - sensor.upstairs_hallway_humidity
-      - sensor.upstairs_hallway_temperature
-      - switch.hudsontv
-      - switch.wesleytv
-      - input_boolean.coalarm
-      - input_boolean.firealarm
-      - input_boolean.garage_alarm
-      - sensor.pws_temp_f
-      - sensor.pws_relative_humidity
-      - switch.hudsons_fan
-      - switch.wesleys_fan
-      - sensor.hudsons_room_temperature
-      - sensor.wesleys_room_temperature
-      - sensor.hudsons_room_humidity
-      - sensor.wesleys_room_humidity
-      - sensor.livingroom_harmony
-      - alarm_control_panel.home_alarm
-
+      - sensor.time
+      - sensor.jarvis_greeting
+    entity_globs:
+      - sensor.weather_*
+      - sensor.random_*
 recorder:
   db_url: sqlite:///opt/jarvis/database/jarvis.db
-  exclude:
-    domains:
-      - sun
-
 updater:
 frontend:
   themes: !include_dir_merge_named themes
 config:
 zeroconf:
-wemo:
 discovery:
-shopping_list:
 conversation:
-alexa:
-snips:
 dialogflow:
 
 #**********************************************************
@@ -167,13 +98,6 @@ notify:
     platform: twilio_call
     from_number: !secret twilio_from
 
-#Track the Sun
-sun:
-
-emulated_hue:
-  host_ip: !secret base_ip
-  expose_by_default: true
-
 shell_command:
   command: "{{cmd}}"
   run_sudo: /usr/bin/sudo "{{cmd}}"
@@ -182,26 +106,22 @@ shell_command:
   relax: /opt/jarvis/scripts/relax.sh "{{track}}"
   bomb_sound: /usr/bin/aplay /opt/jarvis/sounds/sound_effects/missle_explosion.wav
   alarm_sound: /usr/bin/aplay /opt/jarvis/sounds/sound_effects/alarm.wav
-  fart_sound: /usr/bin/aplay /opt/jarvis/sounds/sound_effects/fart.wav
   air_raid_sound: /usr/bin/aplay /opt/jarvis/sounds/asound_effects/ir_raid.wav
-  ghost_sound: /usr/bin/aplay /opt/jarvis/sounds/sound_effects/ghost.wav
-  zombie_sound: /usr/bin/aplay /opt/jarvis/sounds/sound_effects/zombie_brains.wav
-  foghorn: /usr/bin/aplay /opt/jarvis/sounds/sound_effects/foghorn.wav
-  gunshot: /usr/bin/aplay /opt/jarvis/sounds/sound_effects/gunshot.wav
   siren: /usr/bin/aplay /opt/jarvis/sounds/sound_effects/siren.wav
   bullmastiff: /usr/bin/aplay /opt/jarvis/sounds/sound_effects/bullmastiff.wav
-  one_tone: /usr/bin/aplay /opt/jarvis/sounds/tones/one-tone.wav
-  two_tone: /usr/bin/aplay /opt/jarvis/sounds/tones/two-tone.wav
-  shalom_aleichem: /usr/bin/aplay /opt/jarvis/sounds/shabbat/shalom_aleichem.wav
-  lcha_dodi: /usr/bin/aplay /opt/jarvis/sounds/shabbat/lcha_dodi.wav
-  kah_ribon: /usr/bin/aplay /opt/jarvis/sounds/shabbat/kah_ribon.wav
   german_shephard: /usr/bin/aplay /opt/jarvis/sounds/sound_effects/german-shephard.wav
   restart_system: /opt/jarvis/scripts/restart_system.sh
   restart_jarvis_base: /opt/jarvis/scripts/restart_jarvis_base.sh
   restart_jarvis_stt: /opt/jarvis/scripts/restart_jarvis_stt.sh
   restart_jarvis_tts: /opt/jarvis/scripts/restart_jarvis_tts.sh
-  whitenoise: /usr/bin/omxplayer /opt/jarvis/sounds/whitenoise.mp3
-  killwhitenoise: kill $(ps aux | grep '/usr/bin/omxplayer.bin /opt/jarvis/sounds/whitenoise.mp3' | awk '{print $2}')
+  naturesounds: /usr/bin/omxplayer --vol 750 /opt/jarvis/sounds/morninglight.mp3
+  whitenoise: /usr/bin/omxplayer --vol 500 /opt/jarvis/sounds/whitenoise.mp3
+  killnaturesounds: kill $(ps aux | grep '/usr/bin/omxplayer.bin --vol 750 /opt/jarvis/sounds/morninglight.mp3' | awk '{print $2}')
+  killwhitenoise: kill $(ps aux | grep '/usr/bin/omxplayer.bin --vol 500 /opt/jarvis/sounds/whitenoise.mp3' | awk '{print $2}')
+  alert: /usr/bin/omxplayer --vol 25 /opt/jarvis/sounds/tones/notification.mp3
+  winxpstart: /usr/bin/omxplayer --vol 25 /opt/jarvis/sounds/tones/winxp_startup.mp3
+  winxpstop: /usr/bin/omxplayer --vol 25 /opt/jarvis/sounds/tones/winxp_shutdown.mp3
+  joke: /opt/jarvis/scripts/joke.sh
 
 #Alarm Panel
 alarm_control_panel:
@@ -218,10 +138,6 @@ alarm_control_panel:
       delay_time: 0
 
 #**********************************************************
-#* FUNNY SOUNDS
-#**********************************************************
-
-#**********************************************************
 #* INCLUDES
 #**********************************************************
 automation: !include config/automations.yaml
@@ -236,4 +152,3 @@ input_select: !include config/input_select.yaml
 input_boolean: !include config/input_boolean.yaml
 input_number: !include config/input_number.yaml
 script: !include config/scripts.yaml
-
