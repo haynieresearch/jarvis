@@ -11,8 +11,6 @@ Firewall Note: The Jarvis firewall is setup so that only local clients and one s
 The specific IP that can access Jarvis is a front end server with Apache as a reverse proxy and encryption.
 Any other external clients will connect to the front end server outside of the network that then connects direct to Jarvis.
 
-![Screenshot of Jarvis Wall Mount](https://raw.githubusercontent.com/haynieresearch/jarvis/master/resources/screenshots/jarvis_wall.png)
-
 Note: SMS commands will require a basic level of experience with PHP.
 
 P.S.: This system is far from perfect, if you make some enhancements or have any ideas please
