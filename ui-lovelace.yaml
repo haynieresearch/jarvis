@@ -32,6 +32,11 @@ views:
                   - arm_home
                   - arm_away
                 entity: alarm_control_panel.home_alarm
+              - type: entities
+                entities:
+                  - entity: script.leaving_in_15_min
+                    name: Leave in 15 Minutes
+                    icon: 'mdi:car'
           - type: vertical-stack
             cards:
               - type: weather-forecast
@@ -42,12 +47,9 @@ views:
                   - entity: input_number.systemvolume
                   - entity: input_boolean.whitenoise
                   - entity: input_boolean.naturesounds
-                  - entity: script.leaving_in_15_min
-                    name: Leave in 15 Minutes
-                    icon: 'mdi:car'
-                  - entity: script.restart_system
-                    name: Restart Jarvis
-                    icon: 'mdi:power'
+                  - entity: script.game_timer
+                    name: Game Timer
+                    icon: 'mdi:google-controller'
                 show_header_toggle: false
                 state_color: true
 

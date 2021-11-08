@@ -248,9 +248,9 @@ game_timer:
     - service: shell_command.alert
     - service: shell_command.tts
       data_template:
-        message: "The game timer has been activated, you have one hour to play."
+        message: "The game timer has been activated, you have thirty minutes to play."
     - delay:
-        minutes: 50
+        minutes: 20
     - service: shell_command.tts
       data_template:
         message: "This is your ten minute warning, you have ten minutes of game time remaining."
@@ -272,13 +272,15 @@ game_timer:
         message: "Only 1 more minute on the kids game timer, I hope they are saving like they were told to. #HomeAutomation #SmartHome"
     - delay:
         minutes: 1
-    - service: shell_command.alert
+    - service: shell_command.alarm_sound
+    - delay:
+        minutes: 0.5
+    - service: shell_command.alarm_sound
+    - delay:
+        minutes: 0.5
     - service: shell_command.tts
       data_template:
         message: "The game timer is now up. Please exit your game immediatly, you have had exactly twenty minutes to play."
-    - service: notify.twitter
-      data_template:
-        message: "Time is up on the game timer! I am going to turn their system off, otherwise they will play forever. #HomeAutomation #SmartHome"
 
 whitenoise:
   sequence:
