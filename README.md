@@ -7,8 +7,6 @@ well as using Amazon Alexa products. However, creating custom intents was not as
 have liked for quick and easy creation. Between wake word and API.AI for speech handling, it appears to work
 rather well. I have also decoupled the TTS services to make it easier to use that functionality elsewhere.
 
-Note: For those who want to track the network status of local devices the nmap_tracker built into HA does do that job very well. However, I have decided to remove it from my configuration. While it worked as intended, it had an unintended side effect on my Raspberry Pi -- it made it run slow. While I could tweak the interval settings, real time tracking was my goal.
-
 Firewall Note: The Jarvis firewall is setup so that only local clients and one specific public IP can access.
 The specific IP that can access Jarvis is a front end server with Apache as a reverse proxy and encryption.
 Any other external clients will connect to the front end server outside of the network that then connects direct to Jarvis.
@@ -25,34 +23,18 @@ configuration problem, I would be glad to help.
 
 You will need to read this section completely before using this software to ensure that everything
 works as designed. There is no other documentation other than this README file. Please note: this software
-comes with no guaranteed support. Furthermore, this software is licensed under the GNU GENERAL PUBLIC LICENSE.
+comes with no guaranteed support. Furthermore, this software is licensed under the Apache License, Version 2.0.
 License text is provided in the LICENSE file.
 
-### Devices
-* Apple AirPort Extreme
-* Too Many iOS Devices
-* Raspberry Pi 3 - The Brain
-* Raspberry Pi LCD 7" Touchscreen - Touchscreen Interface
-* Honeywell Wi-Fi Thermostat
-* Wink Relay - Smart Switches + Touchscreen Interface
-* Wink Hub
-* Lutron Wireless Dimmer
-* Leviton Z-Wave Switch
-* Schlage Deadbolt
-* Phillips Hue Starter Pack
-* Phillips Hue Light Strip
-* Phillips Hue Soft White Blub
-* Phillips Hue Color Bulb
-* Phillips Hue Color Flood Light Bulb
-* Logitech Harmony Ultimate
-* iHome Smart Plug
-* Kiddie Z-Wave Smoke/Carbon Monoxide Alarm
-
 ### Front End Integrations
+* Meteorologisk Institutt
 * Hue
 * IFTTT
 * Speedtest
 * Apple iCloud
+* Minecraft
+* Roku
+* uPnP
 
 ### Assumptions
 This software makes a couple of assumptions, I will list them below and you can either update/install
@@ -81,7 +63,7 @@ this up for you.
 ### Configuration Files
 * /opt/jarvis/configuration.yaml
 * /opt/jarvis/secrets.yaml
-* /opt/jarvis/stt/config/config.yaml
+* /opt/jarvis/stt/config/*.yaml
 * /opt/jarvis/web/webapi/sms/config.php
 
 If you utilize the install script it will set you up with ready to edit configuration files. Otherwise, you can copy the .example files located in each primary directory.
