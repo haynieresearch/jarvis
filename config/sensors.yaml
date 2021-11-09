@@ -24,12 +24,6 @@
     jarvis_greeting:
       value_template: '{% if is_state("sensor.random_4", "1") %}Pardon me{% elif is_state("sensor.random_4", "2") %}Pardon the interruption{% elif is_state("sensor.random_4", "3") %}Excusez-moi{% elif is_state("sensor.random_4", "4") %}Pardon{% else %}Excuse me{% endif %}'
 
-    climate_downstairs_op_mode:
-      value_template: '{{ states.climate.downstairs.state }}'
-
-    climate_upstairs_op_mode:
-      value_template: '{{ states.climate.upstairs.state }}'
-
     climate_downstairs_temp:
       value_template: '{{ states.climate.downstairs.attributes.current_temperature }}'
 
@@ -106,6 +100,18 @@
 - platform: command_line
   name: Internet Status
   command: /opt/jarvis/scripts/internetstatus.sh
+
+- platform: command_line
+  name: Speedtest Download
+  command: /opt/jarvis/scripts/speedtest_download.sh
+
+- platform: command_line
+  name: Speedtest Upload
+  command: /opt/jarvis/scripts/speedtest_upload.sh
+
+- platform: command_line
+  name: Speedtest Ping
+  command: /opt/jarvis/scripts/speedtest_ping.sh
 
 - platform: random
   name: random_outside_lights

@@ -250,3 +250,11 @@
      sensor.wesleys_room_humidity:
        icon: mdi:water-percent
        friendly_name: Wesleys Room Humidity
+
+     light.exterior_lights:
+       icon: mdi:lightbulb-group
+       friendly_name: Exterior Lights
+
+     light.dining_room:
+       icon: mdi:lightbulb-group
+       friendly_name: Dining Room Lights

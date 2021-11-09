@@ -30,6 +30,20 @@
        brightness: 255
        color_name: red
 
+-  name: Living Room TV Color Loop
+   entities:
+     light.family_room_desk:
+       state: on
+       brightness: 255
+       effect: colorloop
+
+-  name: Family Room Desk Color Loop
+   entities:
+     light.family_room_desk:
+       state: on
+       brightness: 255
+       effect: colorloop
+
 -  name: Outside Blue
    entities:
      light.back_porch:

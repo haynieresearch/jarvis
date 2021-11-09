@@ -22,7 +22,7 @@
 
 - platform: ffmpeg
   name: front_porch_cam
-  input: -rtsp_transport udp -i !secret front_porch_cam
+  input: -rtsp_transport udp -i rtsp://haynienet:Qz9Zt269J7@10.10.0.144/live
   extra_arguments: '-vf "scale=384:216"'
 
 - platform: ffmpeg
@@ -32,27 +32,27 @@
 
 - platform: ffmpeg
   name: family_room_cam
-  input: -rtsp_transport udp -i rtsp://haynienet:Qz9Zt269J7@10.0.0.132/live
+  input: -rtsp_transport udp -i rtsp://haynienet:Qz9Zt269J7@10.10.0.20/live
   extra_arguments: '-vf "scale=384:216"'
 
 - platform: ffmpeg
   name: living_room_cam
-  input: -rtsp_transport udp -i !secret living_room_cam
+  input: -rtsp_transport udp -i rtsp://haynienet:Qz9Zt269J7@10.10.0.24/live
   extra_arguments: '-vf "scale=384:216"'
 
 - platform: ffmpeg
   name: dining_room_cam
-  input: -rtsp_transport udp -i rtsp://haynienet:Qz9Zt269J7@10.0.0.143/live
+  input: -rtsp_transport udp -i rtsp://haynienet:Qz9Zt269J7@10.10.0.138/live
   extra_arguments: '-vf "scale=384:216"'
 
 - platform: ffmpeg
   name: kitchen_cam
-  input: -rtsp_transport udp -i rtsp://haynienet:Qz9Zt269J7@10.0.0.136/live
+  input: -rtsp_transport udp -i rtsp://haynienet:Qz9Zt269J7@10.10.0.23/live
   extra_arguments: '-vf "scale=384:216"'
 
 - platform: ffmpeg
   name: stairs_cam
-  input: -rtsp_transport udp -i rtsp://haynienet:Qz9Zt269J7@10.0.0.142/live
+  input: -rtsp_transport udp -i rtsp://haynienet:Qz9Zt269J7@10.10.0.25/live
   extra_arguments: '-vf "scale=384:216"'
 
 - platform: ffmpeg
@@ -62,12 +62,12 @@
 
 - platform: ffmpeg
   name: garage_cam
-  input: -rtsp_transport udp -i rtsp://haynienet:Qz9Zt269J7@10.0.0.133/live
+  input: -rtsp_transport udp -i rtsp://haynienet:Qz9Zt269J7@10.10.0.22/live
   extra_arguments: '-vf "scale=384:216"'
 
 - platform: ffmpeg
   name: front_yard_cam
-  input: -rtsp_transport udp -i rtsp://haynienet:Qz9Zt269J7@10.0.0.1/live
+  input: -rtsp_transport udp -i rtsp://haynienet:Qz9Zt269J7@10.10.0.143/live
   extra_arguments: '-vf "scale=384:216"'
 
 - platform: ffmpeg

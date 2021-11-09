@@ -25,6 +25,7 @@ homeassistant:
       trusted_networks:
         - 127.0.0.1
         - 10.10.0.0/16
+        - 3.130.109.179
       allow_bypass_login: true
     - type: legacy_api_password
       api_password: !secret http_password
@@ -70,6 +71,7 @@ zeroconf:
 discovery:
 conversation:
 dialogflow:
+api:
 
 #**********************************************************
 #* ACCOUNTS
@@ -122,6 +124,7 @@ shell_command:
   winxpstart: /usr/bin/omxplayer --vol 25 /opt/jarvis/sounds/tones/winxp_startup.mp3
   winxpstop: /usr/bin/omxplayer --vol 25 /opt/jarvis/sounds/tones/winxp_shutdown.mp3
   joke: /opt/jarvis/scripts/joke.sh
+  speedtest: speedtest-cli --simple > /opt/jarvis/tmp/speedtest.out
 
 #Alarm Panel
 alarm_control_panel:

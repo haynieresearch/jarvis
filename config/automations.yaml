@@ -24,7 +24,7 @@
   initial_state: 'on'
   trigger:
     platform: state
-    entity_id: sensor.climate_downstairs_op_mode
+    entity_id: climate.downstairs
     to: 'off'
   condition:
     condition: and
@@ -41,9 +41,10 @@
         entity_id: climate.downstairs
         temperature: !secret hvac_set_temp_ac_day
         state: cool
-    - service: climate.set_operation_mode
+    - service: climate.set_hvac_mode
       data:
         entity_id: climate.downstairs
+        state: cool
     - service: shell_command.alert
     - delay:
         seconds: 0.125
@@ -56,7 +57,7 @@
   initial_state: 'on'
   trigger:
     platform: state
-    entity_id: sensor.climate_downstairs_op_mode
+    entity_id: climate.downstairs
     to: 'off'
   condition:
     condition: and
@@ -73,7 +74,7 @@
         entity_id: climate.downstairs
         temperature: !secret hvac_set_temp_heat_day
         state: heat
-    - service: climate.set_operation_mode
+    - service: climate.set_hvac_mode
       data:
         entity_id: climate.downstairs
         state: heat
@@ -89,7 +90,7 @@
   initial_state: 'on'
   trigger:
     platform: state
-    entity_id: sensor.climate_upstairs_op_mode
+    entity_id: climate.upstairs
     to: 'off'
   condition:
     condition: and
@@ -104,11 +105,12 @@
     - service: climate.set_temperature
       data:
         entity_id: climate.upstairs
-        temperature: !secret hvac_set_temp_ac_day
+        temperature: !secret hvac_set_temp_ac_day_alt
         state: cool
-    - service: climate.set_operation_mode
+    - service: climate.set_hvac_mode
       data:
         entity_id: climate.upstairs
+        state: cool
     - service: shell_command.alert
     - delay:
         seconds: 0.125
@@ -121,7 +123,7 @@
   initial_state: 'on'
   trigger:
     platform: state
-    entity_id: sensor.climate_upstairs_op_mode
+    entity_id: climate.upstairs
     to: 'off'
   condition:
     condition: and
@@ -136,9 +138,9 @@
     - service: climate.set_temperature
       data:
         entity_id: climate.upstairs
-        temperature: !secret hvac_set_temp_heat_day
+        temperature: !secret hvac_set_temp_heat_day_alt
         state: heat
-    - service: climate.set_operation_mode
+    - service: climate.set_hvac_mode
       data:
         entity_id: climate.upstairs
         state: heat
@@ -162,7 +164,7 @@
         entity_id: climate.downstairs
         temperature: !secret hvac_set_temp_ac_day
         state: cool
-    - service: climate.set_operation_mode
+    - service: climate.set_hvac_mode
       data:
         entity_id: climate.downstairs
         state: cool
@@ -184,9 +186,9 @@
     - service: climate.set_temperature
       data:
         entity_id: climate.upstairs
-        temperature: !secret hvac_set_temp_ac_day
+        temperature: !secret hvac_set_temp_ac_day_alt
         state: cool
-    - service: climate.set_operation_mode
+    - service: climate.set_hvac_mode
       data:
         entity_id: climate.upstairs
         state: cool
@@ -210,7 +212,7 @@
         entity_id: climate.downstairs
         temperature: !secret hvac_set_temp_heat_day
         state: heat
-    - service: climate.set_operation_mode
+    - service: climate.set_hvac_mode
       data:
         entity_id: climate.downstairs
         state: heat
@@ -232,9 +234,9 @@
     - service: climate.set_temperature
       data:
         entity_id: climate.upstairs
-        temperature: !secret hvac_set_temp_heat_day
+        temperature: !secret hvac_set_temp_heat_day_alt
         state: heat
-    - service: climate.set_operation_mode
+    - service: climate.set_hvac_mode
       data:
         entity_id: climate.upstairs
         state: heat
@@ -266,7 +268,7 @@
         entity_id: climate.downstairs
         temperature: !secret hvac_set_temp_ac_day
         state: cool
-    - service: climate.set_operation_mode
+    - service: climate.set_hvac_mode
       data:
         entity_id: climate.downstairs
         state: cool
@@ -290,9 +292,9 @@
     - service: climate.set_temperature
       data:
         entity_id: climate.upstairs
-        temperature: !secret hvac_set_temp_ac_day
+        temperature: !secret hvac_set_temp_ac_day_alt
         state: cool
-    - service: climate.set_operation_mode
+    - service: climate.set_hvac_mode
       data:
         entity_id: climate.upstairs
         state: cool
@@ -318,7 +320,7 @@
         entity_id: climate.downstairs
         temperature: !secret hvac_set_temp_heat_day
         state: heat
-    - service: climate.set_operation_mode
+    - service: climate.set_hvac_mode
       data:
         entity_id: climate.downstairs
         state: heat
@@ -342,9 +344,9 @@
     - service: climate.set_temperature
       data:
         entity_id: climate.upstairs
-        temperature: !secret hvac_set_temp_heat_day
+        temperature: !secret hvac_set_temp_heat_day_alt
         state: heat
-    - service: climate.set_operation_mode
+    - service: climate.set_hvac_mode
       data:
         entity_id: climate.upstairs
         state: heat
@@ -370,7 +372,7 @@
         entity_id: climate.downstairs
         temperature: !secret hvac_set_temp_ac_night
         state: cool
-    - service: climate.set_operation_mode
+    - service: climate.set_hvac_mode
       data:
         entity_id: climate.downstairs
         state: cool
@@ -394,9 +396,9 @@
     - service: climate.set_temperature
       data:
         entity_id: climate.upstairs
-        temperature: !secret hvac_set_temp_ac_night
+        temperature: !secret hvac_set_temp_ac_night_alt
         state: cool
-    - service: climate.set_operation_mode
+    - service: climate.set_hvac_mode
       data:
         entity_id: climate.upstairs
         state: cool
@@ -422,7 +424,7 @@
         entity_id: climate.downstairs
         temperature: !secret hvac_set_temp_heat_night
         state: heat
-    - service: climate.set_operation_mode
+    - service: climate.set_hvac_mode
       data:
         entity_id: climate.downstairs
         state: heat
@@ -446,9 +448,9 @@
     - service: climate.set_temperature
       data:
         entity_id: climate.upstairs
-        temperature: !secret hvac_set_temp_heat_night
+        temperature: !secret hvac_set_temp_heat_night_alt
         state: heat
-    - service: climate.set_operation_mode
+    - service: climate.set_hvac_mode
       data:
         entity_id: climate.upstairs
         state: heat
@@ -475,7 +477,7 @@
         entity_id: climate.downstairs
         temperature: !secret hvac_set_temp_ac_day
         state: cool
-    - service: climate.set_operation_mode
+    - service: climate.set_hvac_mode
       data:
         entity_id: climate.downstairs
         state: cool
@@ -506,9 +508,9 @@
     - service: climate.set_temperature
       data:
         entity_id: climate.upstairs
-        temperature: !secret hvac_set_temp_ac_day
+        temperature: !secret hvac_set_temp_ac_day_alt
         state: cool
-    - service: climate.set_operation_mode
+    - service: climate.set_hvac_mode
       data:
         entity_id: climate.upstairs
         state: cool
@@ -541,7 +543,7 @@
         entity_id: climate.downstairs
         temperature: !secret hvac_set_temp_heat_day
         state: heat
-    - service: climate.set_operation_mode
+    - service: climate.set_hvac_mode
       data:
         entity_id: climate.downstairs
         state: heat
@@ -572,9 +574,9 @@
     - service: climate.set_temperature
       data:
         entity_id: climate.upstairs
-        temperature: !secret hvac_set_temp_heat_day
+        temperature: !secret hvac_set_temp_heat_day_alt
         state: heat
-    - service: climate.set_operation_mode
+    - service: climate.set_hvac_mode
       data:
         entity_id: climate.upstairs
         state: heat
@@ -607,7 +609,7 @@
         entity_id: climate.downstairs
         temperature: !secret hvac_set_temp_ac_night
         state: cool
-    - service: climate.set_operation_mode
+    - service: climate.set_hvac_mode
       data:
         entity_id: climate.downstairs
         state: cool
@@ -638,9 +640,9 @@
     - service: climate.set_temperature
       data:
         entity_id: climate.upstairs
-        temperature: !secret hvac_set_temp_ac_night
+        temperature: !secret hvac_set_temp_ac_night_alt
         state: cool
-    - service: climate.set_operation_mode
+    - service: climate.set_hvac_mode
       data:
         entity_id: climate.upstairs
         state: cool
@@ -673,7 +675,7 @@
         entity_id: climate.downstairs
         temperature: !secret hvac_set_temp_heat_night
         state: heat
-    - service: climate.set_operation_mode
+    - service: climate.set_hvac_mode
       data:
         entity_id: climate.downstairs
         state: heat
@@ -704,9 +706,9 @@
     - service: climate.set_temperature
       data:
         entity_id: climate.upstairs
-        temperature: !secret hvac_set_temp_heat_night
+        temperature: !secret hvac_set_temp_heat_night_alt
         state: heat
-    - service: climate.set_operation_mode
+    - service: climate.set_hvac_mode
       data:
         entity_id: climate.upstairs
         state: heat
@@ -728,7 +730,7 @@
     at: '19:00:00'
   action:
     - service: light.turn_on
-      entity_id: group.outsidelights
+      entity_id: light.exterior_lights
     - delay:
         seconds: 0.5
     - service: scene.turn_on
@@ -765,7 +767,7 @@
     at: '07:00:00'
   action:
     - service: light.turn_off
-      entity_id: group.outsidelights
+      entity_id: light.exterior_lights
     - service: shell_command.alert
     - delay:
         seconds: 0.125
@@ -781,11 +783,37 @@
     at: '8:00:00'
   action:
     - service: light.turn_on
-      entity_id: light.tv_backlight
+      entity_id: light.living_room_tv
     - delay:
         seconds: 0.5
     - service: scene.turn_on
-      entity_id: scene.tv_blue
+      entity_id: scene.living_room_tv_color_loop
+
+- id: led_lights_off
+  alias: Family Room Desk LED Daily On
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '22:00:00'
+  action:
+    - service: light.turn_off
+      entity_id: light.living_room_tv
+    - service: light.turn_off
+      entity_id: light.family_room_desk
+
+- id: family_room_desk_led_daily_on
+  alias: Family Room Desk LED Daily On
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '8:00:00'
+  action:
+    - service: light.turn_on
+      entity_id: light.family_room_desk
+    - delay:
+        seconds: 0.5
+    - service: scene.turn_on
+      entity_id: scene.family_room_desk_color_loop
 
 - id: master_shower_colorloop
   alias: Master Shower Color Loop
@@ -2018,7 +2046,7 @@
         seconds: 0.125
     - service: shell_command.tts
       data_template:
-        message: "Warning, our uplink download speed is low. My last check shows a download speed of {{ states.sensor.speedtest_download.state }} mega bits per second."
+        message: "Warning, our network download speed is low. My last check shows a download speed of {{ states.sensor.speedtest_download.state }} mega bits per second."
 
 - id: speedtest_upload
   alias: Speedtest Upload
@@ -2042,7 +2070,7 @@
         seconds: 0.125
     - service: shell_command.tts
       data_template:
-        message: "Warning, our uplink upload speed is low. My last check shows an upload speed of {{ states.sensor.speedtest_upload.state }} mega bits per second."
+        message: "Warning, our network upload speed is low. My last check shows an upload speed of {{ states.sensor.speedtest_upload.state }} mega bits per second."
 
 - id: speedtest_ping
   alias: Speedtest Ping
@@ -2066,7 +2094,7 @@
         seconds: 0.125
     - service: shell_command.tts
       data_template:
-        message: "Warning, our uplink latency is high. My last check shows a ping of {{ states.sensor.speedtest_ping.state }} miliseconds."
+        message: "Warning, our network latency is high. My last check shows a ping of {{ states.sensor.speedtest_ping.state }} miliseconds."
 
 - id: ifttt_webhook
   alias: ifttt webhook
@@ -2102,7 +2130,7 @@
   trigger:
   - platform: numeric_state
     entity_id: sensor.katies_iphone_battery_state
-    below: 50
+    below: 25
   action:
     - service: shell_command.alert
     - delay:
@@ -2132,7 +2160,7 @@
   trigger:
   - platform: numeric_state
     entity_id: sensor.myphone_battery_state
-    below: 50
+    below: 25
   action:
     - service: shell_command.alert
     - delay:
@@ -2162,7 +2190,7 @@
   trigger:
   - platform: numeric_state
     entity_id: sensor.wesleys_iphone_battery_state
-    below: 50
+    below: 25
   action:
     - service: shell_command.alert
     - delay:
@@ -2192,7 +2220,7 @@
   trigger:
   - platform: numeric_state
     entity_id: sensor.littles_iphone_6_plus_battery_state
-    below: 50
+    below: 25
   action:
     - service: shell_command.alert
     - delay:
@@ -2200,3 +2228,26 @@
     - service: shell_command.tts
       data_template:
         message: "{{ states.sensor.jarvis_greeting.state }}, Emma, your iPhone battery is now critically low and has reached {{ states.sensor.littles_iphone_6_plus_battery_state.state }} per cent."
+
+- id: minecraft_server
+  alias: Minecraft Server
+  initial_state: 'on'
+  trigger:
+    platform: state
+    entity_id: sensor.minecraft_server_players_online
+  condition:
+    condition: template
+    value_template: '{{ trigger.to_state.state | int > trigger.from_state.state | int }}'
+  action:
+    - service: shell_command.tts
+      data_template:
+        message: "Hey! Someone joined the Minecraft Server. There are now {{ states.sensor.minecraft_server_players_online.state }} players online."
+
+- id: speedtest
+  alias: Speedtest
+  initial_state: 'on'
+  trigger:
+    platform: time_pattern
+    minutes: 0
+  action:
+    - service: shell_command.speedtest

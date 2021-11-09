@@ -32,11 +32,6 @@ views:
                   - arm_home
                   - arm_away
                 entity: alarm_control_panel.home_alarm
-              - type: entities
-                entities:
-                  - entity: script.leaving_in_15_min
-                    name: Leave in 15 Minutes
-                    icon: 'mdi:car'
           - type: vertical-stack
             cards:
               - type: weather-forecast
@@ -47,9 +42,6 @@ views:
                   - entity: input_number.systemvolume
                   - entity: input_boolean.whitenoise
                   - entity: input_boolean.naturesounds
-                  - entity: script.game_timer
-                    name: Game Timer
-                    icon: 'mdi:google-controller'
                 show_header_toggle: false
                 state_color: true
 
@@ -66,36 +58,58 @@ views:
               #Left Column
               - type: vertical-stack
                 cards:
-                  - type: light
-                    entity: light.exterior_lights
-                    name: Exterior Lights
-                    icon: 'mdi:lightbulb-group'
-                  - type: light
-                    entity: light.tv_backlight
-                    name: Living Room TV
-                    icon: 'mdi:television'
-                  - type: light
-                    entity: light.family_room_desk
-                    name: Family Room Desk
-                    icon: 'mdi:desk'
+                - type: entities
+                  entities:
+                    - entity: light.exterior_lights
+                    - entity: light.front_porch
+                    - entity: light.dining_room
+                    - entity: light.tv_backlight
+                    - entity: light.family_room_desk
+                    - entity: light.master_shower
 
           #Right Column
           - type: vertical-stack
             cards:
               - type: vertical-stack
                 cards:
-                  - type: light
-                    entity: light.dining_room
-                    name: Dining Room
-                    icon: 'mdi:silverware'
-                  - type: light
-                    entity: light.front_porch
-                    name: Front Porch
-                    icon: 'mdi:lightbulb-group'
-                  - type: light
-                    entity: light.back_porch
-                    name: Back Porch
-                    icon: 'mdi:lightbulb-group'
+                - type: entities
+                  entities:
+                    - entity: light.back_porch
+                    - entity: light.front_porch_color_1
+                    - entity: light.front_porch_color_2
+                    - entity: light.front_porch_color_3
+                    - entity: light.front_porch_left
+                    - entity: light.front_porch_right
+
+  #Media
+  - icon: 'mdi:television-play'
+    panel: true
+    badges: []
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: vertical-stack
+            cards:
+
+              #Left Column
+              - type: vertical-stack
+                cards:
+                - type: entities
+                  entities:
+                    - entity: media_player.wes_tv
+
+
+          #Right Column
+          - type: vertical-stack
+            cards:
+              - type: vertical-stack
+                cards:
+                - type: entities
+                  entities:
+                    - entity: script.game_timer
+                      name: Game Timer
+                      icon: 'mdi:google-controller'
+
 
   #HVAC
   - icon: 'mdi:thermometer'
@@ -122,8 +136,8 @@ views:
                   entity: climate.upstairs
                   name: Upstairs
 
-  #Cameras
-  - icon: 'mdi:cctv'
+  #WX
+  - icon: 'mdi:white-balance-sunny'
     panel: true
     badges: []
     cards:
@@ -136,65 +150,104 @@ views:
               - type: vertical-stack
                 cards:
                   - type: picture-entity
-                    entity: camera.front_porch_cam
-                    name: Front Porch
-                  - type: picture-entity
-                    entity: camera.family_room_cam
-                    name: Family Room
-                  - type: picture-entity
-                    entity: camera.dining_room_cam
-                    name: Dining Room
-                  - type: picture-entity
-                    entity: camera.stairs_cam
-                    name: Stairs
-                  - type: picture-entity
-                    entity: camera.garage_cam
-                    name: Garage
-                  - type: picture-entity
-                    entity: camera.front_yard_cam
-                    name: Front Yard
+                    entity: camera.wxradar
+                    name: STGWX
 
           #Right Column
           - type: vertical-stack
             cards:
               - type: vertical-stack
                 cards:
+                  - type: weather-forecast
+                    entity: weather.home
+                    name: Weather
+
+  #Cameras
+  - icon: 'mdi:cctv'
+    panel: true
+    badges: []
+    cards:
+      - type: horizontal-stack
+        cards:
+          - type: vertical-stack
+            cards:
+
+
+              - type: vertical-stack
+                cards:
                   - type: picture-entity
-                    entity: camera.back_porch_cam
-                    name: Back Porch
+                    entity: camera.front_porch_cam
+                    name: Front Porch
+                  - type: picture-entity
+                    entity: camera.family_room_cam
+                    name: Family Room
+                  - type: picture-entity
+                    entity: camera.garage_cam
+                    name: Garage
+
+          - type: vertical-stack
+            cards:
+              - type: vertical-stack
+                cards:
+                  - type: picture-entity
+                    entity: camera.front_yard_cam
+                    name: Front Yard
                   - type: picture-entity
                     entity: camera.living_room_cam
                     name: Living Room
                   - type: picture-entity
+                    entity: camera.upstairs_cam
+                    name: Upstairs
+
+          - type: vertical-stack
+            cards:
+              - type: vertical-stack
+                cards:
+                  - type: picture-entity
+                    entity: camera.stairs_cam
+                    name: Stairs
+                  - type: picture-entity
                     entity: camera.kitchen_cam
                     name: Kitchen
                   - type: picture-entity
-                    entity: camera.upstairs_cam
-                    name: Upstairs
-                  - type: picture-entity
-                    entity: camera.driveway_cam
-                    name: Driveway
-                  - type: picture-entity
-                    entity: camera.back_yard_cam
-                    name: Back Yard
+                    entity: camera.dining_room_cam
+                    name: Dining Room
 
-  #Network Information
+  #Tool
   - panel: true
-    icon: 'mdi:wifi'
-    path: network
+    icon: 'mdi:tools'
+    path: tools
     badges: []
     cards:
-      - type: vertical-stack
+      - type: horizontal-stack
         cards:
-          - type: sensor
-            entity: sensor.speedtest_download
-            graph: line
-          - type: sensor
-            entity: sensor.speedtest_upload
-            graph: line
-          - type: sensor
-            entity: sensor.speedtest_ping
-            graph: line
+          - type: vertical-stack
+            cards:
+              - type: entities
+                entities:
+                  - entity: script.game_timer
+                  - entity: script.leaving_in_15_min
+
+          - type: vertical-stack
+            cards:
+              - type: entities
+                entities:
+                  - entity: scene.color_loop
+                  - entity: scene.family_room_desk_color_loop
+                  - entity: scene.living_room_tv_color_loop
+                  - entity: sensor.myphone_battery_state
+                  - entity: sensor.katies_iphone_battery_state
+                  - entity: sensor.wesleys_iphone_battery_state
+
+          - type: vertical-stack
+            cards:
+              - type: entities
+                entities:
+                  - entity: input_boolean.hvacautomation
+                  - entity: script.restart_system
+                  - entity: script.restart_jarvis_base
+                  - entity: script.restart_jarvis_tts
+                  - entity: script.restart_jarvis_stt
 
   #System Information
   - panel: true
@@ -206,22 +259,37 @@ views:
         cards:
           - type: vertical-stack
             cards:
-              - type: sensor
-                entity: sensor.processor_use
-                graph: line
-              - type: sensor
+              - type: gauge
+                entity: sensor.processor_use_percent
+                min: 0
+                max: 100
+                severity:
+                  green: 0
+                  yellow: 50
+                  red: 75
+              - type: gauge
                 entity: sensor.memory_use_percent
-                graph: line
-              - type: sensor
+                min: 0
+                max: 100
+                severity:
+                  green: 0
+                  yellow: 50
+                  red: 75
+              - type: gauge
                 entity: sensor.disk_use_percent
-                graph: line
+                min: 0
+                max: 100
+                severity:
+                  green: 0
+                  yellow: 50
+                  red: 75
           - type: vertical-stack
             cards:
               - type: gauge
                 entity: sensor.load_1m
                 max: 4
                 severity:
-                  green: 1
+                  green: 0
                   yellow: 2
                   red: 3
                 min: 0
@@ -229,7 +297,7 @@ views:
                 entity: sensor.load_5m
                 max: 4
                 severity:
-                  green: 1
+                  green: 0
                   yellow: 2
                   red: 3
               - type: gauge
@@ -237,16 +305,32 @@ views:
                 min: 0
                 max: 4
                 severity:
-                  green: 1
+                  green: 0
                   yellow: 2
                   red: 3
-              - type: entities
-                entities:
-                  - entity: script.restart_jarvis_base
-                    icon: 'mdi:power'
-                  - entity: script.restart_jarvis_tts
-                    icon: 'mdi:power'
-                  - entity: script.restart_jarvis_stt
-                    icon: 'mdi:power'
-                  - entity: script.restart_system
-                    icon: 'mdi:power'
+          - type: vertical-stack
+            cards:
+            - type: gauge
+              entity: sensor.speedtest_download
+              min: 1
+              max: 200
+              severity:
+                green: 50
+                yellow: 25
+                red: 0
+            - type: gauge
+              entity: sensor.speedtest_upload
+              min: 1
+              max: 25
+              severity:
+                green: 15
+                yellow: 10
+                red: 0
+            - type: gauge
+              entity: sensor.speedtest_ping
+              min: 1
+              max: 100
+              severity:
+                green: 0
+                yellow: 50
+                red: 75
